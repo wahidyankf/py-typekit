@@ -2,7 +2,7 @@
 
 Pyright is the judge of this module and `reportUnnecessaryTypeIgnoreComment` is on, so an ignore comment that stops
 being needed is itself a finding. Pytest imports the module, so its runtime statements are measured too. Each
-refused line is a mistake README.md demonstrates, quoting the same rule.
+refused line is a mistake docs/explanation/what-pyright-catches.md demonstrates, quoting the same rule.
 """
 
 from typing import assert_never

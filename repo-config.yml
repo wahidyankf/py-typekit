@@ -259,6 +259,7 @@ policies:
     naming:
       surfaces:
         - { glob: "repo-governance/**/*.md", style: kebab-case }
+        - { glob: "docs/**/*.md", style: kebab-case }
         - { glob: "plans/**/*.md", style: kebab-case }
       exempt: ["**/README.md"]
   governance:
@@ -277,6 +278,7 @@ policies:
           fail: 1000
     directory-map:
       trees:
+        - { path: docs }
         - { path: plans }
         - { path: repo-governance }
     quality-gates:

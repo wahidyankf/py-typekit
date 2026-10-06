@@ -25,6 +25,7 @@ uv run pytest                          # tests, fast, no coverage
 uv run --locked coverage run -m pytest && uv run --locked coverage report
 uv run pyright
 uv run ruff check && uv run ruff format --check
+uv run --locked python scripts/check-doc-snippets.py   # every documented Python block type-checks as marked
 npx --no-install prettier --check .
 bash scripts/check-wheel.sh            # the wheel lists py.typed and declares no dependency
 ./rhino gate run --surface main        # everything before a pull request
@@ -73,6 +74,9 @@ worktree and the task branch and fast-forwards `main`.
 - Before any rule edit, follow [Rules Propagation](repo-governance/workflows/quality/rules-propagation.md). A later
   catalog change is taken only through [Adopt Artifact](repo-governance/workflows/adoption/adopt-artifact.md).
 - Plans live under `plans/`, per the [Plans Convention](repo-governance/conventions/structure/plans.md).
+- Product documentation lives in `docs/`, one Diátaxis mode per page, per
+  [Documentation Architecture](repo-governance/conventions/structure/documentation-architecture.md); the `doc-snippets`
+  gate type-checks every documented `python` block.
 
 ## Governance and Agents
 

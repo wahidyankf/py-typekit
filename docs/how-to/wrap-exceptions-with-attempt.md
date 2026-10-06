@@ -1,0 +1,68 @@
+# How to wrap a raising call with `attempt`
+
+You call code that raises, such as `int()`, a dictionary lookup, or a library function, and you want its failure as a
+value your caller must handle.
+
+## Name the exceptions you expect
+
+Pass `attempt` a function of no arguments and every exception type you expect. Pyright infers the error side from the
+types you name:
+
+```python
+from functools import partial
+
+from typekit import Result, attempt
+
+
+def parse_port(text: str) -> Result[int, ValueError]:
+    return attempt(lambda: int(text), ValueError)
+
+
+def ratio(text: str, divisor: int) -> Result[int, ValueError | ZeroDivisionError]:
+    return attempt(lambda: int(text) // divisor, ValueError, ZeroDivisionError)
+
+
+def lookup(table: dict[str, int], key: str) -> Result[int, KeyError]:
+    return attempt(partial(table.__getitem__, key), KeyError)
+```
+
+The call runs once, inside `attempt`. When it returns, you get `Ok` with its value. When it raises an instance of a
+named type, a subclass included, you get `Err` holding that very exception object.
+
+## Let everything else propagate
+
+An exception of a type you did not name is not caught; it propagates out of `attempt` unchanged. There is no catch-all,
+and `attempt` refuses to run with no type named, both as a Pyright error and as a `TypeError` at run time. Name only
+what the caller can act on, so a bug still fails loudly.
+
+## Bind arguments
+
+The function takes no arguments. Bind them with a `lambda`, as `parse_port` does, or with `functools.partial`, as
+`lookup` does.
+
+## Use the result
+
+Handle it like any other `Result`: [match on it exhaustively](./match-exhaustively.md), or keep going with
+[`map` and `flat_map`](./chain-with-pipe.md). The error side is the exception itself, so `Err(error)` gives you its
+message and type:
+
+```python
+from typing import assert_never
+
+from typekit import Err, Ok, Result, attempt
+
+
+def parse_port(text: str) -> Result[int, ValueError]:
+    return attempt(lambda: int(text), ValueError)
+
+
+match parse_port("80a"):
+    case Ok(port):
+        print(f"port {port}")
+    case Err(error):
+        print(f"not a port: {error}")
+    case _ as unreachable:
+        assert_never(unreachable)
+```
+
+See [`attempt` in the reference](../reference/attempt.md) for the full contract.
