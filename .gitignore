@@ -18,3 +18,7 @@ htmlcov/
 
 # OS
 .DS_Store
+
+# Repository tooling and scratch
+node_modules/
+local-tmp/

@@ -1,0 +1,13 @@
+{
+  "name": "py-typekit-contributor-tooling",
+  "private": true,
+  "description": "Contributor tooling only. The shipped artifact is the typekit Python package; nothing here is published.",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "markdownlint-cli2": "^0.23.3",
+    "prettier": "^3.0.0"
+  }
+}
