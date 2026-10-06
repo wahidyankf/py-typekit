@@ -10,6 +10,14 @@ Releases are annotated semver tags only; nothing is uploaded to PyPI. A consumer
 (`uv add git+https://github.com/wahidyankf/py-typekit --tag vX.Y.Z`), and `uv.lock` records its commit. The package
 ships `py.typed`. A released tag never moves, per [Release Cut](repo-governance/workflows/maintenance/release-cut.md).
 
+## Library
+
+`src/typekit/` holds `result.py` (`Ok`, `Err`, `Result`, and the curried `map`, `map_err`, `flat_map`, `flat_map_err`,
+`tap`, `tap_err`), `option.py` (`Some`, `Option`, `from_optional`, and the curried `map`, `flat_map`, `tap`, `ok_or`),
+`boundary.py` (`attempt`, the one `except` in the package), and `pipeline.py` (`pipe`, one to nine stages, one
+`@overload` each). `__all__` lists exactly ten names; consumers reach the combinators through their modules,
+`from typekit import option, result`, so none shadows the builtin `map`. A runtime dependency is never added.
+
 ## Gates
 
 ```text
@@ -18,6 +26,7 @@ uv run --locked coverage run -m pytest && uv run --locked coverage report
 uv run pyright
 uv run ruff check && uv run ruff format --check
 npx --no-install prettier --check .
+bash scripts/check-wheel.sh            # the wheel lists py.typed and declares no dependency
 ./rhino gate run --surface main        # everything before a pull request
 ```
 
