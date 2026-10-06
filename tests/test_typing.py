@@ -1,8 +1,11 @@
-"""Typing contracts: what strict Pyright accepts and refuses about typekit (AC-04, AC-07, AC-47, AC-48, AC-50, AC-53).
+"""Typing contracts: what strict Pyright accepts and refuses (AC-04, AC-07, AC-47, AC-48, AC-50, AC-53, AC-57, AC-58).
 
 Pyright is the judge of this module and `reportUnnecessaryTypeIgnoreComment` is on, so an ignore comment that stops
-being needed is itself a finding. Pytest imports the module, so its runtime statements are measured too.
+being needed is itself a finding. Pytest imports the module, so its runtime statements are measured too. Each
+refused line is a mistake README.md demonstrates, quoting the same rule.
 """
+
+from typing import assert_never
 
 from typekit import option, result
 from typekit.boundary import attempt
@@ -118,3 +121,63 @@ def unnamed_error() -> None:
 
     # The refusal this test proves: attempt has no default error type and no catch-all, so naming none is refused.
     attempt(lambda: 1)  # pyright: ignore[reportCallIssue]
+
+
+def describe_result(subject: Result[int, str]) -> str:
+    """An exhaustive match: each side has a case, so the wildcard's subject is `Never` and `assert_never` accepts it."""
+
+    match subject:
+        case Ok(value):
+            return f"ok {value}"
+        case Err(error):
+            return f"err {error}"
+        case _ as unreachable:
+            assert_never(unreachable)
+
+
+def describe_option(subject: Option[int]) -> str:
+    """An exhaustive match: `Some` and `None` each have a case, so `assert_never` receives `Never`."""
+
+    match subject:
+        case Some(value):
+            return f"some {value}"
+        case None:
+            return "none"
+        case _ as unreachable:
+            assert_never(unreachable)
+
+
+def test_exhaustive_matches_handle_every_case() -> None:
+    """Each case of an exhaustive match is reached by its own input, and none reaches `assert_never`."""
+
+    assert (describe_result(Ok(1)), describe_result(Err("bad"))) == ("ok 1", "err bad")
+    assert (describe_option(Some(1)), describe_option(None)) == ("some 1", "none")
+
+
+def missing_err_case(subject: Result[int, str]) -> str:
+    """Never called: with no `case Err(...)`, an `Err[str]` reaches `assert_never`, which accepts only `Never`."""
+
+    match subject:
+        case Ok(value):
+            return f"ok {value}"
+        case _ as unreachable:
+            # The refusal this test proves: a match that forgets the failure side is a type error at `assert_never`.
+            assert_never(unreachable)  # pyright: ignore[reportArgumentType]
+
+
+def missing_none_case(subject: Option[int]) -> str:
+    """Never called: with no `case None`, the absent value reaches `assert_never`, which accepts only `Never`."""
+
+    match subject:
+        case Some(value):
+            return f"some {value}"
+        case _ as unreachable:
+            # The refusal this test proves: a match that forgets absence is a type error at `assert_never`.
+            assert_never(unreachable)  # pyright: ignore[reportArgumentType]
+
+
+def use_result_without_narrowing(subject: Result[int, str]) -> str:
+    """Never called: a `Result[int, str]` is not an `int`, so passing it where the value is expected is refused."""
+
+    # The refusal this test proves: the value is usable only after a match has narrowed the result to `Ok`.
+    return to_text(subject)  # pyright: ignore[reportArgumentType]
