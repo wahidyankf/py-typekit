@@ -1,0 +1,62 @@
+name: quality
+
+# Defence in depth, not the primary control. Every gate here also runs locally
+# before a commit and before a push; this run exists because a local hook can be
+# skipped and a hosted check cannot.
+#
+# It dispatches the same ordered registry the hooks dispatch, through the same
+# pinned RHINO, so "it passed locally" and "it passed here" are statements about
+# one implementation rather than two that happen to agree today.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Pull-request range gates receive immutable base/head commits and
+          # inspect that exact range, so both commits and their history must
+          # be available in this checkout.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # Proves the pin resolves and verifies on a runner with an empty cache,
+      # which is the state every adopter starts from. A failure here is a broken
+      # pin rather than a failing gate, and the two deserve different names.
+      - name: Pinned RHINO bootstrap
+        run: |
+          set -eu
+          # The runner's cache is empty, which is the state every adopter starts
+          # from. The wrapper refuses on a digest or identity mismatch, so
+          # reaching this comparison at all already means both verified.
+          pinned=$(sed -n 's/^version=//p' rhino.lock)
+          test "$(./rhino version)" = "${pinned%%-*}"
+
+      - name: Gates
+        run: |
+          set -eu
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            ./rhino gate run --surface pull-request \
+              --base "${{ github.event.pull_request.base.sha }}" \
+              --head "${{ github.event.pull_request.head.sha }}"
+          else
+            ./rhino gate run --surface main
+          fi
