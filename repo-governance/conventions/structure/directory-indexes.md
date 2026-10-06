@@ -75,7 +75,6 @@ This convention implements [Progressive Disclosure][progressive-disclosure], bec
 hands the rest to its children, and [Explicit Over Implicit](../../principles/explicit-over-implicit.md), because an
 entry and an empty directory are stated rather than left for a reader to infer.
 
-[documentation-architecture]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md
+[documentation-architecture]: documentation-architecture.md
 [progressive-disclosure]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/progressive-disclosure.md

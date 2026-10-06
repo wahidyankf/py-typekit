@@ -95,8 +95,7 @@ Run docs-propagation for the change on the current branch.
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/repository-documentation-files.md
 [project-readmes]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/project-readmes.md
-[documentation-architecture]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md
+[documentation-architecture]: ../../conventions/structure/documentation-architecture.md
 [readme-quality]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/readme-quality.md
 [content-quality]:

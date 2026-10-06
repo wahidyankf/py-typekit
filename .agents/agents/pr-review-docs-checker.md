@@ -106,7 +106,6 @@ It never edits or publishes, judges mechanical conformance, decides whether docu
 settled finding, or searches the public web. A claim about the outside world that the repository cannot settle goes back
 to its caller as a research need.
 
-[documentation-architecture]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md
+[documentation-architecture]: ../../repo-governance/conventions/structure/documentation-architecture.md
 [001-criticality-levels]:
   ../../repo-governance/development/quality/evidence/finding-criticality-and-confidence/001-criticality-levels.md

@@ -36,6 +36,7 @@ before opening it and a validator can check that prediction mechanically.
 - [Plans Convention](plans.md)
 - [Plans Convention Modules](plans/README.md) — the modules, from lifecycle and required documents to the bug-fix plan
 - [Directory Indexes](directory-indexes.md)
+- [Documentation Architecture](documentation-architecture.md)
 - [Document Word Budget](document-word-budget.md)
 - [Governance Layers](governance-layers.md)
 - [Stack Packs](stack-packs.md)
