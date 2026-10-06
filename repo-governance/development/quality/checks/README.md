@@ -1,0 +1,17 @@
+---
+description: >-
+  Indexes the repository check standards: how every rule is enforced, which gate runs each check, how strict lint and
+  Markdown checks are, how validators are built, and what a new check needs before it is added.
+when_to_use: >-
+  Use when adding, placing, or tightening an automated check, or deciding whether a validation belongs to a
+  deterministic check or a judgement review.
+---
+
+# Checks and Gates Standards
+
+Check and gate standards. They answer which automated check runs where, how strict it is, and how it earns its place.
+
+## Directory Map
+
+- [Lint Strictness](lint-strictness.md) — failing at warning severity, cleaning a backlog before a gate goes live,
+  documented waivers, and reviewed autofixes

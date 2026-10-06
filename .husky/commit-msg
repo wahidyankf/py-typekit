@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# One dispatch, one registry. The surface is supplied rather than inferred, and
+# Git's own message-file argument is bound by the declared gate so the runner
+# reads the path Git actually handed the hook.
+#
+# `set -e` is not decoration: without it a failing gate prints its finding and
+# the last command's status becomes the hook's, so the operation completes
+# anyway. The pinned wrapper's exit code is this hook's exit code.
+set -euo pipefail
+
+exec ./rhino gate run --surface commit-msg --message-file "$1"

@@ -1,0 +1,103 @@
+---
+name: docs-propagation
+description: >-
+  Carries one change into every human-facing document it affects in one bounded pass, correcting stale facts and
+  removing obsolete ones; the docs family's sole writer.
+when_to_use: >-
+  Use automatically before landing a change altering what a document describes, when adding, moving, or deleting a
+  document, or on Docs Quality Gate findings.
+---
+
+# Docs Propagation
+
+## Contract
+
+The `docs` family's sole writer, under [Sole-Writer Propagation](../../development/workflow/sole-writer-propagation.md).
+
+## Scope
+
+Every human-facing document: each README, the documentation and specification trees, documents inside projects, the
+[standard files][repository-documentation-files], and a plan's documents where they describe the repository. Governance
+and agent instructions stay with [Rules Propagation](rules-propagation.md). A handed-over ledger narrows the scope to
+what its rows require.
+
+## Executor
+
+`docs-fixer`, loading the `authoring-documentation` skill.
+
+## Row Verification
+
+A row closes when the document no longer holds the state the row names, every command it shows ran or is marked not
+exercised, and the repository's checks exit 0. Each ledger row ends `resolved`, `not-resolved`, `not-applicable`, or
+`needs-decision`, with evidence.
+
+## Family Rules
+
+### Entry
+
+A change about to [land](../../conventions/structure/plans/009-portability.md#what-landed-means) alters what a
+document's reader relies on, a document is added, moved, or deleted, or the [Docs Quality Gate](docs-quality-gate.md)
+hands over findings. Entry is automatic: whoever makes the change starts here, unasked. Edits inside one run start no
+second. Formatting, links, indexes, and word budgets stay with the repository's checks; this workflow runs them and adds
+none.
+
+- `change` (`string`, required): the revision range or working-tree change.
+- `findings` (`file`, optional): a handed-over, frozen ledger.
+
+### Sequence
+
+1. **Freeze the inputs:** the change, any ledger, the revision, and uncommitted paths. A material change ends the run as
+   input changed, never restarting.
+2. **Find what went stale.** Search the scope for every name, path, command, flag, version, and interface the change
+   removed, renamed, or redefined; each ledger row is an item too.
+3. **Remove what is obsolete.** A document describing something the repository no longer has is deleted with every link
+   and index entry to it; still-true unique meaning moves to its canonical home first.
+4. **Keep each fact in its one home.** The root README orients; a [project README][project-readmes] and an
+   [index](../../conventions/structure/directory-indexes.md) follow their conventions; a page serves one mode per
+   [Documentation Architecture][documentation-architecture]. A summary links one level down to its detail, and a fact
+   with a canonical home is linked, never copied.
+5. **Write for a newcomer.** Each affected document opens by telling a newcomer what it is and why it matters, shows the
+   next step without assuming the layout, and leaves no undefined term or skipped prerequisite, per [README
+   Quality][readme-quality] and [Content Quality][content-quality], never a readability score.
+6. **Run what is safe to run.** Execute every command and example an affected document shows through the repository's
+   declared entry point, never one that touches a production or shared system, publishes, spends, needs a secret, or
+   cannot be undone; the document says plainly it was not exercised.
+7. **Treat specifications as canonical.** Refresh their readability, navigation, and links; when one disagrees with the
+   implementation, the partial outcome applies.
+8. **Change only what is stale, missing, or obsolete.** Never rewrite accurate prose, invent behaviour, or fold in
+   unrelated work.
+9. **Verify once** with the repository's existing checks, repairing only failures this run caused, and only while their
+   count strictly decreases, per [Bounded Convergence](../../development/workflow/bounded-convergence.md).
+10. **Hand delivery to the caller.** The run never commits; repairs land with the change they explain, a handed-over
+    ledger's as their own change.
+
+### Exit
+
+Outputs: `status` (`enum`: `no-change`, `landed`, `partial`, `input-changed`), `updated-docs` (`file-list`), `removed`
+(`file-list`), and `not-run` (`record`, each command left unexecuted and why).
+
+Partial outcome: when the code, a specification, or the audience is ambiguous or they disagree, that document stays
+unchanged with its row `needs-decision`, asked of its owner; the rest lands. A rerun on unchanged inputs changes
+nothing.
+
+## Example Usage
+
+```text
+Run docs-propagation for the change on the current branch.
+```
+
+## Related Workflows
+
+- [Docs Quality Gate](docs-quality-gate.md) audits documents and hands blocking rows here.
+- [Planning](../plan/plan-planning.md) adds this workflow to each delivery unit changing what a document describes.
+
+[repository-documentation-files]:
+  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/repository-documentation-files.md
+[project-readmes]:
+  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/project-readmes.md
+[documentation-architecture]:
+  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md
+[readme-quality]:
+  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/readme-quality.md
+[content-quality]:
+  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/content-quality.md
