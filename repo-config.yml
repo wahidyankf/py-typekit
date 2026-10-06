@@ -407,6 +407,76 @@ gates:
         pre-push: {}
         pull-request: {}
         main: {}
+    - id: ruff-format
+      type: check
+      command:
+        executable: uv
+        args:
+          - literal: run
+          - literal: --locked
+          - literal: ruff
+          - literal: format
+          - literal: --check
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: ruff-lint
+      type: check
+      command:
+        executable: uv
+        args:
+          - literal: run
+          - literal: --locked
+          - literal: ruff
+          - literal: check
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: pyright
+      type: check
+      command:
+        executable: uv
+        args:
+          - literal: run
+          - literal: --locked
+          - literal: pyright
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: tests
+      type: check
+      command:
+        executable: uv
+        args:
+          - literal: run
+          - literal: --locked
+          - literal: coverage
+          - literal: run
+          - literal: -m
+          - literal: pytest
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: coverage
+      type: check
+      command:
+        executable: uv
+        args:
+          - literal: run
+          - literal: --locked
+          - literal: coverage
+          - literal: report
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
     - id: repo-config
       type: check
       command:
@@ -528,6 +598,16 @@ gates:
         pre-commit: {}
         pre-push: {}
         pull-request: {}
+        main: {}
+    - id: wheel-check
+      type: check
+      command:
+        executable: bash
+        args:
+          - literal: scripts/check-wheel.sh
+      run-on:
+        pull-request:
+          reason: "The wheel build fetches uv_build, so it needs network access that local hooks must not require."
         main: {}
     - id: public-safety-tests
       type: check

@@ -1,6 +1,7 @@
 // Markdown is read in terminal editors without a renderer, so this config
 // enforces only the 120-column line limit; Prettier owns every other layout
-// choice. Archived plans, the changelog, and fixture bytes are exempt.
+// choice. Archived plans, the changelog, and fixture bytes are exempt, and so is a Python virtual
+// environment: `.venv/` holds third-party packages whose own Markdown this repository does not own.
 {
   "config": {
     "default": false,
@@ -21,6 +22,7 @@
     "dist/**",
     "local-tmp/**",
     "worktrees/**",
+    ".venv/**",
     "plans/done/**",
     "specs/fixtures/**",
     "CHANGELOG.md"
