@@ -477,6 +477,19 @@ gates:
         pre-push: {}
         pull-request: {}
         main: {}
+    - id: doc-snippets
+      type: check
+      command:
+        executable: uv
+        args:
+          - literal: run
+          - literal: --locked
+          - literal: python
+          - literal: scripts/check-doc-snippets.py
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
     - id: repo-config
       type: check
       command:
