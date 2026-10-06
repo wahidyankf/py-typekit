@@ -1,0 +1,10 @@
+node_modules
+CHANGELOG.md
+local-tmp
+worktrees
+.venv
+.claude/agents
+.claude/skills
+.codex/agents
+.opencode/agents
+.markdownlint-cli2.jsonc
