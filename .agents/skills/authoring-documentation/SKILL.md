@@ -75,8 +75,7 @@ Reread every factual sentence and ask what confirmed it. A sentence whose honest
 or removed. No placeholder ships: a heading with nothing beneath it but a promise to write it later advertises a page
 that does not exist.
 
-[documentation-architecture]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md
+[documentation-architecture]: ../../../repo-governance/conventions/structure/documentation-architecture.md
 [content-quality]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/content-quality.md
 [factual-validation]:

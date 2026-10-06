@@ -40,7 +40,7 @@
     {
       "id": "agent/pr-review-docs-checker",
       "path": ".agents/agents/pr-review-docs-checker.md",
-      "digest": "333c5fd251c3590d5ee942d1ebc40aa41ffba34f2e0672c9ee00f13817f60e4d"
+      "digest": "56662c5e2fcbc1169763e69f2fa1b8ffe6c7b626cbaa661b6f93ac87c4e4bc26"
     },
     {
       "id": "agent/pr-review-fixer",
@@ -135,7 +135,7 @@
     {
       "id": "skill/applying-diataxis-framework",
       "path": ".agents/skills/applying-diataxis-framework/SKILL.md",
-      "digest": "0af7ad326aae40ca01ac13348ebe657ea12f3606a5340eb74fdf52ffb07a184e"
+      "digest": "d23546f949e69e096e7f09a70f4daf54165b8d05167795fd4a41d271a683b483"
     },
     {
       "id": "skill/applying-maker-checker-fixer",
@@ -150,7 +150,7 @@
     {
       "id": "skill/authoring-documentation",
       "path": ".agents/skills/authoring-documentation/SKILL.md",
-      "digest": "9178738cadfc5b48aeab8c5907fcb52bd08848a9fc4e62b4ee5780f4f57d69a8"
+      "digest": "b1e5a2d4dd7fc9b14a88147816d05a236f36af6ef012616dff0354a6e29edc1e"
     },
     {
       "id": "skill/classifying-review-scope",

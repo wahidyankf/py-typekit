@@ -82,8 +82,7 @@ A page that fits no mode is usually one of two things. It may be content whose c
 documentation, such as a governance rule or a project README, and the page should link there instead. Or it is notes
 that are not yet a page. Neither earns a fifth mode.
 
-[documentation-architecture]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md
+[documentation-architecture]: ../../../repo-governance/conventions/structure/documentation-architecture.md
 [tutorial-structure]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/tutorial-structure.md
 [content-preservation]:

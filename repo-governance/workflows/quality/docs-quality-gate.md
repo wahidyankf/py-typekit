@@ -101,12 +101,10 @@ Run docs-quality-gate on subject all.
 
 [factual-validation]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/factual-validation.md
-[documentation-architecture]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md#only-what-was-run
+[documentation-architecture]: ../../conventions/structure/documentation-architecture.md#only-what-was-run
 [progressive-disclosure]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/progressive-disclosure.md
-[documentation-architecture-2]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/documentation-architecture.md
+[documentation-architecture-2]: ../../conventions/structure/documentation-architecture.md
 [readme-quality]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/readme-quality.md
 [content-quality]:
