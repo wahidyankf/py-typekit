@@ -22,12 +22,13 @@ plan, a governance rule — links to that home instead.
 
 Documentation follows [Diátaxis](https://diataxis.fr/). Each page serves exactly one mode:
 
-| Mode         | Reader                                     | The page succeeds when                                        |
-| ------------ | ------------------------------------------ | ------------------------------------------------------------- |
-| tutorial     | a newcomer learning by doing               | the reader reaches a working result without deciding anything |
-| how-to guide | someone with a stated goal                 | that one problem is solved                                    |
-| reference    | someone looking something up while working | the description is exact and complete                         |
-| explanation  | someone wanting to understand              | the reasons, context, and trade-offs are clear                |
+- **Tutorial** — for a newcomer learning by doing; the page succeeds when the reader reaches a working result without
+  deciding anything.
+- **How-to guide** — for someone with a stated goal; the page succeeds when that one problem is solved.
+- **Reference** — for someone looking something up while working; the page succeeds when the description is exact and
+  complete.
+- **Explanation** — for someone wanting to understand; the page succeeds when the reasons, context, and trade-offs are
+  clear.
 
 A page is classified by the reader need it primarily serves. Material spanning modes becomes one primary page in the
 best-fitting mode, linked to pages in the others. A page serving two modes serves neither: the learner stalls on
