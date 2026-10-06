@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "profile": "claude",
+  "sources": [
+    {
+      "id": "agent/docs-checker",
+      "path": ".agents/agents/docs-checker.md",
+      "digest": "fbf002efc660f5c21f488de4bb04695029951a1003e8587c4fba2c40eea871bf"
+    },
+    {
+      "id": "agent/docs-fixer",
+      "path": ".agents/agents/docs-fixer.md",
+      "digest": "0d11214c8d5fec531ffb846c983d7999b3602b765f6e86d6e74bf37d7d8d8f0b"
+    },
+    {
+      "id": "agent/plan-checker",
+      "path": ".agents/agents/plan-checker.md",
+      "digest": "1e0a7cf2997e27667090feaf11ad52557aaa329e280efe7277cc19137549da07"
+    },
+    {
+      "id": "agent/plan-execution-checker",
+      "path": ".agents/agents/plan-execution-checker.md",
+      "digest": "11973708eca4f161ae4f526455966a8e617bbb6d0e05427c9507e7761d6d10b5"
+    },
+    {
+      "id": "agent/plan-fixer",
+      "path": ".agents/agents/plan-fixer.md",
+      "digest": "55d3b4696330a9ef6163b6ca84f86b66dc276fc039632765fcf986894bacd5b1"
+    },
+    {
+      "id": "agent/plan-maker",
+      "path": ".agents/agents/plan-maker.md",
+      "digest": "96c5276a8e2a7b62995bb02e3e9f98d21f0efa8f075acacd9b4c9623583a37e7"
+    },
+    {
+      "id": "agent/pr-review-checker",
+      "path": ".agents/agents/pr-review-checker.md",
+      "digest": "5ae7bdbdafd114917dfe5f61efa3c53bee9b42bb4d1637040c250db4cf7b0407"
+    },
+    {
+      "id": "agent/pr-review-docs-checker",
+      "path": ".agents/agents/pr-review-docs-checker.md",
+      "digest": "333c5fd251c3590d5ee942d1ebc40aa41ffba34f2e0672c9ee00f13817f60e4d"
+    },
+    {
+      "id": "agent/pr-review-fixer",
+      "path": ".agents/agents/pr-review-fixer.md",
+      "digest": "d9da91d9572f822faf526bec640bf5a60affd11af285bcfa0a13def2b1c5bcd7"
+    },
+    {
+      "id": "agent/pr-review-governance-checker",
+      "path": ".agents/agents/pr-review-governance-checker.md",
+      "digest": "75bd7fb46f286240553e4ba5ecfc0a3a1977d95d96d7eed5662068a2b9c84f82"
+    },
+    {
+      "id": "agent/pr-review-instruction-checker",
+      "path": ".agents/agents/pr-review-instruction-checker.md",
+      "digest": "fba8bc9f3eca3ce08df127695cf32dc69c3e31a6ff8b8b80d9978e415a0e03b3"
+    },
+    {
+      "id": "agent/pr-review-integrity-checker",
+      "path": ".agents/agents/pr-review-integrity-checker.md",
+      "digest": "faa08b46fff1d472f4fe661f36efac5796e48f431e38ffea17bd66555402d663"
+    },
+    {
+      "id": "agent/pr-review-logic-checker",
+      "path": ".agents/agents/pr-review-logic-checker.md",
+      "digest": "a8b6f89513e72a53889bb0c0b4fd769aa6a15112b7f58b5729d35c5b450f72b4"
+    },
+    {
+      "id": "agent/pr-review-performance-checker",
+      "path": ".agents/agents/pr-review-performance-checker.md",
+      "digest": "4f3f4d3b70d887627a6525f309194d3c4a3ef64ed749031ab18027d93990f226"
+    },
+    {
+      "id": "agent/pr-review-scout",
+      "path": ".agents/agents/pr-review-scout.md",
+      "digest": "914330130c0d859a77cf17169aadc71045327437abd2fe3844aad5ec8b45c725"
+    },
+    {
+      "id": "agent/pr-review-security-checker",
+      "path": ".agents/agents/pr-review-security-checker.md",
+      "digest": "d2a3efd56ae6d583901cc56724354aec66c31eaccca88014f41a51ea0a41c532"
+    },
+    {
+      "id": "agent/pr-review-types-checker",
+      "path": ".agents/agents/pr-review-types-checker.md",
+      "digest": "c7fa60c9dfcca957233a7a10604966e22e2f4b27f8e4935f4e0b57a3baac33a7"
+    },
+    {
+      "id": "agent/rules-checker",
+      "path": ".agents/agents/rules-checker.md",
+      "digest": "e83136cc8ba106778e0a8fed26ec8ce9e89e7038c7b26433d44d59df5e8d7cdc"
+    },
+    {
+      "id": "agent/rules-fixer",
+      "path": ".agents/agents/rules-fixer.md",
+      "digest": "86823958c0f2bca713fe9ffd4abad514444c694d10a39157ed446c1c5fa6596b"
+    },
+    {
+      "id": "agent/swe-architect",
+      "path": ".agents/agents/swe-architect.md",
+      "digest": "41d871fe71993a5c09ece20e88ea4d1d45a0654b81a747bd5978107aeea7bcf4"
+    },
+    {
+      "id": "agent/swe-debugger",
+      "path": ".agents/agents/swe-debugger.md",
+      "digest": "0de1542053b2adfcdda396c5eb5885b3ca867f14610c4a47f3b6e9e6dd0ac6e4"
+    },
+    {
+      "id": "agent/swe-developer",
+      "path": ".agents/agents/swe-developer.md",
+      "digest": "49cc087a127cbf67ef3bce59368ccbb22332754bc3acb231d5735d813c5ab96d"
+    },
+    {
+      "id": "agent/swe-releaser",
+      "path": ".agents/agents/swe-releaser.md",
+      "digest": "d324dfaecf1be12acf71a371106738b0b1f90eaf73fc8a3f1d99c654e91d171b"
+    },
+    {
+      "id": "agent/swe-reviewer",
+      "path": ".agents/agents/swe-reviewer.md",
+      "digest": "0dd7f814b805f539d7b91affd887f7eda3abe4caeed9a586ed4f81963fc0a87c"
+    },
+    {
+      "id": "skill/applying-ci-standards",
+      "path": ".agents/skills/applying-ci-standards/SKILL.md",
+      "digest": "8fc75e2741577c66a12e606c47f2167979cfc08f242990191500456e3c6d7aae"
+    },
+    {
+      "id": "skill/applying-content-quality",
+      "path": ".agents/skills/applying-content-quality/SKILL.md",
+      "digest": "1170a2661061c8212abe34af73a1366c96ab5635da62f77fb81443b9185ab4d5"
+    },
+    {
+      "id": "skill/applying-diataxis-framework",
+      "path": ".agents/skills/applying-diataxis-framework/SKILL.md",
+      "digest": "0af7ad326aae40ca01ac13348ebe657ea12f3606a5340eb74fdf52ffb07a184e"
+    },
+    {
+      "id": "skill/applying-maker-checker-fixer",
+      "path": ".agents/skills/applying-maker-checker-fixer/SKILL.md",
+      "digest": "b58400432b011eb3697020516c3fee1367697c2d641313c9211df0d5177508df"
+    },
+    {
+      "id": "skill/assessing-criticality-confidence",
+      "path": ".agents/skills/assessing-criticality-confidence/SKILL.md",
+      "digest": "7f87c7741793a74aec6655b649692b2573dae89f4a461e941eccbb70614f5ae8"
+    },
+    {
+      "id": "skill/authoring-documentation",
+      "path": ".agents/skills/authoring-documentation/SKILL.md",
+      "digest": "9178738cadfc5b48aeab8c5907fcb52bd08848a9fc4e62b4ee5780f4f57d69a8"
+    },
+    {
+      "id": "skill/classifying-review-scope",
+      "path": ".agents/skills/classifying-review-scope/SKILL.md",
+      "digest": "9e6ef64a339cb146307c29acfaa195f579bdfec783ebbd4d57b82465e31a07b0"
+    },
+    {
+      "id": "skill/cutting-releases",
+      "path": ".agents/skills/cutting-releases/SKILL.md",
+      "digest": "e5a499464a562e50f2cbbba6d47f1e7e0d196385fb567c48e041c51e51ed8437"
+    },
+    {
+      "id": "skill/developing-applications",
+      "path": ".agents/skills/developing-applications/SKILL.md",
+      "digest": "bcada8ec195ea42a2b1d9fc52bd0b37d68067bb961b8d41fc4d539b2ed01c411"
+    },
+    {
+      "id": "skill/generating-validation-reports",
+      "path": ".agents/skills/generating-validation-reports/SKILL.md",
+      "digest": "6d77a7924dcaf6e7e51ecb5dd247c264e0a32762a98deb596bd8ea24997e4640"
+    },
+    {
+      "id": "skill/grill-me",
+      "path": ".agents/skills/grill-me/SKILL.md",
+      "digest": "1e8a9218b9c7287c3cccf430bbd4749f5a591da0b97c05e8f58142e423a84a09"
+    },
+    {
+      "id": "skill/modeling-threats",
+      "path": ".agents/skills/modeling-threats/SKILL.md",
+      "digest": "d6072fcd0b06d7d2d780255b0b178539eac609cbc1da1b529c24c96a9cccb061"
+    },
+    {
+      "id": "skill/plan-creating-project-plans",
+      "path": ".agents/skills/plan-creating-project-plans/SKILL.md",
+      "digest": "e97b19a8948519c23f50d912fe60649316f8213a40d6b1cba18de36f3f0ab4e9"
+    },
+    {
+      "id": "skill/plan-validating-quality",
+      "path": ".agents/skills/plan-validating-quality/SKILL.md",
+      "digest": "71dce047415d5b3a6b17eb7cff22d625fa981452b0ad38cd2f930938ffcdbaf1"
+    },
+    {
+      "id": "skill/plan-verifying-execution",
+      "path": ".agents/skills/plan-verifying-execution/SKILL.md",
+      "digest": "f35e9fe57441bc03556a0dc47996c2db1c5d3cc5d58f65bf9f21a7ecb3e019de"
+    },
+    {
+      "id": "skill/plan-writing-gherkin-criteria",
+      "path": ".agents/skills/plan-writing-gherkin-criteria/SKILL.md",
+      "digest": "3479d77a6d4e205538a7187f91707c91395226b77d2aa50d66075b7a9eabf90e"
+    },
+    {
+      "id": "skill/producing-review-findings",
+      "path": ".agents/skills/producing-review-findings/SKILL.md",
+      "digest": "cdafc44be8065d5af63459397f61f93554940ac24a6f741dbd268ccbdd05b230"
+    },
+    {
+      "id": "skill/programming-python",
+      "path": ".agents/skills/programming-python/SKILL.md",
+      "digest": "ff1ebe873552b1d1cbeaa1b1fa42eeb3e3f5e5a349edf2c1cd8b8c93e7c38384"
+    },
+    {
+      "id": "skill/propagating-rules",
+      "path": ".agents/skills/propagating-rules/SKILL.md",
+      "digest": "e417ab70ef3bb77d55bb36aa1cba1a6c2befeb3d99d0e66ecab988890f46bf0e"
+    },
+    {
+      "id": "skill/resolving-review-threads",
+      "path": ".agents/skills/resolving-review-threads/SKILL.md",
+      "digest": "502f9759ac995c34d3214f7291fc510b7fef75e5ba6358d3e717f69695f076e8"
+    },
+    {
+      "id": "skill/synthesizing-review-findings",
+      "path": ".agents/skills/synthesizing-review-findings/SKILL.md",
+      "digest": "822deeca99fa070431faf1624430c3afa2160f65117a0f9bde0e6a6efaa87ce2"
+    },
+    {
+      "id": "skill/understanding-governance-architecture",
+      "path": ".agents/skills/understanding-governance-architecture/SKILL.md",
+      "digest": "43f1c7583fa48ceec4ba919ef52028255f86e02554967ac55bd9446a8896e79c"
+    },
+    {
+      "id": "skill/validating-factual-accuracy",
+      "path": ".agents/skills/validating-factual-accuracy/SKILL.md",
+      "digest": "a7fec242094b0285efdcb9312dd91fae0502ebda019fd4108d42f122183cf3d0"
+    },
+    {
+      "id": "skill/validating-governance-rules",
+      "path": ".agents/skills/validating-governance-rules/SKILL.md",
+      "digest": "6c9df0968a25e1168c5771f2bb4aab99877010650082028f684645249a5c4923"
+    },
+    {
+      "id": "skill/validating-links",
+      "path": ".agents/skills/validating-links/SKILL.md",
+      "digest": "9dfb32525462d348d942b017b0fd0d65d949a8546a727ec1ddc12fffd472fbee"
+    },
+    {
+      "id": "instruction",
+      "path": "AGENTS.md",
+      "digest": "da5b5d02e34901241a72e64e289e3370c5f91e041ca17991241dfc1b5d16b775"
+    }
+  ]
+}

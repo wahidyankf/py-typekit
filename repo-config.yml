@@ -1,0 +1,551 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wahidyankf/rhino/v0.11.0/schemas/repo-config/v2.schema.json
+# py-typekit's adopted policy values and its one gate registry: hooks, CI, and the aggregate command read only this.
+
+schema: rhino/repo-config/v2
+
+repository: {}
+
+scan:
+  exclude-directories:
+    - .git
+    - node_modules
+    - worktrees
+    - local-tmp
+    - .venv
+
+harness:
+  canonical:
+    agents:
+      name: name
+      description: description
+      tier: tier
+      grants: capabilities
+      denials: denies
+      constraints: constraints
+      dispatches: dispatches
+    skills:
+      name: name
+      description: description
+  requirements:
+    capabilities:
+      - repository-read
+      - repository-write
+      - shell
+      - network
+      - subagent
+    constraints:
+      - read-only
+    routes:
+      - canonical-import
+    identities:
+      - description
+  profiles:
+    - id: claude
+      supports:
+        capabilities:
+          - repository-read
+          - repository-write
+          - shell
+          - network
+          - subagent
+        constraints:
+          - read-only
+        routes:
+          - canonical-import
+        identities:
+          - description
+      instruction-adapter:
+        path: CLAUDE.md
+        route: "@{path}"
+      agent-adapter:
+        path: ".claude/agents/{name}.md"
+        format: front-matter
+        route-field: body
+        route:
+          "Before acting, read the complete canonical agent definition at the repository-root path\n{path}\nand follow
+          it as authoritative. If it cannot be read, stop and report the missing path."
+        identity:
+          name: name
+          description: description
+        tier-fields:
+          model: model
+          effort: effort
+        dispatches:
+          field: tools
+          format: "Agent({names})"
+        empty-tier:
+          model: inherit
+        translations:
+          - when: always
+            field: tools
+            members:
+              - Read
+          - when: requires
+            capability: repository-read
+            field: tools
+            members:
+              - Glob
+              - Grep
+          - when: requires
+            capability: repository-write
+            field: tools
+            members:
+              - Write
+              - Edit
+          - when: requires
+            capability: shell
+            field: tools
+            members:
+              - Bash
+          - when: requires
+            capability: network
+            field: tools
+            members:
+              - WebSearch
+              - WebFetch
+      skill-adapter:
+        path: ".claude/skills/{name}/SKILL.md"
+        format: front-matter
+        route-field: body
+        route:
+          "Read {path} completely,\nresolve every relative resource from that skill directory, and follow it as
+          authoritative before acting."
+        identity:
+          name: name
+          description: description
+      tiers:
+        ultra: {}
+        plan: {}
+        execution:
+          model: sonnet
+          effort: xhigh
+        fast:
+          model: haiku
+          effort: xhigh
+    - id: codex
+      supports:
+        capabilities:
+          - repository-read
+          - repository-write
+          - shell
+          - network
+          - subagent
+        constraints:
+          - read-only
+        routes:
+          - canonical-import
+        identities:
+          - description
+      agent-adapter:
+        path: ".codex/agents/{name}.toml"
+        format: toml
+        route-field: developer_instructions
+        route:
+          "Before acting, read the complete canonical agent definition at the repository-root path\n{path}\nand follow
+          it as authoritative. If it cannot be read, stop and report the missing path."
+        identity:
+          name: name
+          description: description
+        tier-fields:
+          model: model
+          effort: model_reasoning_effort
+      tiers:
+        ultra: {}
+        plan: {}
+        execution: {}
+        fast:
+          model-resolve:
+            command:
+              - codex
+              - debug
+              - models
+            pattern: gpt-*-luna
+            fallback: gpt-6-luna
+          effort: xhigh
+    - id: opencode
+      supports:
+        capabilities:
+          - repository-read
+          - repository-write
+          - shell
+          - network
+          - subagent
+        constraints:
+          - read-only
+        routes:
+          - canonical-import
+        identities:
+          - description
+      agent-adapter:
+        path: ".opencode/agents/{name}.md"
+        format: front-matter
+        route-field: body
+        route:
+          "Before acting, read the complete canonical agent definition at the repository-root path\n{path}\nand follow
+          it as authoritative. If it cannot be read, stop and report the missing path."
+        identity:
+          description: description
+        fixed:
+          mode: subagent
+        dispatches:
+          field: permission.task
+          format: allow-map
+        translations:
+          - when: always
+            field: permission
+            entries:
+              read: allow
+          - when: requires
+            capability: repository-read
+            field: permission
+            entries:
+              glob: allow
+              grep: allow
+          - when: requires
+            capability: repository-write
+            field: permission
+            entries:
+              edit: allow
+          - when: requires
+            capability: shell
+            field: permission
+            entries:
+              bash: allow
+          - when: requires
+            capability: network
+            field: permission
+            entries:
+              webfetch: allow
+              websearch: allow
+          - when: no-dispatches
+            field: permission
+            entries:
+              task: deny
+
+policies:
+  markdown:
+    metadata:
+      surfaces:
+        # RHINO's two Markdown conventions at repo-governance/conventions/ top level are copied verbatim without front
+        # matter (D6, D31), so the governance surface lists every other part of the tree instead of one recursive glob.
+        - glob: "repo-governance/README.md"
+          schema: governance
+        - glob: "repo-governance/principles/**/*.md"
+          schema: governance
+        - glob: "repo-governance/conventions/README.md"
+          schema: governance
+        - glob: "repo-governance/conventions/*/**/*.md"
+          schema: governance
+        - glob: "repo-governance/development/**/*.md"
+          schema: governance
+        - glob: "repo-governance/workflows/**/*.md"
+          schema: workflow
+        - glob: ".agents/skills/*/SKILL.md"
+          schema: skill
+        - glob: ".agents/agents/*.md"
+          schema: agent
+        - glob: ".agents/**/README.md"
+          schema: governance
+    internal-link:
+      exclude-sources:
+        - "plans/done/**"
+    mermaid:
+      authoring-rule: plain-text
+      node-label-graphemes: 32
+      edge-label-graphemes: 24
+      fill-colors: ["#0173B2", "#DE8F05", "#029E73", "#CA9161"]
+      edge-colors: ["#0173B2", "#000000"]
+      text-colors: ["#000000", "#FFFFFF"]
+    naming:
+      surfaces:
+        - { glob: "repo-governance/**/*.md", style: kebab-case }
+        - { glob: "plans/**/*.md", style: kebab-case }
+      exempt: ["**/README.md"]
+  governance:
+    word-budget:
+      count: whitespace-separated
+      surfaces:
+        - glob: "AGENTS.md"
+          fail: 750
+        - glob: "CLAUDE.md"
+          fail: 750
+        - glob: "repo-governance/**/*.md"
+          fail: 750
+        - glob: ".agents/**/*.md"
+          fail: 750
+        - glob: ".agents/**/README.md"
+          fail: 1000
+    directory-map:
+      trees:
+        - { path: plans }
+        - { path: repo-governance }
+    quality-gates:
+      root: repo-governance/workflows
+      agents: .agents/agents
+      groups:
+        - adoption
+        - maintenance
+        - plan
+        - quality
+      gate-group: quality
+      gate-headings:
+        - Entry
+        - Inputs
+        - Deterministic Boundary
+        - Cycle
+        - Termination
+        - Verdict
+        - Ledger
+      verdict-heading: Verdict
+      verdicts:
+        - PASS
+        - PASS_WITH_FINDINGS
+        - FAIL
+        - BLOCKED
+      retired-inputs:
+        - max-iterations
+        - min-iterations
+        - max-audits
+      propagation-headings:
+        - Contract
+        - Scope
+        - Executor
+        - Row Verification
+        - Family Rules
+      defaults:
+        mode: normal
+        max-cycles: 3
+      gates:
+        - family: plan
+        - family: rules
+        - family: docs
+        - family: pr-review
+
+gates:
+  composition:
+    pull-request:
+      relation: at-least
+  entries:
+    - id: public-safety
+      type: check
+      command:
+        executable: bash
+        args:
+          - literal: scripts/public-safety/check.sh
+      run-on:
+        pre-commit: {}
+        pull-request: {}
+        main: {}
+    - id: public-safety-message
+      type: check
+      inputs:
+        message:
+          kind: commit-message
+      command:
+        executable: bash
+        args:
+          - literal: scripts/public-safety/check.sh
+        environment:
+          PUBLIC_SAFETY_MESSAGE:
+            input: message.text
+      run-on:
+        commit-msg:
+          bind:
+            message:
+              source: hook-message-file
+        pull-request:
+          bind:
+            message:
+              source: explicit-range
+              range: explicit
+    - id: public-safety-range
+      type: check
+      inputs:
+        range:
+          kind: commit-range
+      command:
+        executable: bash
+        args:
+          - literal: scripts/public-safety/check.sh
+        environment:
+          PUBLIC_SAFETY_BASE:
+            input: range.base
+          PUBLIC_SAFETY_HEAD:
+            input: range.head
+      run-on:
+        pre-push:
+          bind:
+            range:
+              source: push-updates
+              fallback: refs/remotes/origin/main
+        pull-request:
+          bind:
+            range:
+              source: explicit-range
+              range: explicit
+    - id: markdown-format
+      type: check
+      command:
+        executable: npx
+        args:
+          - literal: --no-install
+          - literal: prettier
+          - literal: --check
+          - literal: .
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: markdown-line-length
+      type: check
+      command:
+        executable: bash
+        args:
+          - literal: scripts/check-markdown-line-length.sh
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: repo-config
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: repo-config
+          - literal: validate
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: gate-registry
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: gate
+          - literal: validate
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: artifact-metadata
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: metadata
+          - literal: validate
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: word-budget
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: governance
+          - literal: word-budget
+          - literal: validate
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: internal-links
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: md
+          - literal: internal-link
+          - literal: validate
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: mermaid
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: md
+          - literal: mermaid
+          - literal: validate
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: md-naming
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: md
+          - literal: naming
+          - literal: validate
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: directory-map
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: governance
+          - literal: directory-map
+          - literal: validate
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: quality-gates
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: governance
+          - literal: quality-gates
+          - literal: validate
+      run-on:
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: harness-adapters
+      type: check
+      command:
+        executable: ./rhino
+        args:
+          - literal: harness
+          - literal: adapters
+          - literal: validate
+      run-on:
+        pre-commit: {}
+        pre-push: {}
+        pull-request: {}
+        main: {}
+    - id: public-safety-tests
+      type: check
+      command:
+        executable: bash
+        args:
+          - literal: scripts/public-safety/tests/run.sh
+      run-on:
+        pull-request:
+          reason: "The scanner regression suite needs the pull-request checkout; local hooks must remain bounded."
+        main: {}
+    - id: leak-review-tests
+      type: check
+      command:
+        executable: bash
+        args:
+          - literal: scripts/leak-review/tests/run.sh
+      run-on:
+        pull-request:
+          reason: "The record check's offline suite runs where the hosted check is defined."
+        main: {}
