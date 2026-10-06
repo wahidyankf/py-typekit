@@ -8,8 +8,8 @@ Entries describe what a consumer can observe: names, signatures, types, and beha
 
 ## [v0.1.0] - 2026-10-06
 
-The first release: a zero-dependency, strictly typed Python 3.14 library, imported as `typekit`, consumed as a pinned
-uv Git-tag dependency.
+The first release: a zero-dependency, strictly typed library for Python 3.14 only (`>=3.14,<3.15`), imported as
+`typekit`, consumed as a pinned uv Git-tag dependency.
 
 ### Added
 
