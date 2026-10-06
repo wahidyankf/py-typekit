@@ -38,6 +38,19 @@ jobs:
 
       - run: npm ci
 
+      # The interpreter and uv are pinned to the versions the dev dependencies were locked with, so the hosted run
+      # and a local run resolve one toolchain. Both are the pins FERRET's setup-python action uses.
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14.7"
+
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          version: 0.12.16
+          checksum: 8e5c6e5523dffc2dcf615bd995554c84c9feb4e577808a3fb8698a639d3f8d9c
+
+      - run: uv sync --locked
+
       # Proves the pin resolves and verifies on a runner with an empty cache,
       # which is the state every adopter starts from. A failure here is a broken
       # pin rather than a failing gate, and the two deserve different names.
