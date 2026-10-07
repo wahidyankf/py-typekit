@@ -22,8 +22,8 @@ Plain explanations help readers understand a choice without decoding the writer'
 
 ## Examples
 
-In a plan, "Keep the old format readable during migration so existing records remain usable" explains a decision.
-"Add migration" only names a task.
+In a plan, "Keep the old format readable during migration so existing records remain usable" explains a decision. "Add
+migration" only names a task.
 
 ## Validation
 
