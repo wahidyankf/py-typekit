@@ -45,8 +45,9 @@ repository's role, then how it relates to py-typekit:
   named here only because it is a member.
 - [`beaver-nest`](https://github.com/wahidyankf/beaver-nest) — an independent family product. None: named only because
   it is a member.
-- _(unnamed, private)_ — authorized operations. None: named only because it is a member. It stays unnamed because this
-  repository is public, and naming a private repository publishes what its owner did not.
+- [`ose-private`](https://github.com/wahidyankf/ose-private) (Private) — authorized operations. None: named only because
+  it is a member. Its name and link are public by the maintainer's 2026-10-07 decision; its contents stay private, and
+  the link resolves only for authorized maintainers.
 
 **That label is navigation, not coupling.** `ose-projects` is a routing label only — not an organization, a parent
 repository, a parity group, or a shared release. The seven are developed, versioned, gated, and released independently.
