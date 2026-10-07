@@ -6,8 +6,9 @@ from the one before, so a mismatched stage is a type error at the stage. A longe
 ``typekit.option`` are the stages that make ``pipe`` chain a ``Result`` or an ``Option``.
 
 Pyright solves each stage from the one before, so the input must carry its full type: a parameter, a function return,
-or an annotation it has not narrowed. A bare ``Ok(2)`` leaves the error type unsolved, which strict mode reports as
-partially unknown.
+or an annotation it has not narrowed. A bare ``Ok(2)`` carries no error type: strict mode reports a lambda stage, whose
+parameter Pyright cannot infer, as partially unknown, and with a named function stage the result's error side stays an
+unsolved type variable that strict mode does not report.
 """
 
 from collections.abc import Callable

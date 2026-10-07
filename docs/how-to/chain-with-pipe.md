@@ -63,8 +63,10 @@ Both styles give the same result; pick the one that reads better. An `Option` ha
 
 Pyright solves each stage from the one before, so the first argument must carry its full type: a function parameter, a
 function's return, or an annotation Pyright has not narrowed. A bare `Ok(2)`, or a local declared `Result[int, str]` but
-narrowed to `Ok[int]` by its assignment, leaves the error type unsolved, which strict mode reports as partially unknown.
-Start from a typed function, as `parse(text)` does above.
+narrowed to `Ok[int]` by its assignment, carries no error type. With a lambda stage, Pyright then cannot infer the
+lambda's parameter, and strict mode reports the lambda and the result as partially unknown. With a named function stage,
+strict mode reports nothing, but the result's error side stays an unsolved type variable, `Err[E@map]`, instead of
+`Err[str]`. Start from a typed function, as `parse(text)` does above.
 
 ## Chain more than nine steps
 
