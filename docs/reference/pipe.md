@@ -22,8 +22,9 @@ pipe[A, B, C, D, E, F, G, H, I, J](value: A, f1: Callable[[A], B], ..., f9: Call
   error at that stage (`reportArgumentType`).
 - More than nine functions: nest, as `pipe(pipe(value, f1, ..., f9), f10)`, which keeps every type.
 - Pyright solves each stage from the input, so the input must carry its full type: a parameter, a function's return, or
-  an unnarrowed annotation. A bare `Ok(2)` leaves the error type unsolved, which strict mode reports as partially
-  unknown.
+  an unnarrowed annotation. A bare `Ok(2)` carries no error type: strict mode reports a lambda stage, whose parameter
+  Pyright cannot infer, as partially unknown, and with a named function stage the result's error side stays an unsolved
+  type variable that strict mode does not report.
 
 The stages that make `pipe` chain a `Result` or an `Option` are the curried combinators of
 [`typekit.result`](./result.md#curried-combinators) and [`typekit.option`](./option.md#curried-combinators).
