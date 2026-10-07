@@ -15,5 +15,6 @@ and consistent.
 ## Directory Map
 
 - [Dependency Selection](dependency-selection.md) — when a dependency is justified, recorded, locked, and removed
+- [Code Clarity](code-clarity.md) — comments that preserve reasons behind code choices
 - [Type and Boundary Safety](type-and-boundary-safety.md) — the strongest practical static checker, reasoned type
   escapes, and external input validated where it arrives
