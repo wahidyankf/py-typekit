@@ -11,7 +11,7 @@ when_to_use: >-
 
 Canonical artifacts live in one place and are the only ones a person edits. A harness that needs another path or format
 gets a **generated** adapter. The configuration declares the canonical field mapping, requirements, and exactly the
-three profiles the repository supports; it never copies a body into the profile.
+profiles the repository supports; it never copies a body into the profile.
 
 ## The Rule
 
@@ -51,7 +51,7 @@ harness's current behaviour with a guess frozen at generation time.
 
 ## Generation and Validation Are Separate
 
-`harness adapters generate` renders the three profile families, their catalogs, and provenance atomically from canonical
+`harness adapters generate` renders the declared profile families, catalogs, and provenance atomically from canonical
 input. `harness adapters validate` is read-only and rejects missing, stale, handwritten, or semantically lossy output.
 Regenerating unchanged input is byte-identical, so an adapter edit becomes a diff rather than a surprise.
 
@@ -65,4 +65,5 @@ and treating it as source creates two authorities.
 The instruction body, vendor-specific notes, and harness configuration and discovery are held in ordered modules:
 
 1. [Instruction Body and Vendor Notes](harness-adapters/001-instruction-body-and-vendor-notes.md)
-2. [Configuration and Discovery](harness-adapters/002-configuration-and-discovery.md)
+2. [Configuration and Discovery](harness-adapters/002-configuration-and-discovery.md), including
+   [session-coordinated profiles](harness-adapters/002-configuration-and-discovery.md#session-coordinated-profiles)

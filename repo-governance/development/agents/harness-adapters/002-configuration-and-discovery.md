@@ -39,3 +39,22 @@ use a capability the harness still grants, does not satisfy the restriction.
 Some repositories accept such a substitute and record it beside the canonical definition. This standard does not,
 because a restriction that holds only while the model complies grants in practice what the definition denies, and a
 recorded substitute reads as enforcement to everyone who did not read the record.
+
+## Session-Coordinated Profiles
+
+A profile whose native subagents cannot dispatch explicitly selects only canonical leaf agents. Any role declaring
+`subagent` or nonempty `dispatches` is read completely in the main session and coordinated there under its named
+dispatch allowlist. This is the exception to one native adapter per canonical role: native leaves cannot perform nested
+dispatch. This repository currently declares no such main-session role; all canonical agents are leaves.
+
+For a session-inheriting profile, omit tier mappings and model, featureModels, effort, and reasoningEffort pins from
+adapters, settings, shared global sources, and smoke commands. The active session supplies the model; omitted reasoning
+fields use the harness default. Retain the strongest documented native grants and denials for every selected leaf.
+
+Keep declared personal project settings and taste-learning trees local and ignored, preserving contents and active
+learning. This native transaction owns only the declared agent root, never local state or project settings.
+
+When canonical agents change, update the explicit selection in the same change. Audit that it equals every canonical
+leaf, excluding exactly roles declaring `subagent` or nonempty `dispatches`, after regeneration. Declared-profile parity
+checks adapter contents; live discovery and main-session-to-leaf probes check vendor behaviour. Semantic main-session
+compliance remains unenforced by decision because adapter validation cannot judge model conduct.
