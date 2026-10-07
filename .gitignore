@@ -22,3 +22,7 @@ htmlcov/
 # Repository tooling and scratch
 node_modules/
 local-tmp/
+
+# Command Code personal project state
+/.commandcode/settings.local.json
+/.commandcode/taste/

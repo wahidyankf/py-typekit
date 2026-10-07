@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "profile": "claude",
+  "profile": "commandcode",
   "sources": [
     {
       "id": "agent/docs-checker",

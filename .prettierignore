@@ -7,4 +7,5 @@ worktrees
 .claude/skills
 .codex/agents
 .opencode/agents
+.commandcode/agents
 .markdownlint-cli2.jsonc
