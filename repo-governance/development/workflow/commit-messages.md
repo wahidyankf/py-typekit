@@ -32,9 +32,9 @@ Messages follow [Conventional Commits](https://www.conventionalcommits.org/):
 - **Scope** is optional. A repository using scopes keeps a stable list instead of coining a synonym per commit.
 - **Subject** is required, in the imperative ("add", not "added" or "adds"), with no closing period. Write to about 50
   characters; the ceiling a hook enforces is the adopter's, commonly 100.
-- **Body** is optional, follows a blank line, and explains what changed and why: the failing case, the constraint, the
-  alternative rejected. It does not narrate how the diff was produced. Body lines keep within the ceiling the message
-  hook enforces, such as 100 characters.
+- **Body** is optional, follows a blank line, and explains why the change was needed: the failing case, the constraint,
+  or an alternative rejected. It does not narrate the diff. Body lines keep within the ceiling the message hook
+  enforces, such as 100 characters. Follow [Writing Style](../../conventions/writing-style.md) for brevity and language.
 - **Footer** carries `BREAKING CHANGE:` for an incompatible change, and issue references.
 
 ## Types

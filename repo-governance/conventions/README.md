@@ -21,5 +21,6 @@ repository. A convention says which of several defensible options this repositor
 
 - [Markdown Line Length](markdown-line-length.md) — the 120-character limit on every Markdown line, from RHINO
 - [Markdown Visualizations](markdown-visualizations.md) — ASCII diagrams in `text` blocks, never Mermaid, from RHINO
+- [Writing Style](writing-style.md) — brief, clear comments, commit messages, and development notes
 - [Security](security/README.md)
 - [Structure](structure/README.md)
