@@ -1,7 +1,8 @@
 # py-typekit
 
 py-typekit is a zero-dependency, strictly typed Python 3.14 library of functional primitives. See
-[README.md](README.md).
+[README.md](README.md). It is one of seven `ose-projects` repositories, a navigation label only; see
+[related repositories](docs/README.md#project-context).
 
 For English writing, including replies, use clear, simple, and natural English that is easy for non-native speakers to
 understand. Follow [Writing Style](repo-governance/conventions/writing-style.md).

@@ -122,6 +122,12 @@ bash scripts/check-wheel.sh            # the wheel lists py.typed and declares n
 Node is repository tooling only and never part of the library. The hooks and the hosted checks run the same gate
 registry, `repo-config.yml`. Contribution rules, governance, and the agent setup are in [AGENTS.md](AGENTS.md).
 
+## Related repositories
+
+py-typekit is one of seven **`ose-projects`** repositories, with `hippo`, `ose-public`, `rhino`, `beaver-nest`,
+`ose-rules`, and one private operations repository. The label is navigation only: each is versioned and released on its
+own. See [project context](docs/README.md#project-context) for each one's link and relationship.
+
 ## License
 
 [MIT](LICENSE)
