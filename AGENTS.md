@@ -1,8 +1,10 @@
 # py-typekit
 
-A zero-dependency, strictly typed Python 3.14 library of functional primitives, imported as `typekit`: `Result`
-(`Ok[T] | Err[E]`), `Option` (`Some[T] | None`), `attempt`, and `pipe` with curried combinators. See
+py-typekit is a zero-dependency, strictly typed Python 3.14 library of functional primitives. See
 [README.md](README.md).
+
+For English writing, including replies, use clear, simple, and natural English that is easy for non-native speakers to
+understand. Follow [Writing Style](repo-governance/conventions/writing-style.md).
 
 ## Consumption
 

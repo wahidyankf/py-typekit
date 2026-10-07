@@ -1,27 +1,31 @@
 ---
 description: >-
-  Keeps comments, commit messages, and work notes brief and clear for readers who learned English later.
+  Keeps English writing clear for readers who learned it later and repository documents brief, reasoned, and complete.
 when_to_use: >-
-  Use when writing or reviewing comments, commit messages, or development notes.
+  Use when writing in English to a user or writing or reviewing comments, commit messages, plans, and other documents.
 ---
 
 # Writing Style
 
 ## Purpose
 
-Short, plain explanations help future readers understand a change without decoding the writer's phrasing.
+Plain explanations help readers understand a choice without decoding the writer's phrasing.
 
 ## Standards
 
-- Keep comments, commit messages, and development notes brief.
-- Use clear, simple, natural English that readers who learned English later can understand.
-- In development notes about code, explain why a choice was needed instead of repeating what the code shows.
+- Whenever writing in English, including replies to users, use clear, simple, natural words that readers who learned
+  English later can understand.
+- Keep comments, commit messages, work notes, plans, and other documents as brief as their purpose allows.
+- In plans and other documents, explain why a non-obvious choice was made, rather than only naming the choice. Preserve
+  the behavior, steps, acceptance criteria, evidence, and context readers need to use, execute, or verify the document.
+- For comments about code, follow [Code Clarity](../development/quality/code/code-clarity.md).
 
 ## Examples
 
-"Keep retries bounded to avoid duplicate requests" explains a reason. "Retry the request three times" only repeats an
-evident operation.
+In a plan, "Keep the old format readable during migration so existing records remain usable" explains a decision.
+"Add migration" only names a task.
 
 ## Validation
 
-Review judges brevity, clarity, and the stated reason against the code and its context; a word count cannot do so.
+Unenforced by tooling, by decision: review judges clarity, brevity, useful reasons, and necessary detail in context; a
+word count cannot do so.
