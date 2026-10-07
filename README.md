@@ -125,8 +125,9 @@ registry, `repo-config.yml`. Contribution rules, governance, and the agent setup
 ## Related repositories
 
 py-typekit is one of seven **`ose-projects`** repositories, with `hippo`, `ose-public`, `rhino`, `beaver-nest`,
-`ose-rules`, and one private operations repository. The label is navigation only: each is versioned and released on its
-own. See [project context](docs/README.md#project-context) for each one's link and relationship.
+`ose-rules`, and [`ose-private`](https://github.com/wahidyankf/ose-private) (Private). The label is navigation only:
+each is versioned and released on its own. See [project context](docs/README.md#project-context) for each one's link and
+relationship.
 
 ## License
 
