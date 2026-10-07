@@ -35,6 +35,19 @@ An exception of a type you did not name is not caught; it propagates out of `att
 and `attempt` refuses to run with no type named, both as a Pyright error and as a `TypeError` at run time. Name only
 what the caller can act on, so a bug still fails loudly.
 
+## Replace an existing `except`
+
+When `attempt` replaces a `try`/`except` block, it must catch every failure the old block caught.
+
+- Name every exception type the `except` caught, not only the type the call documents. `json.loads` documents
+  `json.JSONDecodeError`, a `ValueError`, but deeply nested input can also raise `RecursionError`. If the old block
+  caught both, write `attempt(lambda: json.loads(text), ValueError, RecursionError)`. If you name fewer types, an input
+  the old code handled now raises.
+- Check callbacks that raise to stop the work early. A hook, such as a `json` `object_pairs_hook` that raises on a
+  duplicate key, ends the call at the first problem, so a later failure in the same input never happens. If you change
+  the hook to record the problem and continue, the call can now reach that later failure. Name that failure in `attempt`
+  as well, or the input that used to fail in the hook now fails with a different exception.
+
 ## Bind arguments
 
 The function takes no arguments. Bind them with a `lambda`, as `parse_port` does, or with `functools.partial`, as
