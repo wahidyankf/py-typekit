@@ -73,3 +73,12 @@ harmless.
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/security/environment-variable-contract.md
 [agent-env-file-access]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/security/agent-env-file-access.md
+
+## Agent Tool Access
+
+Agent tools must not directly read, write, or edit `.env*` files, except `.env.example`. Paths under `secrets/` and
+`credentials/` are also protected. The repository owns these restrictions.
+[`.agents/agent-policy.json`](../../../.agents/agent-policy.json) declares the path patterns for
+`scripts/agent-policy-hook.sh`; the tracked `.serena/project.yml` excludes the same paths from semantic indexing. Claude
+Code, OpenCode, and Command Code native bindings enforce their own physical checkout; neutral routing covers
+cross-repository operations. Compute-admission exemptions do not waive these restrictions.
