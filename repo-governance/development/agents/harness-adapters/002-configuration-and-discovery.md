@@ -21,6 +21,26 @@ same way later: it stops working in a release nobody connects to it.
 A file the harness already discovers is not listed again as an extra instruction source. The second listing adds a route
 to the same text and nothing else.
 
+## Repository Policy and Shared Integrations
+
+Selected source: `ose-rules@cc58f5227238d01995cb581857a91d12170e1ade`; repository wording is retained.
+
+User-global approvals and shared integrations do not relocate repository compute admission, protected-path policy,
+quality gates, or Git obligations. Claude Code, OpenCode, and Command Code native bindings invoke the repository-owned
+endpoint for their physical checkout; a neutral global adapter routes a different destination without duplicating policy
+evaluation or containing those policies.
+
+The Claude Code and Command Code Serena proxy activates the physical checkout and requires successful recovery after
+activation failure. Tracked project configuration excludes protected indexing paths; caches and local state stay
+ignored. Native role translations must preserve semantic capability grants and denials, verified in the actual harness.
+OpenCode Serena registration is deferred because its hooks cannot attest the selected MCP client.
+
+Codex 0.161 retains its existing global and repository-native guards. Serena and new destination routing are deferred:
+its [release role loader][role] omits MCP overrides, and native shell hook payloads omit the requested working
+directory. No role-local MCP environment or filter enforcement is claimed.
+
+[role]: https://github.com/openai/codex/blob/979011409de0a60b52f179721948e65531d26144/codex-rs/core/src/agent/role.rs
+
 ## Discovery Is Tested Before It Is Relied On
 
 Which files a harness discovers, where it looks, and what it does with an index file in a directory it scans differ
