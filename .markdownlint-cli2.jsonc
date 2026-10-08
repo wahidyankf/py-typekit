@@ -16,7 +16,9 @@
     }
   },
   "globs": ["**/*.md"],
+  // Command Code taste is personal application-written learning, kept local.
   "ignores": [
+    ".commandcode/taste/**",
     "**/node_modules/**",
     "target/**",
     "dist/**",
