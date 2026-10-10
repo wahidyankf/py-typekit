@@ -88,10 +88,10 @@ Run dev-artifact-clean-up with integration pull-request and outcome pass.
 - [Execution](../plan/plan-execution.md) produces most of what this removes.
 - [Release Cut](release-cut.md) leaves build scratch for it.
 
-## Deletion Is Permanent
+## Companion
 
-Version control restores only committed work, so deleting an uncommitted artifact is permanent; hence `unknown` routes
-to investigation, never removal.
+[External Nx Cache Eviction](dev-artifact-clean-up/001-external-nx-cache-eviction.md) covers cache awareness and
+deletion safety.
 
 [agent-env-file-access]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/security/agent-env-file-access.md
