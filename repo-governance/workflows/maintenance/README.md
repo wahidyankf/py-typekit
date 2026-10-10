@@ -22,3 +22,4 @@ beside the gates that judge them.
 - [Dev Artifact Clean-Up](dev-artifact-clean-up.md)
 - [Dependency Bump Planning](dependency-bump-planning.md)
 - [Release Cut](release-cut.md)
+- [Dev Artifact Clean-Up Modules](dev-artifact-clean-up/README.md) — external Nx cache awareness and deletion safety.
