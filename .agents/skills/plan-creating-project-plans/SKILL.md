@@ -86,6 +86,8 @@ naming test path, command, and expected result, repeated per behaviour. Under ei
 before the production path, as
 [Test-Driven Development](../../../repo-governance/development/quality/testing/test-driven-development.md) requires.
 
+Apply [Focused Runs and Regression Gates][focused-runs] when writing test commands and phase or PR verification items.
+
 [plan-anti-hallucination]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/evidence/plan-anti-hallucination.md
 [plan-ui-design]:
@@ -94,3 +96,5 @@ before the production path, as
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/004-interface-alternatives.md
 [011-phase-boundaries-and-delivery-choices]:
   ../../../repo-governance/conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md
+[focused-runs]:
+  ../../../repo-governance/development/quality/testing/test-driven-development/005-focused-runs-and-regression-gates.md

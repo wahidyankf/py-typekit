@@ -56,6 +56,7 @@ rather than what was required, and nothing afterwards can show that it was ever 
 2. [Test Design](test-driven-development/002-test-design.md)
 3. [Regression Tests](test-driven-development/003-regression-tests.md)
 4. [Intermittent Failures](test-driven-development/004-intermittent-failures.md)
+5. [Focused Runs and Regression Gates](test-driven-development/005-focused-runs-and-regression-gates.md)
 
 ## Related Standards
 

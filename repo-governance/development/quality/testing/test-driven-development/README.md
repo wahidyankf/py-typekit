@@ -27,3 +27,6 @@ The modules below are read in sequence and carry the detail behind the
 - [002 Test Design](002-test-design.md)
 - [003 Regression Tests](003-regression-tests.md)
 - [004 Intermittent Failures](004-intermittent-failures.md)
+
+- [005 Focused Runs and Regression Gates](005-focused-runs-and-regression-gates.md) — local selections and complete
+  boundary gates
