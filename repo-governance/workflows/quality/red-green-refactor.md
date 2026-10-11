@@ -10,6 +10,9 @@ when_to_use: >-
 
 # Red, Green, Refactor
 
+Follow [Focused Runs and Regression Gates][focused-runs] for local selections, execution evidence, and complete boundary
+verification.
+
 ## Entry
 
 A change alters executable behaviour within the scope of
@@ -87,3 +90,4 @@ Problem-Solving][deliberate-problem-solving].
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/quality/exploratory-usability-review.md
 [deliberate-problem-solving]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/deliberate-problem-solving.md
+[focused-runs]: ../../development/quality/testing/test-driven-development/005-focused-runs-and-regression-gates.md

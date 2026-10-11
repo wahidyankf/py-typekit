@@ -38,6 +38,8 @@ with its own red.
 
 ## Small Cycles
 
+Select and record local runs under [Focused Runs and Regression Gates](005-focused-runs-and-regression-gates.md).
+
 Split a feature or a fix into cycles that each cover one behaviour: the simplest case first, then each edge case, error,
 and boundary in turn. A cycle covering several behaviours hides which one a failure belongs to. A long run of cycles is
 normal for real work, not a reason to merge them. A cycle outlasting a few minutes is split.

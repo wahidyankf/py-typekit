@@ -185,12 +185,12 @@
     {
       "id": "skill/plan-creating-project-plans",
       "path": ".agents/skills/plan-creating-project-plans/SKILL.md",
-      "digest": "e97b19a8948519c23f50d912fe60649316f8213a40d6b1cba18de36f3f0ab4e9"
+      "digest": "9e7e05b5055241977252a1f514d0d93e4a7fccc55f865d3158938219738ef1d2"
     },
     {
       "id": "skill/plan-validating-quality",
       "path": ".agents/skills/plan-validating-quality/SKILL.md",
-      "digest": "71dce047415d5b3a6b17eb7cff22d625fa981452b0ad38cd2f930938ffcdbaf1"
+      "digest": "c8ddfc930387f75e79856999a0a5e096e17381ff5ffd71574e7a424e282c2994"
     },
     {
       "id": "skill/plan-verifying-execution",
