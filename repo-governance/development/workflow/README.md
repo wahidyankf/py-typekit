@@ -25,8 +25,9 @@ standards sit alongside them.
   task, reconcile, and cleanup
 - [Native-First Toolchain](native-first-toolchain.md) — pinned native toolchain managers, the idempotent health command,
   what repair may change, and when to revisit
-- [No Destructive Git Operations](no-destructive-git-operations.md) — per-instance approval and additive equivalents for
-  operations that destroy work or rewrite history
+- [No Destructive Git Operations](no-destructive-git-operations.md) — approval outside bounded authorized task sync and
+  additive equivalents for destructive effects
+- [Authorized Task Sync Modules](no-destructive-git-operations/README.md) — owned sync, recovery, reviews, and gates
 - [Pull Request Body](pull-request-body.md) — what a body states, the trunk-state claim, and rewriting the body whenever
   the head moves
 - [Pull Request Merge](pull-request-merge.md) — the merge preconditions, the recorded landing method, the no-bypass
