@@ -13,6 +13,8 @@ read real values; and what leaves the repository, which no later deletion recall
 
 - **[No Secrets in Tracked Files](no-secrets-in-tracked-files.md)**: where credentials live, whatever the visibility,
   and what remediates a leak
+- **[Agent Secret Access](agent-secret-access.md)**: what agents must not open, run, or record around private keys and
+  secrets
 - **[No Machine-Specific Values](no-machine-specific-values.md)**: keeping one machine's paths, names, and addresses out
   of commits
 - **[Public Outbound Safety](public-outbound-safety.md)**: what must be screened before anything is published
@@ -20,5 +22,6 @@ read real values; and what leaves the repository, which no later deletion recall
 ## Directory Map
 
 - [No Secrets in Tracked Files](no-secrets-in-tracked-files.md)
+- [Agent Secret Access](agent-secret-access.md)
 - [No Machine-Specific Values](no-machine-specific-values.md)
 - [Public Outbound Safety](public-outbound-safety.md)
