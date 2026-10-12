@@ -80,8 +80,8 @@ pushes that built the branch remain under [Commit Authorization][commit-authoriz
 [001-quality-gate-results]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/001-quality-gate-results.md
 [integration-hygiene]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/integration-hygiene.md
+  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/development/workflow/integration-hygiene.md
 [thematic-commits]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/thematic-commits.md
 [commit-authorization]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/commit-authorization.md
+  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/development/workflow/commit-authorization.md

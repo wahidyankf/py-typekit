@@ -42,8 +42,10 @@ and changes flow only from the trunk to them.
 - **One task, one short-lived branch.** Merge it the day it is created where possible; two days is the ceiling, and past
   it rebase or abandon the branch.
 - **Sync by rebase.** Before starting and before resuming, fetch and rebase onto the latest trunk. Never auto-stash,
-  discard, or auto-resolve: an unclean tree or a conflict halts the work and goes to its owner. When the sync brings
-  commits in, complete [Integration Diff Review][integration-diff-review].
+  discard, or blindly auto-resolve. An unclean tree halts the work. Resolve only owned, already settled conflicts under
+  [authorized task sync](no-destructive-git-operations/001-authorized-task-branch-sync.md); foreign work, uncertain
+  intent, or a new material choice stops the sync and goes to its owner. When the sync brings commits in, complete
+  [Integration Diff Review][integration-diff-review].
 - **Linear history.** Never merge the trunk into a task branch.
 - **One worktree per task, reused.** A plan or task provisions at most one worktree and reuses it for every delivery
   unit it yields at `{repository location}/worktrees/<task>`. Units land in turn: land one, sync, branch the next in the
@@ -71,7 +73,7 @@ A pull request can come from a checkout whose hooks never ran, so hosted gates r
 Branch-route hosting rules enforce trunk protection and linear history for every actor, owners included.
 
 [commit-authorization]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/commit-authorization.md
+  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/development/workflow/commit-authorization.md
 [ci-post-push-verification]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/ci-post-push-verification.md
 [integration-diff-review]:
