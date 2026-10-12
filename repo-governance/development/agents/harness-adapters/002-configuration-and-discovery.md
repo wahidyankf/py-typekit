@@ -26,9 +26,9 @@ to the same text and nothing else.
 Selected source: `ose-rules@cc58f5227238d01995cb581857a91d12170e1ade`; repository wording is retained.
 
 User-global approvals and shared integrations do not relocate repository compute admission, protected-path policy,
-quality gates, or Git obligations. Claude Code, OpenCode, and Command Code native bindings invoke the repository-owned
-endpoint for their physical checkout; a neutral global adapter routes a different destination without duplicating policy
-evaluation or containing those policies.
+quality gates, or Git obligations. Claude Code, OpenCode, Command Code, and Muse native bindings invoke the
+repository-owned endpoint for their physical checkout; a neutral global adapter routes a different destination without
+duplicating policy evaluation or containing those policies.
 
 The Claude Code and Command Code Serena proxy activates the physical checkout and requires successful recovery after
 activation failure. Tracked project configuration excludes protected indexing paths; caches and local state stay
