@@ -55,7 +55,9 @@ silence:
 A rule portable across a declared parity boundary records its sibling obligation per [Related
 Repositories][related-repositories], or records none with why. A repository adopting from a shared catalog proposes a
 rule that holds beyond itself to that catalog, through the catalog's own delivery, published only after the catalog's
-outbound-safety screen passes.
+outbound-safety screen passes. A fan-out across members, at minimum ose-projects, must land in the catalog first:
+members must adopt only from its published head, never from a branch or worktree, and a member adoption must name the
+catalog head it copies.
 
 ## Adopter Decision: How Entry Becomes Automatic
 
