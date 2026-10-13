@@ -27,6 +27,12 @@ it in full before acting.
 It depends on everything else. Written first, it becomes a checklist for a plan that does not exist yet, and the rest of
 the plan is then reverse-engineered to justify it.
 
+## Order the Checklist by Dependency
+
+Sequence in the file is not dependency. Express phases and items as the dependency graph [Dependency Graph and
+Recovery][014-dependency-graph-and-recovery] defines, with a Parallelization Model section, so independent nodes can run
+concurrently.
+
 ## Granularity Is the Hard Part
 
 An item should be small enough that failing it is informative. "Implement the validator" fails as a unit; the person
@@ -96,5 +102,7 @@ Apply [Focused Runs and Regression Gates][focused-runs] when writing test comman
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/004-interface-alternatives.md
 [011-phase-boundaries-and-delivery-choices]:
   ../../../repo-governance/conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md
+[014-dependency-graph-and-recovery]:
+  ../../../repo-governance/conventions/structure/plans/014-dependency-graph-and-recovery.md
 [focused-runs]:
   ../../../repo-governance/development/quality/testing/test-driven-development/005-focused-runs-and-regression-gates.md
