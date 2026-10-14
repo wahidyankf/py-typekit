@@ -30,7 +30,7 @@ outputs, leak screens, green gates); elsewhere the agent stops at the secret bou
 This library has no secret-handling surface; these rules still bind agent behavior if one ever appears.
 
 R6: An agent may operate the leak review after reading every commit at the pinned head against the three leak classes; a
-record without that reading is fabrication.
+verdict without that reading is fabrication.
 
 Reason: regtech [HUMAN] removes value exposure from the session, and proper pipelines earn faster delivery.
 

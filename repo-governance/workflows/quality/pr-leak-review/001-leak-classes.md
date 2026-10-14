@@ -9,7 +9,7 @@ when_to_use: >-
 
 # Leak Classes
 
-A leak review judges three classes and no others. Each maps to the record's count of the same name.
+A leak review judges three classes and no others. Each maps to the count of the same name in its verdict.
 
 - **`secret_or_private_value`** — A finding is: a real credential or other value that grants access — in any
   environment, with staging and production credentials named explicitly because they reach real data and real users;
@@ -49,9 +49,10 @@ adoption is out of scope for the review; a leak found there is handled under the
 
 ## The Review Is Itself Published
 
-The review body is outbound, per [Public Outbound Safety](../../../conventions/security/public-outbound-safety.md). A
-path pasted into it is the finding the review exists to catch, and a quoted secret is published again in the record of
-its discovery. Anything found is treated as already disclosed.
+The audit comment is outbound, per [Public Outbound Safety](../../../conventions/security/public-outbound-safety.md). It
+carries only the pinned head, the result, and the counts, so no value can reach it. A reviewer's notes are never
+published and never quote a value, because a quoted secret is published again in the record of its discovery. Anything
+found is treated as already disclosed.
 
 It is not a security or semantic review. A screen matches shapes; this review reads context, and three classes keep it
 small enough for every push and every head.

@@ -17,6 +17,7 @@ edits the canonical file, and an adapter is generated from it, never edited in p
 
 - [docs-checker](docs-checker.md) — auditing documentation claims against their sources
 - [docs-fixer](docs-fixer.md) — applying re-validated documentation findings
+- [leak-reviewer](leak-reviewer.md) — judging a change against leak classes
 - [plan-checker](plan-checker.md) — auditing a plan draft against the plan specification
 - [plan-execution-checker](plan-execution-checker.md) — auditing finished plan execution before archival
 - [plan-fixer](plan-fixer.md) — repairing the rows of a frozen plan ledger through Plan Propagation

@@ -60,11 +60,11 @@ library, its wheel, or its Python dependencies. `npm ci` installs it and the hoo
 
 Every change starts in a task worktree at `worktrees/<task>`, never a sibling directory, and lands through a pull
 request merged by rebase under [Pull Request Merge](repo-governance/development/workflow/pull-request-merge.md), once
-the `quality` and `leak-review` checks pass on its head. The
-[PR Leak Review](repo-governance/workflows/quality/pr-leak-review.md) records its verdict on that exact head. Everything
-pushed is public, so commits, branch names, and pull-request text pass the screen in `scripts/public-safety/` first.
-After the merge, [Dev Artifact Clean-Up](repo-governance/workflows/maintenance/dev-artifact-clean-up.md) removes the
-worktree and the task branch and fast-forwards `main`.
+the `quality` check passes on its head. The [PR Leak Review](repo-governance/workflows/quality/pr-leak-review.md)
+harness refuses any push or merge without a fresh `leak-reviewer` pass on that head. Everything pushed is public, so
+commits, branch names, and pull-request text pass the `scripts/public-safety/` screen first. After the merge,
+[Dev Artifact Clean-Up](repo-governance/workflows/maintenance/dev-artifact-clean-up.md) removes the worktree and task
+branch and fast-forwards `main`.
 
 ## Documents
 
