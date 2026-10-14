@@ -174,9 +174,9 @@ harness:
           name: name
           description: description
       tiers:
-        ultra: { model: opus, effort: xhigh }
+        ultra: { model: opus, effort: high }
         plan: { model: sonnet, effort: high }
-        execution: { model: haiku, effort: xhigh }
+        execution: { model: haiku, effort: high }
         fast: { model: haiku, effort: medium }
     - id: codex
       supports:
@@ -214,7 +214,7 @@ harness:
               - models
             pattern: gpt-*-sol
             fallback: gpt-6-sol
-          effort: xhigh
+          effort: high
         plan:
           model-resolve:
             command:
@@ -232,7 +232,7 @@ harness:
               - models
             pattern: gpt-*-luna
             fallback: gpt-6-luna
-          effort: xhigh
+          effort: high
         fast:
           model-resolve:
             command:
