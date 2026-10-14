@@ -3,20 +3,21 @@ name: plan-execution
 description: >-
   Works through a plan's delivery checklist, recording the result of each item as it resolves.
 when_to_use: >-
-  Use when a plan's quality gate verdict is recorded and its checklist is ready to be executed.
+  Use when a plan's checklist is ready to be executed, with or without a quality-gate verdict.
 ---
 
 # Execution
 
 ## Entry
 
-A plan in `plans/in-progress/` whose quality gate verdict is recorded in its `delivery.md`. The verdict is advisory: any
-of the four lets execution start, and a `FAIL` or `BLOCKED` verdict's open blocking rows keep the owners the gate gave
-them.
+A plan in `plans/in-progress/` with its checklist ready. A quality-gate verdict recorded in its `delivery.md`,
+when present, is advisory history: a `FAIL` or `BLOCKED` verdict's open blocking rows keep the owners the gate gave
+them, and any of the four lets execution continue.
 
-The verdict is current and comes from an explicitly directed gate run; without one, execution stops and says so. For a
-bug-fix plan, an adopted Upstream Tool Defects standard is that direction. A queued plan is moved into
-`plans/in-progress/` first, never copied. Input: `plan` (`directory`, required).
+Execution starts with or without a verdict and never runs the gate itself. A missing verdict is recorded as
+`plan-quality-gate: not run (manual-only)`, never a stop. For a bug-fix plan, an adopted Upstream Tool Defects standard
+remains available direction when explicitly invoked. A queued plan is moved into `plans/in-progress/` first, never
+copied. Input: `plan` (`directory`, required).
 
 ## Sequence
 

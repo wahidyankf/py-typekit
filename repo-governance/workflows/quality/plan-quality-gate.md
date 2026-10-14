@@ -4,8 +4,8 @@ description: >-
   Judges a complete plan draft for what structural validation cannot reach, in at most three bounded cycles, and returns
   one advisory verdict with its findings in an uncommitted ledger.
 when_to_use: >-
-  Use after a complete six-document draft and its post-write gate, before execution begins, or after a material change
-  to a plan, when someone names this gate or a listed caller runs it.
+  Use after a complete six-document draft and its post-write gate, or after a material change to a plan, when someone
+  names this gate or a listed caller runs it. Execution never requires it.
 ---
 
 # Plan Quality Gate
@@ -24,8 +24,8 @@ The gate starts only on an explicit request that names it, or from one of these 
 
 An adopting repository lists only the callers it has, chosen from this set.
 
-Creating, editing, or executing a plan never starts it alone. Each run serves one named checkpoint: before execution, or
-after a material change.
+Creating, editing, or executing a plan never starts it alone. Each run serves one named checkpoint: an optional
+manual check before execution, or a check after a material change. Neither checkpoint is required by execution.
 
 ## Inputs
 
