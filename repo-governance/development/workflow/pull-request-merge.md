@@ -34,7 +34,8 @@ Each holds at merge time:
    and each open blocking row of a `FAIL` or `BLOCKED` verdict has an owner. Where no reachable behaviour changed, the
    merge record says so.
 5. **Outbound safety.** The exact head passed an outbound leak screen, which in a public repository is
-   [Public Outbound Safety](../../conventions/security/public-outbound-safety.md). A suspected secret halts merge
+   [Public Outbound Safety](../../conventions/security/public-outbound-safety.md), and holds a `pass` verdict from the
+   [PR Leak Review](../../workflows/quality/pr-leak-review.md) for that revision. A suspected secret halts merge
    handling and follows [No Secrets in Tracked Files](../../conventions/security/no-secrets-in-tracked-files.md); no
    green check, closed conversation, or earlier clean screen permits merging it.
 

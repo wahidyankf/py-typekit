@@ -23,18 +23,20 @@ remote lacks starts from its merge base with the remote's default branch.
 1. **List the range's commits.** The harness lists every commit in the range, oldest first, including merges.
 2. **Run the repository's screen on the range.** It must screen commit by commit per [Enforcement](003-enforcement.md);
    a scan error blocks exactly as a finding does.
-3. **Spawn a fresh-context reviewer.** One read-only subagent for this range alone: no part in authoring the commits, no
-   memory of an earlier range, never pushing or posting. It receives only the range and the three leak classes. A failed
-   spawn blocks the push exactly as a finding does; no self-judging fallback, and no human substitutes.
-4. **Read every commit.** The subagent reads each commit's added lines, its file names, its message, and the ref name. A
+3. **Spawn a fresh-context reviewer.** The harness spawns one read-only `leak-reviewer` agent for this range alone: no
+   part in authoring the commits, no memory of an earlier range, and never pushing or posting. It receives only the
+   range and the three leak classes. A failed spawn blocks the push exactly as a finding does; the harness never judges
+   itself, and no human substitutes.
+4. **Read every commit.** The reviewer reads each commit's added lines, its file names, its message, and the ref name. A
    merge contributes what it resolved beyond the automatic merge.
-5. **Judge against the [leak classes](001-leak-classes.md).** The subagent returns the count per class and each finding
+5. **Judge against the [leak classes](001-leak-classes.md).** The reviewer returns the count per class and each finding
    without its value. No candidate is copied into notes, commands, or logs.
-6. **Decide.** The harness acts on that verdict unchanged. No finding: push. Any finding: do not push; remediate, then
-   start again from step 1 with a new subagent.
+6. **Decide.** The harness acts on that verdict unchanged, after a second check that the local head still matches the
+   reviewed range. No finding and an unmoved head: push. Any finding, failed spawn, or moved head: do not push;
+   remediate or re-run, then start again from step 1 with a new `leak-reviewer` spawn.
 
-A repository whose integration path pushes straight to its default branch has no pull request to carry a record, so this
-review is its only review, and it is no less required.
+A repository whose integration path pushes straight to its default branch has no pull request to gate, so this review is
+its only review, and it is no less required.
 
 ## Remediation
 

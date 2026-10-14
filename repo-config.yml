@@ -329,6 +329,7 @@ harness:
         agents:
           - docs-checker
           - docs-fixer
+          - leak-reviewer
           - plan-checker
           - plan-execution-checker
           - plan-fixer
@@ -895,14 +896,4 @@ gates:
       run-on:
         pull-request:
           reason: "The scanner regression suite needs the pull-request checkout; local hooks must remain bounded."
-        main: {}
-    - id: leak-review-tests
-      type: check
-      command:
-        executable: bash
-        args:
-          - literal: scripts/leak-review/tests/run.sh
-      run-on:
-        pull-request:
-          reason: "The record check's offline suite runs where the hosted check is defined."
         main: {}
