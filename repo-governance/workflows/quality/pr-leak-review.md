@@ -24,8 +24,8 @@ Two entries share one judgement:
 
 - **Push.** Before any push, review the outgoing range privately per [Push Review](pr-leak-review/002-push-review.md).
   Nothing is posted; a finding blocks the push.
-- **Merge.** A pull request is open, and no `pass` record posted by the reviewer identity the adopter designates exists
-  for its current head. `pull-request` (`string`, required): the pull request's number or address.
+- **Merge.** An open pull request has no `pass` record from the designated reviewer identity for its current head. The
+  delivery harness runs this workflow before merge. `pull-request` (`string`, required): its number or address.
 
 ## Sequence
 
