@@ -50,9 +50,9 @@ and its integration state meets the rule below.
 Size never creates or erases a boundary: unrelated purposes split, and an unreviewable unit splits only along a genuine
 seam.
 
-Units land one at a time, each starting only after the previous one lands. Before landing, each refreshes against the
-current integration branch and re-runs its gates; a unit built on an unlanded sibling is reviewed against a state that
-may never exist.
+Independent units land in any order, up to the declared concurrency cap, serializing under host or budget pressure.
+Before landing, each refreshes against the current integration branch and re-runs its gates; a unit built on an unlanded
+sibling is reviewed against a state that may never exist.
 
 ## The Integration State Is an Adopter Decision
 

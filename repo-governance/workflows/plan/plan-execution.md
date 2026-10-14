@@ -27,12 +27,16 @@ copied. Input: `plan` (`directory`, required).
    noticed late is expensive. Enter it, synced per [Integration Path](../../development/workflow/integration-path.md),
    before any change; every delivery unit reuses the plan's one worktree when its route uses one.
 3. **Mirror the checklist, disk first.** On every start and resume, rebuild the task list from `delivery.md`: one task
-   per unchecked action checkbox, in order, and none without one. A tick whose change is absent is removed and its item
-   re-run. Dormant recovery items wait for their trigger. See
-   [Task Tracking](../../development/agents/task-tracking.md).
-4. **Work items in order.** An item blocked by something outside the plan is recorded as blocked, with what would
-   unblock it, never skipped silently. A `[HUMAN]` item is prepared as far as possible, then handed over, never
-   performed or ticked on that person's behalf.
+   per unchecked action checkbox, ordered by the dependency graph rather than list position, and none without one. A
+   tick whose change is absent is removed and its item re-run. Dormant recovery items wait for their trigger. See
+   [Task Tracking](../../development/agents/task-tracking.md) and
+   [Dependency Graph and Recovery](../../conventions/structure/plans/014-dependency-graph-and-recovery.md).
+4. **Work ready items concurrently.** Dispatch every item whose dependencies are terminal, up to the concurrency cap,
+   reusing the plan's one worktree per repository; a failure blocks only its downstream. An item blocked by something
+   outside the plan is recorded as blocked, with what would unblock it, never skipped silently. A `[HUMAN]` item is
+   prepared as far as possible, then handed over, never performed or ticked on that person's behalf. A more optimal
+   order found mid-run revises `delivery.md` first, keeping acceptance criteria and the end result; a material change
+   re-passes the quality gate.
 5. **Resolve each item atomically.** Tick the checkbox, record the result, and move on, in that order, as one step; a
    batch of ticks at session end cannot say which item produced which result. Tick only once the item's outcome and its
    proof both hold.
@@ -43,7 +47,9 @@ copied. Input: `plan` (`directory`, required).
    Choices][011-phase-boundaries-and-delivery-choices], run each gate check as written against the phase's combined
    state, and repair a failure inside the phase before its delivery or the next phase starts.
 8. **Land each delivery unit** by the route Integration Path records; a unit is complete once it has
-   [landed](../../conventions/structure/plans/009-portability.md#what-landed-means).
+   [landed](../../conventions/structure/plans/009-portability.md#what-landed-means). Independent units land in any
+   order, each refreshed with its gates re-run, per
+   [Delivery Seams and Ownership](../../development/agents/planning-capabilities/005-delivery-seams-and-ownership.md).
 9. **Fix what fails, including what was already failing.** A check red before the plan started is, by shipping time, red
    because of this plan's work. Pre-existing explains; it never exempts.
 10. **Route discoveries to `learnings.md`**, or a bug-fix plan's Learnings section, as they happen, not from memory.

@@ -36,6 +36,13 @@ other gates never covers either.
 A repository that pushes straight to its default branch has no pull request to gate. Its hosted check replays the screen
 over each pushed range after the fact: detective rather than preventive, so the push review stays mandatory.
 
+## Fresh-Context Judgement
+
+The record check proves who posted and which head the record names; no forge record can prove who judged. Freshness is
+therefore unenforced by decision, with this reason: the harness spawns the reviewer, and a spawn failure or an
+unreadable pin ends the run as `failed` before anything posts, so the mechanical layers still fail closed on every
+outcome a machine can observe. A self-judged verdict is a rule breach, not a passing record with a caveat.
+
 ## Adopter Decisions
 
 Record each once, in the adopting repository's own conventions:

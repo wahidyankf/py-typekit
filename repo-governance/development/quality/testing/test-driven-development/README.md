@@ -30,3 +30,5 @@ The modules below are read in sequence and carry the detail behind the
 
 - [005 Focused Runs and Regression Gates](005-focused-runs-and-regression-gates.md) — local selections and complete
   boundary gates
+- [006 Batched Cycles in Planned Delivery](006-batched-cycles-in-planned-delivery.md) — one test-first cycle per
+  delivery batch, with per-scenario failing tests and a single batch record
