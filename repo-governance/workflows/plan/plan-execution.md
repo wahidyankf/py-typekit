@@ -10,9 +10,9 @@ when_to_use: >-
 
 ## Entry
 
-A plan in `plans/in-progress/` with its checklist ready. A quality-gate verdict recorded in its `delivery.md`,
-when present, is advisory history: a `FAIL` or `BLOCKED` verdict's open blocking rows keep the owners the gate gave
-them, and any of the four lets execution continue.
+A plan in `plans/in-progress/` with its checklist ready. A quality-gate verdict recorded in its `delivery.md`, when
+present, is advisory history: a `FAIL` or `BLOCKED` verdict's open blocking rows keep the owners the gate gave them, and
+any of the four lets execution continue.
 
 Execution starts with or without a verdict and never runs the gate itself. A missing verdict is recorded as
 `plan-quality-gate: not run (manual-only)`, never a stop. For a bug-fix plan, an adopted Upstream Tool Defects standard

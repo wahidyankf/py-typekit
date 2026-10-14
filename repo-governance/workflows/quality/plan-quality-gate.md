@@ -24,8 +24,8 @@ The gate starts only on an explicit request that names it, or from one of these 
 
 An adopting repository lists only the callers it has, chosen from this set.
 
-Creating, editing, or executing a plan never starts it alone. Each run serves one named checkpoint: an optional
-manual check before execution, or a check after a material change. Neither checkpoint is required by execution.
+Creating, editing, or executing a plan never starts it alone. Each run serves one named checkpoint: an optional manual
+check before execution, or a check after a material change. Neither checkpoint is required by execution.
 
 ## Inputs
 
