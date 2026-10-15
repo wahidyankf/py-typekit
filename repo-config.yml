@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/wahidyankf/rhino/v0.12.0/schemas/repo-config/v2.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wahidyankf/rhino/v0.13.0/schemas/repo-config/v2.schema.json
 # py-typekit's adopted policy values and its one gate registry: hooks, CI, and the aggregate command read only this.
 
 schema: rhino/repo-config/v2
