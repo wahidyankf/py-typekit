@@ -89,7 +89,8 @@ branch and fast-forwards `main`.
 | `.agents/agents/`  | canonical agent definitions                                                    |
 | `.agents/skills/`  | canonical skills, one directory each with a `SKILL.md`                         |
 
-`./rhino harness adapters generate` renders the declared harness adapters from `.agents/` and `repo-config.yml`; they
-are never edited by hand. Dispatch coding work to the fitting `swe-*` agent, except a trivial edit, a harness without
-subagents, or a tool repin, per [SWE Delegation](repo-governance/development/agents/swe-delegation.md). The
-`pr-review-*` agents run the PR Review gate, and the plan and docs agents run their workflows.
+`./rhino harness adapters generate` renders the declared harness adapters from `.agents/` and `repo-config.yml`; never
+hand-edit them. Dispatch every create, modify, update, or delete of code or declarative configuration to the fitting
+`swe-*` agent, except a harness without subagents or a tool repin, per
+[SWE Delegation](repo-governance/development/agents/swe-delegation.md). `pr-review-*` agents run the PR Review gate;
+plan and docs agents run their workflows.

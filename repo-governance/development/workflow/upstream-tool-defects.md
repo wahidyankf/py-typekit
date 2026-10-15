@@ -47,6 +47,9 @@ documentation.
    the owner's [Release Cut](../../workflows/maintenance/release-cut.md) without a further prompt, skipping no step, and
    repin every consumer.
 
+Each repin in steps 3 and 5 changes declarative configuration, so `swe-releaser` makes it, per
+[SWE Delegation](../agents/swe-delegation.md).
+
 A workaround is any route to the current work's outcome that does not edit the tool or its pin: another option or
 command, a documented manual step, or a reliably succeeding retry. Record it beside the link or brief for the next
 consumer.

@@ -44,6 +44,8 @@ edits the canonical file, and an adapter is generated from it, never edited in p
   review lens
 - [swe-debugger](swe-debugger.md) — repairing failing type checks, lint, and tests at the cause
 - [swe-developer](swe-developer.md) — building behaviour test-first and applying re-validated findings
+- [swe-orchestrator](swe-orchestrator.md) — decomposing a multi-task goal and dispatching the swe agents until its
+  checks pass
 - [swe-releaser](swe-releaser.md) — cutting releases, deploying artifacts, and repinning tools through documented
   workflows
 - [swe-reviewer](swe-reviewer.md) — auditing code, component source, and scenario bindings against adopted standards

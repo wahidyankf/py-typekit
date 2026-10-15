@@ -72,7 +72,8 @@ The family file never restates a shared rule; it may narrow one, such as shrinki
 
 In every family the writer is `<family>-propagation`, and its executor is the repairer agent: `<family>-fixer`, or the
 agent the repository's gate entry declares. A maker authors; a fixer repairs only ledger rows. One agent never holds
-both roles in the same gate run.
+both roles in the same gate run. The `swe-developer` the executor names writes any configuration or code change, under
+rules 1 to 8, per [SWE Delegation](../agents/swe-delegation.md).
 
 ## Existing Writers Keep Their Rules
 

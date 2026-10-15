@@ -50,7 +50,7 @@
     {
       "id": "agent/pr-review-fixer",
       "path": ".agents/agents/pr-review-fixer.md",
-      "digest": "d9da91d9572f822faf526bec640bf5a60affd11af285bcfa0a13def2b1c5bcd7"
+      "digest": "07b56a3eac8758351a155b6107bc05a5c24dd300228c2e2df49badd58c2d60e5"
     },
     {
       "id": "agent/pr-review-governance-checker",
@@ -100,7 +100,7 @@
     {
       "id": "agent/rules-fixer",
       "path": ".agents/agents/rules-fixer.md",
-      "digest": "86823958c0f2bca713fe9ffd4abad514444c694d10a39157ed446c1c5fa6596b"
+      "digest": "e0a76d20b5bb07ed73a4f0cfd1f7d489a3758a159fc8db8b31b6a5adcd262438"
     },
     {
       "id": "agent/swe-architect",
@@ -110,12 +110,17 @@
     {
       "id": "agent/swe-debugger",
       "path": ".agents/agents/swe-debugger.md",
-      "digest": "0de1542053b2adfcdda396c5eb5885b3ca867f14610c4a47f3b6e9e6dd0ac6e4"
+      "digest": "5d3f76da9b5f27021492f935b8b07f191405c2f15af973ced23a96247a7b6b93"
     },
     {
       "id": "agent/swe-developer",
       "path": ".agents/agents/swe-developer.md",
       "digest": "49cc087a127cbf67ef3bce59368ccbb22332754bc3acb231d5735d813c5ab96d"
+    },
+    {
+      "id": "agent/swe-orchestrator",
+      "path": ".agents/agents/swe-orchestrator.md",
+      "digest": "3059d42ce8b7a83e8e3613eb23d8e0e445bab15a6a78a3560c499a5b20d59082"
     },
     {
       "id": "agent/swe-releaser",
@@ -125,7 +130,7 @@
     {
       "id": "agent/swe-reviewer",
       "path": ".agents/agents/swe-reviewer.md",
-      "digest": "0dd7f814b805f539d7b91affd887f7eda3abe4caeed9a586ed4f81963fc0a87c"
+      "digest": "9aec2ba4e910f5600d5539365027b3110889eb3a2b8b67bb141da79a788d03e2"
     },
     {
       "id": "skill/applying-ci-standards",
@@ -255,7 +260,7 @@
     {
       "id": "instruction",
       "path": "AGENTS.md",
-      "digest": "0c3edacae4f3acece594afad59a5855938f3bbe9a16c7fdf5e129503f240ef31"
+      "digest": "1cacb04efac6e4300b064bc981714ac0019149b51f52628f3ab4c9c1c2a98a2f"
     }
   ],
   "resolvedModels": {
