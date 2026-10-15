@@ -87,7 +87,8 @@ complete. A finding accepted as a false positive that is raised again is escalat
 
 It does not raise findings, which [Rules Checker][rules-checker] owns, author new rules, which [Repo Rules
 Maker][repo-rules-maker] owns, decide between same-level rules, bend a higher rule to fit a lower one, or rewrite rules
-for style.
+for style. A gate declaration or other configuration or code change a rule needs goes to `swe-developer` as repairer,
+per [SWE Delegation](../../repo-governance/development/agents/swe-delegation.md).
 
 [principle-traceability]:
   https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/principle-traceability.md
