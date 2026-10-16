@@ -70,7 +70,8 @@ reads the frozen plan and asks whether:
 6. every checklist item carries a **Deterministic proof** and is **Execution-tier executable**, per
    [Delivery Contract](../../conventions/structure/plans/004-delivery-contract.md); a breach of either is `HIGH`.
 
-Wording preference and speculative cases are not findings, per
+The checker raises only essential findings: executability, correctness, or decision completeness; wording preference,
+style, and speculative cases without executability impact are never findings, per
 [Minimal Sufficiency](../../principles/minimal-sufficiency.md). `plan-maker` authors plans; `plan-fixer` only repairs
 ledger rows.
 
