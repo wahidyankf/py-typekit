@@ -86,7 +86,7 @@ branch and fast-forwards `main`.
 | Path               | Holds                                                                          |
 | ------------------ | ------------------------------------------------------------------------------ |
 | `repo-governance/` | principles, conventions, development standards, and workflows from `ose-rules` |
-| `.agents/agents/`  | canonical agent definitions                                                    |
+| `agents/`          | canonical agent definitions                                                    |
 | `.agents/skills/`  | canonical skills, one directory each with a `SKILL.md`                         |
 
 `./rhino harness adapters generate` renders the declared harness adapters from `.agents/` and `repo-config.yml`; never
