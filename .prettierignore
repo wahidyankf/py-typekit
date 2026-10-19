@@ -9,3 +9,9 @@ worktrees
 .opencode/agents
 .commandcode/agents
 .markdownlint-cli2.jsonc
+
+# Rhino owns these generated adapter bytes; formatting them would diverge from
+# the canonical `agents/` source.
+.agents/agents/*/AGENT.md
+.agents/agents/catalog.json
+.agents/agents/provenance.json

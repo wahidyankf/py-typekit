@@ -3,131 +3,6 @@
   "profile": "commandcode",
   "sources": [
     {
-      "id": "agent/docs-checker",
-      "path": ".agents/agents/docs-checker.md",
-      "digest": "fbf002efc660f5c21f488de4bb04695029951a1003e8587c4fba2c40eea871bf"
-    },
-    {
-      "id": "agent/docs-fixer",
-      "path": ".agents/agents/docs-fixer.md",
-      "digest": "0d11214c8d5fec531ffb846c983d7999b3602b765f6e86d6e74bf37d7d8d8f0b"
-    },
-    {
-      "id": "agent/leak-reviewer",
-      "path": ".agents/agents/leak-reviewer.md",
-      "digest": "eaf3b315def83cb0b387501125b7f660e2aa330062bc7bccbfbee0d888465634"
-    },
-    {
-      "id": "agent/plan-checker",
-      "path": ".agents/agents/plan-checker.md",
-      "digest": "1e0a7cf2997e27667090feaf11ad52557aaa329e280efe7277cc19137549da07"
-    },
-    {
-      "id": "agent/plan-execution-checker",
-      "path": ".agents/agents/plan-execution-checker.md",
-      "digest": "fd03a56f72db9478e904429f3e8af7839d65d26f3bef2c4606dc405dcda977be"
-    },
-    {
-      "id": "agent/plan-fixer",
-      "path": ".agents/agents/plan-fixer.md",
-      "digest": "55d3b4696330a9ef6163b6ca84f86b66dc276fc039632765fcf986894bacd5b1"
-    },
-    {
-      "id": "agent/plan-maker",
-      "path": ".agents/agents/plan-maker.md",
-      "digest": "96c5276a8e2a7b62995bb02e3e9f98d21f0efa8f075acacd9b4c9623583a37e7"
-    },
-    {
-      "id": "agent/pr-review-checker",
-      "path": ".agents/agents/pr-review-checker.md",
-      "digest": "5ae7bdbdafd114917dfe5f61efa3c53bee9b42bb4d1637040c250db4cf7b0407"
-    },
-    {
-      "id": "agent/pr-review-docs-checker",
-      "path": ".agents/agents/pr-review-docs-checker.md",
-      "digest": "56662c5e2fcbc1169763e69f2fa1b8ffe6c7b626cbaa661b6f93ac87c4e4bc26"
-    },
-    {
-      "id": "agent/pr-review-fixer",
-      "path": ".agents/agents/pr-review-fixer.md",
-      "digest": "07b56a3eac8758351a155b6107bc05a5c24dd300228c2e2df49badd58c2d60e5"
-    },
-    {
-      "id": "agent/pr-review-governance-checker",
-      "path": ".agents/agents/pr-review-governance-checker.md",
-      "digest": "75bd7fb46f286240553e4ba5ecfc0a3a1977d95d96d7eed5662068a2b9c84f82"
-    },
-    {
-      "id": "agent/pr-review-instruction-checker",
-      "path": ".agents/agents/pr-review-instruction-checker.md",
-      "digest": "fba8bc9f3eca3ce08df127695cf32dc69c3e31a6ff8b8b80d9978e415a0e03b3"
-    },
-    {
-      "id": "agent/pr-review-integrity-checker",
-      "path": ".agents/agents/pr-review-integrity-checker.md",
-      "digest": "faa08b46fff1d472f4fe661f36efac5796e48f431e38ffea17bd66555402d663"
-    },
-    {
-      "id": "agent/pr-review-logic-checker",
-      "path": ".agents/agents/pr-review-logic-checker.md",
-      "digest": "a8b6f89513e72a53889bb0c0b4fd769aa6a15112b7f58b5729d35c5b450f72b4"
-    },
-    {
-      "id": "agent/pr-review-performance-checker",
-      "path": ".agents/agents/pr-review-performance-checker.md",
-      "digest": "4f3f4d3b70d887627a6525f309194d3c4a3ef64ed749031ab18027d93990f226"
-    },
-    {
-      "id": "agent/pr-review-scout",
-      "path": ".agents/agents/pr-review-scout.md",
-      "digest": "914330130c0d859a77cf17169aadc71045327437abd2fe3844aad5ec8b45c725"
-    },
-    {
-      "id": "agent/pr-review-security-checker",
-      "path": ".agents/agents/pr-review-security-checker.md",
-      "digest": "d2a3efd56ae6d583901cc56724354aec66c31eaccca88014f41a51ea0a41c532"
-    },
-    {
-      "id": "agent/pr-review-types-checker",
-      "path": ".agents/agents/pr-review-types-checker.md",
-      "digest": "c7fa60c9dfcca957233a7a10604966e22e2f4b27f8e4935f4e0b57a3baac33a7"
-    },
-    {
-      "id": "agent/rules-checker",
-      "path": ".agents/agents/rules-checker.md",
-      "digest": "e83136cc8ba106778e0a8fed26ec8ce9e89e7038c7b26433d44d59df5e8d7cdc"
-    },
-    {
-      "id": "agent/rules-fixer",
-      "path": ".agents/agents/rules-fixer.md",
-      "digest": "e0a76d20b5bb07ed73a4f0cfd1f7d489a3758a159fc8db8b31b6a5adcd262438"
-    },
-    {
-      "id": "agent/swe-architect",
-      "path": ".agents/agents/swe-architect.md",
-      "digest": "41d871fe71993a5c09ece20e88ea4d1d45a0654b81a747bd5978107aeea7bcf4"
-    },
-    {
-      "id": "agent/swe-debugger",
-      "path": ".agents/agents/swe-debugger.md",
-      "digest": "5d3f76da9b5f27021492f935b8b07f191405c2f15af973ced23a96247a7b6b93"
-    },
-    {
-      "id": "agent/swe-developer",
-      "path": ".agents/agents/swe-developer.md",
-      "digest": "49cc087a127cbf67ef3bce59368ccbb22332754bc3acb231d5735d813c5ab96d"
-    },
-    {
-      "id": "agent/swe-releaser",
-      "path": ".agents/agents/swe-releaser.md",
-      "digest": "d324dfaecf1be12acf71a371106738b0b1f90eaf73fc8a3f1d99c654e91d171b"
-    },
-    {
-      "id": "agent/swe-reviewer",
-      "path": ".agents/agents/swe-reviewer.md",
-      "digest": "9aec2ba4e910f5600d5539365027b3110889eb3a2b8b67bb141da79a788d03e2"
-    },
-    {
       "id": "skill/applying-ci-standards",
       "path": ".agents/skills/applying-ci-standards/SKILL.md",
       "digest": "8fc75e2741577c66a12e606c47f2167979cfc08f242990191500456e3c6d7aae"
@@ -255,7 +130,132 @@
     {
       "id": "instruction",
       "path": "AGENTS.md",
-      "digest": "1cacb04efac6e4300b064bc981714ac0019149b51f52628f3ab4c9c1c2a98a2f"
+      "digest": "d5e2200fef0dae85835e5fea3440779ebce0b6871eae0cb3e978f17f52d374ae"
+    },
+    {
+      "id": "agent/docs-checker",
+      "path": "agents/docs-checker.md",
+      "digest": "03bced25bc7a47ccdebafe8cd7b2fbf2128233da9ea0218072d01a4df7ee024f"
+    },
+    {
+      "id": "agent/docs-fixer",
+      "path": "agents/docs-fixer.md",
+      "digest": "723e6304c486384350bf5849c67649d31786d1d921c7edac6153ee05f9644568"
+    },
+    {
+      "id": "agent/leak-reviewer",
+      "path": "agents/leak-reviewer.md",
+      "digest": "0d89afbc5f369ff6f9fb717317bc3a516544bc64ac4ec72f62f81b51fd0726e7"
+    },
+    {
+      "id": "agent/plan-checker",
+      "path": "agents/plan-checker.md",
+      "digest": "75a6e26339cd68c6eeea21fe0eb171fd94b819c2271b0cc15c64712d00e24669"
+    },
+    {
+      "id": "agent/plan-execution-checker",
+      "path": "agents/plan-execution-checker.md",
+      "digest": "fd03a56f72db9478e904429f3e8af7839d65d26f3bef2c4606dc405dcda977be"
+    },
+    {
+      "id": "agent/plan-fixer",
+      "path": "agents/plan-fixer.md",
+      "digest": "873aa10877a5172d280cfc0bf77078b8f814ca0cb9f3d5e164fe9e01e6a2763a"
+    },
+    {
+      "id": "agent/plan-maker",
+      "path": "agents/plan-maker.md",
+      "digest": "80b389040d54797d17c614ed88efd9a20f18b289a6752aaaa037ff24ac3cbaa8"
+    },
+    {
+      "id": "agent/pr-review-checker",
+      "path": "agents/pr-review-checker.md",
+      "digest": "683789cd87c060b609709a77412f3dd241184c398119181c69325134a32f3970"
+    },
+    {
+      "id": "agent/pr-review-docs-checker",
+      "path": "agents/pr-review-docs-checker.md",
+      "digest": "eaafbfd032d93bc9681df507197bac0f670c155e7c85a773c736b9d5f0fc2b39"
+    },
+    {
+      "id": "agent/pr-review-fixer",
+      "path": "agents/pr-review-fixer.md",
+      "digest": "2eca875da995a076f657a280d21677e7c451b9c6b61c6e0491b83c003f398b6b"
+    },
+    {
+      "id": "agent/pr-review-governance-checker",
+      "path": "agents/pr-review-governance-checker.md",
+      "digest": "c928fd0604e57802419b149ea1806a7c820cffd0f789cd4596ddd65d342782c5"
+    },
+    {
+      "id": "agent/pr-review-instruction-checker",
+      "path": "agents/pr-review-instruction-checker.md",
+      "digest": "4e15b545bebf5e9c2deb14b7ea288ae1e3c935bec0e06e3fa62d047c98cf1a66"
+    },
+    {
+      "id": "agent/pr-review-integrity-checker",
+      "path": "agents/pr-review-integrity-checker.md",
+      "digest": "90918fd1d45adfc6059f2a44f1377527cf26b951595d8f2edff2cac3d87b91cc"
+    },
+    {
+      "id": "agent/pr-review-logic-checker",
+      "path": "agents/pr-review-logic-checker.md",
+      "digest": "dafe0efb061f078a29b9174c38982456391506f1f3032db9d6051ac56765b409"
+    },
+    {
+      "id": "agent/pr-review-performance-checker",
+      "path": "agents/pr-review-performance-checker.md",
+      "digest": "0614fc97e4a40b2b5ad7148a91c3274fce4989659bb8fb807c159a4feebc94e0"
+    },
+    {
+      "id": "agent/pr-review-scout",
+      "path": "agents/pr-review-scout.md",
+      "digest": "ef294803a7f6a2a9a59799ef7d04b2c7dbbb55a0fefc9b622b0abc0b0f15b844"
+    },
+    {
+      "id": "agent/pr-review-security-checker",
+      "path": "agents/pr-review-security-checker.md",
+      "digest": "70c3e90b57ea8f590e9890cb37ed8bd4b80e040c96d344981aafd428b5ff06e8"
+    },
+    {
+      "id": "agent/pr-review-types-checker",
+      "path": "agents/pr-review-types-checker.md",
+      "digest": "2cba089331050c8d191d1f724cdc89bc26337ab3f2c32627b58f952ec57d793f"
+    },
+    {
+      "id": "agent/rules-checker",
+      "path": "agents/rules-checker.md",
+      "digest": "d922be067a25445c7d3c4ec5cce6577028e0744b66dab3f5b2d9d13b4098c27b"
+    },
+    {
+      "id": "agent/rules-fixer",
+      "path": "agents/rules-fixer.md",
+      "digest": "ec4e0382d4caf1326d35248ab240e38f3d5b187706ee75ef5becc5993bd02d19"
+    },
+    {
+      "id": "agent/swe-architect",
+      "path": "agents/swe-architect.md",
+      "digest": "0c197f29af4542ad2e74262bd347a3a33d99d686825b3d3b1790f345b009a8d1"
+    },
+    {
+      "id": "agent/swe-debugger",
+      "path": "agents/swe-debugger.md",
+      "digest": "8624617d19c0cfbee3874bebb59ad1c10977db999f333fbb26b7a9efa5c1785a"
+    },
+    {
+      "id": "agent/swe-developer",
+      "path": "agents/swe-developer.md",
+      "digest": "0d1d34d2fcdd7da9b4623b42d46b8a828769c91bf7ef47ff69764e75e1b7d4bd"
+    },
+    {
+      "id": "agent/swe-releaser",
+      "path": "agents/swe-releaser.md",
+      "digest": "5b79cc7529bd2007678ebdbfa7da4f8375afee44021ca9abde3fd9cf042e293d"
+    },
+    {
+      "id": "agent/swe-reviewer",
+      "path": "agents/swe-reviewer.md",
+      "digest": "98a1719d98fadc903dfdec7838969ea3f1d6d63669adf75d5d25125b906b4bce"
     }
   ]
 }

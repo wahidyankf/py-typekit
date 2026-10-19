@@ -11,8 +11,8 @@ when_to_use: >-
 - **workflow** — Path: `repo-governance/workflows/**/*.md`; Keys, in order: `name`, `description`, `when_to_use`
 - **skill** — Path: `.agents/skills/<name>/SKILL.md`; Keys, in order: `name`, `description`, `when_to_use`, optional
   `compatibility`
-- **agent** — Path: `.agents/agents/<name>.md`; Keys, in order: `name`, `description`, `when_to_use`, `tier`,
-  `capabilities`, optional `skills`, optional `constraints`, optional `dispatches`
+- **agent** — Path: `agents/<name>.md`; Keys, in order: `name`, `description`, `when_to_use`, `tier`, `capabilities`,
+  optional `skills`, optional `constraints`, optional `dispatches`
 
 Workflows are governance documents whose path selects the more specific schema.
 

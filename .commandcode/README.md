@@ -1,8 +1,8 @@
 # Native Repository Binding
 
 The profile in [`repo-config.yml`](../repo-config.yml) selects native leaf agents. Their generated adapters import the
-authoritative definitions in [`.agents/agents/`](../.agents/agents/README.md); change those sources or the profile and
-regenerate with `./rhino harness adapters generate`. Validate with `./rhino harness adapters validate`.
+authoritative definitions in [`agents/`](../agents/README.md); change those sources or the profile and regenerate with
+`./rhino harness adapters generate`. Validate with `./rhino harness adapters validate`.
 
 ## Contents
 
