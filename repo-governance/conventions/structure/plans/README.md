@@ -9,7 +9,7 @@ when_to_use: >-
 
 Read in order. Each module is a self-contained part of the rule the [Plans Convention](../plans.md) entrypoint indexes.
 
-Modules 010 to 018 hold:
+Modules 010 to 019 hold:
 
 - **[010 Authorization and Execution Record](010-authorization-and-execution-record.md)**: the owner's request before a
   plan is written, and the execution record atop delivery
@@ -28,6 +28,8 @@ Modules 010 to 018 hold:
   choices an adopter fixes
 - **[018 Bug-Fix Plan](018-bug-fix-plan.md)**: the one-document plan for a single defect, its sections, and the rules it
   is exempt from
+- **[019 Migration Numbers](019-migration-numbers.md)**: how a migration takes its number at use, why a number a plan
+  names is a hint, and why an applied migration is never renumbered
 
 ## Directory Map
 
@@ -49,3 +51,4 @@ Modules 010 to 018 hold:
 - [016 Learning Triage](016-learning-triage.md)
 - [017 Learning Routing](017-learning-routing.md)
 - [018 Bug-Fix Plan](018-bug-fix-plan.md)
+- [019 Migration Numbers](019-migration-numbers.md)
