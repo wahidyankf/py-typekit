@@ -23,9 +23,9 @@ abandoned: never between units sharing a worktree, and never as a periodic sweep
 ## Sequence
 
 1. **Enumerate what the task created.** Scratch directories, generated reports, temporary scripts, downloaded fixtures,
-   task branches and worktrees, and any tooling installed only for this work. Include regenerable build output. Never
-   list a real environment file, per [Agent Environment-File Access][agent-env-file-access], or other local secret:
-   nothing rebuilds one.
+   task branches and worktrees, and any tooling installed only for this work. Include regenerable build output and
+   [leaked test containers](dev-artifact-clean-up/002-leaked-test-containers.md). Never list a real environment file,
+   per [Agent Environment-File Access][agent-env-file-access], or other local secret: nothing rebuilds one.
 
    Never delete a secret-bearing file or directory from the primary `main` checkout. An exact ignored, nonshared cache
    is scratch after recorded regeneration, non-use, and secret-free evidence, regardless of origin.
