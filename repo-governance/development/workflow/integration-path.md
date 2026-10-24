@@ -32,7 +32,7 @@ task branch, worktree, or pull request serves as a second path; a temporary bran
 removed when that purpose ends. A repository with no remote follows the direct route locally.
 
 **Recorded here: short-lived branch via pull request.** Every change reaches `main` as a task branch in a worktree,
-through a pull request that lands by rebase under [Pull Request Merge](pull-request-merge.md).
+through a pull request that lands by squash under [Pull Request Merge](pull-request-merge.md).
 
 Long-lived environment branches tracking what is deployed are not development branches: nothing is developed on them,
 and changes flow only from the trunk to them.

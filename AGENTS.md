@@ -59,7 +59,7 @@ library, its wheel, or its Python dependencies. `npm ci` installs it and the hoo
 ## Delivery
 
 Every change starts in a task worktree at `worktrees/<task>`, never a sibling directory, and lands through a pull
-request merged by rebase under [Pull Request Merge](repo-governance/development/workflow/pull-request-merge.md), once
+request merged by squash under [Pull Request Merge](repo-governance/development/workflow/pull-request-merge.md), once
 the `quality` check passes on its head. The [PR Leak Review](repo-governance/workflows/quality/pr-leak-review.md)
 harness refuses any push or merge without a fresh `leak-reviewer` pass on that head. Everything pushed is public, so
 commits, branch names, and pull-request text pass the `scripts/public-safety/` screen first. After the merge,
