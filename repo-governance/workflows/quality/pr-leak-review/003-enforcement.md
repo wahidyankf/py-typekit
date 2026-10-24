@@ -60,5 +60,5 @@ Record once, in the adopting repository's own conventions, whether its integrati
 push to the default branch. A direct-push repository has no pull request to gate, so its push review is its only review,
 and the harness's refusal on push is the whole gate.
 
-**Recorded here: pull request.** Each change lands through a pull request merged by rebase, per
+**Recorded here: pull request.** Each change lands through a pull request merged by squash, per
 [Pull Request Merge](../../../development/workflow/pull-request-merge.md).

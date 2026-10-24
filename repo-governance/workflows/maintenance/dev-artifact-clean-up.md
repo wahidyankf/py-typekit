@@ -52,14 +52,15 @@ abandoned: never between units sharing a worktree, and never as a periodic sweep
    request merged or was deliberately abandoned; otherwise retain it with the reason. Remove from outside the directory;
    never force a worktree removal or stash to empty one, since worktrees share one stash stack.
 
-   A rebase merge makes `git branch -d` refuse. After `git fetch origin --prune`, `git branch -D <branch>` may delete a
-   task branch no worktree holds (`git worktree list --porcelain` names no `branch refs/heads/<branch>`) that either
-   **landed**, its pull request `MERGED` with `headRefOid` equal to the tip or `git cherry origin/main <branch>`
-   printing only `-` lines, or is **stale**, its tip's committer date over 72 hours old with no open pull request from
-   it. When that cherry prints a `+` line, a stale tip is preserved first: keep `origin/<branch>` if it holds the tip,
-   else `git bundle create <path> origin/main..<branch>` under `local-tmp/`, recording the path. The remote branch goes
-   by exact ref, `git push origin --delete <branch>`. Otherwise retain the branch with the reason. Never use wildcard
-   refs, delete `main` or a protected branch, or lift a host's branch protection.
+   A squash merge leaves the task branch unmerged by SHA, so `git branch -d` refuses. After `git fetch origin --prune`,
+   `git branch -D <branch>` may delete a task branch no worktree holds (`git worktree list --porcelain` names no
+   `branch refs/heads/<branch>`) that either **landed**, its pull request `MERGED` with `headRefOid` equal to the tip or
+   `git cherry origin/main <branch>` printing only `-` lines, or is **stale**, its tip's committer date over 72 hours
+   old with no open pull request from it. When that cherry prints a `+` line, a stale tip is preserved first: keep
+   `origin/<branch>` if it holds the tip, else `git bundle create <path> origin/main..<branch>` under `local-tmp/`,
+   recording the path. The remote branch goes by exact ref, `git push origin --delete <branch>`. Otherwise retain the
+   branch with the reason. Never use wildcard refs, delete `main` or a protected branch, or lift a host's branch
+   protection.
 
 4. **Preserve unrelated work.** A dirty file this task did not create is left alone: cleanup removes only what the task
    made.

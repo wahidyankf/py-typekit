@@ -45,7 +45,9 @@ present each precondition's status and its evidence.
 The repository records its landing method. A rebase keeps the branch's [thematic commits][thematic-commits], a squash
 collapses them, and a merge commit is unavailable where [Integration Path](integration-path.md) keeps history linear.
 
-**Recorded here: rebase.** Each pull request lands by a rebase merge, keeping its commits on the linear trunk.
+**Recorded here: squash.** The repository ruleset allows only squash merges, so each pull request lands as one commit on
+the linear trunk. Merge with `gh pr merge <n> --squash --match-head-commit <head>`, where `<head>` is the exact head the
+gates passed on; a rebase merge is refused.
 
 ## Landing Identity
 
