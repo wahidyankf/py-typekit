@@ -231,8 +231,8 @@ harness:
               - codex
               - debug
               - models
-            pattern: gpt-*-luna
-            fallback: gpt-6-luna
+            pattern: gpt-*-terra
+            fallback: gpt-6.1-terra
           effort: high
         fast:
           model-resolve:
@@ -240,8 +240,8 @@ harness:
               - codex
               - debug
               - models
-            pattern: gpt-*-luna
-            fallback: gpt-6-luna
+            pattern: gpt-*-terra
+            fallback: gpt-6.1-terra
           effort: medium
     - id: opencode
       supports:
