@@ -120,14 +120,15 @@ bash scripts/check-wheel.sh            # the wheel lists py.typed and declares n
 
 `uv sync --locked` installs the Python dev dependencies, and `npm ci` installs the Markdown tooling and the git hooks;
 Node is repository tooling only and never part of the library. The hooks and the hosted checks run the same gate
-registry, `repo-config.yml`. Contribution rules, governance, and the agent setup are in [AGENTS.md](AGENTS.md).
+registry, `repo-config.yml`. Contribution rules, governance, and the agent setup are in [AGENTS.md](AGENTS.md). External
+contributions are currently closed while the engineering patterns stabilize. Forks remain welcome under the MIT license.
 
 ## Related repositories
 
-py-typekit is one of seven **`ose-projects`** repositories, with `hippo`, `ose-public`, `rhino`, `beaver-nest`,
-`ose-rules`, and [`ose-private`](https://github.com/wahidyankf/ose-private) (Private). The label is navigation only:
-each is versioned and released on its own. See [project context](docs/README.md#project-context) for each one's link and
-relationship.
+py-typekit is one of eight **`ose-projects`** repositories, with `hippo`, `ose-public`, `rhino`, `beaver-nest`,
+`ose-rules`, `ex-bdd`, and [`ose-private`](https://github.com/wahidyankf/ose-private) (Private). The label is navigation
+only: each is versioned and released on its own. See [project context](docs/README.md#project-context) for each one's
+link and relationship.
 
 ## License
 
