@@ -29,7 +29,7 @@ mistake marks each error with a `# Pyright error:` comment, and the gate require
 The [README](../README.md) is the short front door, and [CHANGELOG.md](../CHANGELOG.md) records what each tag holds.
 Contribution rules and the gates live in [AGENTS.md](../AGENTS.md); they govern changing the repository, not using it.
 
-py-typekit is one of the seven **`ose-projects`** repositories — the repositories
+py-typekit is one of the eight **`ose-projects`** repositories — the repositories
 [Open Sharia Enterprise](https://github.com/wahidyankf/ose-public) is built and maintained in. Each entry gives the
 repository's role, then how it relates to py-typekit:
 
@@ -48,8 +48,10 @@ repository's role, then how it relates to py-typekit:
 - [`ose-private`](https://github.com/wahidyankf/ose-private) (Private) — authorized operations. None: named only because
   it is a member. Its name and link are public by the maintainer's 2026-10-07 decision; its contents stay private, and
   the link resolves only for authorized maintainers.
+- [`ex-bdd`](https://github.com/wahidyankf/ex-bdd) — behaviour-driven development testing for Elixir. None: named only
+  because it is a member.
 
 **That label is navigation, not coupling.** `ose-projects` is a routing label only — not an organization, a parent
-repository, a parity group, or a shared release. The seven are developed, versioned, gated, and released independently.
-Membership obliges each member only to name the others, so a reader who finds one can find the other six, and nothing
-more. py-typekit is usable entirely on its own.
+repository, a parity group, or a shared release. The eight are developed, versioned, gated, and released
+independently. Membership obliges each member only to name the others, so a reader who finds one can find the other
+seven, and nothing more. py-typekit is usable entirely on its own.
