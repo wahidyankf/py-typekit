@@ -52,6 +52,6 @@ repository's role, then how it relates to py-typekit:
   because it is a member.
 
 **That label is navigation, not coupling.** `ose-projects` is a routing label only — not an organization, a parent
-repository, a parity group, or a shared release. The eight are developed, versioned, gated, and released
-independently. Membership obliges each member only to name the others, so a reader who finds one can find the other
-seven, and nothing more. py-typekit is usable entirely on its own.
+repository, a parity group, or a shared release. The eight are developed, versioned, gated, and released independently.
+Membership obliges each member only to name the others, so a reader who finds one can find the other seven, and nothing
+more. py-typekit is usable entirely on its own.
