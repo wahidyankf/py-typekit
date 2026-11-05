@@ -44,10 +44,18 @@ Split a feature or a fix into cycles that each cover one behaviour: the simplest
 and boundary in turn. A cycle covering several behaviours hides which one a failure belongs to. A long run of cycles is
 normal for real work, not a reason to merge them. A cycle outlasting a few minutes is split.
 
-```text
-red: empty input is rejected          -> green -> refactor
-red: input missing its separator fails -> green -> refactor
-red: well-formed input is accepted    -> green -> refactor
+```mermaid
+flowchart LR
+    accTitle: One cycle per behaviour
+    accDescr: Red-green-refactor per behaviour.
+    R1["red: empty input rejected"]:::redPhase --> G["green"]:::greenPhase --> F["refactor"]:::refactorPhase
+    R2["red: input missing<br/>its separator fails"]:::redPhase --> G
+    R3["red: well-formed input accepted"]:::redPhase --> G
+
+    classDef redPhase fill:#DE8F05,stroke:#000000,color:#000000,stroke-width:2px
+    classDef greenPhase fill:#029E73,stroke:#000000,color:#000000,stroke-width:2px
+    classDef refactorPhase fill:#0173B2,stroke:#000000,color:#FFFFFF,stroke-width:2px
+    classDef default fill:#FFFFFF,stroke:#000000,color:#000000
 ```
 
 After the final cycle, run the fast gate from [Test Boundaries and Gates](../test-boundaries-and-gates.md) to catch
