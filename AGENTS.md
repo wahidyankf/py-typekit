@@ -37,7 +37,7 @@ bash scripts/check-wheel.sh            # the wheel lists py.typed and declares n
 `repo-config.yml` is the one gate registry. The husky hooks, the hosted workflow, and the aggregate command dispatch it
 through `./rhino gate run --surface <surface>`, so a gate added there reaches every surface it declares. `pre-push`
 refuses a push whose tests fail or whose branch coverage is below 100%, and one that breaks a link, a word budget, the
-120-column limit, Prettier formatting, or a generated adapter, or adds a Mermaid block.
+120-column limit, Prettier formatting, a generated adapter, or a Mermaid diagram check.
 
 `./rhino` installs the RHINO release `rhino.lock` pins and verifies it before running; exit `125` is the wrapper
 refusing. This repository pins RHINO only: no HIPPO and no FERRET.
@@ -68,9 +68,10 @@ branch and fast-forwards `main`.
 
 ## Documents
 
-- Every Markdown line is at most 120 columns, and every diagram is ASCII art in a `text` block, per
+- Every Markdown line is at most 120 columns, and every conceptual diagram is an accessible Mermaid block, per
   [Markdown Line Length](repo-governance/conventions/markdown-line-length.md) and
-  [Markdown Visualizations](repo-governance/conventions/markdown-visualizations.md): no Mermaid, image, or inline HTML.
+  [Markdown Visualizations](repo-governance/conventions/markdown-visualizations.md): no ASCII-art diagram, image, or
+  inline HTML.
 - `AGENTS.md`, `CLAUDE.md`, and each `repo-governance/**/*.md` and `.agents/**/*.md` file hold 750 words at most.
 - Governed documents declare `description` and `when_to_use` front matter, per
   [Artifact Metadata](repo-governance/conventions/structure/artifact-metadata.md).
