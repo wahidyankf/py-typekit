@@ -16,3 +16,4 @@ others rely on is declared and kept compatible.
 ## Directory Map
 
 - [Public Contract](public-contract.md) — a tool's declared surface, and compatible versus breaking changes
+- [Consumer Correctness First](consumer-correctness.md) — public API choices that help the consumer be correct
