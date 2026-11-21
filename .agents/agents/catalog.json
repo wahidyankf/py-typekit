@@ -75,7 +75,7 @@
     {
       "id": "skill/plan-verifying-execution",
       "path": ".agents/skills/plan-verifying-execution/SKILL.md",
-      "digest": "f35e9fe57441bc03556a0dc47996c2db1c5d3cc5d58f65bf9f21a7ecb3e019de"
+      "digest": "eff7f7a6a37ad359ed2c24730c5350a55d3c167109a4c0247fda10fa5ddc4737"
     },
     {
       "id": "skill/plan-writing-gherkin-criteria",

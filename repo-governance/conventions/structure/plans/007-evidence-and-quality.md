@@ -46,6 +46,10 @@ Sanitized means the finding is described without reproducing what made it a find
 credential has published it a second time; a record that names a private host has leaked the thing the scan existed to
 protect. Raw scanner output never becomes evidence.
 
+Proof from the past that can no longer be produced is not rebuilt. A recorded observation of current behaviour replaces
+it, under
+[Current Behaviour Over Past Proof](../../../development/quality/evidence/current-behaviour-over-past-proof.md).
+
 Evidence that cannot be recorded safely is summarized structurally — how many findings, of what class, in what surface —
 and the unsafe detail stays out.
 
