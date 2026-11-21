@@ -13,6 +13,8 @@ Evidence standards. They answer what a claim, a finding, or a measurement has to
 
 ## Directory Map
 
+- [Current Behaviour Over Past Proof](current-behaviour-over-past-proof.md) — recording a current observation when past
+  proof can no longer be produced
 - [Finding Criticality and Confidence](finding-criticality-and-confidence.md) — ratings, re-validation before a fix,
   priority, and report contents
 - [Finding Criticality and Confidence Modules](finding-criticality-and-confidence/README.md) — levels, confidence and

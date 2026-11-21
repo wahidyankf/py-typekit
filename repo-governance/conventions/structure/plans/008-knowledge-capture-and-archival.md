@@ -59,7 +59,9 @@ unticked under a dated `Not triggered` disposition, and that has always counted 
 
 Three dispositions resolve an item or a criterion — **met**, **not applicable**, and **accepted as permanently unmet**.
 The third is for a plan finished except for evidence that no longer exists to be taken, such as a slot promoted and
-retired. It holds only when all of these do:
+retired. When current behaviour still establishes the criterion, it is met instead, per
+[Current Behaviour Over Past Proof](../../../development/quality/evidence/current-behaviour-over-past-proof.md). It
+holds only when all of these do:
 
 1. the evidence is unobtainable rather than unobtained, and the disposition says why;
 2. the plan's authority accepts it, as a dated decision naming what was put to them and what they chose, never the
