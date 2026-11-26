@@ -130,7 +130,17 @@
     {
       "id": "instruction",
       "path": "AGENTS.md",
-      "digest": "476ef48fb5319d1b7f6bdcc874d675f36c591b2c15e3d847aecb247631888f2a"
+      "digest": "53d925b6d6c9ab86081f079d82876e49d5c0d4b5604b5fb597055d9d70fffeda"
+    },
+    {
+      "id": "agent/ci-checker",
+      "path": "agents/ci-checker.md",
+      "digest": "e0b3267bf66e42bca4f46535a323c9d6f94f5b31fd1336d2493841b8151c273e"
+    },
+    {
+      "id": "agent/ci-fixer",
+      "path": "agents/ci-fixer.md",
+      "digest": "008d134746cc7fa48f5d7896b58b30bf1daee462a13595403516c849a1d2607d"
     },
     {
       "id": "agent/docs-checker",
@@ -141,6 +151,16 @@
       "id": "agent/docs-fixer",
       "path": "agents/docs-fixer.md",
       "digest": "723e6304c486384350bf5849c67649d31786d1d921c7edac6153ee05f9644568"
+    },
+    {
+      "id": "agent/harness-checker",
+      "path": "agents/harness-checker.md",
+      "digest": "dae298af8423c5381d7be1dfb3a14c83a038cb270900f34b5dd1e1dbfca75505"
+    },
+    {
+      "id": "agent/harness-fixer",
+      "path": "agents/harness-fixer.md",
+      "digest": "8e680128eec980bb18b888f4db54603c2abffb0f57037f714049977e000e6b3e"
     },
     {
       "id": "agent/leak-reviewer",
@@ -233,6 +253,16 @@
       "digest": "ec4e0382d4caf1326d35248ab240e38f3d5b187706ee75ef5becc5993bd02d19"
     },
     {
+      "id": "agent/specs-checker",
+      "path": "agents/specs-checker.md",
+      "digest": "a0b280265cdca20af971356206bf3cacbacb213b759323d2c8f0d3cf5f1d2ccf"
+    },
+    {
+      "id": "agent/specs-fixer",
+      "path": "agents/specs-fixer.md",
+      "digest": "e52fd5131f649a8c9ee6b4a537c7580f336ecdc317119c2880afdbdcecc6e452"
+    },
+    {
       "id": "agent/swe-architect",
       "path": "agents/swe-architect.md",
       "digest": "0c197f29af4542ad2e74262bd347a3a33d99d686825b3d3b1790f345b009a8d1"
@@ -266,7 +296,7 @@
   "resolvedModels": {
     "execution": "gpt-6.1-terra",
     "fast": "gpt-6.1-terra",
-    "plan": "gpt-6.1-sol",
-    "ultra": "gpt-6.1-sol"
+    "plan": "gpt-6.2-sol",
+    "ultra": "gpt-6.2-sol"
   }
 }
