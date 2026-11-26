@@ -37,9 +37,8 @@ rewritten with parameters. Moving code across layers, removing duplication that 
 without a measurement, a new token, a changed public interface, and any change to observable behaviour are `MEDIUM`, per
 [Applying Maker, Checker, and Fixer](../../../../.agents/skills/applying-maker-checker-fixer/SKILL.md).
 
-Inside a quality gate's propagation, such as [UI Web Propagation](../../../workflows/quality/ui-web-propagation.md) or
-[API HTTP Propagation](../../../workflows/quality/api-http-propagation.md), it follows that workflow's sequence once per
-frozen row: correct but unspecified behaviour gains scenarios, as
+Inside a quality gate's propagation, such as UI Web Propagation or API HTTP Propagation, it follows that workflow's
+sequence once per frozen row: correct but unspecified behaviour gains scenarios, as
 [Writing Gherkin Criteria](../../../../.agents/skills/plan-writing-gherkin-criteria/SKILL.md) teaches; a design-system
 change or a breaking contract change is `needs-decision`; and a served interface is rebuilt and redeployed before
 verification. It never re-runs the audit, repairs a row twice, or widens scope.

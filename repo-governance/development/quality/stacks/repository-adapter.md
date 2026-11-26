@@ -22,27 +22,27 @@ This is py-typekit's adopter-owned record. It holds repository-wide decisions an
 
 ## Adopter Decisions
 
-| Source                 | Decision            | Choice                          | Reason                              |
-| ---------------------- | ------------------- | ------------------------------- | ----------------------------------- |
-| `python-standards.md`  | boundary validation | standard-library checks         | zero runtime dependencies           |
-| `python-standards.md`  | expected failures   | returned `Result` and `Option`  | the library is the mechanism        |
-| `python-standards.md`  | union returns       | `Result` and `Option` only      | read with expected failures         |
-| `python-standards.md`  | coverage floor      | 100% branch, no exclusion       | measured over `typekit`             |
-| `specs/behaviours/`    | scenario corpus     | bound by pytest-bdd             | behaviour is the contract           |
-| `repo-config.yml`      | test layers         | unit, integration, end-to-end   | end-to-end uses the built wheel     |
-| `pyproject.toml`       | unit hermeticity    | TID251 banned-API lint          | C21: unit tests are hermetic        |
-| `.husky/pre-commit`    | formatting          | `format-staged`                 | staged paths only                   |
-| `.husky/commit-msg`    | message check       | commitlint                      | Conventional Commits                |
-| `.husky/pre-push`      | leak scan           | `public-safety-range` only      | nothing else runs before a push     |
-| `repo-config.yml`      | gate families       | seven declared (below)          | the declared families               |
-| catalog families       | not adopted         | five families (below)           | no web UI, API, or tutorial content |
-| SWE procedures         | kept                | `swe-architect` Design and Lens | a library's design and review       |
-| SWE procedures         | kept                | `swe-developer` Build           | test-first build applies            |
-| SWE procedures         | kept                | `swe-developer` Apply Findings  | re-validation applies               |
-| SWE procedures         | kept                | `swe-reviewer` code checks      | code and test checks apply          |
-| SWE procedures         | removed             | no `swe-web-tester` agent       | no web UI; no such agent            |
-| `harness-*`, `specs-*` | internal links      | link markup removed             | named skills and maker not adopted  |
-| SWE procedures         | UI/API paragraphs   | kept, not applied               | no interface in this repository     |
+| Source                 | Decision            | Choice                          | Reason                             |
+| ---------------------- | ------------------- | ------------------------------- | ---------------------------------- |
+| `python-standards.md`  | boundary validation | standard-library checks         | zero runtime dependencies          |
+| `python-standards.md`  | expected failures   | returned `Result` and `Option`  | the library is the mechanism       |
+| `python-standards.md`  | union returns       | `Result` and `Option` only      | read with expected failures        |
+| `python-standards.md`  | coverage floor      | 100% branch, no exclusion       | measured over `typekit`            |
+| `specs/behaviours/`    | scenario corpus     | bound by pytest-bdd             | behaviour is the contract          |
+| `repo-config.yml`      | test layers         | unit, integration, end-to-end   | end-to-end uses the built wheel    |
+| `pyproject.toml`       | unit hermeticity    | TID251 banned-API lint          | C21: unit tests are hermetic       |
+| `.husky/pre-commit`    | formatting          | `format-staged`                 | staged paths only                  |
+| `.husky/commit-msg`    | message check       | commitlint                      | Conventional Commits               |
+| `.husky/pre-push`      | leak scan           | `public-safety-range` only      | nothing else runs before a push    |
+| `repo-config.yml`      | gate families       | seven declared (below)          | the declared families              |
+| catalog families       | not adopted         | eight families (below)          | no subject in this Python library  |
+| SWE procedures         | kept                | `swe-architect` Design and Lens | a library's design and review      |
+| SWE procedures         | kept                | `swe-developer` Build           | test-first build applies           |
+| SWE procedures         | kept                | `swe-developer` Apply Findings  | re-validation applies              |
+| SWE procedures         | kept                | `swe-reviewer` code checks      | code and test checks apply         |
+| SWE procedures         | removed             | no `swe-web-tester` agent       | no web UI; no such agent           |
+| `harness-*`, `specs-*` | internal links      | link markup removed             | named skills and maker not adopted |
+| SWE procedures         | UI/API paragraphs   | kept, not applied               | no interface in this repository    |
 
 The three test layers are unit (`tests/test_*.py`), integration (`tests/integration/`), and end-to-end (`tests/e2e/`),
 which installs the built wheel into a fresh virtual environment. Coverage is measured by coverage.py over the unit run.
@@ -53,8 +53,9 @@ The behaviour corpus is `specs/behaviours/*.feature`. pytest-bdd binds it under 
 sleep, wall-clock, environment, and random calls out of `tests/test_*.py`.
 
 The declared gate families are plan, docs, rules, harness, ci, pr-review, and specs. The catalog families api-http,
-content, pdf-to-md, `tutorial-*`, and ui-web are not adopted, because this repository has no web UI, API, or tutorial
-content.
+content, pdf-to-md, tutorial-annotated-concept, tutorial-by-example, tutorial-in-the-field, tutorial-primer, and ui-web
+are not adopted, because this Python library has no subject for them (no web UI, HTTP API, tutorial content, or PDF
+input). Hippo never held them. Their sixteen propagation and quality-gate documents were removed in this commit.
 
 The kept procedure files are `swe-architect-modes.md`, `swe-developer-build.md`, `swe-developer-apply-findings.md`, and
 `swe-reviewer-code-checks.md`, indexed by the [SWE Agent Procedures](../../agents/swe-agent-procedures/README.md)
@@ -66,8 +67,9 @@ Adopted `swe-*` agents keep catalog skill names. `swe-releaser` lists `cutting-r
 
 ## Deviations
 
-- **Procedure steps.** The kept files match the catalog text, except that the Evolving Database Schemas link is plain
-  text, as that skill is not adopted, and the web tester procedure is deleted.
+- **Procedure steps.** The kept files match the catalog text, except that the Evolving Database Schemas, UI Web
+  Propagation, and API HTTP Propagation links are plain text, as those are not adopted, and the web tester procedure is
+  deleted.
 - **Python standard.** No other deviation. Its union rule reads with the expected-failures row.
 
 ## Project Applicability
