@@ -9,54 +9,67 @@ when_to_use: >-
 
 # Phase Boundaries and Delivery Choices
 
-The [Delivery Contract](004-delivery-contract.md) fixes what every checklist item contains. Four questions about
-delivery grammar stay open, because repositories answer them differently for sound reasons. An adopter answers each
-once, records the answer with its [Portability](009-portability.md) statuses, and applies it to every plan. A single
-plan does not choose for itself.
+The [Delivery Contract](004-delivery-contract.md) fixes what every checklist item contains. Six questions stay open;
+repositories answer them differently for sound reasons. An adopter answers each once, records the answer with its
+[Portability](009-portability.md) statuses, and applies it to every plan. A single plan does not choose for itself.
 
 ## 1. How a Phase Ends
 
-- **phase gate** — Requires: every phase closes on a `### Phase N Gate` of exact commands and observable criteria, then
-  a pause-safety note; Trade-off: every boundary is auditable and resumable; the checklist grows by a gate a phase
-- **plan-level pause safety** — Requires: only the single pause-safety declaration the delivery contract already
-  requires; Trade-off: shorter; a resumed executor re-derives whether the last phase left things coherent
+| Option                  | Requires                                                                                      | Trade-off                                                         |
+| ----------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| phase gate              | every phase closes on a `### Phase N Gate` of commands and criteria, then a pause-safety note | auditable, resumable boundaries; one more gate per phase          |
+| plan-level pause safety | only the delivery contract's pause-safety declaration                                         | shorter; a resumed executor re-derives the last phase's coherence |
 
-Under a phase gate, phase N+1 does not begin while any item of phase N's gate fails, and the failure is repaired inside
-phase N. Gate items carry executor labels like any other item. The pause-safety note names the coherent state the phase
-reached and the one command that re-verifies it. A phase whose gate cannot be written as commands has not been thought
-through.
+Under a phase gate, phase N+1 waits while any item of phase N's gate fails; the failure is repaired inside phase N. Gate
+items carry executor labels like any other item. The pause-safety note names the coherent state the phase reached and
+the one command that re-verifies it. A phase whose gate cannot be written as commands has not been thought through.
 
 ## 2. Whether a Baseline Phase Exists
 
-- **Phase 0 baseline** — Requires: a first phase that installs dependencies and records the gates passing before any
-  change is made; Trade-off: a later failure is attributable to the work, not the environment; costs a phase every time
-- **no baseline** — Requires: the first phase starts changing the repository; Trade-off: faster start; a pre-existing
-  failure still has to be fixed, but looks like one the work made
+| Option           | Requires                                                                          | Trade-off                                                         |
+| ---------------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Phase 0 baseline | a first phase installing dependencies and recording green gates before any change | later failures attributable to the work; costs a phase every time |
+| no baseline      | the first phase changes the repository                                            | faster start; a pre-existing failure looks like one the work made |
 
-Either way, a failure that predates the plan is fixed rather than exempted — see
-[Execution](../../../workflows/plan/plan-execution.md). The baseline only decides whether its origin stays visible.
+Either way, a predating failure is fixed, never exempted — see [Execution](../../../workflows/plan/plan-execution.md).
+The baseline only keeps its origin visible.
 
 ## 3. How a Test-First Item Is Written
 
-- **split cycle** — Requires: an item that ships code becomes three — RED, GREEN, REFACTOR — each naming the test path,
-  command, and expectation; Trade-off: proves the test failed before the change, which cannot be shown afterwards; more
-  items
-- **single item** — Requires: one item whose proof is the passing test; Trade-off: a shorter checklist; nothing shows
-  the test was ever able to fail
+| Option      | Requires                                                                                           | Trade-off                                  |
+| ----------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| split cycle | a code-shipping item becomes RED, GREEN, REFACTOR, each naming test path, command, and expectation | proves the test failed first; more items   |
+| single item | one item proved by the passing test                                                                | shorter; nothing shows the test could fail |
 
-A repository that builds its own validators or gates has the strongest reason to split: a check never observed failing
-has not been shown to check anything.
+Builders of validators or gates have the strongest reason to split: an unobserved-failing check is unshown.
 
 ## 4. What Happens When an Archived Plan Is Defective
 
-- **follow-up plan** — Requires: the defect becomes an idea brief or a new plan linking the archived one; `done/` stays
-  untouched; Trade-off: keeps the lifecycle's single reverse edge; the repair lives apart from the claim it corrects
-- **reopen** — Requires: move the folder back to `in-progress/`, strip the date prefix, and add a dated note in
-  `README.md` on what broke; Trade-off: the correction sits beside the original claim; adds a second reverse edge,
-  recorded as adapted
+| Option         | Requires                                                                             | Trade-off                                                                      |
+| -------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| follow-up plan | the defect becomes a brief or plan linking the archived one; `done/` stays untouched | keeps the single reverse edge; the repair lives apart from the corrected claim |
+| reopen         | move the folder back, strip the date prefix, and add a dated note on what broke      | the correction sits beside the claim; adds a recorded second reverse edge      |
 
-The follow-up plan is the rule as [Lifecycle and Folders](001-lifecycle-and-folders.md) states it. Reopening adapts that
-rule, so an adopter choosing it records the adaptation and its reason.
+Follow-up is the [Lifecycle and Folders](001-lifecycle-and-folders.md) rule; reopening adapts it, so the adopter records
+the adaptation and reason.
 
-Neither option permits quietly editing a plan in `done/`. A silently corrected archive reads as though the plan had been
-right all along.
+Neither permits quietly editing `done/`. A silent correction reads as though the plan had been right.
+
+## 5. How Test-First Cycles Are Batched in Planned Delivery
+
+| Option         | Requires                                                                                                                                                                                                                                                     | Trade-off                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| batched cycles | one RED and GREEN per delivery batch per [Batched Cycles](../../../development/quality/testing/test-driven-development/001-cycle-and-evidence/002-batched-cycles-in-planned-delivery.md); single-scenario cycles only for small changes and single bug fixes | planned work skips per-scenario ceremony; an oversized batch hides which scenario failed |
+| strict cycles  | RED, GREEN, REFACTOR per scenario, always                                                                                                                                                                                                                    | every scenario proves its own red; full ceremony per scenario                            |
+
+Batched is the rule; strict is a recorded adaptation with its reason. Unrelated failures in one RED run mean the batch
+is too large: split it.
+
+## 6. How Delivery Units Reach Review
+
+| Option                  | Requires                                                                     | Trade-off                      |
+| ----------------------- | ---------------------------------------------------------------------------- | ------------------------------ |
+| minimal PRs per plan    | units sharing a boundary land together; each split names its hard constraint | fewest reviews; larger PRs     |
+| one PR per natural seam | each cohesive unit lands in its own PR at its boundary                       | small reviewable PRs; more PRs |
+
+An adopter answers once and applies it to every plan.

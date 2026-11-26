@@ -4,8 +4,8 @@ description: >-
   Judges a complete plan draft for what structural validation cannot reach, in at most three bounded cycles, and returns
   one advisory verdict with its findings in an uncommitted ledger.
 when_to_use: >-
-  Use after a complete six-document draft and its post-write gate, before execution begins, or after a material change
-  to a plan, when someone names this gate or a listed caller runs it.
+  Use after a complete six-document draft and its post-write gate, or after a material change to a plan, when someone
+  names this gate or a listed caller runs it. Execution never requires it.
 ---
 
 # Plan Quality Gate
@@ -19,13 +19,13 @@ specific to plans.
 The gate starts only on an explicit request that names it, or from one of these callers:
 
 - [Planning](../plan/plan-planning.md), after the post-write gate;
-- [Parity Planning][plan-parity-planning], once per plan in the parity set; and
-- [UX Review Fix Planning][ux-review-fix-planning], on the plan it authors.
+- [Parity Planning](../plan/plan-parity-planning.md), once per plan in the parity set; and
+- [UX Review Fix Planning](ux-review-fix-planning.md), on the plan it authors.
 
 An adopting repository lists only the callers it has, chosen from this set.
 
-Creating, editing, or executing a plan never starts it alone. Each run serves one named checkpoint: before execution, or
-after a material change.
+Creating, editing, or executing a plan never starts it alone. Each run serves one named checkpoint: an optional
+pre-execution check or a post-material-change check. Neither checkpoint is required by execution.
 
 ## Inputs
 
@@ -51,8 +51,7 @@ The checker reports none of these properties. The entry and exit checks run thei
 
 The plan validator's checks are listed in
 [Structural Validation](../../conventions/structure/plans/006-structural-validation.md). An adopting repository replaces
-the last column with the tools its declared gate runs. A property no tool of its own owns leaves the table and becomes
-judgeable.
+the last column with the tools its declared gate runs. A property no tool owns leaves the table and becomes judgeable.
 
 ## Cycle
 
@@ -68,12 +67,12 @@ reads the frozen plan and asks whether:
 4. for a bug-fix plan, the root cause carries checkable evidence and the solution cites references;
 5. every decision the plan relies on is recorded, so an executor invents no policy; and
 6. every checklist item carries a **Deterministic proof** and is **Execution-tier executable**, per
-   [Delivery Contract](../../conventions/structure/plans/004-delivery-contract.md); a breach of either is `HIGH`.
+   [Delivery Contract](../../conventions/structure/plans/004-delivery-contract.md); either breach is `HIGH`.
 
 The checker raises only essential findings: executability, correctness, or decision completeness; wording preference,
 style, and speculative cases without executability impact are never findings, per
-[Minimal Sufficiency](../../principles/minimal-sufficiency.md). `plan-maker` authors plans; `plan-fixer` only repairs
-ledger rows.
+[Minimal Sufficiency](../../principles/minimal-sufficiency.md). Unenforced by decision: nitpicking has no mechanical
+check. `plan-maker` authors plans; `plan-fixer` only repairs ledger rows.
 
 ## Termination
 
@@ -109,8 +108,3 @@ Run plan-quality-gate on plans/in-progress/billing-retry with mode normal.
 
 - [Planning](../plan/plan-planning.md) authors the draft this gate judges.
 - [Execution Check](../plan/plan-execution-check.md) judges finished execution, not a draft.
-
-[plan-parity-planning]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/plan/plan-parity-planning.md
-[ux-review-fix-planning]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/quality/ux-review-fix-planning.md

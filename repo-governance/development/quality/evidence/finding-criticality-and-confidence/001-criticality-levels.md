@@ -12,14 +12,12 @@ Criticality measures how much a problem matters, independent of how certain anyo
 
 ## Four Levels
 
-- **`CRITICAL`** — Meaning: breaks functionality, blocks users, weakens security, loses data, or violates a MUST;
-  Examples: a failing build, an exposed credential, a broken required link
-- **`HIGH`** — Meaning: significantly degrades quality, or violates a documented SHOULD convention; Examples: an
-  accessibility failure at level AA, misleading documentation
-- **`MEDIUM`** — Meaning: a minor quality issue, a style inconsistency, or a MAY guideline not followed; Examples:
-  inconsistent formatting, missing optional metadata
-- **`LOW`** — Meaning: a suggestion that would improve an already acceptable artifact; Examples: alternative wording, an
-  optional reorganization
+| Level      | Meaning                                                                              | Examples                                                       |
+| ---------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| `CRITICAL` | breaks functionality, blocks users, weakens security, loses data, or violates a MUST | a failing build, an exposed credential, a broken required link |
+| `HIGH`     | significantly degrades quality, or violates a documented SHOULD convention           | an accessibility failure at level AA, misleading documentation |
+| `MEDIUM`   | a minor quality issue, a style inconsistency, or a MAY guideline not followed        | inconsistent formatting, missing optional metadata             |
+| `LOW`      | a suggestion that would improve an already acceptable artifact                       | alternative wording, an optional reorganization                |
 
 ## Assign in Order
 
@@ -57,14 +55,11 @@ Requirement keywords carry the meanings given in [RFC 2119](https://www.rfc-edit
 | `HIGH`          | fixed before publication; blocks unless explicitly dispositioned with a recorded reason |
 | `MEDIUM`, `LOW` | never blocks; reported, and each one left unfixed still carries an explicit disposition |
 
-Results and dispositions follow [Quality Gate Results][001-quality-gate-results]. Treating `HIGH` as blocking unless
-dispositioned is deliberately the stricter choice: a significant problem left without a recorded decision is silence,
-and silence afterwards looks exactly like oversight.
+Results and dispositions follow [Quality Gate Results](../../manual-verification/001-quality-gate-results.md). Treating
+`HIGH` as blocking unless dispositioned is deliberately the stricter choice: a significant problem left without a
+recorded decision is silence, and silence afterwards looks exactly like oversight.
 
 ## Status Labels Stay Separate
 
 Some checkers also mark each item's observed status, such as verified or broken. Those labels say what was seen;
 criticality says how much it matters. A report keeps both.
-
-[001-quality-gate-results]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/001-quality-gate-results.md

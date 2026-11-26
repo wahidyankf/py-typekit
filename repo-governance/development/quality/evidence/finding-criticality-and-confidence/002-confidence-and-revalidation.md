@@ -26,12 +26,11 @@ against the current state before acting:
 
 ## Three Levels
 
-- **`HIGH`** — When: the finding is objective, re-validation confirms it, and the fix is safe and unambiguous; Action:
-  apply the fix
-- **`MEDIUM`** — When: the finding is subjective, ambiguous, or depends on context the applier cannot settle; Action:
-  skip it and flag it for human review
-- **`FALSE_POSITIVE`** — When: re-validation disproves the finding; Action: skip it and report it, with a suggested
-  checker improvement
+| Level            | When                                                                                     | Action                                                      |
+| ---------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| `HIGH`           | the finding is objective, re-validation confirms it, and the fix is safe and unambiguous | apply the fix                                               |
+| `MEDIUM`         | the finding is subjective, ambiguous, or depends on context the applier cannot settle    | skip it and flag it for human review                        |
+| `FALSE_POSITIVE` | re-validation disproves the finding                                                      | skip it and report it, with a suggested checker improvement |
 
 ## Record the Decision
 
@@ -45,7 +44,4 @@ recurring. The finding's criticality sets how urgent that improvement is, becaus
 every gate that relies on the checker.
 
 A false-positive shape that keeps recurring and can be written as an exact predicate is a candidate to move under
-[Deterministic and Judgement Validation][deterministic-and-judgement-validation].
-
-[deterministic-and-judgement-validation]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/checks/deterministic-and-judgement-validation.md
+[Deterministic and Judgement Validation](../../checks/deterministic-and-judgement-validation.md).

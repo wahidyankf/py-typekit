@@ -23,15 +23,14 @@ whether a later reader can see that agreement without re-doing the work.
 
 ## Where It Is Already Load-Bearing
 
-- **[Deletion With Proof][deletion-with-proof]**: disable the thing and demonstrate that something fails
-- **[Delivery Contract](../conventions/structure/plans/004-delivery-contract.md)**: a ticked box says an action
-  happened, not what it produced
-- **[Dev Artifact Clean-Up](../workflows/maintenance/dev-artifact-clean-up.md)**: a cleanup performed but not verified
-  is a claim
-- **[Execution Check](../workflows/plan/plan-execution-check.md)**: a declared gate that never ran is not a passing gate
-- **[Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md)**: evidence is a file with a
-  command, a revision, a time, and a result
-- **[Manual Verification][manual-verification]**: a green pipeline does not become sufficient by being convenient
+| Applied in                                                                         | As                                                                  |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [Deletion With Proof](../development/quality/deletion-with-proof.md)               | disable the thing and demonstrate that something fails              |
+| [Delivery Contract](../conventions/structure/plans/004-delivery-contract.md)       | a ticked box says an action happened, not what it produced          |
+| [Dev Artifact Clean-Up](../workflows/maintenance/dev-artifact-clean-up.md)         | a cleanup performed but not verified is a claim                     |
+| [Execution Check](../workflows/plan/plan-execution-check.md)                       | a declared gate that never ran is not a passing gate                |
+| [Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md) | evidence is a file with a command, a revision, a time, and a result |
+| [Manual Verification](../development/quality/manual-verification.md)               | a green pipeline does not become sufficient by being convenient     |
 
 ## The Demonstration That Can Contradict You
 
@@ -51,8 +50,3 @@ safely is recorded structurally — how many findings, of what class, on what su
 
 Summarizing is not weakening. A count and a class are checkable by someone who was not there, which is the property that
 made it evidence in the first place.
-
-[deletion-with-proof]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/deletion-with-proof.md
-[manual-verification]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification.md

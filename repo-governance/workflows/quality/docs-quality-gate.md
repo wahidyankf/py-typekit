@@ -51,13 +51,16 @@ Each cycle is one full audit by `docs-checker` and one repair by [Docs Propagati
 [Sequence and Termination](../../development/workflow/quality-gate-contract/002-sequence-and-termination.md). The audit
 may delegate reading to the repository's documentation checkers. It asks of each document whether:
 
-1. every claim is true to the implementation, per [Factual Validation][factual-validation], and every command shown was
-   run or is marked not exercised, per [Only What Was Run][documentation-architecture];
+1. every claim is true to the implementation, per [Factual Validation](../../conventions/writing/factual-validation.md),
+   and every command shown was run or is marked not exercised, per
+   [Only What Was Run](../../conventions/structure/documentation-architecture.md#only-what-was-run);
 2. it still describes something the repository has; if not, it is obsolete and its resolution is removal;
-3. each fact has one home, a summary sits above its detail per [Progressive Disclosure][progressive-disclosure], and a
-   page serves one mode per [Documentation Architecture][documentation-architecture-2];
-4. a newcomer learns from the opening what it is and why it matters, and finds the next step, per [README
-   Quality][readme-quality] and [Content Quality][content-quality], judged by reading, never by a score;
+3. each fact has one home, a summary sits above its detail per
+   [Progressive Disclosure](../../principles/progressive-disclosure.md), and a page serves one mode per
+   [Documentation Architecture](../../conventions/structure/documentation-architecture.md);
+4. a newcomer learns from the opening what it is and why it matters, and finds the next step, per
+   [README Quality](../../conventions/writing/readme-quality.md) and
+   [Content Quality](../../conventions/writing/content-quality.md), judged by reading, never by a score;
 5. under `all`, or when setup changed, a reader with no prior context can follow the setup as written from a clean
    checkout; and
 6. it agrees with its specification, which is canonical.
@@ -98,14 +101,3 @@ Run docs-quality-gate on subject all.
 
 - [Docs Propagation](docs-propagation.md) repairs every blocking row, removals included.
 - [Release Cut](../maintenance/release-cut.md) runs this gate before publishing.
-
-[factual-validation]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/factual-validation.md
-[documentation-architecture]: ../../conventions/structure/documentation-architecture.md#only-what-was-run
-[progressive-disclosure]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/progressive-disclosure.md
-[documentation-architecture-2]: ../../conventions/structure/documentation-architecture.md
-[readme-quality]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/readme-quality.md
-[content-quality]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/content-quality.md

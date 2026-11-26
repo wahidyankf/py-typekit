@@ -36,8 +36,8 @@ it, so it becomes a plain test, per
 [Bindings and Exemptions](behaviour-driven-development/003-bindings-and-exemptions.md).
 
 Enforcement: gated for the exemption pair, by the static check in
-[Compliance and Reporting](../checks/automated-quality-gates.md). Unenforced by decision for the choice itself, because
-whether anyone outside the code sees a break is a review judgement.
+[Compliance and Reporting](behaviour-driven-development/004-compliance-and-reporting.md). Unenforced by decision for the
+choice itself, because whether anyone outside the code sees a break is a review judgement.
 
 ## Every Owner of Runtime Code Owns a Corpus
 
@@ -69,7 +69,7 @@ covers the code, a characterization test first records its current behaviour, so
 
 ## Modules
 
-1. [Discovery and Scenarios](#scenario-first-then-code)
+1. [Discovery and Scenarios](behaviour-driven-development/001-discovery-and-scenarios.md)
 2. [Layers and Adapters](behaviour-driven-development/002-layers-and-adapters.md)
 3. [Bindings and Exemptions](behaviour-driven-development/003-bindings-and-exemptions.md)
-4. [Compliance and Reporting](../checks/automated-quality-gates.md)
+4. [Compliance and Reporting](behaviour-driven-development/004-compliance-and-reporting.md)

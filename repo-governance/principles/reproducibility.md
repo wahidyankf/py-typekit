@@ -14,16 +14,13 @@ result, by following what the repository records. Nothing required lives only on
 
 ## What It Requires
 
-- **runtimes and tools** — Recorded as: exact versions in a committed file a version manager reads; Never: whatever
-  happens to be installed
-- **dependencies** — Recorded as: a committed lockfile that automation installs from, failing if the manifest differs;
-  Never: a floating selector such as `latest`, resolved at install
-- **system dependencies** — Recorded as: documented, with the versions known to work; Never: discovered by a newcomer's
-  first failure
-- **configuration** — Recorded as: a committed example naming every variable, with placeholders such as `<api-token>`;
-  Never: a real secret in the example, or an unlisted variable
-- **setup** — Recorded as: a script, run the same way by a person and by automation; Never: steps passed on in
-  conversation
+| Concern             | Recorded as                                                                         | Never                                                     |
+| ------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| runtimes and tools  | exact versions in a committed file a version manager reads                          | whatever happens to be installed                          |
+| dependencies        | a committed lockfile that automation installs from, failing if the manifest differs | a floating selector such as `latest`, resolved at install |
+| system dependencies | documented, with the versions known to work                                         | discovered by a newcomer's first failure                  |
+| configuration       | a committed example naming every variable, with placeholders such as `<api-token>`  | a real secret in the example, or an unlisted variable     |
+| setup               | a script, run the same way by a person and by automation                            | steps passed on in conversation                           |
 
 Which version manager, lockfile format, or setup tool is the adopter's choice. That the choice is recorded and committed
 is not.
@@ -33,14 +30,13 @@ from a question asked again at every install into a record.
 
 ## Where It Is Already Load-Bearing
 
-- **[The Shared Fixture Corpus][003-fixture-corpus]**: two implementations agree only on bytes pinned by a digest
-- **[Adopt Artifact](../workflows/adoption/adopt-artifact.md)**: a source resolves from published `main` to a full
-  commit before use
-- **[Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md)**: evidence records the exact
-  command and the revision it ran against
-- **[Quality Gate Results][001-quality-gate-results]**: a result is about a recorded revision, never a changing draft
-- **[Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md)**: a configuration
-  names the schema version it conforms to
+| Applied in                                                                                          | As                                                                  |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [The Shared Fixture Corpus](../conventions/structure/plan-validator-contract/003-fixture-corpus.md) | two implementations agree only on bytes pinned by a digest          |
+| [Adopt Artifact](../workflows/adoption/adopt-artifact.md)                                           | a source resolves from published `main` to a full commit before use |
+| [Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md)                  | evidence records the exact command and the revision it ran against  |
+| [Quality Gate Results](../development/quality/manual-verification/001-quality-gate-results.md)      | a result is about a recorded revision, never a changing draft       |
+| [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md)       | a configuration names the schema version it conforms to             |
 
 ## An Unrecorded Difference Is a Defect Nobody Can Find
 
@@ -65,8 +61,3 @@ committed example describes.
 An adopter enforces this in its own automated gate, continuous integration where it has one: a frozen install from the
 lockfile on the pinned runtime, failing when the lock, the manifest, or any pinned runtime disagree. A check that runs
 only on a developer's machine inherits that machine's differences, which are the thing being checked for.
-
-[003-fixture-corpus]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-validator-contract/003-fixture-corpus.md
-[001-quality-gate-results]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/001-quality-gate-results.md

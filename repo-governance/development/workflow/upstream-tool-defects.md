@@ -17,7 +17,7 @@ blocking one into a fix there.
 
 It covers tools the repository consumes as pinned releases from an upstream it can contribute to; the adopter records
 which tools and which repository owns each. A tool the repository cannot change is reported through its project's own
-channel per [Bug Reports][bug-reports]; the plan steps below do not apply.
+channel per [Bug Reports](../../conventions/writing/bug-reports.md); the plan steps below do not apply.
 
 ## Watch While Using
 
@@ -36,19 +36,17 @@ documentation.
    Repin once it lands, releasing it first per step 5 if no release carries it. With no workaround, a match already in
    repair leaves the current work blocked on that link; a match that is only an idea brief becomes a bug-fix plan per
    step 5.
-4. **When the defect has a workaround or does not block the work in hand, file it and continue.** Write an [idea
-   brief][015-idea-brief-template] in the owner's `plans/ideas/`, with the report in its problem section and the
-   duplicate check and references in its prior art. Land it through the owner's route, then resume on the workaround.
+4. **When the defect has a workaround or does not block the work in hand, file it and continue.** Write an
+   [idea brief](../../conventions/structure/plans/015-idea-brief-template.md) in the owner's `plans/ideas/`, with the
+   report in its problem section and the duplicate check and references in its prior art. Land it through the owner's
+   route, then resume on the workaround.
 5. **Only when the defect blocks the work in hand and no workaround exists, fix it.** Write a
-   [bug-fix plan](../../conventions/structure/plans/018-bug-fix-plan.md) in the owning repository, researching cause and
+   [bug-fix plan](../../conventions/structure/plans/019-bug-fix-plan.md) in the owning repository, researching cause and
    solution and citing every source. First land the plan alone on the owner's trunk through its route, run the plan
    quality gate, record its verdict, give each open blocking row an owner, then execute it through the owner's delivery,
    regression test first. Once that test and the owner's full release gate pass on the exact revision, release through
    the owner's [Release Cut](../../workflows/maintenance/release-cut.md) without a further prompt, skipping no step, and
    repin every consumer.
-
-Each repin in steps 3 and 5 changes declarative configuration, so `swe-releaser` makes it, per
-[SWE Delegation](../agents/swe-delegation.md).
 
 A workaround is any route to the current work's outcome that does not edit the tool or its pin: another option or
 command, a documented manual step, or a reliably succeeding retry. Record it beside the link or brief for the next
@@ -68,8 +66,3 @@ workaround rather than absorbing the fix, staying reviewable.
 Record the tools covered, each one's owning repository, and the route a plan lands by. Adopting this standard is the
 standing request under which a defect's idea brief, a blocking defect's bug-fix plan, and a merged fix's release once
 its tests pass need no further authorization.
-
-[bug-reports]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/bug-reports.md
-[015-idea-brief-template]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plans/015-idea-brief-template.md

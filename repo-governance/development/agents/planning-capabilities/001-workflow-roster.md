@@ -13,8 +13,8 @@ equivalent local procedure recorded as a deviation.
 
 | Capability       | Canonical workflow                                                                 |
 | ---------------- | ---------------------------------------------------------------------------------- |
-| idea grooming    | [`plan-ideas-grooming`][plan-ideas-grooming]                                       |
-| backlog grooming | [`plan-backlog-grooming`][plan-backlog-grooming]                                   |
+| idea grooming    | [`plan-ideas-grooming`](../../../workflows/plan/plan-ideas-grooming.md)            |
+| backlog grooming | [`plan-backlog-grooming`](../../../workflows/plan/plan-backlog-grooming.md)        |
 | plan creation    | [`plan-planning`](../../../workflows/plan/plan-planning.md)                        |
 | plan execution   | [`plan-execution`](../../../workflows/plan/plan-execution.md)                      |
 | quality review   | [`plan-quality-gate`](../../../workflows/quality/plan-quality-gate.md)             |
@@ -22,8 +22,8 @@ equivalent local procedure recorded as a deviation.
 | cleanup          | [`dev-artifact-clean-up`](../../../workflows/maintenance/dev-artifact-clean-up.md) |
 
 A repository that supports Gherkin acceptance criteria additionally exposes exactly one
-[`gherkin-implementation-review`][gherkin-implementation-review]. One, not several: the review's value is that every
-scenario is walked, and two overlapping reviews each assume the other covered the gap.
+[`gherkin-implementation-review`](../../../workflows/quality/gherkin-implementation-review.md). One, not several: the
+review's value is that every scenario is walked, and two overlapping reviews each assume the other covered the gap.
 
 ## Why These Seven
 
@@ -51,10 +51,3 @@ the failure this roster exists to catch.
 
 Where a repository does diverge, it records which capability, what it does instead, and why — see
 [Skill and Agent Roster](002-skill-and-agent-roster.md) for the same rule applied to capability form.
-
-[plan-ideas-grooming]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/plan/plan-ideas-grooming.md
-[plan-backlog-grooming]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/plan/plan-backlog-grooming.md
-[gherkin-implementation-review]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/quality/gherkin-implementation-review.md

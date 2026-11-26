@@ -9,13 +9,18 @@ when_to_use: >-
 
 # Adoption Workflows
 
-One workflow: Adopt Artifact copies what a user named from the `ose-rules` catalog. The catalog's read-only assessment
-is not adopted here.
+Two workflows, and the boundary between them is the point of the design: one reads and one writes, and nothing crosses
+from the first into the second without a person asking.
 
-| Workflow                            | Writes                                                  |
-| ----------------------------------- | ------------------------------------------------------- |
-| [Adopt Artifact](adopt-artifact.md) | only the artifacts a user named, plus their integration |
+| Workflow                                | Writes                                                  |
+| --------------------------------------- | ------------------------------------------------------- |
+| [Assess Alignment](assess-alignment.md) | nothing                                                 |
+| [Adopt Artifact](adopt-artifact.md)     | only the artifacts a user named, plus their integration |
+
+An assessment that could adopt would make every comparison a negotiation about whether to change something. Keeping the
+read strictly read-only is what makes it safe to run on any repository at any time.
 
 ## Directory Map
 
+- [Assess Alignment](assess-alignment.md)
 - [Adopt Artifact](adopt-artifact.md)

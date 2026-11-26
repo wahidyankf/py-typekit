@@ -18,8 +18,8 @@ It implements [Root Cause Orientation](../../../principles/root-cause-orientatio
 
 ## Modules
 
-1. [Triage and Investigation](#the-rule)
-2. [Pipeline Availability](#never-around-it)
+1. [Triage and Investigation](preexisting-error-resolution/001-triage-and-investigation.md)
+2. [Pipeline Availability](preexisting-error-resolution/002-pipeline-availability.md)
 
 ## The Rule
 

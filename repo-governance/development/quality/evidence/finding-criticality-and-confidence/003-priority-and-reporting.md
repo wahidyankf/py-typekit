@@ -14,14 +14,12 @@ happens first and nothing uncertain is applied quietly.
 
 ## The Priority Matrix
 
-- **`CRITICAL`** — `HIGH` confidence: P0: apply at once; blocks until fixed; `MEDIUM` confidence: P1: urgent human
-  review; `FALSE_POSITIVE`: report; improve the checker urgently
-- **`HIGH`** — `HIGH` confidence: P1: apply after P0, before publication; `MEDIUM` confidence: P2: standard review;
-  `FALSE_POSITIVE`: report; improve the checker soon
-- **`MEDIUM`** — `HIGH` confidence: P2: apply after P1, only with approval; `MEDIUM` confidence: P3: optional review;
-  `FALSE_POSITIVE`: report; note a checker improvement
-- **`LOW`** — `HIGH` confidence: P3: batch with other fixes when the owner chooses; `MEDIUM` confidence: P4: suggestion
-  only; `FALSE_POSITIVE`: report for information
+| Criticality | `HIGH` confidence                                 | `MEDIUM` confidence     | `FALSE_POSITIVE`                     |
+| ----------- | ------------------------------------------------- | ----------------------- | ------------------------------------ |
+| `CRITICAL`  | P0: apply at once; blocks until fixed             | P1: urgent human review | report; improve the checker urgently |
+| `HIGH`      | P1: apply after P0, before publication            | P2: standard review     | report; improve the checker soon     |
+| `MEDIUM`    | P2: apply after P1, only with approval            | P3: optional review     | report; note a checker improvement   |
+| `LOW`       | P3: batch with other fixes when the owner chooses | P4: suggestion only     | report for information               |
 
 ## Execution Order
 

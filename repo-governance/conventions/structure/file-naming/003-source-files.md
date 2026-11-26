@@ -44,4 +44,4 @@ removed without the other.
 
 ## Enforcement
 
-An adopter using either language enforces these in its own pre-commit or CI source-name check.
+An adopter using either language enforces these in its own pull-request source-name check.

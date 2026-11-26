@@ -63,7 +63,7 @@ A `needs-decision` row stays open, and an open one at the end of the run makes t
 A gate judges only non-deterministic properties: clarity, completeness, fitness, coherence, risk. A property that a
 deterministic tool or a test already proves is never reported as a finding, however the gate notices it. Each gate file
 lists those properties in its `## Deterministic Boundary` table, with the tool or test that owns each, per
-[Deterministic and Judgement Validation][deterministic-and-judgement-validation].
+[Deterministic and Judgement Validation](../../quality/checks/deterministic-and-judgement-validation.md).
 
 Tooling plays two other parts instead:
 
@@ -76,14 +76,9 @@ Tooling is never a source of findings, and only tooling can refuse a commit, a m
 ## Red Entry: The Root-Cause Pre-Step
 
 A red entry run starts a separate pre-step before cycle 1, outside the cycle budget. It diagnoses the failure, repairs
-its cause, and runs the entry check again, for at most 3 attempts. It follows [Preexisting Error
-Resolution][preexisting-error-resolution] for a failure that predates the run, and
-[Upstream Tool Defects](../upstream-tool-defects.md) for a defect in a pinned tool.
+its cause, and runs the entry check again, for at most 3 attempts. It follows
+[Preexisting Error Resolution](../../quality/evidence/preexisting-error-resolution.md) for a failure that predates the
+run, and [Upstream Tool Defects](../upstream-tool-defects.md) for a defect in a pinned tool.
 
 Silencing the check, skipping it, or narrowing its scope is not a repair. Still red after the third attempt, the run
 ends `BLOCKED` (tooling) with the diagnosis, and no audit starts.
-
-[deterministic-and-judgement-validation]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/checks/deterministic-and-judgement-validation.md
-[preexisting-error-resolution]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/evidence/preexisting-error-resolution.md

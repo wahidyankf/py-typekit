@@ -17,13 +17,15 @@ Moved verbatim from [swe-architect](../../../../agents/swe-architect.md), which 
    or does, as [Developing Applications](../../../../.agents/skills/developing-applications/SKILL.md) teaches.
 2. Name the assets, trust boundaries, and entry points the design creates or changes, and the threats each choice opens
    or closes, as [Modeling Threats](../../../../.agents/skills/modeling-threats/SKILL.md) teaches.
-3. Where the design changes a stored schema or a migration, load [Evolving Database Schemas][evolving-database-schemas]
-   on demand and state the expand, migrate, verify, and contract steps.
+3. Where the design changes a stored schema or a migration, load
+   [Evolving Database Schemas](../../../../.agents/skills/evolving-database-schemas/SKILL.md) on demand and state the
+   expand, migrate, verify, and contract steps.
 4. Return the decisions, the boundaries, and the deterministic tests the work must add: each a failing test, a lint or
    type rule, an end-to-end assertion, or a threshold a command checks. A design whose success no command can check is
    not finished.
-5. Write one decision record when the choice meets the test in [Architecture Decision
-   Records][003-architecture-decision-records], at the location below, with the threat notes beside it.
+5. Write one decision record when the choice meets the test in
+   [Architecture Decision Records](../../../conventions/writing/repository-documentation-files/003-architecture-decision-records.md),
+   at the location below, with the threat notes beside it.
 
 ## Lens
 
@@ -40,8 +42,3 @@ a foreseeable change costlier. It reads the brief and the linked plan before the
 [Producing Review Findings](../../../../.agents/skills/producing-review-findings/SKILL.md), gives each finding what
 [Finding Requirements](../review-disciplines/003-finding-requirements.md) lists, and returns them to the coordinator. In
 this mode it writes nothing.
-
-[evolving-database-schemas]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/.agents/skills/evolving-database-schemas/SKILL.md
-[003-architecture-decision-records]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/repository-documentation-files/003-architecture-decision-records.md

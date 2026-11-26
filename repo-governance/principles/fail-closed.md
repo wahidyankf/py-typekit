@@ -24,17 +24,14 @@ refusal. Silence is never consent.
 
 ## Where It Is Already Load-Bearing
 
-- **[Public Outbound Safety](../conventions/security/public-outbound-safety.md)**: a scan that failed to run never
-  counts as a pass
-- **[Inputs and Exit Classes][001-inputs-and-exits]**: exits `2` and `3` are never reported as a clean run
-- **[Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md)**: an unknown
-  top-level key fails rather than being ignored
-- **[Surfaces and Mutation](../conventions/structure/repository-configuration/003-surfaces-and-mutation.md)**: a gate
-  declaring no surface fails rather than being silently skipped
-- **[Governance Categories](../conventions/structure/repository-configuration/004-governance-categories.md)**: an
-  undeclared category fails rather than being inferred from a directory
-- **[Harness Adapters](../development/agents/harness-adapters.md)**: a capability with no harness equivalent is a hard
-  failure
+| Applied in                                                                                              | As                                                                       |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [Public Outbound Safety](../conventions/security/public-outbound-safety.md)                             | a scan that failed to run never counts as a pass                         |
+| [Inputs and Exit Classes](../conventions/structure/plan-validator-contract/001-inputs-and-exits.md)     | exits `2` and `3` are never reported as a clean run                      |
+| [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md)           | an unknown top-level key fails rather than being ignored                 |
+| [Surfaces and Mutation](../conventions/structure/repository-configuration/003-surfaces-and-mutation.md) | a gate declaring no surface fails rather than being silently skipped     |
+| [Governance Categories](../conventions/structure/repository-configuration/004-governance-categories.md) | an undeclared category fails rather than being inferred from a directory |
+| [Harness Adapters](../development/agents/harness-adapters.md)                                           | a capability with no harness equivalent is a hard failure                |
 
 Six applications, one rule. That count is the argument for stating it here.
 
@@ -59,6 +56,3 @@ when it cannot see is worthless.
 Where the noise is genuinely wrong, the fix is to narrow the rule in a reviewed change. It is never to add a bypass —
 see [Public Outbound Safety](../conventions/security/public-outbound-safety.md), which says the same thing about the
 same temptation.
-
-[001-inputs-and-exits]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-validator-contract/001-inputs-and-exits.md

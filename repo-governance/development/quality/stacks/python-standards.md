@@ -83,20 +83,12 @@ and [Public Contract](../architecture/public-contract.md).
 
 ## Adopter Decisions
 
-- **boundary validation**
-  - Option: standard-library dataclasses and checks
-  - Gains: no dependency
-  - Costs: hand-written validation and serialization
-  - Option: a library; example: Pydantic
-  - Gains: declared rules, parsing, serialization
-  - Costs: a dependency, per [Dependency Selection](../code/dependency-selection.md)
-- **expected failures**
-  - Option: exceptions
-  - Gains: the standard library's idiom
-  - Costs: signatures hide what can fail
-  - Option: returned result values
-  - Gains: the checker forces every caller to handle
-  - Costs: every raising library call needs wrapping
+| Decision            | Option                                  | Gains                                     | Costs                                                                     |
+| ------------------- | --------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------- |
+| boundary validation | standard-library dataclasses and checks | no dependency                             | hand-written validation and serialization                                 |
+|                     | a library; example: Pydantic            | declared rules, parsing, serialization    | a dependency, per [Dependency Selection](../code/dependency-selection.md) |
+| expected failures   | exceptions                              | the standard library's idiom              | signatures hide what can fail                                             |
+|                     | returned result values                  | the checker forces every caller to handle | every raising library call needs wrapping                                 |
 
 Record each choice in the repository adapter [Stack Packs](../../../conventions/structure/stack-packs.md) defines.
 

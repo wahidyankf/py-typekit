@@ -5,7 +5,7 @@ py-typekit is a zero-dependency, strictly typed Python 3.14 library of functiona
 [related repositories](docs/README.md#project-context).
 
 For English writing, including replies, use clear, simple, and natural English that is easy for non-native speakers to
-understand. Follow [Writing Style](repo-governance/conventions/writing-style.md).
+understand. Follow [Content Quality](repo-governance/conventions/writing/content-quality.md).
 
 ## Consumption
 
@@ -70,9 +70,8 @@ branch and fast-forwards `main`.
 ## Documents
 
 - Every Markdown line is at most 120 columns, and every conceptual diagram is an accessible Mermaid block, per
-  [Markdown Line Length](repo-governance/conventions/markdown-line-length.md) and
-  [Markdown Visualizations](repo-governance/conventions/markdown-visualizations.md): no ASCII-art diagram, image, or
-  inline HTML.
+  [Markdown Prose Wrap](repo-governance/conventions/writing/markdown-prose-wrap.md) and
+  [Diagrams](repo-governance/conventions/writing/diagrams.md): no ASCII-art diagram, image, or inline HTML.
 - `AGENTS.md`, `CLAUDE.md`, and each `repo-governance/**/*.md` and `.agents/**/*.md` file hold 750 words at most.
 - Governed documents declare `description` and `when_to_use` front matter, per
   [Artifact Metadata](repo-governance/conventions/structure/artifact-metadata.md).

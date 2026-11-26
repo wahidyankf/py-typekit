@@ -23,13 +23,12 @@ the repository, long after the line that carried it was corrected.
 
 ## What Counts
 
-- **an absolute path under a home directory or a tool's install prefix**: a repository-relative path, or one derived
-  from the environment at runtime
-- **a username, inside a path or as a literal identity in configuration**: an environment variable or a documented
-  placeholder
-- **a local network address or a machine's hostname**: configuration supplied at runtime
-- **a connection string, key, token, or tool path that differs between machines and automation**: an environment
-  variable declared in the committed template
+| Category                                                                                   | Use instead                                                                |
+| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| an absolute path under a home directory or a tool's install prefix                         | a repository-relative path, or one derived from the environment at runtime |
+| a username, inside a path or as a literal identity in configuration                        | an environment variable or a documented placeholder                        |
+| a local network address or a machine's hostname                                            | configuration supplied at runtime                                          |
+| a connection string, key, token, or tool path that differs between machines and automation | an environment variable declared in the committed template                 |
 
 Loopback addresses such as `127.0.0.1` and `localhost` may appear only in test configuration that targets a locally
 running service, never beside a literal credential.
@@ -62,14 +61,14 @@ synthetic value must also be unmistakably synthetic, as [Public Outbound Safety]
 ## Machine-Dependent Values Belong in Configuration
 
 Where a program needs a value that differs between machines, it reads an environment variable declared in the template
-that [Environment Variable Contract][environment-variable-contract] defines. The real file stays ignored.
+that [Environment Variable Contract](environment-variable-contract.md) defines. The real file stays ignored.
 
 ## Before Committing
 
 Review the staged change for every category in What Counts, including every loopback address outside the
 test-configuration allowance. Source, tests, fixtures, configuration, scripts, workflow definitions, generated files,
 and documentation are all in scope; ignored files are not, because they are never committed. This review is required; a
-pre-commit scan over staged additions is an enforcement point an adopter may add.
+scan over the change in the pull-request gate is an enforcement point an adopter may add.
 
 ## If One Lands
 
@@ -80,6 +79,3 @@ pre-commit scan over staged additions is an enforcement point an adopter may add
 
 A path or username that grants nothing needs only the corrective commit — unless it was already published, where
 [Public Outbound Safety](public-outbound-safety.md) applies.
-
-[environment-variable-contract]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/security/environment-variable-contract.md

@@ -55,12 +55,10 @@ unit layer proves it. It moves out of the corpus into a plain test beside the co
 
 How exemptions are recorded is an adopter decision:
 
-- **a comment and tag on the scenario**
-  - Gains: the reason sits beside the scenario it excuses
-  - Costs: the corpus carries test-layer vocabulary
-- **a reviewed inventory file**
-  - Gains: the corpus stays a pure statement of behaviour
-  - Costs: the inventory can drift from the scenarios it names
+| Option                            | Gains                                          | Costs                                               |
+| --------------------------------- | ---------------------------------------------- | --------------------------------------------------- |
+| a comment and tag on the scenario | the reason sits beside the scenario it excuses | the corpus carries test-layer vocabulary            |
+| a reviewed inventory file         | the corpus stays a pure statement of behaviour | the inventory can drift from the scenarios it names |
 
 In the tag form, which an adopter of the
 [Test and Gate Contract](../../checks/test-and-gate-contract/005-behaviour-corpus.md) takes, a comment directly above

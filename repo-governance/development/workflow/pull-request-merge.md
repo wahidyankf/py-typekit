@@ -22,10 +22,10 @@ Each holds at merge time:
 
 1. **Exact-head gates.** Each required check is green for the pull request's current head commit against its current
    base. A run for an earlier head or another base, or superseded by a later push, is stale and authorizes nothing; see
-   [Quality Gate Results][001-quality-gate-results].
-2. **A current branch.** The branch contains the latest target, brought forward per [Integration
-   Hygiene][integration-hygiene], and the hosting service reports no conflict. A conflict in a generated file is
-   resolved in the generator's source, then regenerated and checked for drift, never hand-edited.
+   [Quality Gate Results](../quality/manual-verification/001-quality-gate-results.md).
+2. **A current branch.** The branch contains the latest target, brought forward per
+   [Integration Hygiene](integration-hygiene.md), and the hosting service reports no conflict. A conflict in a generated
+   file is resolved in the generator's source, then regenerated and checked for drift, never hand-edited.
 3. **Closed conversations.** Every review conversation is resolved or dismissed by the user. Review may be optional; the
    conversations it opens still bind.
 4. **Surface gates.** Each deterministic check the changed reachable behaviour requires, whether a running interface,
@@ -42,12 +42,8 @@ Each holds at merge time:
 Preconditions are evaluated per merge; meeting them once says nothing about the next pull request. Before merging,
 present each precondition's status and its evidence.
 
-The repository records its landing method. A rebase keeps the branch's [thematic commits][thematic-commits], a squash
+The repository records its landing method. A rebase keeps the branch's [thematic commits](thematic-commits.md), a squash
 collapses them, and a merge commit is unavailable where [Integration Path](integration-path.md) keeps history linear.
-
-**Recorded here: squash.** The repository ruleset allows only squash merges, so each pull request lands as one commit on
-the linear trunk. Merge with `gh pr merge <n> --squash --match-head-commit <head>`, where `<head>` is the exact head the
-gates passed on; a rebase merge is refused.
 
 ## Landing Identity
 
@@ -71,20 +67,10 @@ retriggers the checks, the following run counts.
 
 ## Adopter Decision: Merge Authority
 
-- **preconditions** — The merge happens: an agent merges once all preconditions hold, unless a plan step names a human
-  gate; Trade-off: fast and consistent, but any gate gap becomes a merge gap, so test depth carries weight
-- **explicit approval** — The merge happens: a person approves each merge after the preconditions hold, for that one
-  pull request; Trade-off: a human backstop for gate misses, but merges wait, and approval can become a signature
-  without evidence
+| Authority         | The merge happens                                                                    | Trade-off                                                                                               |
+| ----------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
+| preconditions     | an agent merges once all preconditions hold, unless a plan step names a human gate   | fast and consistent, but any gate gap becomes a merge gap, so test depth carries weight                 |
+| explicit approval | a person approves each merge after the preconditions hold, for that one pull request | a human backstop for gate misses, but merges wait, and approval can become a signature without evidence |
 
 The repository records its choice. Either way the preconditions are the same and only the actor differs; the commits and
-pushes that built the branch remain under [Commit Authorization][commit-authorization].
-
-[001-quality-gate-results]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/001-quality-gate-results.md
-[integration-hygiene]:
-  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/development/workflow/integration-hygiene.md
-[thematic-commits]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/thematic-commits.md
-[commit-authorization]:
-  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/development/workflow/commit-authorization.md
+pushes that built the branch remain under [Commit Authorization](commit-authorization.md).

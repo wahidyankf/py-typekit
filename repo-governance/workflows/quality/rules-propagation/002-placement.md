@@ -30,7 +30,8 @@ Admit a candidate only when both conditions hold, judged in this order:
 
 Room never rescues a rule that fails necessity; otherwise the root file fills with rules a link would have delivered. A
 vendor-neutral rule goes in the canonical root file, never in a harness-specific one, where it would bind one harness
-while looking landed. Vendor-specific text follows [Vendor-Neutral Governance][vendor-neutral-governance].
+while looking landed. Vendor-specific text follows
+[Vendor-Neutral Governance](../../../conventions/writing/vendor-neutral-governance.md).
 
 ## Otherwise, the Owning Document
 
@@ -43,24 +44,19 @@ rule nobody finds.
 Ceilings are fixed, per [Document Word Budget](../../../conventions/structure/document-word-budget.md): no raise,
 exemption, or ignore entry pays for a placement.
 
-When an admitted rule finds no room, disclose progressively first: keep the entrypoint — the obligation and its reason —
-where its audience looks, and move scope, boundaries, observations, and disposition into numbered modules under a
-sibling directory named after the entrypoint.
-
-Shortening is allowed in one direction only: a tighter sentence keeping the whole obligation, audience, scope,
-exception, and condition. An addition a surface cannot hold must split, never compress meaning to fit.
-
-Relocation of the weakest entry is the fallback, only for subjects that cannot split: rank the file's current entries by
-the same necessity test and relocate the weakest, never the oldest or the last. A weak entry points to a fuller
-statement elsewhere, describes rather than binds, or has an owning document a reader would try first.
+When an admitted rule finds no room, disclose progressively first: keep the entrypoint (the obligations with their
+reason) where its audience looks, and move scope, boundaries, observations, or disposition into numbered modules under a
+sibling directory named after the entrypoint, indexed like any other document. Shortening a rule is allowed and often
+good, but it runs one direction only: a tighter sentence that keeps the whole obligation, audience, scope, exception,
+and condition. When the placement must add meaning the surface cannot hold, do not compress the meaning to fit —
+disclose it. Only a subject that cannot split falls back to relocation: rank the file's current entries by the same
+necessity test and relocate the weakest, never the oldest or the last. A weak entry points to a fuller statement
+elsewhere, describes rather than binds, or has an owning document a reader would try first.
 
 Relocation moves the substance to its owner and leaves at most a link. Deleting an entry outright is allowed only when
 it was already superseded, and it is then recorded as a supersession. Compressing an entry in place counts only when the
-shorter form still states the whole obligation, audience, scope, exception, and condition.
+shorter form still states the whole obligation.
 
-The disclosure, split, or relocation lands in the same change as the admission, because a deferred one leaves the file
-over its ceiling. Measure the result rather than predicting it, including any harness file that shares the root file's
-ceiling, and record what disclosed, split, or moved, where it went, and which admission it paid for.
-
-[vendor-neutral-governance]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/vendor-neutral-governance.md
+The relocation lands in the same change as the admission, because a deferred one leaves the file over its ceiling.
+Measure the result rather than predicting it, including any harness file that shares the root file's ceiling, and record
+what moved, where it went, and which admission it paid for.

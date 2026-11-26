@@ -19,13 +19,14 @@ the option and its trade-off, and must stop there.
 ## Sequence
 
 1. **Resolve the source before reading or editing anything.** A version, tag, or moving branch name is not a source. If
-   the request names a commit, require a full SHA reachable from the canonical remote's published `main`. Otherwise:
+   the request names a commit, require a full SHA reachable from the canonical remote's published `main`, and keep that
+   commit as the source even after published `main` advances. Otherwise:
 
    1. resolve the canonical remote's default branch and require it to be `main`;
    2. resolve its published head to a full 40-character commit SHA;
    3. verify that the commit and every named artifact can be read;
    4. show the resolved source; and
-   5. stop if any identity, reachability, or content check is ambiguous or unverifiable.
+   5. stop, and report why, if any identity, reachability, or content check is ambiguous or unverifiable.
 
 2. **Read the target repository's instructions.** Adoption is intent-first: the artifact is mapped into local ownership,
    not pasted into place.

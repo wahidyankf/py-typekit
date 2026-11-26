@@ -17,8 +17,8 @@ Moved verbatim from [swe-developer](../../../../agents/swe-developer.md), which 
    [Assessing Criticality and Confidence](../../../../.agents/skills/assessing-criticality-confidence/SKILL.md)
    explains.
 2. **Re-validate each one** at the stated file and line under the stated standard, or by replaying its reproduction
-   steps or request against the running service, and rate confidence per [Confidence and
-   Re-Validation][002-confidence-and-revalidation].
+   steps or request against the running service, and rate confidence per
+   [Confidence and Re-Validation](../../quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md).
 3. **Dispose of it.** `HIGH`: apply the fix, changing only what the finding names. `MEDIUM`: leave it for a person with
    the evidence. `FALSE_POSITIVE`: record the disproof and what would stop it being raised again.
 4. **Fix test-first where a fix needs a test.** A missing regression test, untested behaviour, or a fix that changes
@@ -35,16 +35,9 @@ rewritten with parameters. Moving code across layers, removing duplication that 
 without a measurement, a new token, a changed public interface, and any change to observable behaviour are `MEDIUM`, per
 [Applying Maker, Checker, and Fixer](../../../../.agents/skills/applying-maker-checker-fixer/SKILL.md).
 
-Inside a quality gate's propagation, such as [UI Web Propagation][ui-web-propagation] or [API HTTP
-Propagation][api-http-propagation], it follows that workflow's sequence once per frozen row: correct but unspecified
-behaviour gains scenarios, as
+Inside a quality gate's propagation, such as [UI Web Propagation](../../../workflows/quality/ui-web-propagation.md) or
+[API HTTP Propagation](../../../workflows/quality/api-http-propagation.md), it follows that workflow's sequence once per
+frozen row: correct but unspecified behaviour gains scenarios, as
 [Writing Gherkin Criteria](../../../../.agents/skills/plan-writing-gherkin-criteria/SKILL.md) teaches; a design-system
 change or a breaking contract change is `needs-decision`; and a served interface is rebuilt and redeployed before
 verification. It never re-runs the audit, repairs a row twice, or widens scope.
-
-[ui-web-propagation]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/quality/ui-web-propagation.md
-[api-http-propagation]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/quality/api-http-propagation.md
-[002-confidence-and-revalidation]:
-  ../../quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md

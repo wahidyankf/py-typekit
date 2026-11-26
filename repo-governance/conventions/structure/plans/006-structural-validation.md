@@ -44,9 +44,9 @@ judgement call encoded as a rule will be enforced in cases nobody considered.
 
 ## Determinism
 
-The exact diagnostic format, sort order, and exit classes belong to the [Plan Validator
-Contract][plan-validator-contract]; this section states the properties they exist to provide rather than restating the
-contract.
+The exact diagnostic format, sort order, and exit classes belong to the
+[Plan Validator Contract](../plan-validator-contract.md); this section states the properties they exist to provide
+rather than restating the contract.
 
 The same input produces the same diagnostics and the same exit status, every time and on every machine. Concretely:
 
@@ -61,6 +61,3 @@ The same input produces the same diagnostics and the same exit status, every tim
 Where more than one implementation of this validator exists, they accept and reject the same inputs with the same rule
 identifiers, the same messages, and the same exit classes. Two validators that disagree are worse than one, because a
 repository will believe whichever it happened to run.
-
-[plan-validator-contract]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-validator-contract.md

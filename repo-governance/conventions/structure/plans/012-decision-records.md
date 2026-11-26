@@ -10,8 +10,8 @@ when_to_use: >-
 
 A plan records the route from evidence to delivery completely enough that a reader with no context — new to the
 repository, its stack, and the conversation that produced the plan — can follow why the delivery is shaped as it is
-without asking anyone. [Documentation First][documentation-first] says a decision records its context, choice, rejected
-alternatives, and consequences; this module fixes what that means inside a plan.
+without asking anyone. [Documentation First](../../../principles/documentation-first.md) says a decision records its
+context, choice, rejected alternatives, and consequences; this module fixes what that means inside a plan.
 
 ## What Counts as Material
 
@@ -68,6 +68,3 @@ could meet the goal, why one was selected, the operational consequence, and the 
 reopened. "The new store is best" records nothing a reviewer can disagree with.
 
 Plan quality review judges these records. No structural validator can tell a viable alternative from a straw one.
-
-[documentation-first]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/documentation-first.md

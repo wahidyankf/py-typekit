@@ -29,8 +29,10 @@ are recorded, and the other rules in the batch continue.
 ## Sufficiency Before Change
 
 Search three ways: by the subject's term, by the obligation's verb, and by the surfaces the rule would touch, since a
-rule restated in other words escapes any single search. Read a list item whole before matching it; a line-by-line search
-misses a rule that wraps.
+rule restated in other words escapes any single search. The surfaces include skill and agent definitions with their
+reference examples, which an agent loads verbatim; an example that restates the old rule without the new rule's
+exception is amended to cite the exception, never kept as a stricter variant. Read a list item whole before matching it;
+a line-by-line search misses a rule that wraps.
 
 Compare meaning, strength, audience, scope, boundaries, exceptions, and discoverability, not wording or order. When the
 effective rules satisfy every one, the rule ends with no change: record the canonical source and the evidence, and write

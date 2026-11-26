@@ -27,11 +27,12 @@ approach is sound, which is the question no tool answers.
 
 ## When to Automate
 
-- **the task recurs**: it happens once or twice
-- **the rule can be written down completely**: it needs judgement, taste, or knowledge of intent
-- **an omission causes real harm**: the rule is still changing faster than automation can keep
-- **building and keeping it costs less than the manual work and its errors**: the automation would be more complex than
-  the task
+| Automate when                                                          | Keep it manual when                                        |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------- |
+| the task recurs                                                        | it happens once or twice                                   |
+| the rule can be written down completely                                | it needs judgement, taste, or knowledge of intent          |
+| an omission causes real harm                                           | the rule is still changing faster than automation can keep |
+| building and keeping it costs less than the manual work and its errors | the automation would be more complex than the task         |
 
 The comparison includes maintenance. Automation is code, and code nobody keeps current becomes a check enforcing last
 year's rule with full confidence.
@@ -47,16 +48,14 @@ does not establish, so nobody mistakes a green run for a finished review.
 
 ## Where It Is Already Load-Bearing
 
-- **[Structural Validation](../conventions/structure/plans/006-structural-validation.md)**: everything mechanically
-  checkable is checked mechanically
-- **[Exclusions][004-exclusions]**: what needs judgement is deliberately kept out of the validator
-- **[Harness Adapters](../development/agents/harness-adapters.md)**: adapters are generated and verified by
-  regeneration, never hand-kept
-- **[Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md)**: automation normalizes
-  syntax and never authors a description
-- **[Public Outbound Safety](../conventions/security/public-outbound-safety.md)**: the screen runs first on every
-  surface, not when someone remembers
-- **[Verification Layers][002-verification-layers]**: green automation never closes a user-facing change on its own
+| Applied in                                                                                   | As                                                                   |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [Structural Validation](../conventions/structure/plans/006-structural-validation.md)         | everything mechanically checkable is checked mechanically            |
+| [Exclusions](../conventions/structure/plan-validator-contract/004-exclusions.md)             | what needs judgement is deliberately kept out of the validator       |
+| [Harness Adapters](../development/agents/harness-adapters.md)                                | adapters are generated and verified by regeneration, never hand-kept |
+| [Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md)   | automation normalizes syntax and never authors a description         |
+| [Public Outbound Safety](../conventions/security/public-outbound-safety.md)                  | the screen runs first on every surface, not when someone remembers   |
+| [Verification Layers](../development/quality/manual-verification/002-verification-layers.md) | green automation never closes a user-facing change on its own        |
 
 ## Early, Fast, and Legible
 
@@ -75,8 +74,3 @@ the thing they changed.
 An instruction to run a check is not automation; it is a manual step with better formatting. An adopter enforces an
 automated rule in its own hook, gate, or continuous integration, where skipping it takes a deliberate act rather than a
 lapse of memory.
-
-[004-exclusions]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-validator-contract/004-exclusions.md
-[002-verification-layers]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/002-verification-layers.md

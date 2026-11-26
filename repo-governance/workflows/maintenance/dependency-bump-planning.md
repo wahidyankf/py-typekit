@@ -28,11 +28,11 @@ The working tree is clean, and the repository records the eligibility rule its d
    pipeline action references, and pipeline-pinned tool versions. Lockfiles and workspace-internal references follow
    their manifests and stay out. Record source, ecosystem, package, and current version.
 3. **Research candidates by ecosystem.** One batch per ecosystem, in parallel since none reads another's result, handed
-   over per [Web Research Delegation][web-research-delegation]. Per package: latest version and date; any
-   long-term-support line; the newest version the eligibility rule admits; advisories on current and proposed versions
-   from multiple authoritative sources; whether an actively exploited vulnerability affects the current pin, escalating
-   it regardless of eligibility; and whether the proposed version is withdrawn, deprecated, or known broken, with the
-   newest admitted version that is not.
+   over per [Web Research Delegation](../../development/agents/web-research-delegation.md). Per package: latest version
+   and date; any long-term-support line; the newest version the eligibility rule admits; advisories on current and
+   proposed versions from multiple authoritative sources; whether an actively exploited vulnerability affects the
+   current pin, escalating it regardless of eligibility; and whether the proposed version is withdrawn, deprecated, or
+   known broken, with the newest admitted version that is not.
 4. **Write the clearance report.** Tabulate bumps (package, current, proposed, eligibility path, advisory status,
    clearance), escalations and holds first, written per
    [Temporary Files](../../conventions/structure/temporary-files.md).
@@ -49,7 +49,8 @@ The working tree is clean, and the repository records the eligibility rule its d
      [Dependency Selection](../../development/quality/code/dependency-selection.md);
    - no actively exploited vulnerability remains pinned;
    - every waiver or hold is recorded where the repository records exceptions;
-   - a changed license has a [Dependency-License Decision][002-dependency-license-decisions]; and
+   - a changed license has a
+     [Dependency-License Decision](../../conventions/structure/licensing/002-dependency-license-decisions.md); and
    - every affected project's gates pass.
 7. **Hand back.** Report the plan path, report path, and verdict, noting the plan snapshots the recorded date: if
    execution starts much later, eligibility is re-researched first.
@@ -81,18 +82,13 @@ person approves the exact set first and the change runs under a plan's checklist
 
 ## What an Adopter Decides
 
-- **eligibility rule**: A soak window admits only versions some days old, preferring long-term-support lines: problems
-  surface first, fixes arrive later. Latest stable adopts fixes at once, unproven.
-- **advisory sources**: More sources catch what one misses at more research per package; one source is quick but
-  inherits its gaps.
+| Decision         | Options and trade-off                                                                                                                                                           |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| eligibility rule | A soak window admits only versions some days old, preferring long-term-support lines: problems surface first, fixes arrive later. Latest stable adopts fixes at once, unproven. |
+| advisory sources | More sources catch what one misses at more research per package; one source is quick but inherits its gaps.                                                                     |
 
 ## Principles
 
 This workflow implements [Explicit Over Implicit](../../principles/explicit-over-implicit.md): every proposed version
 carries its eligibility path and clearance; and [Reproducibility](../../principles/reproducibility.md): the plan pins
 exact versions and moves each lockfile with its manifest.
-
-[web-research-delegation]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/agents/web-research-delegation.md
-[002-dependency-license-decisions]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/licensing/002-dependency-license-decisions.md

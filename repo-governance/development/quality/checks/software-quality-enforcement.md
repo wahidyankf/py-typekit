@@ -51,7 +51,7 @@ Automation proves a final state, not the order that produced it, so an ordering 
 result.
 
 Applicable entries, results, and evidence still owed survive compaction and handoff under
-[Governance Continuity](../../../conventions/structure/temporary-files.md); a resumed reader reloads the map first.
+[Governance Continuity](../../../principles/governance-continuity.md); a resumed reader reloads the map first.
 
 ## No Superficial Satisfaction
 

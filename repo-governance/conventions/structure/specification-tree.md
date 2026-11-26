@@ -55,7 +55,8 @@ specs/apps/<product>/
   no architecture.
 
 A library corpus has the same shape without the product level; its `behaviours/` states what a caller of its public API
-observes, per [Behaviour-Driven Development][bdd].
+observes, per
+[Behaviour-Driven Development](../../development/quality/testing/behaviour-driven-development.md#every-owner-of-runtime-code-owns-a-corpus).
 
 ## Architecture Is As-Built
 
@@ -89,5 +90,3 @@ This convention implements [One Source Per Fact](../../principles/one-source-per
 each architecture has exactly one corpus that owns it, and
 [Evidence Over Assertion](../../principles/evidence-over-assertion.md), because a corpus states behaviour as
 specifications, executable where its form allows, rather than prose claims about behaviour.
-
-[bdd]: ../../development/quality/testing/behaviour-driven-development.md#every-owner-of-runtime-code-owns-a-corpus

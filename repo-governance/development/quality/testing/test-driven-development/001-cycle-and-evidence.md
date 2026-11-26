@@ -17,9 +17,10 @@ behaviour they describe change together.
 
 ## A Red Shows the Behaviour Is Missing
 
-A red counts only when the new test fails on an assertion about the missing behaviour while every previously passing
-test still passes. A compile error, a missing import or binding, a wrong fixture, or broken configuration or
-infrastructure produces not a red but a broken test, and nothing built on it says anything about the change.
+A red counts only when the new test fails on an assertion about the missing behaviour while selected previously passing
+boundary cases still pass and no other checks are known to fail. A compile error, a missing import or binding, a wrong
+fixture, or broken configuration or infrastructure produces not a red but a broken test, and nothing built on it says
+anything about the change.
 
 A new test that passes before the code exists checks nothing. Repair the test until it fails for its stated reason, and
 never move to green from a vacuous pass.
@@ -38,31 +39,28 @@ with its own red.
 
 ## Small Cycles
 
-Select and record local runs under [Focused Runs and Regression Gates](005-focused-runs-and-regression-gates.md).
-
 Split a feature or a fix into cycles that each cover one behaviour: the simplest case first, then each edge case, error,
 and boundary in turn. A cycle covering several behaviours hides which one a failure belongs to. A long run of cycles is
-normal for real work, not a reason to merge them. A cycle outlasting a few minutes is split.
+normal for real work, not a reason to merge them, except for one delivery batch under
+[Batched cycles in planned delivery](001-cycle-and-evidence/002-batched-cycles-in-planned-delivery.md). A cycle
+outlasting a few minutes is split.
 
-```mermaid
-flowchart LR
-    accTitle: One cycle per behaviour
-    accDescr: Red-green-refactor per behaviour.
-    R1["red: empty input rejected"]:::redPhase --> G["green"]:::greenPhase --> F["refactor"]:::refactorPhase
-    R2["red: input missing<br/>its separator fails"]:::redPhase --> G
-    R3["red: well-formed input accepted"]:::redPhase --> G
-
-    classDef redPhase fill:#DE8F05,stroke:#000000,color:#000000,stroke-width:2px
-    classDef greenPhase fill:#029E73,stroke:#000000,color:#000000,stroke-width:2px
-    classDef refactorPhase fill:#0173B2,stroke:#000000,color:#FFFFFF,stroke-width:2px
-    classDef default fill:#FFFFFF,stroke:#000000,color:#000000
+```text
+red: empty input is rejected          -> green -> refactor
+red: input missing its separator fails -> green -> refactor
+red: well-formed input is accepted    -> green -> refactor
 ```
 
-After the final cycle, run the fast gate from [Test Boundaries and Gates](../test-boundaries-and-gates.md) to catch
-regressions elsewhere. A deliberately failing test is evidence in progress during red, never a finished state.
+Run full regression at the phase and pre-pull-request boundaries defined below. A deliberately failing test is evidence
+in progress during red, never a finished state.
 
 A behaviour checked by hand follows the same order: write the expected observations, observe them fail, change the code,
 and repeat the whole check. Automate it once that is cheap.
+
+## Focused Runs and Regression Gates
+
+[Focused Runs and Regression Gates](001-cycle-and-evidence/001-focused-runs-and-regression-gates.md) owns cycle
+selection, executed-case proof, and full phase/pre-pull-request regression.
 
 ## A New Harness Needs Its Own Red
 
@@ -72,7 +70,7 @@ Prove it in reverse. Break the behaviour or remove the fix, run the check, watch
 run as the evidence, since a broken harness also produces the passing one.
 
 The same demonstration proves a change to a script or gate; a check staying green under the mutation does not cover the
-change. [Deletion With Proof][deletion-with-proof] asks for the same demonstration before a removal.
+change. [Deletion With Proof](../../deletion-with-proof.md) asks for the same demonstration before a removal.
 
 ## What Each Step Records
 
@@ -86,10 +84,5 @@ change. [Deletion With Proof][deletion-with-proof] asks for the same demonstrati
 suite's final state, not its build order, so only these records show the test failed before the change.
 
 How each step becomes a task item is owned by [List Lifecycle](../../../agents/task-tracking/001-list-lifecycle.md). How
-a plan's delivery item carries a cycle is an adopter choice under [Phase Boundaries and Delivery
-Choices][011-phase-boundaries-and-delivery-choices].
-
-[deletion-with-proof]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/deletion-with-proof.md
-[011-phase-boundaries-and-delivery-choices]:
-  ../../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md
+a plan's delivery item carries a cycle is an adopter choice under
+[Phase Boundaries and Delivery Choices](../../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md).

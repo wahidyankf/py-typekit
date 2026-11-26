@@ -56,20 +56,21 @@ review.
 A non-exempt row follows its scenario end to end:
 
 - **Given** sets up the precondition with a boundary-valid fixture or injected double, on synthetic data kept apart per
-  [Test Data Isolation](../../development/quality/testing/test-doubles.md).
+  [Test Data Isolation](../../development/quality/testing/test-data-isolation.md).
 - **When** calls real production code or the boundary the scenario names.
 - **Then** asserts on evidence that call produced, observed from outside.
 
-Besides the defects in [Bindings and Exemptions][bindings], a row is `untested` when an expected-outcome table supplies
-success, a literal success follows a helper's own action, the assertion misses the stated behaviour, or any step can
-reach production data.
+Besides the defects in
+[Bindings and Exemptions](../../development/quality/testing/behaviour-driven-development/003-bindings-and-exemptions.md),
+a row is `untested` when an expected-outcome table supplies success, a literal success follows a helper's own action,
+the assertion misses the stated behaviour, or any step can reach production data.
 
 Each exemption is checked per layer against that module's limits, its alternative proof read. An exempt layer keeps no
 silent success branch, so accidental execution fails. Scenario counts, pattern searches, and green runs never replace
 reading each row. Run the affected scenarios in every layer as
-[Compliance and Reporting](../../development/quality/testing/behaviour-driven-development.md) places them; a failing run
-blocks completion like a failing row. A row that cannot pass stays failed until its seam or binding is fixed; an
-exemption never repairs it.
+[Compliance and Reporting](../../development/quality/testing/behaviour-driven-development/004-compliance-and-reporting.md)
+places them; a failing run blocks completion like a failing row. A row that cannot pass stays failed until its seam or
+binding is fixed; an exemption never repairs it.
 
 ## Assertion Theater Is a Failure, Not a Pass
 
@@ -84,5 +85,3 @@ none: it occupies a real test's place, counts in coverage, and is trusted by eve
 A passing suite proves only that its tests pass, not that they match the agreed scenarios, and it cannot notice a
 scenario nobody implemented, which has no test to fail. Only walking the scenarios closes that gap. One canonical review
 does this; several overlapping versions give a scenario several places to be missed.
-
-[bindings]: ../../development/quality/testing/behaviour-driven-development/003-bindings-and-exemptions.md

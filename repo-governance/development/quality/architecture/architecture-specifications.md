@@ -18,8 +18,8 @@ This standard implements [Documentation First](../../../principles/documentation
 
 ## Modules
 
-1. [Model Content](#one-canonical-model-per-application)
-2. [Scaling and Change Discipline](#as-built-not-as-intended)
+1. [Model Content](architecture-specifications/001-model-content.md)
+2. [Scaling and Change Discipline](architecture-specifications/002-scaling-and-change-discipline.md)
 
 ## One Canonical Model per Application
 
@@ -39,12 +39,10 @@ document until it is implemented.
 The requirement does not vary: views exist, and prose carries every claim they make. Only the form of the diagrams
 varies, and the adopter records one under its [Diagrams](../../../conventions/writing/diagrams.md) authoring rule.
 
-- **rendered Mermaid**
-  - Gains: automatic layout; reads well wherever a renderer runs; label lengths a tool can check
-  - Costs: source is hard to read in a terminal or plain diff; needs an accessible title and description
-- **plain text in fenced `text`**
-  - Gains: reads identically in a terminal, a diff, and a review tool, with no renderer
-  - Costs: layout is maintained by hand, and wide views reach the line width sooner
+| Option                      | Gains                                                                                 | Costs                                                                                         |
+| --------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| rendered Mermaid            | automatic layout; reads well wherever a renderer runs; label lengths a tool can check | source is hard to read in a terminal or plain diff; needs an accessible title and description |
+| plain text in fenced `text` | reads identically in a terminal, a diff, and a review tool, with no renderer          | layout is maintained by hand, and wide views reach the line width sooner                      |
 
 Whichever form is chosen, every relationship a diagram shows also appears in searchable prose, so a reader who cannot
-see the diagram loses nothing. See [Accessibility First](../../../conventions/writing/color-accessibility.md).
+see the diagram loses nothing. See [Accessibility First](../../../principles/accessibility-first.md).

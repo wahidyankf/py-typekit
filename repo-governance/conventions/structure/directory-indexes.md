@@ -57,24 +57,18 @@ fit hides exactly what the index exists to show.
 
 ## What an Adopter Decides
 
-- **which trees are indexed**: Governance alone is the minimum. Adding specifications and plans makes every scenario and
-  plan findable. Documentation navigated by landing pages may be left out — see [Documentation
-  Architecture][documentation-architecture].
-- **which files count**: Markdown only suits prose trees; a tree whose content is not Markdown, such as behaviour
-  specifications, lists every file type.
-- **generated directories**: They carry no hand-written index, because regeneration removes it; the source is indexed
-  instead.
-- **vendored or tool-bound**: A vendored copy is indexed from its parent so the copy stays identical. A directory where
-  a tool registers every file as a command is indexed from its parent unless the tool ignores an index there.
+| Decision                | Options and trade-off                                                                                                                                                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| which trees are indexed | Governance alone is the minimum. Adding specifications and plans makes every scenario and plan findable. Documentation navigated by landing pages may be left out — see [Documentation Architecture](documentation-architecture.md). |
+| which files count       | Markdown only suits prose trees; a tree whose content is not Markdown, such as behaviour specifications, lists every file type.                                                                                                      |
+| generated directories   | They carry no hand-written index, because regeneration removes it; the source is indexed instead.                                                                                                                                    |
+| vendored or tool-bound  | A vendored copy is indexed from its parent so the copy stays identical. A directory where a tool registers every file as a command is indexed from its parent unless the tool ignores an index there.                                |
 
-An adopter enforces the findings with its own index check in pre-commit or CI, scoped to the trees it declares.
+An adopter enforces the findings with its own index check in the pull-request gate, scoped to the trees it declares.
 
 ## Principles
 
-This convention implements [Progressive Disclosure][progressive-disclosure], because each index shows one level and
-hands the rest to its children, and [Explicit Over Implicit](../../principles/explicit-over-implicit.md), because an
-entry and an empty directory are stated rather than left for a reader to infer.
-
-[documentation-architecture]: documentation-architecture.md
-[progressive-disclosure]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/progressive-disclosure.md
+This convention implements [Progressive Disclosure](../../principles/progressive-disclosure.md), because each index
+shows one level and hands the rest to its children, and
+[Explicit Over Implicit](../../principles/explicit-over-implicit.md), because an entry and an empty directory are stated
+rather than left for a reader to infer.

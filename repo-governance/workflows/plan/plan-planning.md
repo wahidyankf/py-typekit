@@ -10,7 +10,7 @@ when_to_use: >-
 
 ## Entry
 
-A formal plan is requested, or a brief is promoted by [Ideas Grooming][plan-ideas-grooming].
+A formal plan is requested, or a brief is promoted by [Ideas Grooming](plan-ideas-grooming.md).
 
 The request is explicit, as
 [Authorization and Execution Record](../../conventions/structure/plans/010-authorization-and-execution-record.md)
@@ -36,7 +36,7 @@ optional, default the adopter's recorded stage, or `backlog` for a promoted brie
    or third-party practice, against an authoritative source, and cite it. A finding that changes an answer reopens that
    branch of the pre-write gate; no plan document is written until it closes again.
 4. **Author all six documents.** `README.md`, `brd.md`, `prd.md`, one technical shape, `delivery.md`, `learnings.md`. A
-   [Bug-Fix Plan](../../conventions/structure/plans/018-bug-fix-plan.md) is not planned through this workflow. The
+   [Bug-Fix Plan](../../conventions/structure/plans/019-bug-fix-plan.md) is not planned through this workflow. The
    document set and its rules are the [Plans Convention](../../conventions/structure/plans.md)'s; this workflow does not
    restate them. They land in `plans/<target-stage>/<identifier>/`.
 5. **Write `delivery.md` last.** It depends on every other document; written first, it checklists a plan not yet
@@ -62,10 +62,10 @@ resolve puts the plan in `plans/backlog/`, its open question written into `READM
 
 ## Adopter Decision: Default Target Stage
 
-- **`backlog`** — The finished plan: waits as a proposal until someone schedules it; Trade-off: nothing looks active
-  before it is chosen; one more move
-- **`in-progress`** — The finished plan: is active at once, for work that executes as soon as its gate holds; Trade-off:
-  no scheduling step; unscheduled work can crowd the live root
+| Option        | The finished plan                                                   | Trade-off                                                    |
+| ------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ |
+| `backlog`     | waits as a proposal until someone schedules it                      | nothing looks active before it is chosen; one more move      |
+| `in-progress` | is active at once, for work that executes as soon as its gate holds | no scheduling step; unscheduled work can crowd the live root |
 
 Record the default. Neither stage executes the plan: execution is [Execution](plan-execution.md)'s, after its own entry
 condition holds.
@@ -75,6 +75,3 @@ condition holds.
 The two gates ask different questions at different times. Before authoring, open questions concern approach, scope, and
 constraint; after a draft, what it revealed — an unexpected dependency, a misplaced seam. Running one gate instead of
 two asks the second set before the information to answer it exists.
-
-[plan-ideas-grooming]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/plan/plan-ideas-grooming.md

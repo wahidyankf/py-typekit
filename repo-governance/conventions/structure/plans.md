@@ -32,35 +32,26 @@ is what an adopter's plan validator checks against; the catalog ships none.
 12. [Decision Records](plans/012-decision-records.md)
 13. [File Impact](plans/013-file-impact.md)
 14. [Dependency Graph and Recovery](plans/014-dependency-graph-and-recovery.md)
-15. [Evidence Files](plans/015-evidence-files.md)
-16. [Learning Triage](plans/016-learning-triage.md)
-17. [Learning Routing](plans/017-learning-routing.md)
-18. [Bug-Fix Plan](plans/018-bug-fix-plan.md)
-19. [Migration Numbers](plans/019-migration-numbers.md)
+15. [Idea Brief Template](plans/015-idea-brief-template.md)
+16. [Evidence Files](plans/016-evidence-files.md)
+17. [Learning Triage](plans/017-learning-triage.md)
+18. [Learning Routing](plans/018-learning-routing.md)
+19. [Bug-Fix Plan](plans/019-bug-fix-plan.md)
 
 ## Conditional Conventions
 
 Some plans carry more than every plan does. Each of these applies only when its trigger holds, and each adds to this
 convention without restating it.
 
-- **[Plan Specification Changes][plan-specification-changes]**: changes observable behaviour, an interface,
-  architecture, or an executable specification
-- **[Plan Migrations][plan-migrations]**: moves, copies, normalizes, replaces, or retires data, configuration, or
-  structure
-- **[Plan UI Design][plan-ui-design]**: creates or materially changes a user interface
-- **[Plan Content Corpora][plan-content-corpora]**: authors or restructures a content corpus inside its own folder
+| Convention                                                  | Applies when a plan                                                                      |
+| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Plan Specification Changes](plan-specification-changes.md) | changes observable behaviour, an interface, architecture, or an executable specification |
+| [Plan Migrations](plan-migrations.md)                       | moves, copies, normalizes, replaces, or retires data, configuration, or structure        |
+| [Plan UI Design](plan-ui-design.md)                         | creates or materially changes a user interface                                           |
+| [Plan Content Corpora](plan-content-corpora.md)             | authors or restructures a content corpus inside its own folder                           |
 
 ## What This Convention Does Not Decide
 
 It does not decide what a repository should plan, how large a plan should be, or which delivery mode — pull request,
 direct [landing](plans/009-portability.md#what-landed-means), local-only landing — a repository uses. Those are the
 adopting repository's to choose, and the plan system is designed to survive any of them.
-
-[plan-specification-changes]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-specification-changes.md
-[plan-migrations]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-migrations.md
-[plan-ui-design]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-ui-design.md
-[plan-content-corpora]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-content-corpora.md

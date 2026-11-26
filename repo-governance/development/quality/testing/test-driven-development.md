@@ -14,8 +14,8 @@ check nothing, and a green run looks identical in all three cases. Writing the t
 cheapest way to find out which.
 
 This standard implements [Evidence Over Assertion](../../../principles/evidence-over-assertion.md),
-[Explicit Over Implicit](../../../principles/explicit-over-implicit.md), [Deliberate
-Problem-Solving][deliberate-problem-solving], and
+[Explicit Over Implicit](../../../principles/explicit-over-implicit.md),
+[Deliberate Problem-Solving](../../../principles/deliberate-problem-solving.md), and
 [Root Cause Orientation](../../../principles/root-cause-orientation.md).
 
 ## Scope
@@ -26,12 +26,13 @@ guards. Every bug fix is in scope.
 
 It does not apply where no executable behaviour changes:
 
-- **prose, documentation, or governance text**: no test target reads prose
-- **generated output**: the generator's own tests cover it
-- **a typo or comment correction**: the existing tests already cover the behaviour
-- **a configuration value that alters no behaviour and no gate's rule**: nothing executable changes; a change to what a
-  gate accepts starts from a red test
-- **an exploratory spike**: it is discarded, or rebuilt test-first, before anything ships
+| Change                                                            | Why no test comes first                                                            |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| prose, documentation, or governance text                          | no test target reads prose                                                         |
+| generated output                                                  | the generator's own tests cover it                                                 |
+| a typo or comment correction                                      | the existing tests already cover the behaviour                                     |
+| a configuration value that alters no behaviour and no gate's rule | nothing executable changes; a change to what a gate accepts starts from a red test |
+| an exploratory spike                                              | it is discarded, or rebuilt test-first, before anything ships                      |
 
 Keep this list short. When it is unclear whether a change alters behaviour, treat it as one that does and write the test
 first.
@@ -41,10 +42,14 @@ first.
 1. **Red.** Write one test for the next small behaviour, run it, and confirm it fails for its stated reason: the
    behaviour does not exist yet.
 2. **Green.** Make the smallest production change that passes it while the surrounding tests stay green.
-3. **Refactor.** Improve the design with every test still green, adding no behaviour.
+3. **Refactor.** Improve the design with the focused boundary selection green and no known failing checks, adding no
+   behaviour.
+
+Case selection, executed-case evidence, and phase/pre-pull-request full regression follow
+[Focused Runs and Regression Gates](test-driven-development/001-cycle-and-evidence.md#focused-runs-and-regression-gates).
 
 Repeat for the next behaviour. Where behaviour is specified as scenarios, the scenario is added or updated before the
-red, as [Behaviour-Driven Development][behaviour-driven-development] requires. A refactor that changes no behaviour
+red, as [Behaviour-Driven Development](behaviour-driven-development.md) requires. A refactor that changes no behaviour
 starts from a green run and follows the characterization rule stated there.
 
 This is the stricter reading of the practice. A test that appears after the code tends to confirm what the code does
@@ -56,25 +61,13 @@ rather than what was required, and nothing afterwards can show that it was ever 
 2. [Test Design](test-driven-development/002-test-design.md)
 3. [Regression Tests](test-driven-development/003-regression-tests.md)
 4. [Intermittent Failures](test-driven-development/004-intermittent-failures.md)
-5. [Focused Runs and Regression Gates](test-driven-development/005-focused-runs-and-regression-gates.md)
-6. [Batched Cycles in Planned Delivery](test-driven-development/006-batched-cycles-in-planned-delivery.md)
 
 ## Related Standards
 
 - [Test Boundaries and Gates](test-boundaries-and-gates.md) decides which layer a test belongs to and which gate runs
   it.
-- [Layers and Adapters][002-layers-and-adapters] records whether coverage carries a numeric floor.
-- [Manual Verification][manual-verification] owns what a person still checks once the suite is green.
-- [Software Quality Enforcement][software-quality-enforcement] records that test-first order is proven by evidence,
-  since a gate only sees the final state.
-
-[deliberate-problem-solving]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/deliberate-problem-solving.md
-[behaviour-driven-development]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/testing/behaviour-driven-development.md
-[002-layers-and-adapters]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/testing/behaviour-driven-development/002-layers-and-adapters.md
-[manual-verification]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification.md
-[software-quality-enforcement]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/checks/software-quality-enforcement.md
+- [Meaningful Coverage](meaningful-coverage.md) sets the coverage floor and what it measures, and
+  [Layers and Adapters](behaviour-driven-development/002-layers-and-adapters.md) records any higher floor.
+- [Manual Verification](../manual-verification.md) owns what a person still checks once the suite is green.
+- [Software Quality Enforcement](../checks/software-quality-enforcement.md) records that test-first order is proven by
+  evidence, since a gate only sees the final state.

@@ -7,8 +7,7 @@ when_to_use: >-
 
 # Repository Governance
 
-py-typekit's governance artifacts, adopted from the `ose-rules` catalog and organized by the level of authority each one
-carries.
+The catalog's governance artifacts, organized by the level of authority each one carries.
 
 Levels are compared in order — `vision > principles > conventions > development > workflows` — and a lower level never
 contradicts a higher one. Placing an artifact is therefore a decision about what kind of statement it is, not about

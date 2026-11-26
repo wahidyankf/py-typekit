@@ -9,7 +9,5 @@ when_to_use: >-
 
 [No Destructive Git Operations](../no-destructive-git-operations.md) owns the general destructive-effect boundary.
 
-## Directory Map
-
-- [Authorized Task Branch Sync](001-authorized-task-branch-sync.md) — continuing an authorized delivery task while
-  preserving other work, recovery, reviews, and gates.
+1. [Authorized Task Branch Sync](001-authorized-task-branch-sync.md) — continuing an authorized delivery task while
+   preserving other work, recovery, reviews, and gates.

@@ -22,13 +22,12 @@ plan, a governance rule — links to that home instead.
 
 Documentation follows [Diátaxis](https://diataxis.fr/). Each page serves exactly one mode:
 
-- **Tutorial** — for a newcomer learning by doing; the page succeeds when the reader reaches a working result without
-  deciding anything.
-- **How-to guide** — for someone with a stated goal; the page succeeds when that one problem is solved.
-- **Reference** — for someone looking something up while working; the page succeeds when the description is exact and
-  complete.
-- **Explanation** — for someone wanting to understand; the page succeeds when the reasons, context, and trade-offs are
-  clear.
+| Mode         | Reader                                     | The page succeeds when                                        |
+| ------------ | ------------------------------------------ | ------------------------------------------------------------- |
+| tutorial     | a newcomer learning by doing               | the reader reaches a working result without deciding anything |
+| how-to guide | someone with a stated goal                 | that one problem is solved                                    |
+| reference    | someone looking something up while working | the description is exact and complete                         |
+| explanation  | someone wanting to understand              | the reasons, context, and trade-offs are clear                |
 
 A page is classified by the reader need it primarily serves. Material spanning modes becomes one primary page in the
 best-fitting mode, linked to pages in the others. A page serving two modes serves neither: the learner stalls on
@@ -55,11 +54,10 @@ came to find.
 
 ## What an Adopter Decides
 
-- **Directory maps for this tree.** Options: map every page, or let landing pages link into sections. Trade-off: a map
-  makes every page findable and checkable; landing pages serve a reader who arrives wanting a mode rather than an
-  inventory.
-- **Page metadata.** Options: a title, description, mode, and tags per page, or none. Trade-off: metadata supports
-  search and a mode-to-directory check; every field is one more thing to keep true.
+| Decision                     | Options                                                 | Trade-off                                                                                                                       |
+| ---------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| directory maps for this tree | map every page, or let landing pages link into sections | a map makes every page findable and checkable; landing pages serve a reader who arrives wanting a mode rather than an inventory |
+| page metadata                | a title, description, mode, and tags per page, or none  | metadata supports search and a mode-to-directory check; every field is one more thing to keep true                              |
 
 A repository mapping this tree applies [Directory Indexes](directory-indexes.md). Metadata on governance documents is
 not part of this decision; [Artifact Metadata](artifact-metadata.md) governs it.

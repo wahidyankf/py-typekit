@@ -12,7 +12,8 @@ when_to_use: >-
 
 A formal plan, or any document inside a formal plan's root, is written only when whoever owns the repository's planning
 has explicitly asked for it. A plan promoted from an idea brief is no exception: a brief marked for promotion during
-[Ideas Grooming][plan-ideas-grooming] becomes a plan only once that owner explicitly requests it.
+[Ideas Grooming](../../../workflows/plan/plan-ideas-grooming.md) becomes a plan only once that owner explicitly requests
+it.
 
 Nothing else authorizes one:
 
@@ -22,7 +23,7 @@ Nothing else authorizes one:
 - an agent judging that the work would benefit from a plan.
 
 The one standing request is an adopted [Upstream Tool Defects](../../../development/workflow/upstream-tool-defects.md)
-standard: it covers a blocking defect's [Bug-Fix Plan](018-bug-fix-plan.md), including its quality gate, execution, and
+standard: it covers a blocking defect's [Bug-Fix Plan](019-bug-fix-plan.md), including its quality gate, execution, and
 release, and any other defect's idea brief.
 
 A plan is a commitment the repository carries. It occupies a lifecycle root, and it is groomed, reviewed, and archived,
@@ -32,6 +33,15 @@ change rules, or stops and asks.
 
 Authorizing a plan does not authorize executing it. Approving a design and approving the changes it prescribes are
 different decisions, made with different information.
+
+## Access Before Execution
+
+Authorizing execution is not holding access. Before Phase 0, derive the access list from the plan's scope alone — never
+a standing checklist — and prove this machine holds each item through its authorized route: repo, branch, review, merge
+scope, each secret through its wrapper, claiming nothing more: least privilege, infra secrets only for infra. Never
+assume from the machine's name. Record each need portable or bound to machines holding the secret, so any run knows what
+runs everywhere and only there — ayokoding-www runs anywhere, infra-apply only where its secret lives. Missing access
+stops the run as a human blocker; a machine-bound node parks where the machine lacks it, claimed by a capable one.
 
 The request that authorized a plan does cover the records its execution writes — ticks and Execution Record lines in
 `delivery.md`, entries in `learnings.md`, and files in `evidence/` — so none of them needs a request of its own.
@@ -72,12 +82,8 @@ the one place the order of events survives.
 A plan that has not started carries the heading with no lines. The record then survives archival unchanged.
 
 An archived plan is never edited to add a record it did not keep. Plans under `done/` are history — see
-[Exclusions][004-exclusions] — and a record written after the fact is a reconstruction with a date attached.
+[Exclusions](../plan-validator-contract/004-exclusions.md) — and a record written after the fact is a reconstruction
+with a date attached.
 
 An adopter that wants this checked mechanically verifies the heading and the `YYYY-MM-DD:` line shape in its own plan
 gate.
-
-[plan-ideas-grooming]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/plan/plan-ideas-grooming.md
-[004-exclusions]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-validator-contract/004-exclusions.md

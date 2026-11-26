@@ -1,16 +1,19 @@
 ---
 name: plan-execution-check
 description: >-
-  Evaluates finished execution in a fixed order and records the terminal verdict that permits or blocks archival.
+  Evaluates substantive execution and pre-archive cleanup, records archive readiness, and names post-delivery cleanup
+  that remains pending.
 when_to_use: >-
-  Use once every substantive delivery item is terminal, before a plan is archived.
+  Use once every substantive delivery item is terminal and before the archival move.
 ---
 
 # Execution Check
 
 ## Entry
 
-Every substantive item in `delivery.md` is terminal. Archival has not started.
+Every substantive item in `delivery.md` is terminal. Post-delivery cleanup may remain explicitly `pending` under
+[Dependency Graph and Recovery](../../conventions/structure/plans/014-dependency-graph-and-recovery.md). Archival has
+not started.
 
 ## Sequence
 
@@ -22,7 +25,9 @@ produces findings that contradict each other.
 3. **Checklist evidence.** Does every completed item carry a result, and does the result match what the repository now
    contains?
 4. **Gates.** Did every declared gate run and return a terminal result, including the ones that returned findings?
-5. **Cleanup.** Are the task-owned artifacts gone, and is their absence proven rather than assumed?
+5. **Cleanup.** Is all cleanup required before archival complete and proven? Are the worktree, local and remote task
+   branches, and other post-delivery removals explicitly recorded as `pending` in `delivery.md` for cleanup after the
+   final delivery lands?
 6. **Knowledge capture.** Is every `learnings.md` entry resolved to a durable owner or discarded with a reason?
 
 Where a step asks for past proof that can no longer be produced, judge the recorded observation of current behaviour
@@ -32,17 +37,21 @@ past record alone is not a finding.
 
 ## Exit
 
-One terminal verdict is recorded. Archival proceeds only on a verdict that permits it.
+One terminal archive-readiness verdict is recorded. Archival proceeds only on a verdict that permits it. The verdict
+does not claim post-delivery cleanup is complete; the task remains open until actual cleanup is verified and recorded in
+the final delivery record outside `plans/done/` (the archival PR body for a pull-request route).
 
 ## Archival Is Blocked, Not Warned
 
-An unresolved acceptance criterion, an unproven cleanup, or an unrouted learning blocks archival outright. This check
-judges finished execution and is not a quality gate, so the advisory verdicts of the
+An unresolved acceptance criterion, an unproven pre-archive cleanup, or an unrouted learning blocks archival outright.
+Required post-delivery cleanup must be marked `pending`, never `met`, and does not block archive readiness. It remains a
+task obligation: final task completion is blocked until cleanup is verified and its proof is recorded in the final
+delivery record. This check judges substantive execution and is not a quality gate, so the advisory verdicts of the
 [Quality Gate Contract](../../development/workflow/quality-gate-contract.md) do not cover it.
 
-This is stricter than it looks, and deliberately so. A plan in `plans/done/` reads as finished — that is the entire
-signal the lifecycle root carries. Filing an unfinished plan does not merely record something inaccurate; it destroys
-the meaning of the root for every plan already in it.
+This is strict by design. A plan in `plans/done/` records completed substantive execution and archive readiness. An
+explicitly pending post-delivery cleanup remains visible in the archived checklist, and the external final delivery
+record must prove it before the task is called complete.
 
-The remedy is always the same: resolve the item, then re-run the check. There is no partial archival and no archival
-with a note explaining what was left open.
+Resolve any blocking item and re-run the check. There is no partial archival and no archival with an unresolved
+acceptance criterion, pre-archive cleanup, or unrouted learning.

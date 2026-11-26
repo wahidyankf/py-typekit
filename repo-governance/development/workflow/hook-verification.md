@@ -19,9 +19,10 @@ This standard implements [Root Cause Orientation](../../principles/root-cause-or
 ## Bypass Is a Separate Permission
 
 Skipping the hooks on a commit or a push needs explicit authorization that names the bypass, or clearly includes it, for
-that one operation — or the standing [worktree-to-PR pre-authorization](#when-a-bypass-is-authorized).
+that one operation — or the standing
+[worktree-to-PR pre-authorization](hook-verification/001-capacity-held-hook.md#worktree-to-pr-exception).
 
-- A request to commit or push never authorizes a bypass; see [Commit Authorization](#bypass-is-a-separate-permission).
+- A request to commit or push never authorizes a bypass; see [Commit Authorization](commit-authorization.md).
 - The authorization is spent by the operation it names. It never carries into a later operation or a wider scope.
 - Nothing stands in for it: not convenience, time pressure, a slow hook, a failure that looks unrelated, repeated
   failure, a cause that is hard to find, an urgent fix, or an investigation of the blocker already under way.
@@ -42,12 +43,12 @@ check that fails because a file it names was renamed is reporting an unfinished 
 
 If the cause cannot be fixed within the authorized scope, report the evidence and the open blocker, and ask for
 direction only once inspection leaves a genuine choice; see
-[Deliberate Problem-Solving](../../principles/root-cause-orientation.md).
+[Deliberate Problem-Solving](../../principles/deliberate-problem-solving.md).
 
 A hook held back because a local compute guard reported a busy host has not failed. Retry that same invocation once the
-stated condition clears, as [Resource-Aware Development](#when-a-hook-fails) requires. Exceptions — the one-push
-exception for guard-held hooks and the standing worktree-to-PR pre-authorization — live in
-[Capacity-Held Hook](#when-a-bypass-is-authorized).
+stated condition clears, as [Resource-Aware Development](resource-aware-development.md) requires. Exceptions — the
+one-push exception for guard-held hooks and the standing worktree-to-PR pre-authorization — live in
+[Capacity-Held Hook](hook-verification/001-capacity-held-hook.md).
 
 ## When the Hook Is Wrong
 

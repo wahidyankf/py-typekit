@@ -12,14 +12,12 @@ when_to_use: >-
 The modules below are read in sequence and carry the detail behind the
 [Test-Driven Development](../test-driven-development.md) entrypoint.
 
-- **[Cycle and Evidence](001-cycle-and-evidence.md)**: valid red, green, and refactor steps, cycle size, harness reds,
-  and recorded evidence
-- **[Test Design](002-test-design.md)**: arrange-act-assert, test properties, names, one logical assertion, and derived
-  sets
-- **[Regression Tests](003-regression-tests.md)**: a reproducing test with every fix, its form by defect, and planned
-  fixes
-- **[Intermittent Failures](004-intermittent-failures.md)**: confirming the same code, the required response, and the
-  remedies that only hide it
+| Module                                                | Holds                                                                                 |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [Cycle and Evidence](001-cycle-and-evidence.md)       | valid red, green, and refactor steps, cycle size, harness reds, and recorded evidence |
+| [Test Design](002-test-design.md)                     | arrange-act-assert, test properties, names, one logical assertion, and derived sets   |
+| [Regression Tests](003-regression-tests.md)           | a reproducing test with every fix, its form by defect, and planned fixes              |
+| [Intermittent Failures](004-intermittent-failures.md) | confirming the same code, the required response, and the remedies that only hide it   |
 
 ## Directory Map
 
@@ -27,8 +25,3 @@ The modules below are read in sequence and carry the detail behind the
 - [002 Test Design](002-test-design.md)
 - [003 Regression Tests](003-regression-tests.md)
 - [004 Intermittent Failures](004-intermittent-failures.md)
-
-- [005 Focused Runs and Regression Gates](005-focused-runs-and-regression-gates.md) — local selections and complete
-  boundary gates
-- [006 Batched Cycles in Planned Delivery](006-batched-cycles-in-planned-delivery.md) — one test-first cycle per
-  delivery batch, with per-scenario failing tests and a single batch record

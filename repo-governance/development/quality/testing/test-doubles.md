@@ -18,20 +18,19 @@ This standard implements [Reproducibility](../../../principles/reproducibility.m
 
 ## The Kinds
 
-- **fake** — What it is: a working, simplified implementation, such as an in-memory store; A test using it asserts on:
-  the state the code under test leaves
-- **stub** — What it is: an object returning fixed, deterministic answers; A test using it asserts on: the result the
-  code under test returns
-- **spy** — What it is: an object recording the calls it receives; A test using it asserts on: the interaction itself
-- **mock** — What it is: an object programmed in advance with the calls it expects; A test using it asserts on: the
-  calls the code under test happens to make
+| Double | What it is                                                       | A test using it asserts on                    |
+| ------ | ---------------------------------------------------------------- | --------------------------------------------- |
+| fake   | a working, simplified implementation, such as an in-memory store | the state the code under test leaves          |
+| stub   | an object returning fixed, deterministic answers                 | the result the code under test returns        |
+| spy    | an object recording the calls it receives                        | the interaction itself                        |
+| mock   | an object programmed in advance with the calls it expects        | the calls the code under test happens to make |
 
 ## Prefer an In-Memory Fake to a Mock
 
 Where the collaborator is something the application owns and persists through, such as a repository, use an in-memory
-implementation instead of a mock. [Hexagonal Architecture][hexagonal-architecture] already requires such an adapter for
-every output port used in unit tests, and runs the port's contract suite against it; that suite is what makes the fake
-trustworthy.
+implementation instead of a mock. [Hexagonal Architecture](../architecture/hexagonal-architecture.md) already requires
+such an adapter for every output port used in unit tests, and runs the port's contract suite against it; that suite is
+what makes the fake trustworthy.
 
 A mock of the same collaborator encodes how the code currently calls it. Rename a method, merge two saves into one, or
 read before writing, and the test fails although the behaviour is unchanged. A fake checks the outcome, so the test
@@ -44,8 +43,9 @@ that returns a deterministic response. The test then exercises the code's handli
 the service's availability, or its side effects. Where Hexagonal Architecture applies, that double is the port's
 in-memory adapter, a fake returning deterministic responses and held to its contract suite.
 
-The real service is still exercised, at the level [Composition Roots and Test Adapters][003-composition-and-testing]
-assigns to adapters reached over the network.
+The real service is still exercised, at the level
+[Composition Roots and Test Adapters](../architecture/hexagonal-architecture/003-composition-and-testing.md) assigns to
+adapters reached over the network.
 
 ## Spy Only When the Interaction Is the Behaviour
 
@@ -67,8 +67,3 @@ the rule, and it keeps passing when the rule is wrong. They depend on no infrast
 
 Review checks each new double against the kinds above. An adopter wanting a mechanical check refuses doubles of domain
 types in its own lint or test gate.
-
-[hexagonal-architecture]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/architecture/hexagonal-architecture.md
-[003-composition-and-testing]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/architecture/hexagonal-architecture/003-composition-and-testing.md

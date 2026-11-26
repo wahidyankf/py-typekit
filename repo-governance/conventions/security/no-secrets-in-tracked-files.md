@@ -29,16 +29,16 @@ every other copy open.
 
 ## Where Real Values Live
 
-Outside version history, in the locations recorded by the census that [Environment Variable
-Contract][environment-variable-contract] defines: real environment files, an ignored secrets directory, a platform's
-secret store, or a password manager. The committed template holds names and placeholders only, and agent access to real
-files is governed by [Agent Environment-File Access][agent-env-file-access].
+Outside version history, in the locations recorded by the census that
+[Environment Variable Contract](environment-variable-contract.md) defines: real environment files, an ignored secrets
+directory, a platform's secret store, or a password manager. The committed template holds names and placeholders only,
+and agent access to real files is governed by [Agent Environment-File Access](agent-env-file-access.md).
 
 An ignore rule reduces accidental tracking; it is not a security boundary, because a forced add walks straight past it.
-The staged-file guard that [Agent Environment-File Access][agent-env-file-access] defines refuses that add only for a
-file matching its recorded real-environment pattern. A file forced in from any other ignored location, such as a secrets
+The leak scan that [Agent Environment-File Access](agent-env-file-access.md) defines refuses that add only for a file
+matching its recorded real-environment pattern. A file forced in from any other ignored location, such as a secrets
 directory, is stopped by review: every repository reviews each staged change for secrets before it commits. A secret
-scan over staged changes is a further enforcement point an adopter may add for such files.
+scan in the pull-request gate is a further enforcement point an adopter may add for such files.
 
 ## Durable Text Counts
 
@@ -68,11 +68,6 @@ removing the value afterwards is cleanup, and rewriting history never substitute
 
 State plainly what cannot be undone. External clones, forks, and caches are beyond reach, and rotation is what made them
 harmless.
-
-[environment-variable-contract]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/security/environment-variable-contract.md
-[agent-env-file-access]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/security/agent-env-file-access.md
 
 ## Agent Tool Access
 

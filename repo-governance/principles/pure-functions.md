@@ -31,16 +31,13 @@ is little in it to get wrong.
 
 ## Where It Is Already Load-Bearing
 
-- **[Inputs and Exit Classes][001-inputs-and-exits]**: output is identical from any working directory and byte-identical
-  across runs
-- **[Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md)**: diagnostics sort by
-  position, never by the order the filesystem listed them
-- **[Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)**: an argument vector has no
-  shell to rewrite it against the current directory
-- **[Harness Adapters](../development/agents/harness-adapters.md)**: an adapter derives from canonical input alone, so a
-  regeneration can be compared
-- **[Assess Alignment][assess-alignment]**: the assessment decides and reports; changing the repository is another
-  workflow
+| Applied in                                                                                          | As                                                                               |
+| --------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [Inputs and Exit Classes](../conventions/structure/plan-validator-contract/001-inputs-and-exits.md) | output is identical from any working directory and byte-identical across runs    |
+| [Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md)          | diagnostics sort by position, never by the order the filesystem listed them      |
+| [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)               | an argument vector has no shell to rewrite it against the current directory      |
+| [Harness Adapters](../development/agents/harness-adapters.md)                                       | an adapter derives from canonical input alone, so a regeneration can be compared |
+| [Assess Alignment](../workflows/adoption/assess-alignment.md)                                       | the assessment decides and reports; changing the repository is another workflow  |
 
 ## Why the Boundary Matters
 
@@ -65,8 +62,3 @@ Effects are not the problem. They are usually the reason the program exists, and
 Where the effect is the whole job — copy this file, send this message — there is no decision to separate, and inventing
 one is complexity with no return. The rule applies wherever logic worth verifying would otherwise be tangled with the
 act of carrying it out.
-
-[001-inputs-and-exits]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-validator-contract/001-inputs-and-exits.md
-[assess-alignment]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/adoption/assess-alignment.md

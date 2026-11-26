@@ -17,15 +17,11 @@ This standard implements [Reproducibility](../../../principles/reproducibility.m
 
 ## Observe Only the Public Boundary
 
-- **command-line tool**
-  - Driven through: the built executable, with arguments, standard input, and a working directory
-  - Observed as: exit code, standard output and error, and the resulting file tree
-- **service**
-  - Driven through: requests to the exact served origin
-  - Observed as: status, headers, body, and externally visible side effects
-- **browser application**
-  - Driven through: a real browser at the exact served origin
-  - Observed as: rendered state, URL, network responses, and data the page exposes
+| Subject             | Driven through                                                                | Observed as                                                       |
+| ------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| command-line tool   | the built executable, with arguments, standard input, and a working directory | exit code, standard output and error, and the resulting file tree |
+| service             | requests to the exact served origin                                           | status, headers, body, and externally visible side effects        |
+| browser application | a real browser at the exact served origin                                     | rendered state, URL, network responses, and data the page exposes |
 
 A test that imports a function, a private module, or an internal store has left the boundary. Keep such checks at the
 unit or integration layer, and keep in this suite only the journeys no narrower layer can prove.
@@ -36,7 +32,7 @@ Each case creates its own temporary fixture tree and removes it afterwards. No c
 relies on files another case left behind, depends on execution order, or touches a tree it did not create.
 
 An order-dependent suite passes on one machine and fails on the next with no change to the code, and nobody can tell
-which result to believe. Rules for the data inside a fixture belong to [Test Data Isolation](test-doubles.md).
+which result to believe. Rules for the data inside a fixture belong to [Test Data Isolation](test-data-isolation.md).
 
 ## Use the Exact Origin
 
@@ -80,6 +76,5 @@ A failed cleanup fails the run. Leaked browsers and servers hold ports and state
 ## Related Standards
 
 - [Behaviour-Driven Development](behaviour-driven-development.md) binds end-to-end scenarios to the shared corpus.
-- [API Testing](../architecture/openapi-contract-first.md) adds the direct request an API change requires.
-- [Manual Verification](../../agents/planning-capabilities/006-verification-routing.md) owns what a person must still
-  check in a rendered interface.
+- [API Testing](api-testing.md) adds the direct request an API change requires.
+- [Manual Verification](../manual-verification.md) owns what a person must still check in a rendered interface.

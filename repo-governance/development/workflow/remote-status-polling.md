@@ -13,10 +13,10 @@ when_to_use: >-
 Every remote state read spends from a request budget the whole account shares. Asking more often finishes no run sooner,
 and a spent budget stops other work too.
 
-This standard sets the mechanics behind the polling step of [CI Post-Push Verification][ci-post-push-verification] and
-the spacing inside the ceiling every remote wait declares under [Bounded Convergence](bounded-convergence.md). It
-implements [Minimal Sufficiency](../../principles/minimal-sufficiency.md) and [Deliberate
-Problem-Solving][deliberate-problem-solving].
+This standard sets the mechanics behind the polling step of [CI Post-Push Verification](ci-post-push-verification.md)
+and the spacing inside the ceiling every remote wait declares under [Bounded Convergence](bounded-convergence.md). It
+implements [Minimal Sufficiency](../../principles/minimal-sufficiency.md) and
+[Deliberate Problem-Solving](../../principles/deliberate-problem-solving.md).
 
 ## Scope
 
@@ -74,8 +74,3 @@ Retriggering a slow run adds a second run to await and resets the first's eviden
 
 An adopter enforces this where its automation issues status reads, such as a shared polling helper with the interval
 built in, or a review rule rejecting watch commands and unspaced loops in scripts and pipeline definitions.
-
-[ci-post-push-verification]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/ci-post-push-verification.md
-[deliberate-problem-solving]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/deliberate-problem-solving.md

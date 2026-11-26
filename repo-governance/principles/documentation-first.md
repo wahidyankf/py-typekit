@@ -62,19 +62,13 @@ record, never rewritten to match what is true now.
 
 ## Where It Is Already Load-Bearing
 
-- **[Decision Gates](../development/agents/planning-capabilities/003-decision-gates.md)**
-  - As: both gates leave a record, because conversation is neither durable nor shared
-- **[Knowledge Capture and Archival](../conventions/structure/plans/008-knowledge-capture-and-archival.md)**
-  - As: every learning reaches a durable owner or is discarded with a reason
-- **[Required Documents](../conventions/structure/plans/002-required-documents.md)**
-  - As: a plan holds a place for discoveries so they are not lost mid-execution
-- **[Interface Alternatives](../conventions/structure/plans/012-decision-records.md)**
-  - As: every rejected alternative records why it lost
-- **[Exclusions](immutability.md)**
-  - As: archived plans are history, never rewritten to satisfy a later rule
-- **[Diagrams](../conventions/writing/diagrams.md)**
-  - As: reversing the authoring rule records the change and its reason
-- **[Portability](../conventions/structure/plans/009-portability.md)**
-  - As: an adopter's divergence is recorded with a reason, never left silent
-- **[Execution](../workflows/plan/plan-execution.md)**
-  - As: the plan itself carries enough state to resume at any pause
+| Applied in                                                                                             | As                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| [Decision Gates](../development/agents/planning-capabilities/003-decision-gates.md)                    | both gates leave a record, because conversation is neither durable nor shared |
+| [Knowledge Capture and Archival](../conventions/structure/plans/008-knowledge-capture-and-archival.md) | every learning reaches a durable owner or is discarded with a reason          |
+| [Required Documents](../conventions/structure/plans/002-required-documents.md)                         | a plan holds a place for discoveries so they are not lost mid-execution       |
+| [Interface Alternatives](../development/quality/manual-verification/004-interface-alternatives.md)     | every rejected alternative records why it lost                                |
+| [Exclusions](../conventions/structure/plan-validator-contract/004-exclusions.md)                       | archived plans are history, never rewritten to satisfy a later rule           |
+| [Diagrams](../conventions/writing/diagrams.md)                                                         | reversing the authoring rule records the change and its reason                |
+| [Portability](../conventions/structure/plans/009-portability.md)                                       | an adopter's divergence is recorded with a reason, never left silent          |
+| [Execution](../workflows/plan/plan-execution.md)                                                       | the plan itself carries enough state to resume at any pause                   |

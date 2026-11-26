@@ -25,17 +25,14 @@ forgotten.
 
 ## Where It Is Already Load-Bearing
 
-- **[Schemas by Path](../conventions/structure/artifact-metadata/001-schemas-by-path.md)**: governance documents carry
-  no `name`, because the path is the identity
-- **[Harness Adapters](../development/agents/harness-adapters.md)**: an adapter holds no authored body, and is never
-  read to learn about the artifact
-- **[Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)**: hooks dispatch the ordered
-  registry rather than transcribing it
-- **[Capability Forms][capability-forms]**: two artifacts carrying the same instructions fail review
-- **[Lifecycle and Folders](../conventions/structure/plans/001-lifecycle-and-folders.md)**: a slug in two lifecycle
-  roots is a failure, not a merge to resolve
-- **[Knowledge Capture](../conventions/structure/plans/008-knowledge-capture-and-archival.md)**: a learning is promoted
-  to exactly one owner, not copied into three
+| Applied in                                                                                | As                                                                               |
+| ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [Schemas by Path](../conventions/structure/artifact-metadata/001-schemas-by-path.md)      | governance documents carry no `name`, because the path is the identity           |
+| [Harness Adapters](../development/agents/harness-adapters.md)                             | an adapter holds no authored body, and is never read to learn about the artifact |
+| [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)     | hooks dispatch the ordered registry rather than transcribing it                  |
+| [Capability Forms](../development/agents/capability-forms.md)                             | two artifacts carrying the same instructions fail review                         |
+| [Lifecycle and Folders](../conventions/structure/plans/001-lifecycle-and-folders.md)      | a slug in two lifecycle roots is a failure, not a merge to resolve               |
+| [Knowledge Capture](../conventions/structure/plans/008-knowledge-capture-and-archival.md) | a learning is promoted to exactly one owner, not copied into three               |
 
 ## A Link Is Not a Weaker Copy
 
@@ -49,13 +46,10 @@ who follows a link reads the current text. A reader given a copy reads whatever 
 
 Restating a fact **in different terms for a different purpose** is not a copy. A convention states a rule; a workflow
 says when it applies; a skill says how to apply it well. Each answers a different question, and none of them is the
-authority on the others — see [Capability Forms][capability-forms].
+authority on the others — see [Capability Forms](../development/agents/capability-forms.md).
 
 Deliberate redundancy with a stated reason is also not a copy. An agent declares `constraints` that its `capabilities`
 list already implies, because a granted capability and a decided restriction are different claims and the second must
 survive someone widening the first.
 
 The test is whether the two would ever need to change together. If they would, one of them should not exist.
-
-[capability-forms]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/agents/capability-forms.md

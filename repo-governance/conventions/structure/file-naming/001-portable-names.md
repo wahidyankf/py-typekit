@@ -40,8 +40,8 @@ pair and silently loses the other.
 
 ## Enforcement
 
-These are mechanical, and an adopter enforces them in its own pre-commit or CI name check rather than in review. The
-check admits the exceptions stated alongside these rules:
+These are mechanical, and an adopter enforces them in its own pull-request name check rather than in review. The check
+admits the exceptions stated alongside these rules:
 
 - tool-fixed names such as `README.md` and `SKILL.md`, per [File Naming](../file-naming.md);
 - a dated form that a convention fixes for its own kind of folder, such as an archived plan's folder, per

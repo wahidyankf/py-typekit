@@ -25,17 +25,14 @@ The question is therefore never "is this reasonable?". It is "what is this the o
 
 ## Where It Is Already Load-Bearing
 
-- **[Repository Configuration](../conventions/structure/repository-configuration.md)**: a formatter's settings belong to
-  the formatter
-- **[Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)**: exactly four fields: no
-  description, no flag, no timeout, no continue-on-error
-- **[Schemas by Path](../conventions/structure/artifact-metadata/001-schemas-by-path.md)**: the list of excluded fields
-  is longer than the list of fields
-- **[Portable Capabilities](../conventions/structure/artifact-metadata/004-portable-capabilities.md)**: declare what is
-  needed, not what might one day be convenient
-- **[Exclusions][004-exclusions]**: a judgement call encoded as a rule is enforced in cases nobody considered
-- **[Adopt Artifact](../workflows/adoption/adopt-artifact.md)**: change the requested scope; note what else you noticed
-  and leave it
+| Applied in                                                                                       | As                                                                             |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| [Repository Configuration](../conventions/structure/repository-configuration.md)                 | a formatter's settings belong to the formatter                                 |
+| [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)            | exactly four fields: no description, no flag, no timeout, no continue-on-error |
+| [Schemas by Path](../conventions/structure/artifact-metadata/001-schemas-by-path.md)             | the list of excluded fields is longer than the list of fields                  |
+| [Portable Capabilities](../conventions/structure/artifact-metadata/004-portable-capabilities.md) | declare what is needed, not what might one day be convenient                   |
+| [Exclusions](../conventions/structure/plan-validator-contract/004-exclusions.md)                 | a judgement call encoded as a rule is enforced in cases nobody considered      |
+| [Adopt Artifact](../workflows/adoption/adopt-artifact.md)                                        | change the requested scope; note what else you noticed and leave it            |
 
 ## Record the Omission
 
@@ -64,10 +61,7 @@ and never smaller than the obligations it touches.
 
 Where the change half is already load-bearing:
 
-- **[Quality Gate](../workflows/quality/plan-quality-gate.md)**: the budget is not extended because the next attempt
-  looks close
-- **[Plan Execution](../workflows/plan/plan-execution.md)**: a failure that predates the work is an explanation, not
-  exemption
-
-[004-exclusions]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-validator-contract/004-exclusions.md
+| Applied in                                                | As                                                                |
+| --------------------------------------------------------- | ----------------------------------------------------------------- |
+| [Quality Gate](../workflows/quality/plan-quality-gate.md) | the budget is not extended because the next attempt looks close   |
+| [Plan Execution](../workflows/plan/plan-execution.md)     | a failure that predates the work is an explanation, not exemption |

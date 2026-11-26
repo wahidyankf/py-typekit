@@ -17,9 +17,9 @@ The `docs` family's sole writer, under [Sole-Writer Propagation](../../developme
 ## Scope
 
 Every human-facing document: each README, the documentation and specification trees, documents inside projects, the
-[standard files][repository-documentation-files], and a plan's documents where they describe the repository. Governance
-and agent instructions stay with [Rules Propagation](rules-propagation.md). A handed-over ledger narrows the scope to
-what its rows require.
+[standard files](../../conventions/writing/repository-documentation-files.md), and a plan's documents where they
+describe the repository. Governance and agent instructions stay with [Rules Propagation](rules-propagation.md). A
+handed-over ledger narrows the scope to what its rows require.
 
 ## Executor
 
@@ -52,13 +52,15 @@ none.
    removed, renamed, or redefined; each ledger row is an item too.
 3. **Remove what is obsolete.** A document describing something the repository no longer has is deleted with every link
    and index entry to it; still-true unique meaning moves to its canonical home first.
-4. **Keep each fact in its one home.** The root README orients; a [project README][project-readmes] and an
+4. **Keep each fact in its one home.** The root README orients; a
+   [project README](../../conventions/structure/project-readmes.md) and an
    [index](../../conventions/structure/directory-indexes.md) follow their conventions; a page serves one mode per
-   [Documentation Architecture][documentation-architecture]. A summary links one level down to its detail, and a fact
-   with a canonical home is linked, never copied.
+   [Documentation Architecture](../../conventions/structure/documentation-architecture.md). A summary links one level
+   down to its detail, and a fact with a canonical home is linked, never copied.
 5. **Write for a newcomer.** Each affected document opens by telling a newcomer what it is and why it matters, shows the
-   next step without assuming the layout, and leaves no undefined term or skipped prerequisite, per [README
-   Quality][readme-quality] and [Content Quality][content-quality], never a readability score.
+   next step without assuming the layout, and leaves no undefined term or skipped prerequisite, per
+   [README Quality](../../conventions/writing/readme-quality.md) and
+   [Content Quality](../../conventions/writing/content-quality.md), never a readability score.
 6. **Run what is safe to run.** Execute every command and example an affected document shows through the repository's
    declared entry point, never one that touches a production or shared system, publishes, spends, needs a secret, or
    cannot be undone; the document says plainly it was not exercised.
@@ -90,13 +92,3 @@ Run docs-propagation for the change on the current branch.
 
 - [Docs Quality Gate](docs-quality-gate.md) audits documents and hands blocking rows here.
 - [Planning](../plan/plan-planning.md) adds this workflow to each delivery unit changing what a document describes.
-
-[repository-documentation-files]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/repository-documentation-files.md
-[project-readmes]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/project-readmes.md
-[documentation-architecture]: ../../conventions/structure/documentation-architecture.md
-[readme-quality]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/readme-quality.md
-[content-quality]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/content-quality.md

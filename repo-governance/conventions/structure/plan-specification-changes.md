@@ -64,12 +64,10 @@ planned diagram follows the repository's [Diagrams](../writing/diagrams.md) rule
 
 A plan cannot state bindings until the repository says where scenarios bind.
 
-- **one declared boundary**
-  - Requires: every scenario binds at one declared adapter, such as the unit boundary
-  - Trade-off: fast, deterministic proof; says nothing about integration or deployed behaviour
-- **every declared boundary**
-  - Requires: every scenario binds at each declared boundary, unless the plan names one that cannot carry it and why
-  - Trade-off: strongest end-to-end proof; costs more adapters and slower gates
+| Option                  | Requires                                                                                               | Trade-off                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| one declared boundary   | every scenario binds at one declared adapter, such as the unit boundary                                | fast, deterministic proof; says nothing about integration or deployed behaviour |
+| every declared boundary | every scenario binds at each declared boundary, unless the plan names one that cannot carry it and why | strongest end-to-end proof; costs more adapters and slower gates                |
 
 ## Public Contracts
 

@@ -27,13 +27,12 @@ first cycle.
 
 ## The Form Follows the Defect
 
-- **behavioural or functional**: a scenario stating the correct behaviour, bound at the layers [Layers and
-  Adapters][002-layers-and-adapters] requires, or a narrow test
-- **visual or layout**: an assertion on the specific rendered property that was wrong, such as a document element, a
-  computed style, or a compared capture
-- **content or copy**: an assertion on the corrected text or translation key, where it is produced or where it is
-  rendered
-- **integration or API**: an assertion on the response shape, status, or state transition that was wrong
+| Defect                    | Test that pins it                                                                                                                                                          |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| behavioural or functional | a scenario stating the correct behaviour, bound at the layers [Layers and Adapters](../behaviour-driven-development/002-layers-and-adapters.md) requires, or a narrow test |
+| visual or layout          | an assertion on the specific rendered property that was wrong, such as a document element, a computed style, or a compared capture                                         |
+| content or copy           | an assertion on the corrected text or translation key, where it is produced or where it is rendered                                                                        |
+| integration or API        | an assertion on the response shape, status, or state transition that was wrong                                                                                             |
 
 Whatever the form, a test that also passes on the broken code does not satisfy the rule. It has to make this particular
 defect impossible to reintroduce without a failure.
@@ -41,8 +40,9 @@ defect impossible to reintroduce without a failure.
 ## When the Specification Was Wrong Too
 
 A fix for code that departed from a correct specification needs only the reproducing test. When the specification also
-described the wrong behaviour, the specification is corrected in the same change, as [Specification
-Maintenance][specification-maintenance] requires, and the test follows the corrected statement.
+described the wrong behaviour, the specification is corrected in the same change, as
+[Specification Maintenance](../../evidence/specification-maintenance.md) requires, and the test follows the corrected
+statement.
 
 ## Planned Fixes
 
@@ -59,8 +59,3 @@ runs.
 
 The adopter enforces the mechanical part, a fix that changes source without adding or changing any test, in its own
 review or gate.
-
-[002-layers-and-adapters]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/testing/behaviour-driven-development/002-layers-and-adapters.md
-[specification-maintenance]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/evidence/specification-maintenance.md

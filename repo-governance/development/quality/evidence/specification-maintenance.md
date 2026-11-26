@@ -44,20 +44,15 @@ comes first; a moved boundary is synchronized with the final as-built state.
 Synchronization runs both ways: new behaviour with no scenario is drift, and so is a scenario kept after its behaviour
 was removed, even while every binding resolves.
 
-- **adds, removes, or renames an operation, command, page, or other entry point**
-  - Specification update: add, remove, or rename its scenarios
-- **changes an input or output shape, an observable validation rule, or an access requirement**
-  - Specification update: update the scenarios that state it
-- **adds or removes a data store, external integration, or runtime boundary**
-  - Specification update: update the architecture model
-- **renames or removes a project**
-  - Specification update: rename or remove its corpus, and every index naming it
-- **fixes a defect to match the existing specification**
-  - Specification update: none: the specification was already right
-- **fixes a defect by changing behaviour the specification stated wrongly**
-  - Specification update: correct it to the fixed behaviour
-- **refactors internals, upgrades a dependency, or tunes performance with no observable change**
-  - Specification update: none
+| The change                                                                                 | Specification update                                   |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| adds, removes, or renames an operation, command, page, or other entry point                | add, remove, or rename its scenarios                   |
+| changes an input or output shape, an observable validation rule, or an access requirement  | update the scenarios that state it                     |
+| adds or removes a data store, external integration, or runtime boundary                    | update the architecture model                          |
+| renames or removes a project                                                               | rename or remove its corpus, and every index naming it |
+| fixes a defect to match the existing specification                                         | none: the specification was already right              |
+| fixes a defect by changing behaviour the specification stated wrongly                      | correct it to the fixed behaviour                      |
+| refactors internals, upgrades a dependency, or tunes performance with no observable change | none                                                   |
 
 ## Complete Means Every Companion Artifact
 

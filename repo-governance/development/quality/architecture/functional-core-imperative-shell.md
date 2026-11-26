@@ -21,12 +21,10 @@ It also implements [Immutability](../../../principles/immutability.md),
 
 Each feature module splits into at most two zones, and its directory layout makes the zone of every file visible.
 
-- **core**
-  - Holds: validation, transformation, derivation, calculation, and formatting; value and data types; data schemas;
-    constant tables; interfaces the shell implements
-- **shell**
-  - Holds: interface components, input and output, network and storage access, framework entry points and wiring, and
-    anything that reads the clock, randomness, or the environment
+| Zone  | Holds                                                                                                                                                                    |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| core  | validation, transformation, derivation, calculation, and formatting; value and data types; data schemas; constant tables; interfaces the shell implements                |
+| shell | interface components, input and output, network and storage access, framework entry points and wiring, and anything that reads the clock, randomness, or the environment |
 
 The shell gathers inputs, calls the core for decisions, and carries out the results. It stays thin enough that there is
 little in it to get wrong.

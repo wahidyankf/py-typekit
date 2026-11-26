@@ -23,6 +23,12 @@ lacks, or relinks the link to its own owner, so no link dangles. The companions 
   repair follows;
 - **each `tutorial-*` family:** the `content` family's gate and propagation, which own the shared content rules.
 
+A family is adopted whole: a repository copies `<family>-quality-gate` and `<family>-propagation` together, never one
+alone, and where it declares its gates, it declares the family.
+
+A gate hands its frozen ledger to its propagation, so either file alone is half a family. A declared structural check
+for gates rejects an undeclared family's propagation and a declared family missing either file.
+
 A copied agent reads what it links from the adopter's own tree. Most declare no `network`, so a link that resolves only
 in the catalog is a rule the agent can never read.
 

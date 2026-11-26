@@ -24,13 +24,13 @@ check target that [Test Boundaries and Gates](../testing/test-boundaries-and-gat
 threshold [Lint Strictness](../checks/lint-strictness.md) sets, and a strictness option is never relaxed to make a
 change pass; the code is fixed instead.
 
-- **static types**: the compiler with its strict options, warnings treated as errors
-- **optional annotations**: a checker in its strict mode, with every public and external boundary annotated
-- **dynamic, with no checker of record**: its strongest substitute: static analysis plus declared data specifications
-  checked at runtime at the boundary
-- **shell**: a static analyser for the declared dialect, or the dialect's native syntax check plus review where none
-  exists
-- **declarative infrastructure and hosts**: schema-aware native validation, with no static-type claim
+| Stack capability                     | Strongest practical checker                                                                                    |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| static types                         | the compiler with its strict options, warnings treated as errors                                               |
+| optional annotations                 | a checker in its strict mode, with every public and external boundary annotated                                |
+| dynamic, with no checker of record   | its strongest substitute: static analysis plus declared data specifications checked at runtime at the boundary |
+| shell                                | a static analyser for the declared dialect, or the dialect's native syntax check plus review where none exists |
+| declarative infrastructure and hosts | schema-aware native validation, with no static-type claim                                                      |
 
 A stack without static types states its strongest practical substitute in its stack standard, and never claims a
 guarantee its tools cannot give.
@@ -52,8 +52,9 @@ third-party response. A schema, parser, or type guard checks it once, at that bo
 typed error there, and inner code trusts the result instead of checking it again.
 
 Never declare a type over unvalidated external data. A cast that names the expected shape passes the checker and fails
-later, in code that never saw the input. [Runtime File Data][runtime-file-data] and [Environment Variable
-Contract][environment-variable-contract] apply this rule to their own boundaries.
+later, in code that never saw the input. [Runtime File Data](runtime-file-data.md) and
+[Environment Variable Contract](../../../conventions/security/environment-variable-contract.md) apply this rule to their
+own boundaries.
 
 ## Dynamic Languages
 
@@ -73,8 +74,3 @@ Native tests carry that proof, as the stack standard states.
 An adopter enforces the checker and its strictness in its own type check and lint gates, and escape waivers through Lint
 Strictness. Review applies what no checker sees: whether external data is validated where it arrives, and whether each
 escape carries its reason.
-
-[runtime-file-data]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/code/runtime-file-data.md
-[environment-variable-contract]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/security/environment-variable-contract.md

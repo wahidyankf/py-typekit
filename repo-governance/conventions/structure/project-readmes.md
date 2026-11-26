@@ -15,31 +15,23 @@ detail lives, so nobody reverse-engineers a directory to start.
 ## Every Project Has One
 
 Every application and library project carries a `README.md` at its root, added in the same change that creates the
-project. [Monorepo Layout](directory-indexes.md) already requires one; this convention fixes what it holds. In a
+project. [Monorepo Layout](monorepo-layout.md) already requires one; this convention fixes what it holds. In a
 single-project repository, the root `README.md` is the project README: it holds these sections itself and needs no link
 to itself.
 
 ## What It Covers
 
-- **purpose**
-  - States: what the project is for, in a sentence or two
-- **ownership**
-  - States: what it owns, and what a reader might expect it to own but it does not
-- **stack**
-  - States: the languages, frameworks, and tool versions it runs on
-- **setup**
-  - States: prerequisites, installation, and configuration needed before the first command
-- **commands**
-  - States: the repository's declared task entry point, run from the repository root, to build, run, and test
-- **layout**
-  - States: where its source, tests, configuration, and entry points live
-- **boundaries**
-  - States: its dependencies, its consumers, and the interfaces it exposes, each named at the boundary
-- **testing**
-  - States: how to run its tests, and at which levels
-- **links**
-  - States: the root `README.md`, the project's specification, and the canonical architecture, security, operations, and
-    governance documents it uses
+| Section    | States                                                                                                                                    |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| purpose    | what the project is for, in a sentence or two                                                                                             |
+| ownership  | what it owns, and what a reader might expect it to own but it does not                                                                    |
+| stack      | the languages, frameworks, and tool versions it runs on                                                                                   |
+| setup      | prerequisites, installation, and configuration needed before the first command                                                            |
+| commands   | the repository's declared task entry point, run from the repository root, to build, run, and test                                         |
+| layout     | where its source, tests, configuration, and entry points live                                                                             |
+| boundaries | its dependencies, its consumers, and the interfaces it exposes, each named at the boundary                                                |
+| testing    | how to run its tests, and at which levels                                                                                                 |
+| links      | the root `README.md`, the project's specification, and the canonical architecture, security, operations, and governance documents it uses |
 
 The most useful information comes first, and every command runs as written. A section that does not apply is left out,
 not filled: a library with no configuration has no configuration section. Content with a canonical home elsewhere, such
@@ -80,7 +72,7 @@ true stays a review question.
 
 ## Principles
 
-This convention implements [Progressive Disclosure](document-word-budget.md), because the README orients a reader and
-hands interface detail to the specification one link away, and
+This convention implements [Progressive Disclosure](../../principles/progressive-disclosure.md), because the README
+orients a reader and hands interface detail to the specification one link away, and
 [One Source Per Fact](../../principles/one-source-per-fact.md), because each interface is described in exactly one
 place.

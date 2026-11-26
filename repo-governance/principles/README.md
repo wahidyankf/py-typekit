@@ -16,24 +16,26 @@ Everything here was **discovered rather than declared**. Each of these was alrea
 before it had a page, and each page names where — a principle with no existing application is a preference that has been
 promoted.
 
-- **[Fail Closed](fail-closed.md)**: a control that cannot decide refuses, and never reports a clean run
-- **[One Source Per Fact](one-source-per-fact.md)**: every fact has one place; a second copy is a scheduled
-  contradiction
-- **[Evidence Over Assertion](evidence-over-assertion.md)**: a claim is worth nothing until something outside it agrees
-- **[Minimal Sufficiency](minimal-sufficiency.md)**: carry what the purpose or the change requires, and record what was
-  left out
-- **[Automation Over Manual](automation-over-manual.md)**: recurring rule-bound work goes to machines; judgement stays
-  with people
-- **[Explicit Over Implicit](explicit-over-implicit.md)**: behaviour a reader depends on is written down, never left to
-  a default
-- **[Immutability](immutability.md)**: what others can observe gets a new value, never an in-place change
-- **[Pure Functions](pure-functions.md)**: decide without effects, and carry out the decision at a thin edge
-- **[Reproducibility](reproducibility.md)**: a clean checkout reaches the same environment and result on any machine
-  meeting documented prerequisites
-- **[Root Cause Orientation](root-cause-orientation.md)**: fix the cause at the layer that owns it; a hidden symptom is
-  not a fix
-- **[Simplicity Over Complexity](simplicity-over-complexity.md)**: the fewest concepts that do the job; abstraction
-  waits for a real need
+| Principle                                                   | Holds                                                                                                    |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [Fail Closed](fail-closed.md)                               | a control that cannot decide refuses, and never reports a clean run                                      |
+| [One Source Per Fact](one-source-per-fact.md)               | every fact has one place; a second copy is a scheduled contradiction                                     |
+| [Evidence Over Assertion](evidence-over-assertion.md)       | a claim is worth nothing until something outside it agrees                                               |
+| [Minimal Sufficiency](minimal-sufficiency.md)               | carry what the purpose or the change requires, and record what was left out                              |
+| [Accessibility First](accessibility-first.md)               | content is usable by every intended reader from its first draft                                          |
+| [Automation Over Manual](automation-over-manual.md)         | recurring rule-bound work goes to machines; judgement stays with people                                  |
+| [Consumer Independence](consumer-independence.md)           | a shared tool holds none of its consumers' answers and never guesses one                                 |
+| [Deliberate Problem-Solving](deliberate-problem-solving.md) | state assumptions, surface readings, inspect before asking, then act                                     |
+| [Documentation First](documentation-first.md)               | knowledge is written down when it becomes true, why as well as what                                      |
+| [Explicit Over Implicit](explicit-over-implicit.md)         | behaviour a reader depends on is written down, never left to a default                                   |
+| [Governance Continuity](governance-continuity.md)           | rules, authority, and state survive context loss unchanged                                               |
+| [Immutability](immutability.md)                             | what others can observe gets a new value, never an in-place change                                       |
+| [Progressive Disclosure](progressive-disclosure.md)         | a reader reaches the rule for the task in hand without reading the rest                                  |
+| [Pure Functions](pure-functions.md)                         | decide without effects, and carry out the decision at a thin edge                                        |
+| [Reproducibility](reproducibility.md)                       | a clean checkout reaches the same environment and result on any machine meeting documented prerequisites |
+| [Root Cause Orientation](root-cause-orientation.md)         | fix the cause at the layer that owns it; a hidden symptom is not a fix                                   |
+| [Simplicity Over Complexity](simplicity-over-complexity.md) | the fewest concepts that do the job; abstraction waits for a real need                                   |
+| [Consumer Correctness First](consumer-correctness-first.md) | when options differ, the one that most helps the consumer be correct wins                                |
 
 ## What Is Not Here
 
@@ -42,7 +44,7 @@ Bounded repetition is not a principle here. It is owned as a development standar
 restating it at this level would break the second principle on the list above.
 
 Portability is not here either. [Portability](../conventions/structure/plans/009-portability.md) owns it for the plan
-system.
+system and this repository's instructions own it for the catalog, which is two places already.
 
 ## Directory Map
 
@@ -51,10 +53,17 @@ system.
 - [Evidence Over Assertion](evidence-over-assertion.md)
 - [Minimal Sufficiency](minimal-sufficiency.md)
 - [Minimal Sufficiency Modules](minimal-sufficiency/README.md)
+- [Accessibility First](accessibility-first.md)
 - [Automation Over Manual](automation-over-manual.md)
+- [Consumer Independence](consumer-independence.md)
+- [Deliberate Problem-Solving](deliberate-problem-solving.md)
+- [Documentation First](documentation-first.md)
 - [Explicit Over Implicit](explicit-over-implicit.md)
+- [Governance Continuity](governance-continuity.md)
 - [Immutability](immutability.md)
+- [Progressive Disclosure](progressive-disclosure.md)
 - [Pure Functions](pure-functions.md)
 - [Reproducibility](reproducibility.md)
 - [Root Cause Orientation](root-cause-orientation.md)
 - [Simplicity Over Complexity](simplicity-over-complexity.md)
+- [Consumer Correctness First](consumer-correctness-first.md)
