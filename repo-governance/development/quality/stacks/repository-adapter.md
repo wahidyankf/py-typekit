@@ -29,8 +29,9 @@ py-typekit holds one project, the `typekit` library, so [`repo-config.yml`](../.
 The standard's "no function returns a union its callers must untangle" is read with the expected-failures decision:
 `Result` and `Option` are the sanctioned unions, and every other return is a single type.
 
-Behaviour-driven development is not adopted: a pure library has no behaviour corpus beyond its unit contract. The unit
-suite under [Test-Driven Development](../testing/test-driven-development.md) is the only test layer.
+Behaviour-driven development is adopted: the library's observable behaviour is the `.feature` corpus under
+`specs/behaviours/`, bound with pytest-bdd under `tests/`. The unit suite under
+[Test-Driven Development](../testing/test-driven-development.md) is the base test layer.
 
 ## Project Applicability
 
