@@ -55,8 +55,9 @@ specs/apps/<product>/
   no architecture.
 
 A library corpus has the same shape without the product level; its `behaviours/` states what a caller of its public API
-observes, per
-[Behaviour-Driven Development](../../development/quality/testing/behaviour-driven-development.md#every-owner-of-runtime-code-owns-a-corpus).
+observes, per [Behaviour-Driven Development][ref-1].
+
+[ref-1]: ../../development/quality/testing/behaviour-driven-development.md#every-owner-of-runtime-code-owns-a-corpus
 
 ## Architecture Is As-Built
 

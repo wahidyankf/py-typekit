@@ -60,17 +60,19 @@ A non-exempt row follows its scenario end to end:
 - **When** calls real production code or the boundary the scenario names.
 - **Then** asserts on evidence that call produced, observed from outside.
 
-Besides the defects in
-[Bindings and Exemptions](../../development/quality/testing/behaviour-driven-development/003-bindings-and-exemptions.md),
-a row is `untested` when an expected-outcome table supplies success, a literal success follows a helper's own action,
-the assertion misses the stated behaviour, or any step can reach production data.
+Besides the defects in [Bindings and Exemptions][ref-1], a row is `untested` when an expected-outcome table supplies
+success, a literal success follows a helper's own action, the assertion misses the stated behaviour, or any step can
+reach production data.
+
+[ref-1]: ../../development/quality/testing/behaviour-driven-development/003-bindings-and-exemptions.md
 
 Each exemption is checked per layer against that module's limits, its alternative proof read. An exempt layer keeps no
 silent success branch, so accidental execution fails. Scenario counts, pattern searches, and green runs never replace
-reading each row. Run the affected scenarios in every layer as
-[Compliance and Reporting](../../development/quality/testing/behaviour-driven-development/004-compliance-and-reporting.md)
-places them; a failing run blocks completion like a failing row. A row that cannot pass stays failed until its seam or
-binding is fixed; an exemption never repairs it.
+reading each row. Run the affected scenarios in every layer as [Compliance and Reporting][ref-2] places them; a failing
+run blocks completion like a failing row. A row that cannot pass stays failed until its seam or binding is fixed; an
+exemption never repairs it.
+
+[ref-2]: ../../development/quality/testing/behaviour-driven-development/004-compliance-and-reporting.md
 
 ## Assertion Theater Is a Failure, Not a Pass
 

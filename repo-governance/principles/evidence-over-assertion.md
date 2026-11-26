@@ -23,14 +23,19 @@ whether a later reader can see that agreement without re-doing the work.
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                         | As                                                                  |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| [Deletion With Proof](../development/quality/deletion-with-proof.md)               | disable the thing and demonstrate that something fails              |
-| [Delivery Contract](../conventions/structure/plans/004-delivery-contract.md)       | a ticked box says an action happened, not what it produced          |
-| [Dev Artifact Clean-Up](../workflows/maintenance/dev-artifact-clean-up.md)         | a cleanup performed but not verified is a claim                     |
-| [Execution Check](../workflows/plan/plan-execution-check.md)                       | a declared gate that never ran is not a passing gate                |
-| [Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md) | evidence is a file with a command, a revision, a time, and a result |
-| [Manual Verification](../development/quality/manual-verification.md)               | a green pipeline does not become sufficient by being convenient     |
+**Applied in** — **As**
+
+- [Deletion With Proof](../development/quality/deletion-with-proof.md) — disable the thing and demonstrate that
+  something fails
+- [Delivery Contract](../conventions/structure/plans/004-delivery-contract.md) — a ticked box says an action happened,
+  not what it produced
+- [Dev Artifact Clean-Up](../workflows/maintenance/dev-artifact-clean-up.md) — a cleanup performed but not verified is a
+  claim
+- [Execution Check](../workflows/plan/plan-execution-check.md) — a declared gate that never ran is not a passing gate
+- [Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md) — evidence is a file with a
+  command, a revision, a time, and a result
+- [Manual Verification](../development/quality/manual-verification.md) — a green pipeline does not become sufficient by
+  being convenient
 
 ## The Demonstration That Can Contradict You
 

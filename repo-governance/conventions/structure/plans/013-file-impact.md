@@ -51,10 +51,13 @@ execution blocks on it. A vague entry hides the gap and hands the decision to wh
 
 ## Patterns: an Adopter Decision
 
-| Option                   | Requires                                                                                                                               | Trade-off                                                                        |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| exact paths only         | every entry is one file; an unknown name is a blocking prerequisite                                                                    | fully reviewable before execution; costs discovery up front for sweeping changes |
-| bounded pattern families | a `*` entry names a bounded family and the rule that discovers its members, and `delivery.md` records the members before any is edited | practical for mechanical sweeps; the exact scope is visible only after discovery |
+**Option** — **Requires** — **Trade-off**
+
+- exact paths only — every entry is one file; an unknown name is a blocking prerequisite — fully reviewable before
+  execution; costs discovery up front for sweeping changes
+- bounded pattern families — a `*` entry names a bounded family and the rule that discovers its members, and
+  `delivery.md` records the members before any is edited — practical for mechanical sweeps; the exact scope is visible
+  only after discovery
 
 An unbounded pattern — a whole directory, or every file of a type — is never an entry under either option.
 

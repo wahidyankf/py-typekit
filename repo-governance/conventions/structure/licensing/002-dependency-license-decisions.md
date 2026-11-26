@@ -51,10 +51,12 @@ and a decision that omits usage cannot be rechecked when usage changes.
 
 ## What an Adopter Decides
 
-| Decision                 | Trade-off                                                                                                   |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| the permissive allowlist | a short list sends more licenses to review; a long one lets an unusual clause through unrecorded            |
-| the audit cadence        | frequent audits catch a license change early and cost attention each time; rare ones leave it in use longer |
+**Decision** — **Trade-off**
+
+- the permissive allowlist — a short list sends more licenses to review; a long one lets an unusual clause through
+  unrecorded
+- the audit cadence — frequent audits catch a license change early and cost attention each time; rare ones leave it in
+  use longer
 
 An adopter enforces this with its own dependency-license check in CI, failing on any license outside the allowlist that
 has no decision record.

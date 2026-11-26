@@ -10,11 +10,12 @@ when_to_use: >-
 
 ## Three Kinds of Step
 
-| Kind      | The step names                                                                 | Performed by                                                                                                 |
-| --------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| delegated | the agent that performs it                                                     | that agent, or the orchestrator in its place — see [Execution](003-checkpoints-composition-and-execution.md) |
-| nested    | the workflow it runs, by that workflow's `name` or a relative link to its file | a run of the nested workflow                                                                                 |
-| procedure | nothing beyond its own instructions                                            | whoever is running the workflow                                                                              |
+**Kind** — **The step names** — **Performed by**
+
+- delegated — the agent that performs it — that agent, or the orchestrator in its place — see
+  [Execution](003-checkpoints-composition-and-execution.md)
+- nested — the workflow it runs, by that workflow's `name` or a relative link to its file — a run of the nested workflow
+- procedure — nothing beyond its own instructions — whoever is running the workflow
 
 A step that names no agent and no workflow is a procedure. Its text is then the whole instruction, so it is written
 precisely enough to carry out without guessing, stating whichever of the command, the file, the decision, and what

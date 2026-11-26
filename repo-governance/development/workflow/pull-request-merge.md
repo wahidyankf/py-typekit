@@ -67,10 +67,12 @@ retriggers the checks, the following run counts.
 
 ## Adopter Decision: Merge Authority
 
-| Authority         | The merge happens                                                                    | Trade-off                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
-| preconditions     | an agent merges once all preconditions hold, unless a plan step names a human gate   | fast and consistent, but any gate gap becomes a merge gap, so test depth carries weight                 |
-| explicit approval | a person approves each merge after the preconditions hold, for that one pull request | a human backstop for gate misses, but merges wait, and approval can become a signature without evidence |
+**Authority** — **The merge happens** — **Trade-off**
+
+- preconditions — an agent merges once all preconditions hold, unless a plan step names a human gate — fast and
+  consistent, but any gate gap becomes a merge gap, so test depth carries weight
+- explicit approval — a person approves each merge after the preconditions hold, for that one pull request — a human
+  backstop for gate misses, but merges wait, and approval can become a signature without evidence
 
 The repository records its choice. Either way the preconditions are the same and only the actor differs; the commits and
 pushes that built the branch remain under [Commit Authorization](commit-authorization.md).

@@ -28,10 +28,11 @@ plan-only change stops being one the moment a script joins it.
 The tier from [Cost and Noise Controls](004-cost-and-noise-controls.md) still applies. The route changes which
 specialists run, never how the tier is chosen.
 
-| Tier         | Runs                                                                                                                                    |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| trivial      | the coordinator alone, in one generalist pass that checks security first, then architecture, correctness, documentation, and governance |
-| lite or full | security, architecture, correctness, documentation, and governance, plus the coordinator                                                |
+**Tier** — **Runs**
+
+- trivial — the coordinator alone, in one generalist pass that checks security first, then architecture, correctness,
+  documentation, and governance
+- lite or full — security, architecture, correctness, documentation, and governance, plus the coordinator
 
 Each reviews the plan as the shipping artifact: architecture the design decisions the plan makes, correctness its domain
 intent and acceptance criteria, documentation its substantive quality and completeness, and governance its mechanical

@@ -15,16 +15,16 @@ directory it introduces, and it names the thing plainly.
 
 A repository's root README carries these sections, in this order:
 
-| #   | Section               | Contains                                                                                 |
-| --- | --------------------- | ---------------------------------------------------------------------------------------- |
-| 1   | Title and description | the name, one or two sentences on what it does, and status badges where a status exists  |
-| 2   | Motivation            | the problem it addresses, who it is for, and why it exists                               |
-| 3   | Quick start           | prerequisites stated explicitly, copy-paste installation, and a command that verifies it |
-| 4   | Features              | the key capabilities as reader benefits, linking to the complete list                    |
-| 5   | Usage                 | a real, runnable example of the most common use, linking to fuller documentation         |
-| 6   | Documentation         | links to the tutorials, guides, and reference that hold the detail                       |
-| 7   | Contributing          | a short invitation and a link to the contributing guide                                  |
-| 8   | License               | the license name and a link to the license file                                          |
+**#** — **Section** — **Contains**
+
+- 1 — Title and description — the name, one or two sentences on what it does, and status badges where a status exists
+- 2 — Motivation — the problem it addresses, who it is for, and why it exists
+- 3 — Quick start — prerequisites stated explicitly, copy-paste installation, and a command that verifies it
+- 4 — Features — the key capabilities as reader benefits, linking to the complete list
+- 5 — Usage — a real, runnable example of the most common use, linking to fuller documentation
+- 6 — Documentation — links to the tutorials, guides, and reference that hold the detail
+- 7 — Contributing — a short invitation and a link to the contributing guide
+- 8 — License — the license name and a link to the license file
 
 The order follows the reader's questions: what is it, is it for me, can I run it, what does it do, how do I use it,
 where is the rest, how do I help, and may I use it.

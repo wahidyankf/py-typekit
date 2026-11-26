@@ -36,11 +36,11 @@ contract, it is the only persistence the unit tests use, and it is never deploye
 Each output port has one shared contract suite that describes its behaviour. It is written once and run against every
 adapter of that port, at the test level that matches the adapter's strongest real boundary:
 
-| Adapter                                                         | Runs the contract suite at                                       |
-| --------------------------------------------------------------- | ---------------------------------------------------------------- |
-| the in-memory adapter                                           | unit level                                                       |
-| a real adapter over an isolated local resource, with no network | integration level                                                |
-| a real adapter reached over the network                         | end-to-end level only, through the application's public boundary |
+**Adapter** — **Runs the contract suite at**
+
+- the in-memory adapter — unit level
+- a real adapter over an isolated local resource, with no network — integration level
+- a real adapter reached over the network — end-to-end level only, through the application's public boundary
 
 The port's contract is a specification, and every adapter is a candidate implementation of it. Running one suite against
 each is what makes swapping adapters in the composition root safe, and it is the reason the in-memory adapter can be

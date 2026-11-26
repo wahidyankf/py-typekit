@@ -11,33 +11,37 @@ when_to_use: >-
 Structure conventions answer where something goes and what it is called, so a reader, human or agent, can predict a path
 before opening it and a validator can check that prediction mechanically.
 
-| Convention                                                  | Governs                                                                                  |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Artifact Metadata](artifact-metadata.md)                   | frontmatter every governed artifact family carries                                       |
-| [File Naming](file-naming.md)                               | naming files and directories, and splitting a document                                   |
-| [Repository Configuration](repository-configuration.md)     | what a repository is and what must pass before a change lands                            |
-| [Plans](plans.md)                                           | the plan system: lifecycle, documents, delivery, archival                                |
-| [Plan Specification Changes](plan-specification-changes.md) | a plan's specification and architecture delta                                            |
-| [Plan Migrations](plan-migrations.md)                       | preserving data and structure through a planned transition                               |
-| [Plan UI Design](plan-ui-design.md)                         | a plan's interface exploration, assets, and device proof                                 |
-| [Plan Content Corpora](plan-content-corpora.md)             | who may change a plan-authored content corpus, and where it ends up                      |
-| [Capability Naming](capability-naming.md)                   | the scope-first grammar for agent and workflow names                                     |
-| [CI Workflow File Naming](ci-workflow-file-naming.md)       | deriving a CI workflow's filename from its declared name                                 |
-| [Command-Line Interface](command-line-interface.md)         | exit vocabulary, streams, and output a tool owes callers                                 |
-| [Coordination Repository](coordination-repository.md)       | routing work to owning repositories without transferring ownership                       |
-| [Directory Indexes](directory-indexes.md)                   | the README index of every indexed directory                                              |
-| [Document Word Budget](document-word-budget.md)             | the instruction and governance document word ceiling, and repair                         |
-| [Documentation Architecture](documentation-architecture.md) | where documentation lives and the one mode each page serves                              |
-| [Governance Layers](governance-layers.md)                   | what each governance level answers and which wins a conflict                             |
-| [Licensing](licensing.md)                                   | the root licensing model, exceptions, and dependency-license decisions                   |
-| [Monorepo Layout](monorepo-layout.md)                       | dependency direction and project boundaries inside a monorepo                            |
-| [Principle Traceability](principle-traceability.md)         | how each rule traces to the principles it implements                                     |
-| [Project READMEs](project-readmes.md)                       | what a project's root README covers and leaves to its specification                      |
-| [Related Repositories](related-repositories.md)             | parity, consumption, and knowledge-sharing relationships                                 |
-| [Specification Tree](specification-tree.md)                 | one specification corpus per logical owner, fully specified for Gherkin, C4, and OpenAPI |
-| [Stack Packs](stack-packs.md)                               | stack standard and skill paths, stack IDs, the inventory, and the repository adapter     |
-| [Temporary Files](temporary-files.md)                       | where scratch files and reports go, and their naming and writing                         |
-| [Workflow Pattern](workflow-pattern.md)                     | the contract, steps, checkpoints, and composition of a workflow document                 |
+**Convention** — **Governs**
+
+- [Artifact Metadata](artifact-metadata.md) — frontmatter every governed artifact family carries
+- [File Naming](file-naming.md) — naming files and directories, and splitting a document
+- [Repository Configuration](repository-configuration.md) — what a repository is and what must pass before a change
+  lands
+- [Plans](plans.md) — the plan system: lifecycle, documents, delivery, archival
+- [Plan Specification Changes](plan-specification-changes.md) — a plan's specification and architecture delta
+- [Plan Migrations](plan-migrations.md) — preserving data and structure through a planned transition
+- [Plan UI Design](plan-ui-design.md) — a plan's interface exploration, assets, and device proof
+- [Plan Content Corpora](plan-content-corpora.md) — who may change a plan-authored content corpus, and where it ends up
+- [Capability Naming](capability-naming.md) — the scope-first grammar for agent and workflow names
+- [CI Workflow File Naming](ci-workflow-file-naming.md) — deriving a CI workflow's filename from its declared name
+- [Command-Line Interface](command-line-interface.md) — exit vocabulary, streams, and output a tool owes callers
+- [Coordination Repository](coordination-repository.md) — routing work to owning repositories without transferring
+  ownership
+- [Directory Indexes](directory-indexes.md) — the README index of every indexed directory
+- [Document Word Budget](document-word-budget.md) — the instruction and governance document word ceiling, and repair
+- [Documentation Architecture](documentation-architecture.md) — where documentation lives and the one mode each page
+  serves
+- [Governance Layers](governance-layers.md) — what each governance level answers and which wins a conflict
+- [Licensing](licensing.md) — the root licensing model, exceptions, and dependency-license decisions
+- [Monorepo Layout](monorepo-layout.md) — dependency direction and project boundaries inside a monorepo
+- [Principle Traceability](principle-traceability.md) — how each rule traces to the principles it implements
+- [Project READMEs](project-readmes.md) — what a project's root README covers and leaves to its specification
+- [Related Repositories](related-repositories.md) — parity, consumption, and knowledge-sharing relationships
+- [Specification Tree](specification-tree.md) — one specification corpus per logical owner, fully specified for Gherkin,
+  C4, and OpenAPI
+- [Stack Packs](stack-packs.md) — stack standard and skill paths, stack IDs, the inventory, and the repository adapter
+- [Temporary Files](temporary-files.md) — where scratch files and reports go, and their naming and writing
+- [Workflow Pattern](workflow-pattern.md) — the contract, steps, checkpoints, and composition of a workflow document
 
 ## Directory Map
 

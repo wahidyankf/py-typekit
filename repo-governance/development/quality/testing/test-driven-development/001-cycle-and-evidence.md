@@ -84,5 +84,6 @@ change. [Deletion With Proof](../../deletion-with-proof.md) asks for the same de
 suite's final state, not its build order, so only these records show the test failed before the change.
 
 How each step becomes a task item is owned by [List Lifecycle](../../../agents/task-tracking/001-list-lifecycle.md). How
-a plan's delivery item carries a cycle is an adopter choice under
-[Phase Boundaries and Delivery Choices](../../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md).
+a plan's delivery item carries a cycle is an adopter choice under [Phase Boundaries and Delivery Choices][ref-1].
+
+[ref-1]: ../../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md

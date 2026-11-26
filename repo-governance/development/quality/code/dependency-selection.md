@@ -42,13 +42,15 @@ or to avoid learning a capable standard-library facility.
 
 The plan or change description that adds a dependency records:
 
-| Record                    | Holds                                                                                                 |
-| ------------------------- | ----------------------------------------------------------------------------------------------------- |
-| the need                  | what the repository must do that it cannot reasonably do itself                                       |
-| the rejected alternatives | including the standard library and writing it directly, each with why it lost                         |
-| the evidence              | release cadence, defect response, and whether anyone still owns the project                           |
-| the owned consequence     | what happens if it is abandoned, relicensed, or ships an advisory; if the answer is to vendor it, now |
-| what it brings along      | its transitive dependencies, and whether it reaches the network, the filesystem, or other processes   |
+**Record** — **Holds**
+
+- the need — what the repository must do that it cannot reasonably do itself
+- the rejected alternatives — including the standard library and writing it directly, each with why it lost
+- the evidence — release cadence, defect response, and whether anyone still owns the project
+- the owned consequence — what happens if it is abandoned, relicensed, or ships an advisory; if the answer is to vendor
+  it, now
+- what it brings along — its transitive dependencies, and whether it reaches the network, the filesystem, or other
+  processes
 
 What a dependency pulls in is part of what is adopted. A dependency that crosses a boundary the repository guards
 crosses it on the repository's behalf.

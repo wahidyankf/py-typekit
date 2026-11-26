@@ -80,12 +80,12 @@ as well as types. An observable behaviour change updates it per
 
 ## Adopter Decisions
 
-| Decision    | Option                        | Gains                                 | Costs                                    |
-| ----------- | ----------------------------- | ------------------------------------- | ---------------------------------------- |
-| check scope | project-wide `checkJs`        | no file escapes by omission           | existing backlog cleaned before the gate |
-|             | per-file `// @ts-check`       | file-by-file adoption                 | an unmarked file is silently unchecked   |
-| test runner | the runtime's built-in runner | no dependency                         | coverage may still be experimental       |
-|             | a runner package, like Vitest | stable branch coverage and watch mode | a dependency to pin and upgrade          |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- check scope — project-wide `checkJs` — no file escapes by omission — existing backlog cleaned before the gate
+- per-file `// @ts-check` — file-by-file adoption — an unmarked file is silently unchecked
+- test runner — the runtime's built-in runner — no dependency — coverage may still be experimental
+- a runner package, like Vitest — stable branch coverage and watch mode — a dependency to pin and upgrade
 
 Record each choice in the [Stack Packs](../../../conventions/structure/stack-packs.md) repository adapter; a per-file
 choice records how an unmarked file is found.

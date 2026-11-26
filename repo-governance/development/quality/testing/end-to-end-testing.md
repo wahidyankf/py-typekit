@@ -17,11 +17,13 @@ This standard implements [Reproducibility](../../../principles/reproducibility.m
 
 ## Observe Only the Public Boundary
 
-| Subject             | Driven through                                                                | Observed as                                                       |
-| ------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| command-line tool   | the built executable, with arguments, standard input, and a working directory | exit code, standard output and error, and the resulting file tree |
-| service             | requests to the exact served origin                                           | status, headers, body, and externally visible side effects        |
-| browser application | a real browser at the exact served origin                                     | rendered state, URL, network responses, and data the page exposes |
+**Subject** — **Driven through** — **Observed as**
+
+- command-line tool — the built executable, with arguments, standard input, and a working directory — exit code,
+  standard output and error, and the resulting file tree
+- service — requests to the exact served origin — status, headers, body, and externally visible side effects
+- browser application — a real browser at the exact served origin — rendered state, URL, network responses, and data the
+  page exposes
 
 A test that imports a function, a private module, or an internal store has left the boundary. Keep such checks at the
 unit or integration layer, and keep in this suite only the journeys no narrower layer can prove.

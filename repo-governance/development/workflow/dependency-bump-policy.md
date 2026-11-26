@@ -22,11 +22,14 @@ This standard implements [Reproducibility](../../principles/reproducibility.md),
 Classify each package, runtime, toolchain, base image, and pipeline action into one path, then pin the most recent
 version that path allows. An update bot may open a bump, but a person classifies it on one path before it merges.
 
-| Path              | Applies when                                             | Take                                                                                                            |
-| ----------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| long-term support | the upstream designates a long-term-support line         | the latest patch on that line, whatever its age, provided it is vulnerability-clean                             |
-| soak              | there is no long-term-support line                       | the latest vulnerability-clean version released at least 60 days before the bump date                           |
-| security waiver   | no version is both past the soak and vulnerability-clean | the most recent version that patches the vulnerabilities, or the security-recommended long-term-support release |
+**Path** — **Applies when** — **Take**
+
+- long-term support — the upstream designates a long-term-support line — the latest patch on that line, whatever its
+  age, provided it is vulnerability-clean
+- soak — there is no long-term-support line — the latest vulnerability-clean version released at least 60 days before
+  the bump date
+- security waiver — no version is both past the soak and vulnerability-clean — the most recent version that patches the
+  vulnerabilities, or the security-recommended long-term-support release
 
 A long-term-support line already carries the upstream's own soak and curation. Sixty days is the minimum window for a
 community to surface regressions and security issues; upstreams without such a line commonly ship patches about monthly,

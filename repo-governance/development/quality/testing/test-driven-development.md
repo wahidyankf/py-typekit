@@ -26,13 +26,14 @@ guards. Every bug fix is in scope.
 
 It does not apply where no executable behaviour changes:
 
-| Change                                                            | Why no test comes first                                                            |
-| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| prose, documentation, or governance text                          | no test target reads prose                                                         |
-| generated output                                                  | the generator's own tests cover it                                                 |
-| a typo or comment correction                                      | the existing tests already cover the behaviour                                     |
-| a configuration value that alters no behaviour and no gate's rule | nothing executable changes; a change to what a gate accepts starts from a red test |
-| an exploratory spike                                              | it is discarded, or rebuilt test-first, before anything ships                      |
+**Change** — **Why no test comes first**
+
+- prose, documentation, or governance text — no test target reads prose
+- generated output — the generator's own tests cover it
+- a typo or comment correction — the existing tests already cover the behaviour
+- a configuration value that alters no behaviour and no gate's rule — nothing executable changes; a change to what a
+  gate accepts starts from a red test
+- an exploratory spike — it is discarded, or rebuilt test-first, before anything ships
 
 Keep this list short. When it is unclear whether a change alters behaviour, treat it as one that does and write the test
 first.
@@ -45,8 +46,10 @@ first.
 3. **Refactor.** Improve the design with the focused boundary selection green and no known failing checks, adding no
    behaviour.
 
-Case selection, executed-case evidence, and phase/pre-pull-request full regression follow
-[Focused Runs and Regression Gates](test-driven-development/001-cycle-and-evidence.md#focused-runs-and-regression-gates).
+Case selection, executed-case evidence, and phase/pre-pull-request full regression follow [Focused Runs and Regression
+Gates][ref-1].
+
+[ref-1]: test-driven-development/001-cycle-and-evidence.md#focused-runs-and-regression-gates
 
 Repeat for the next behaviour. Where behaviour is specified as scenarios, the scenario is added or updated before the
 red, as [Behaviour-Driven Development](behaviour-driven-development.md) requires. A refactor that changes no behaviour

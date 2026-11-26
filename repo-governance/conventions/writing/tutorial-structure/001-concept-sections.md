@@ -11,14 +11,17 @@ when_to_use: >-
 A content section that teaches a concept applies the explain-then-show order of
 [Tutorial Structure](../tutorial-structure.md) in six parts:
 
-| #   | Part                   | Carries                                                                                                               |
-| --- | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| 1   | Title and introduction | the concept's name, then a few sentences on what it is, why it matters, and how it relates to concepts already taught |
-| 2   | Diagram                | only when components, flow, states, relationships, or a comparison of approaches are clearer drawn than described     |
-| 3   | Narrative              | how the concept works, when to use it, its trade-offs, alternatives, and common pitfalls, before any code             |
-| 4   | Annotated code         | a worked example whose annotations say what each significant line does and produces                                   |
-| 5   | Key takeaway           | the one insight to keep, in a sentence or two                                                                         |
-| 6   | Why it matters         | a short note connecting the concept to production use and what it changes there                                       |
+**#** — **Part** — **Carries**
+
+- 1 — Title and introduction — the concept's name, then a few sentences on what it is, why it matters, and how it
+  relates to concepts already taught
+- 2 — Diagram — only when components, flow, states, relationships, or a comparison of approaches are clearer drawn than
+  described
+- 3 — Narrative — how the concept works, when to use it, its trade-offs, alternatives, and common pitfalls, before any
+  code
+- 4 — Annotated code — a worked example whose annotations say what each significant line does and produces
+- 5 — Key takeaway — the one insight to keep, in a sentence or two
+- 6 — Why it matters — a short note connecting the concept to production use and what it changes there
 
 ## Why These Parts
 

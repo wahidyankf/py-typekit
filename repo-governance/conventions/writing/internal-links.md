@@ -48,10 +48,12 @@ change. Keeping the two apart keeps the deletion green without shortchanging the
 
 Whether a tree may use wiki-style links is a decision each repository makes and records.
 
-| Option                                      | Gains                                                                   | Costs                                                                         |
-| ------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| standard relative links everywhere          | every link passes a general link checker and resolves in every renderer | a notes tool's backlinks and rename tracking may not follow them              |
-| wiki-style links in a tool-bound notes tree | the notes tool's backlinks and rename tracking work on every link       | the links resolve only inside that tool, and no general validator checks them |
+**Option** — **Gains** — **Costs**
+
+- standard relative links everywhere — every link passes a general link checker and resolves in every renderer — a notes
+  tool's backlinks and rename tracking may not follow them
+- wiki-style links in a tool-bound notes tree — the notes tool's backlinks and rename tracking work on every link — the
+  links resolve only inside that tool, and no general validator checks them
 
 A tree using wiki-style links sits outside the standard check, so its links are only as sound as the tool resolving
 them.
@@ -61,10 +63,12 @@ them.
 Whether archived material is validated as a link **source** is a decision each repository makes and records in its link
 validator's configuration. Archived material stays a valid link **target** either way.
 
-| Option                                   | Gains                                                                | Costs                                                                                |
-| ---------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| validate every source, archives included | every link in the repository resolves, with no exception to remember | a move or deletion forces edits inside archived documents, rewriting a closed record |
-| exclude archived trees as sources        | archives stay exactly as they were closed                            | links inside an archive rot, so an archived document stops being a reliable map      |
+**Option** — **Gains** — **Costs**
+
+- validate every source, archives included — every link in the repository resolves, with no exception to remember — a
+  move or deletion forces edits inside archived documents, rewriting a closed record
+- exclude archived trees as sources — archives stay exactly as they were closed — links inside an archive rot, so an
+  archived document stops being a reliable map
 
 A repository with no archived tree declares an empty exclusion list, so the absence reads as a decision rather than an
 oversight.

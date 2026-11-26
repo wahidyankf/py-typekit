@@ -39,10 +39,13 @@ names and follow [File Naming](file-naming.md).
 
 The scope, role, and type vocabularies can each be closed or open, and a repository records which.
 
-| Vocabulary                   | Gains                                                                                                                                                | Costs                                                                                                                                                 |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| closed: declared and checked | a name alone says what the artifact does, a misspelled or invented token is caught, and routing, permissions, or reports that read it can rely on it | every new kind of agent or procedure needs a vocabulary amendment first, names bend to fit the list, and a check on a token nothing reads buys little |
-| open: grammar only           | a new kind needs no amendment, and no rename follows from a check that prevents no defect                                                            | two names may use different words for one role, and nothing mechanical checks meaning                                                                 |
+**Vocabulary** — **Gains** — **Costs**
+
+- closed: declared and checked — a name alone says what the artifact does, a misspelled or invented token is caught, and
+  routing, permissions, or reports that read it can rely on it — every new kind of agent or procedure needs a vocabulary
+  amendment first, names bend to fit the list, and a check on a token nothing reads buys little
+- open: grammar only — a new kind needs no amendment, and no rename follows from a check that prevents no defect — two
+  names may use different words for one role, and nothing mechanical checks meaning
 
 A closed vocabulary lives in one place, with a one-line meaning for each entry, and is amended before the first name
 that uses a new entry. A type is also a claim about behaviour: a workflow typed as a quality gate that does not return

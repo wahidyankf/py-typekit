@@ -21,7 +21,10 @@ when_to_use: >-
 ```mermaid
 flowchart LR
     accTitle: Hexagonal dependency direction
-    accDescr: Inbound adapters and outbound adapters each depend on the application layer, and the application layer depends on the domain.
+    accDescr {
+      Inbound adapters and outbound adapters each depend on the application layer, and the application layer depends on
+      the domain.
+    }
     classDef default fill:#CA9161,stroke:#000000,color:#000000,stroke-width:2px
     Inbound["Inbound adapters"] -- depend on --> App["Application"]
     Outbound["Outbound adapters"] -- depend on --> App

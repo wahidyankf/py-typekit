@@ -24,27 +24,34 @@ consequence.
 
 ## What It Requires
 
-| Concern       | Explicit form                                                  | Implicit form it replaces                        |
-| ------------- | -------------------------------------------------------------- | ------------------------------------------------ |
-| configuration | every value a reader depends on, written out                   | whatever the tool happens to do today            |
-| permissions   | granted by name, the narrowest that does the job               | inherited, or assumed from what is available     |
-| dependencies  | declared at the point of use                                   | reached through global state or auto-discovery   |
-| outcomes      | a recorded decision, disposition, or authorization             | inferred from silence, or from nothing objecting |
-| assumptions   | checked where they are made, and failed loudly when they break | trusted until something distant goes wrong       |
+**Concern** — **Explicit form** — **Implicit form it replaces**
+
+- configuration — every value a reader depends on, written out — whatever the tool happens to do today
+- permissions — granted by name, the narrowest that does the job — inherited, or assumed from what is available
+- dependencies — declared at the point of use — reached through global state or auto-discovery
+- outcomes — a recorded decision, disposition, or authorization — inferred from silence, or from nothing objecting
+- assumptions — checked where they are made, and failed loudly when they break — trusted until something distant goes
+  wrong
 
 Mechanical parts belong in the adopter's own schema validation: a required key that is missing fails there rather than
 being filled with a default.
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                              | As                                                                           |
-| ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md)           | visibility is required rather than guessed from where the repository lives   |
-| [Governance Categories](../conventions/structure/repository-configuration/004-governance-categories.md) | a category is declared, never inferred from a directory                      |
-| [Verification Layers](../development/quality/manual-verification/002-verification-layers.md)            | an assertion states its procedure, observation, failure signal, and evidence |
-| [Executor Authority](../development/agents/planning-capabilities/004-executor-authority.md)             | authorization is granted explicitly and recorded, not assumed from context   |
-| [Adopt Artifact](../workflows/adoption/adopt-artifact.md)                                               | only an explicit request naming the artifact opens the workflow              |
-| [Deletion With Proof](../development/quality/deletion-with-proof.md)                                    | every responsibility names its successor explicitly, by path                 |
+**Applied in** — **As**
+
+- [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md) — visibility is required
+  rather than guessed from where the repository lives
+- [Governance Categories](../conventions/structure/repository-configuration/004-governance-categories.md) — a category
+  is declared, never inferred from a directory
+- [Verification Layers](../development/quality/manual-verification/002-verification-layers.md) — an assertion states its
+  procedure, observation, failure signal, and evidence
+- [Executor Authority](../development/agents/planning-capabilities/004-executor-authority.md) — authorization is granted
+  explicitly and recorded, not assumed from context
+- [Adopt Artifact](../workflows/adoption/adopt-artifact.md) — only an explicit request naming the artifact opens the
+  workflow
+- [Deletion With Proof](../development/quality/deletion-with-proof.md) — every responsibility names its successor
+  explicitly, by path
 
 ## The One Explicit Omission
 

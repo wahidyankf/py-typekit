@@ -13,15 +13,18 @@ opens the document.
 
 ## The Types
 
-| Name          | Prerequisite                           | Coverage        | Reader and goal                                                      |
-| ------------- | -------------------------------------- | --------------- | -------------------------------------------------------------------- |
-| Initial Setup | none                                   | up to 5%        | install, verify, and run a first example                             |
-| Quick Start   | none                                   | 5–30%           | enough core concepts to read the documentation and explore alone     |
-| Beginner      | none                                   | up to 60%       | a complete foundation: the core features most real work uses         |
-| Intermediate  | Beginner, or equivalent experience     | 60–85%          | production practice: testing strategy, security, performance, scale  |
-| Advanced      | Intermediate, or equivalent experience | 85–95%          | expert depth: edge cases, profiling, internals, design trade-offs    |
-| By Example    | programming experience                 | 95%, cumulative | a language or framework learned through annotated, runnable examples |
-| Cookbook      | working knowledge                      | not depth-based | problem-solving recipes, organised by problem, not a learning path   |
+**Name** — **Prerequisite** — **Coverage** — **Reader and goal**
+
+- Initial Setup — none — up to 5% — install, verify, and run a first example
+- Quick Start — none — 5–30% — enough core concepts to read the documentation and explore alone
+- Beginner — none — up to 60% — a complete foundation: the core features most real work uses
+- Intermediate — Beginner, or equivalent experience — 60–85% — production practice: testing strategy, security,
+  performance, scale
+- Advanced — Intermediate, or equivalent experience — 85–95% — expert depth: edge cases, profiling, internals, design
+  trade-offs
+- By Example — programming experience — 95%, cumulative — a language or framework learned through annotated, runnable
+  examples
+- Cookbook — working knowledge — not depth-based — problem-solving recipes, organised by problem, not a learning path
 
 Coverage is the share of the subject's domain knowledge a type covers, stated as the author's estimate. By Example's
 figure is cumulative across its own levels. The last 5% — research-level and highly specialised topics — belongs to no

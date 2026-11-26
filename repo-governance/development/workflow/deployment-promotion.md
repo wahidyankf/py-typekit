@@ -39,10 +39,13 @@ checkout starts on the trunk with a clean working tree.
 
 For a non-production tier the adopter records one option:
 
-| Option           | The pointer moves when                                                | Trade-off                                                                                                                                                             |
-| ---------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| deliberate only  | someone promotes it, as for production                                | every change is chosen, and the tier lags until someone acts                                                                                                          |
-| gated automation | a workflow that passed the full test suite on a trunk commit moves it | the tier tracks the trunk with evidence attached; a bypass, allowed only while the gate itself is broken and the tier must ship urgently, is recorded with its reason |
+**Option** — **The pointer moves when** — **Trade-off**
+
+- deliberate only — someone promotes it, as for production — every change is chosen, and the tier lags until someone
+  acts
+- gated automation — a workflow that passed the full test suite on a trunk commit moves it — the tier tracks the trunk
+  with evidence attached; a bypass, allowed only while the gate itself is broken and the tier must ship urgently, is
+  recorded with its reason
 
 ## Build Gating
 

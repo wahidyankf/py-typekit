@@ -15,12 +15,13 @@ A workflow owns sequence. It states when it applies, what happens in order, what
 It does not teach judgement — that belongs to a skill — and it does not assert a durable truth — that belongs to a
 principle or a convention. When a workflow starts explaining how to decide well, the explanation has outgrown it.
 
-| Group          | Covers                                                                                                                                  |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `plan/`        | the plan lifecycle, from idea to archived plan                                                                                          |
-| `adoption/`    | comparing a repository with this catalog, and adopting from it                                                                          |
-| `quality/`     | reviews that judge finished work against stated criteria, and bounded, advisory quality gates with the propagation that writes for each |
-| `maintenance/` | keeping a repository clean, current, and releasable, and grooming its rules                                                             |
+**Group** — **Covers**
+
+- `plan/` — the plan lifecycle, from idea to archived plan
+- `adoption/` — comparing a repository with this catalog, and adopting from it
+- `quality/` — reviews that judge finished work against stated criteria, and bounded, advisory quality gates with the
+  propagation that writes for each
+- `maintenance/` — keeping a repository clean, current, and releasable, and grooming its rules
 
 ## Directory Map
 

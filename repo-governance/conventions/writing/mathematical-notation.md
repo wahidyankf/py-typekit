@@ -63,12 +63,15 @@ environment made to sit inside a display, and KaTeX and MathJax both render it.
 
 ## Where Math Does Not Go
 
-| Context                                 | Instead                                       | Because                                                                          |
-| --------------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------- |
-| a fenced code block or a code comment   | the language's own expression syntax          | code is literal; LaTeX there is never rendered, only misread                     |
-| a diagram label                         | plain notation, such as `r = a / b`           | diagram math support varies by renderer and version, and a text diagram has none |
-| configuration, JSON, YAML, or data file | plain notation, if a formula is stored at all | a program consumes the value, and LaTeX backslashes need escaping in most data   |
-| a plain-text diagram                    | plain notation, per [Diagrams](diagrams.md)   | it is read in a terminal, where nothing renders                                  |
+**Context** — **Instead** — **Because**
+
+- a fenced code block or a code comment — the language's own expression syntax — code is literal; LaTeX there is never
+  rendered, only misread
+- a diagram label — plain notation, such as `r = a / b` — diagram math support varies by renderer and version, and a
+  text diagram has none
+- configuration, JSON, YAML, or data file — plain notation, if a formula is stored at all — a program consumes the
+  value, and LaTeX backslashes need escaping in most data
+- a plain-text diagram — plain notation, per [Diagrams](diagrams.md) — it is read in a terminal, where nothing renders
 
 A fenced block that quotes LaTeX source to show how it is written — as the examples above do — is a quotation, not a
 place math is meant to render, and is unaffected.

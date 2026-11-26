@@ -35,10 +35,11 @@ plan, a fixture, or version control.
 When a plan adds, alters, or drops a persistent schema, a diagram of the data model sits next to the exact contract,
 drawn in the form the repository's [Diagrams](../../writing/diagrams.md) rule sets.
 
-| Model                                | The diagram shows                                                                      |
-| ------------------------------------ | -------------------------------------------------------------------------------------- |
-| relational                           | the entities involved, their primary, foreign, and unique keys, links, and cardinality |
-| document, key-value, event, or graph | the records involved, their keys and references, and where ownership changes hands     |
+**Model** — **The diagram shows**
+
+- relational — the entities involved, their primary, foreign, and unique keys, links, and cardinality
+- document, key-value, event, or graph — the records involved, their keys and references, and where ownership changes
+  hands
 
 Even a change to one entity draws that entity, together with the keys and neighbouring ownership a reader needs to make
 sense of it.

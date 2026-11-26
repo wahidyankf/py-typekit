@@ -36,10 +36,16 @@ This standard implements [Explicit Over Implicit](../../principles/explicit-over
 
 ## Adopter Decision: Resolving Internal Packages
 
-| Strategy                   | How                                                                                                                                                       | Gains                                                                                                                          | Costs                                                                                                                                                                |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| inject package sources     | install the application's dependencies, then copy each internal package's source and package manifest into the dependency directory under its scoped name | a small install limited to one application, and each internal dependency is a visible line in the build file                   | every new internal dependency adds copy lines to the build file and every overlay, and a hoisted transitive dependency is declared in the application's own manifest |
-| copy resolved dependencies | install at the workspace root in an earlier stage, then copy the resolved root dependency directory, and any package-level one, into the build stage      | links are resolved at install time, nothing is maintained per package, and hoisted dependencies arrive with the root directory | a larger install and image layer carrying the whole workspace's dependencies, and a missed package-level directory surfaces only at runtime                          |
+**Strategy** — **How** — **Gains** — **Costs**
+
+- inject package sources — install the application's dependencies, then copy each internal package's source and package
+  manifest into the dependency directory under its scoped name — a small install limited to one application, and each
+  internal dependency is a visible line in the build file — every new internal dependency adds copy lines to the build
+  file and every overlay, and a hoisted transitive dependency is declared in the application's own manifest
+- copy resolved dependencies — install at the workspace root in an earlier stage, then copy the resolved root dependency
+  directory, and any package-level one, into the build stage — links are resolved at install time, nothing is maintained
+  per package, and hoisted dependencies arrive with the root directory — a larger install and image layer carrying the
+  whole workspace's dependencies, and a missed package-level directory surfaces only at runtime
 
 Record the strategy. Under injection, copy both the source and the package manifest: resolution by file path works
 without the manifest, but type declarations and export maps that read it do not.

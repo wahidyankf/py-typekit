@@ -18,12 +18,12 @@ This standard implements [Reproducibility](../../../principles/reproducibility.m
 
 ## The Kinds
 
-| Double | What it is                                                       | A test using it asserts on                    |
-| ------ | ---------------------------------------------------------------- | --------------------------------------------- |
-| fake   | a working, simplified implementation, such as an in-memory store | the state the code under test leaves          |
-| stub   | an object returning fixed, deterministic answers                 | the result the code under test returns        |
-| spy    | an object recording the calls it receives                        | the interaction itself                        |
-| mock   | an object programmed in advance with the calls it expects        | the calls the code under test happens to make |
+**Double** — **What it is** — **A test using it asserts on**
+
+- fake — a working, simplified implementation, such as an in-memory store — the state the code under test leaves
+- stub — an object returning fixed, deterministic answers — the result the code under test returns
+- spy — an object recording the calls it receives — the interaction itself
+- mock — an object programmed in advance with the calls it expects — the calls the code under test happens to make
 
 ## Prefer an In-Memory Fake to a Mock
 

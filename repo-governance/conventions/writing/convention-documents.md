@@ -14,13 +14,16 @@ reader.
 
 ## What Every Convention Contains
 
-| Content                                                             | Why it is required                                                                   |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| the rule, stated first and decisively                               | a reader deciding whether the document applies needs the rule, not its history       |
-| its scope, including what it excludes                               | an unstated boundary gets guessed, and two readers guess differently                 |
-| the reason for every rule that is not self-evident                  | a rule without a reason is followed exactly until the first case it did not foresee  |
-| an example wherever the rule is abstract                            | the example is what a reader copies, and a correct and incorrect pair shows the edge |
-| metadata per [Artifact Metadata](../structure/artifact-metadata.md) | routing and discovery read metadata before the body                                  |
+**Content** — **Why it is required**
+
+- the rule, stated first and decisively — a reader deciding whether the document applies needs the rule, not its history
+- its scope, including what it excludes — an unstated boundary gets guessed, and two readers guess differently
+- the reason for every rule that is not self-evident — a rule without a reason is followed exactly until the first case
+  it did not foresee
+- an example wherever the rule is abstract — the example is what a reader copies, and a correct and incorrect pair shows
+  the edge
+- metadata per [Artifact Metadata](../structure/artifact-metadata.md) — routing and discovery read metadata before the
+  body
 
 Write "use" and "never", not "consider" or "you might": a convention that only suggests cannot be checked.
 
@@ -36,11 +39,14 @@ makes sense as a sequence, as recurring judgement, or as a role with its own too
 
 ## Create, Update, or Merge
 
-| Decision                      | When                                                                                                                                               |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| create a new convention       | the concern is distinct, its scope can be stated without overlapping an existing convention, and more than one document or process will rely on it |
-| update an existing convention | the guidance extends or clarifies that convention's scope, or more than 60 percent of it is already covered there                                  |
-| merge two conventions         | they overlap by more than 60 percent, they are always consulted together, or readers cannot tell which one to follow                               |
+**Decision** — **When**
+
+- create a new convention — the concern is distinct, its scope can be stated without overlapping an existing convention,
+  and more than one document or process will rely on it
+- update an existing convention — the guidance extends or clarifies that convention's scope, or more than 60 percent of
+  it is already covered there
+- merge two conventions — they overlap by more than 60 percent, they are always consulted together, or readers cannot
+  tell which one to follow
 
 Search the [conventions index](../README.md) before deciding. The expensive mistake is a new convention whose rule
 already exists under another name: the two drift apart, and nothing decides which a reader should believe.

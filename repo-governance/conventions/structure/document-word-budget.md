@@ -29,13 +29,18 @@ shell count is only an estimate.
 
 ## What an Adopter Decides
 
-| Decision          | Options                                                                 | Trade-off                                                                                                |
-| ----------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| the ceiling       | one number, or one per class of surface                                 | one number is simpler; classes fit files with different jobs, and overlapping classes then need an order |
-| the count         | whitespace-separated tokens, or runs of letters and digits              | whitespace is reproducible with standard tools; letter runs weigh links and tables more as a reader does |
-| agent definitions | measure them, or leave them unmeasured                                  | measuring catches a definition a harness stops reading; leaving them out sizes each by its task          |
-| a warning band    | none; closed only by relocation; or prompting a simplification or split | relocation-only blocks trimming back under the band; a prompt trusts the author; no band fails first     |
-| excluded trees    | exclude records sized by what they must say, or include them            | exclusion keeps a delivery record whole; inclusion catches a plan grown too large to follow              |
+**Decision** — **Options** — **Trade-off**
+
+- the ceiling — one number, or one per class of surface — one number is simpler; classes fit files with different jobs,
+  and overlapping classes then need an order
+- the count — whitespace-separated tokens, or runs of letters and digits — whitespace is reproducible with standard
+  tools; letter runs weigh links and tables more as a reader does
+- agent definitions — measure them, or leave them unmeasured — measuring catches a definition a harness stops reading;
+  leaving them out sizes each by its task
+- a warning band — none; closed only by relocation; or prompting a simplification or split — relocation-only blocks
+  trimming back under the band; a prompt trusts the author; no band fails first
+- excluded trees — exclude records sized by what they must say, or include them — exclusion keeps a delivery record
+  whole; inclusion catches a plan grown too large to follow
 
 When two surface classes match one file, the later declaration decides, so a narrower class is declared after any
 broader one it overlaps, and reordering declarations is a policy change. An excluded tree is outside the gate, not

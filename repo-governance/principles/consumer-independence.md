@@ -57,14 +57,20 @@ the record false.
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                    | As                                                                          |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [Portability](../conventions/structure/plans/009-portability.md)                              | the plan system names no repository and depends on none                     |
-| [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md) | an unwritten validator section is refused by name, never given a default    |
-| [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)         | leaf commands own file filtering, because a runner would guess for each one |
-| [Harness Adapters](../development/agents/harness-adapters.md)                                 | an absent tier mapping emits nothing rather than a guess frozen in place    |
-| [Portable Tiers](../conventions/structure/artifact-metadata/003-portable-tiers.md)            | the model mapping lives in the repository's configuration, not the agent    |
-| [Adopt Artifact](../workflows/adoption/adopt-artifact.md)                                     | an adopted copy belongs to the adopter, and nothing reaches back into it    |
+**Applied in** — **As**
+
+- [Portability](../conventions/structure/plans/009-portability.md) — the plan system names no repository and depends on
+  none
+- [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md) — an unwritten validator
+  section is refused by name, never given a default
+- [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md) — leaf commands own file
+  filtering, because a runner would guess for each one
+- [Harness Adapters](../development/agents/harness-adapters.md) — an absent tier mapping emits nothing rather than a
+  guess frozen in place
+- [Portable Tiers](../conventions/structure/artifact-metadata/003-portable-tiers.md) — the model mapping lives in the
+  repository's configuration, not the agent
+- [Adopt Artifact](../workflows/adoption/adopt-artifact.md) — an adopted copy belongs to the adopter, and nothing
+  reaches back into it
 
 ## Proving It
 

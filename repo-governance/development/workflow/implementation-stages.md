@@ -18,11 +18,15 @@ This standard implements [Simplicity Over Complexity](../../principles/simplicit
 
 ## The Stages
 
-| Stage | Aim                                                                                                      | Complete when                                                              | Not during this stage                                                                    |
-| ----- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| work  | the most direct solution that meets the requirement                                                      | the behaviour works and its tests pass                                     | abstractions, performance tuning, or restructuring while implementing                    |
-| right | readable, maintainable code: clear names, small single-purpose units, error handling, and thorough tests | the code is clean and every test still passes                              | performance tuning, features the requirement does not ask for, or any behaviour change   |
-| fast  | a performance need that a measurement demonstrated                                                       | the measured need is met, the tests still pass, and the reason is recorded | tuning without profiling data, tuning beyond the bottleneck, or needless loss of clarity |
+**Stage** — **Aim** — **Complete when** — **Not during this stage**
+
+- work — the most direct solution that meets the requirement — the behaviour works and its tests pass — abstractions,
+  performance tuning, or restructuring while implementing
+- right — readable, maintainable code: clear names, small single-purpose units, error handling, and thorough tests — the
+  code is clean and every test still passes — performance tuning, features the requirement does not ask for, or any
+  behaviour change
+- fast — a performance need that a measurement demonstrated — the measured need is met, the tests still pass, and the
+  reason is recorded — tuning without profiling data, tuning beyond the bottleneck, or needless loss of clarity
 
 Duplication is tolerated while making it work. Removing it belongs to making it right, and an abstraction is extracted
 only once it has earned its place, as Simplicity Over Complexity describes.
@@ -40,12 +44,13 @@ Tuning on a guess tends to land where little time is spent, costs clarity, and l
 
 ## Exceptions
 
-| Situation                                                 | How the order changes                                                          |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| a security fix                                            | correctness leads: the fix is made right before it counts as working           |
-| a production hotfix                                       | a working fix ships first and is made right afterwards                         |
-| performance is itself a requirement, as in real-time work | performance constrains even the first stage, and the stages still run in order |
-| restructuring code that already works                     | begin at the second stage                                                      |
+**Situation** — **How the order changes**
+
+- a security fix — correctness leads: the fix is made right before it counts as working
+- a production hotfix — a working fix ships first and is made right afterwards
+- performance is itself a requirement, as in real-time work — performance constrains even the first stage, and the
+  stages still run in order
+- restructuring code that already works — begin at the second stage
 
 ## Surgical Changes
 

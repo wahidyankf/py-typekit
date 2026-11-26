@@ -27,10 +27,10 @@ and another platform maps the cascade rules below onto its own theming mechanism
 
 ## Two Categories
 
-| Category   | Holds                                                          | Defined by             | Overridden per application |
-| ---------- | -------------------------------------------------------------- | ---------------------- | -------------------------- |
-| structural | spacing scale, radii, type scale, shadows, and base neutrals   | a shared token package | never                      |
-| brand      | primary, secondary, and accent colours, each with a foreground | each application       | yes, by design             |
+**Category** — **Holds** — **Defined by** — **Overridden per application**
+
+- structural — spacing scale, radii, type scale, shadows, and base neutrals — a shared token package — never
+- brand — primary, secondary, and accent colours, each with a foreground — each application — yes, by design
 
 An application imports the shared structural tokens and declares only its brand overrides, after the import, so the
 cascade applies them. It never copies a structural token into its own stylesheet, where the copy silently diverges once

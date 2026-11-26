@@ -46,13 +46,17 @@ is whether anything governing the work was stored only there.
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                  | As                                                                      |
-| ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [Plan Execution](../workflows/plan/plan-execution.md)                                       | a resumed session continues a budget; it does not reset one             |
-| [Delivery Contract](../conventions/structure/plans/004-delivery-contract.md)                | an executor with no memory of the plan can tell what to do next         |
-| [Decision Gates](../development/agents/planning-capabilities/003-decision-gates.md)         | a choice is traceable from the plan, without conversation history       |
-| [Executor Authority](../development/agents/planning-capabilities/004-executor-authority.md) | authorization is recorded once, so it never moves into memory           |
-| [Quality Gate](../workflows/quality/plan-quality-gate.md)                                   | the draft is frozen at a named revision, so the gate knows what it read |
+**Applied in** — **As**
+
+- [Plan Execution](../workflows/plan/plan-execution.md) — a resumed session continues a budget; it does not reset one
+- [Delivery Contract](../conventions/structure/plans/004-delivery-contract.md) — an executor with no memory of the plan
+  can tell what to do next
+- [Decision Gates](../development/agents/planning-capabilities/003-decision-gates.md) — a choice is traceable from the
+  plan, without conversation history
+- [Executor Authority](../development/agents/planning-capabilities/004-executor-authority.md) — authorization is
+  recorded once, so it never moves into memory
+- [Quality Gate](../workflows/quality/plan-quality-gate.md) — the draft is frozen at a named revision, so the gate knows
+  what it read
 
 ## Why a Principle
 

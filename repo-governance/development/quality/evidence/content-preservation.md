@@ -22,12 +22,13 @@ stated simply stops being applied, and the next reader cannot tell it ever exist
 
 ## Choose the Home by What the Content Is
 
-| Option                                  | Use when                                                                           |
-| --------------------------------------- | ---------------------------------------------------------------------------------- |
-| a new owning document                   | the content is a rule or practice that has no current owner                        |
-| merge into an existing owner            | a document already governs the subject and the content extends it                  |
-| extract a shared pattern to one owner   | several documents restate the same content; one holds it and the others link there |
-| a companion module of the same document | the content belongs to the same rule but exceeds the entrypoint's budget           |
+**Option** — **Use when**
+
+- a new owning document — the content is a rule or practice that has no current owner
+- merge into an existing owner — a document already governs the subject and the content extends it
+- extract a shared pattern to one owner — several documents restate the same content; one holds it and the others link
+  there
+- a companion module of the same document — the content belongs to the same rule but exceeds the entrypoint's budget
 
 A companion module is this catalog's form of a separate sibling document: it keeps the content beside the rule it
 belongs to while giving it a budget of its own.

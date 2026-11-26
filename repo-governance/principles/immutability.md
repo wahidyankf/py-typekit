@@ -43,12 +43,15 @@ no further justification: a function that fills a local list and returns it has 
 
 These are common ways of keeping mutation behind that boundary. They are examples, not a closed list:
 
-| Example                                         | Stays confined because                                                                         |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| a local accumulator or buffer                   | it is created and filled inside one owner, and callers receive only the finished value         |
-| a performance-critical loop or profiled hotspot | the mutable structure never escapes the loop or the owner that runs it                         |
-| a dataset too large to copy                     | one owner updates it while nothing else holds it, then hands out a new value or read-only view |
-| a mutable library or platform interface         | the mutation happens at the call site, and values crossing into the rest of the code are new   |
+**Example** — **Stays confined because**
+
+- a local accumulator or buffer — it is created and filled inside one owner, and callers receive only the finished value
+- a performance-critical loop or profiled hotspot — the mutable structure never escapes the loop or the owner that runs
+  it
+- a dataset too large to copy — one owner updates it while nothing else holds it, then hands out a new value or
+  read-only view
+- a mutable library or platform interface — the mutation happens at the call site, and values crossing into the rest of
+  the code are new
 
 The boundary decides, not the reason for approaching it. A mutable structure that is returned, stored, shared, or
 captured by something that outlives the change is observable, and no speed gain makes it confined. A library that
@@ -56,11 +59,14 @@ mutates is not a licence to spread its style past the boundary where it is calle
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                              | As                                                              |
-| ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| [Surfaces and Mutation](../conventions/structure/repository-configuration/003-surfaces-and-mutation.md) | a check leaves the working tree unchanged                       |
-| [Quality Gate](../workflows/quality/plan-quality-gate.md)                                               | the draft is frozen at a named revision for the gate's duration |
-| [Harness Adapters](../development/agents/harness-adapters.md)                                           | an adapter is regenerated from its source, never edited by hand |
+**Applied in** — **As**
+
+- [Surfaces and Mutation](../conventions/structure/repository-configuration/003-surfaces-and-mutation.md) — a check
+  leaves the working tree unchanged
+- [Quality Gate](../workflows/quality/plan-quality-gate.md) — the draft is frozen at a named revision for the gate's
+  duration
+- [Harness Adapters](../development/agents/harness-adapters.md) — an adapter is regenerated from its source, never
+  edited by hand
 
 ## Examples Are Not the Rule
 

@@ -37,32 +37,47 @@ gate.
 
 ## Rules and Enforcement
 
-| Rule                                                         | States                               | Disposition: check or reason                          |
-| ------------------------------------------------------------ | ------------------------------------ | ----------------------------------------------------- |
-| [C1](test-and-gate-contract/001-registry-and-dispatch.md)    | one gate declaration, dispatched     | gated: wiring rules W01–W06                           |
-| [C2](test-and-gate-contract/001-registry-and-dispatch.md)    | no dead entries or unwired artefacts | gated: wiring rules W01–W06                           |
-| [C3](test-and-gate-contract/001-registry-and-dispatch.md)    | the bootstrap installs hooks         | gated: the bootstrap health check                     |
-| [C4](test-and-gate-contract/001-registry-and-dispatch.md)    | every gate tool pinned               | gated: wiring rule W06, or a runner pin check         |
-| [C5](test-and-gate-contract/001-registry-and-dispatch.md)    | offline and deterministic            | unenforced: judgement; network-denied run as evidence |
-| [C6](test-and-gate-contract/002-surface-placement.md)        | one kind of work per surface         | gated: wiring rules W01–W05 and W07                   |
-| [C7](test-and-gate-contract/003-pull-request-scope.md)       | scope by dependence                  | unenforced: a per-check judgement                     |
-| [C8](test-and-gate-contract/002-surface-placement.md)        | superset, parallel, one aggregate    | gated: wiring rules W01–W05, composition              |
-| [C9](test-and-gate-contract/002-surface-placement.md)        | local landing gate                   | unenforced: review reads the landing evidence         |
-| [C10](test-and-gate-contract/002-surface-placement.md)       | commit-message lint twice            | gated: the message-lint entries                       |
-| [C11](test-and-gate-contract/002-surface-placement.md)       | leak scan and leak review            | gated: the leak-scanner entries                       |
-| [C12](test-and-gate-contract/004-test-levels-and-targets.md) | levels by strongest boundary         | gated: through C21                                    |
-| [C13](test-and-gate-contract/005-behaviour-corpus.md)        | bound behaviour corpus               | gated: behaviour-coverage rules B01–B09               |
-| [C14](test-and-gate-contract/004-test-levels-and-targets.md) | standard targets                     | gated: behaviour-coverage rules B01–B09               |
-| [C15](test-and-gate-contract/006-coverage-floor.md)          | 99% unit floor                       | gated: the coverage gate, failing at 98.9%            |
-| [C16](test-and-gate-contract/007-conformance-record.md)      | a real linter per stack              | gated: the lint entries, no advisory tier             |
-| [C17](test-and-gate-contract/004-test-levels-and-targets.md) | every layer runs automatically       | gated: wiring rule W01                                |
-| [C18](test-and-gate-contract/004-test-levels-and-targets.md) | no placeholders                      | gated: the skip and focus bans                        |
-| [C19](test-and-gate-contract/007-conformance-record.md)      | gate inventory                       | unenforced: review against the registry               |
-| [C20](test-and-gate-contract/007-conformance-record.md)      | remote-backed delivery               | unenforced: review reads the merge record             |
-| [C21](test-and-gate-contract/004-test-levels-and-targets.md) | hermetic units, mechanically         | gated: the stack mechanism                            |
-| [C22](test-and-gate-contract/007-conformance-record.md)      | required `quality-gate` check        | gated: a recorded hosting-service read                |
-| [C23](test-and-gate-contract/007-conformance-record.md)      | diagram rule and validation          | gated: the Mermaid validator                          |
-| [C24](test-and-gate-contract/007-conformance-record.md)      | per project, product scope           | covered: per-project checks of C13, C15, C21          |
+**Rule** — **States** — **Disposition: check or reason**
+
+- [C1](test-and-gate-contract/001-registry-and-dispatch.md) — one gate declaration, dispatched — gated: wiring rules
+  W01–W06
+- [C2](test-and-gate-contract/001-registry-and-dispatch.md) — no dead entries or unwired artefacts — gated: wiring rules
+  W01–W06
+- [C3](test-and-gate-contract/001-registry-and-dispatch.md) — the bootstrap installs hooks — gated: the bootstrap health
+  check
+- [C4](test-and-gate-contract/001-registry-and-dispatch.md) — every gate tool pinned — gated: wiring rule W06, or a
+  runner pin check
+- [C5](test-and-gate-contract/001-registry-and-dispatch.md) — offline and deterministic — unenforced: judgement;
+  network-denied run as evidence
+- [C6](test-and-gate-contract/002-surface-placement.md) — one kind of work per surface — gated: wiring rules W01–W05 and
+  W07
+- [C7](test-and-gate-contract/003-pull-request-scope.md) — scope by dependence — unenforced: a per-check judgement
+- [C8](test-and-gate-contract/002-surface-placement.md) — superset, parallel, one aggregate — gated: wiring rules
+  W01–W05, composition
+- [C9](test-and-gate-contract/002-surface-placement.md) — local landing gate — unenforced: review reads the landing
+  evidence
+- [C10](test-and-gate-contract/002-surface-placement.md) — commit-message lint twice — gated: the message-lint entries
+- [C11](test-and-gate-contract/002-surface-placement.md) — leak scan and leak review — gated: the leak-scanner entries
+- [C12](test-and-gate-contract/004-test-levels-and-targets.md) — levels by strongest boundary — gated: through C21
+- [C13](test-and-gate-contract/005-behaviour-corpus.md) — bound behaviour corpus — gated: behaviour-coverage rules
+  B01–B09
+- [C14](test-and-gate-contract/004-test-levels-and-targets.md) — standard targets — gated: behaviour-coverage rules
+  B01–B09
+- [C15](test-and-gate-contract/006-coverage-floor.md) — 99% unit floor — gated: the coverage gate, failing at 98.9%
+- [C16](test-and-gate-contract/007-conformance-record.md) — a real linter per stack — gated: the lint entries, no
+  advisory tier
+- [C17](test-and-gate-contract/004-test-levels-and-targets.md) — every layer runs automatically — gated: wiring rule W01
+- [C18](test-and-gate-contract/004-test-levels-and-targets.md) — no placeholders — gated: the skip and focus bans
+- [C19](test-and-gate-contract/007-conformance-record.md) — gate inventory — unenforced: review against the registry
+- [C20](test-and-gate-contract/007-conformance-record.md) — remote-backed delivery — unenforced: review reads the merge
+  record
+- [C21](test-and-gate-contract/004-test-levels-and-targets.md) — hermetic units, mechanically — gated: the stack
+  mechanism
+- [C22](test-and-gate-contract/007-conformance-record.md) — required `quality-gate` check — gated: a recorded
+  hosting-service read
+- [C23](test-and-gate-contract/007-conformance-record.md) — diagram rule and validation — gated: the Mermaid validator
+- [C24](test-and-gate-contract/007-conformance-record.md) — per project, product scope — covered: per-project checks of
+  C13, C15, C21
 
 ## Modules
 

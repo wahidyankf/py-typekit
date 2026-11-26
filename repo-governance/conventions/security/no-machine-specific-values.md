@@ -23,12 +23,15 @@ the repository, long after the line that carried it was corrected.
 
 ## What Counts
 
-| Category                                                                                   | Use instead                                                                |
-| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
-| an absolute path under a home directory or a tool's install prefix                         | a repository-relative path, or one derived from the environment at runtime |
-| a username, inside a path or as a literal identity in configuration                        | an environment variable or a documented placeholder                        |
-| a local network address or a machine's hostname                                            | configuration supplied at runtime                                          |
-| a connection string, key, token, or tool path that differs between machines and automation | an environment variable declared in the committed template                 |
+**Category** — **Use instead**
+
+- an absolute path under a home directory or a tool's install prefix — a repository-relative path, or one derived from
+  the environment at runtime
+- a username, inside a path or as a literal identity in configuration — an environment variable or a documented
+  placeholder
+- a local network address or a machine's hostname — configuration supplied at runtime
+- a connection string, key, token, or tool path that differs between machines and automation — an environment variable
+  declared in the committed template
 
 Loopback addresses such as `127.0.0.1` and `localhost` may appear only in test configuration that targets a locally
 running service, never beside a literal credential.

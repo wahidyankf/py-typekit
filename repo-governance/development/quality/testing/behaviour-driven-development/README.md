@@ -12,12 +12,16 @@ when_to_use: >-
 The modules below are read in sequence and carry the detail behind the
 [Behaviour-Driven Development](../behaviour-driven-development.md) entrypoint.
 
-| Module                                                      | Holds                                                                               |
-| ----------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Discovery and Scenarios](001-discovery-and-scenarios.md)   | three perspectives before formulation, and the rules every scenario follows         |
-| [Layers and Adapters](002-layers-and-adapters.md)           | layer boundaries, test classification, targets by project role, and adopter choices |
-| [Bindings and Exemptions](003-bindings-and-exemptions.md)   | strict step resolution, forbidden bindings, and scoped exemptions                   |
-| [Compliance and Reporting](004-compliance-and-reporting.md) | static versus semantic checks, the behaviour-coverage check, gates, and the report  |
+**Module** — **Holds**
+
+- [Discovery and Scenarios](001-discovery-and-scenarios.md) — three perspectives before formulation, and the rules every
+  scenario follows
+- [Layers and Adapters](002-layers-and-adapters.md) — layer boundaries, test classification, targets by project role,
+  and adopter choices
+- [Bindings and Exemptions](003-bindings-and-exemptions.md) — strict step resolution, forbidden bindings, and scoped
+  exemptions
+- [Compliance and Reporting](004-compliance-and-reporting.md) — static versus semantic checks, the behaviour-coverage
+  check, gates, and the report
 
 ## Directory Map
 

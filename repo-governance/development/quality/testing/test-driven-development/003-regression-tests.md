@@ -27,12 +27,14 @@ first cycle.
 
 ## The Form Follows the Defect
 
-| Defect                    | Test that pins it                                                                                                                                                          |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| behavioural or functional | a scenario stating the correct behaviour, bound at the layers [Layers and Adapters](../behaviour-driven-development/002-layers-and-adapters.md) requires, or a narrow test |
-| visual or layout          | an assertion on the specific rendered property that was wrong, such as a document element, a computed style, or a compared capture                                         |
-| content or copy           | an assertion on the corrected text or translation key, where it is produced or where it is rendered                                                                        |
-| integration or API        | an assertion on the response shape, status, or state transition that was wrong                                                                                             |
+**Defect** — **Test that pins it**
+
+- behavioural or functional — a scenario stating the correct behaviour, bound at the layers
+  [Layers and Adapters](../behaviour-driven-development/002-layers-and-adapters.md) requires, or a narrow test
+- visual or layout — an assertion on the specific rendered property that was wrong, such as a document element, a
+  computed style, or a compared capture
+- content or copy — an assertion on the corrected text or translation key, where it is produced or where it is rendered
+- integration or API — an assertion on the response shape, status, or state transition that was wrong
 
 Whatever the form, a test that also passes on the broken code does not satisfy the rule. It has to make this particular
 defect impossible to reintroduce without a failure.

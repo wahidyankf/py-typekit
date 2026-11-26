@@ -27,12 +27,13 @@ approach is sound, which is the question no tool answers.
 
 ## When to Automate
 
-| Automate when                                                          | Keep it manual when                                        |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------- |
-| the task recurs                                                        | it happens once or twice                                   |
-| the rule can be written down completely                                | it needs judgement, taste, or knowledge of intent          |
-| an omission causes real harm                                           | the rule is still changing faster than automation can keep |
-| building and keeping it costs less than the manual work and its errors | the automation would be more complex than the task         |
+**Automate when** — **Keep it manual when**
+
+- the task recurs — it happens once or twice
+- the rule can be written down completely — it needs judgement, taste, or knowledge of intent
+- an omission causes real harm — the rule is still changing faster than automation can keep
+- building and keeping it costs less than the manual work and its errors — the automation would be more complex than the
+  task
 
 The comparison includes maintenance. Automation is code, and code nobody keeps current becomes a check enforcing last
 year's rule with full confidence.
@@ -48,14 +49,20 @@ does not establish, so nobody mistakes a green run for a finished review.
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                   | As                                                                   |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| [Structural Validation](../conventions/structure/plans/006-structural-validation.md)         | everything mechanically checkable is checked mechanically            |
-| [Exclusions](../conventions/structure/plan-validator-contract/004-exclusions.md)             | what needs judgement is deliberately kept out of the validator       |
-| [Harness Adapters](../development/agents/harness-adapters.md)                                | adapters are generated and verified by regeneration, never hand-kept |
-| [Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md)   | automation normalizes syntax and never authors a description         |
-| [Public Outbound Safety](../conventions/security/public-outbound-safety.md)                  | the screen runs first on every surface, not when someone remembers   |
-| [Verification Layers](../development/quality/manual-verification/002-verification-layers.md) | green automation never closes a user-facing change on its own        |
+**Applied in** — **As**
+
+- [Structural Validation](../conventions/structure/plans/006-structural-validation.md) — everything mechanically
+  checkable is checked mechanically
+- [Exclusions](../conventions/structure/plan-validator-contract/004-exclusions.md) — what needs judgement is
+  deliberately kept out of the validator
+- [Harness Adapters](../development/agents/harness-adapters.md) — adapters are generated and verified by regeneration,
+  never hand-kept
+- [Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md) — automation normalizes
+  syntax and never authors a description
+- [Public Outbound Safety](../conventions/security/public-outbound-safety.md) — the screen runs first on every surface,
+  not when someone remembers
+- [Verification Layers](../development/quality/manual-verification/002-verification-layers.md) — green automation never
+  closes a user-facing change on its own
 
 ## Early, Fast, and Legible
 

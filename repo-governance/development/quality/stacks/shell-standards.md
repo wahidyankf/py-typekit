@@ -86,10 +86,10 @@ a script at the full bar documents usage through help.
 
 ## Adopter Decisions
 
-| Decision  | Option                           | Gains                                    | Costs                                    |
-| --------- | -------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| test tool | a shell test framework           | tests read as the shell they exercise    | a dependency to pin                      |
-|           | the repository's main test stack | one runner and one report for every test | each test spawns the script as a process |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- test tool — a shell test framework — tests read as the shell they exercise — a dependency to pin
+- the repository's main test stack — one runner and one report for every test — each test spawns the script as a process
 
 Record the choice in the repository adapter [Stack Packs](../../../conventions/structure/stack-packs.md) defines.
 

@@ -39,10 +39,12 @@ document until it is implemented.
 The requirement does not vary: views exist, and prose carries every claim they make. Only the form of the diagrams
 varies, and the adopter records one under its [Diagrams](../../../conventions/writing/diagrams.md) authoring rule.
 
-| Option                      | Gains                                                                                 | Costs                                                                                         |
-| --------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| rendered Mermaid            | automatic layout; reads well wherever a renderer runs; label lengths a tool can check | source is hard to read in a terminal or plain diff; needs an accessible title and description |
-| plain text in fenced `text` | reads identically in a terminal, a diff, and a review tool, with no renderer          | layout is maintained by hand, and wide views reach the line width sooner                      |
+**Option** — **Gains** — **Costs**
+
+- rendered Mermaid — automatic layout; reads well wherever a renderer runs; label lengths a tool can check — source is
+  hard to read in a terminal or plain diff; needs an accessible title and description
+- plain text in fenced `text` — reads identically in a terminal, a diff, and a review tool, with no renderer — layout is
+  maintained by hand, and wide views reach the line width sooner
 
 Whichever form is chosen, every relationship a diagram shows also appears in searchable prose, so a reader who cannot
 see the diagram loses nothing. See [Accessibility First](../../../principles/accessibility-first.md).

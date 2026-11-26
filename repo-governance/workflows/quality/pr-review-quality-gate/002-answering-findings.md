@@ -12,9 +12,10 @@ when_to_use: >-
 
 ## Three Answers
 
-The writer re-validates each blocking row against the current head, per
-[Confidence and Re-Validation](../../../development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md),
-and gives it exactly one answer:
+The writer re-validates each blocking row against the current head, per [Confidence and Re-Validation][ref-1], and gives
+it exactly one answer:
+
+[ref-1]: ../../../development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md
 
 - **fix**
   - Admissible when: the finding holds and its remedy serves the change's stated problem

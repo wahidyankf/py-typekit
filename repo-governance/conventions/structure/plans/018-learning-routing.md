@@ -40,10 +40,15 @@ work leaves as a follow-up.
 Each choice below is made once, in the repository's own plan rules. Whatever is chosen, every entry still reaches one
 owner or a reasoned discard before archival, and work never lands in the plan that found it.
 
-| Decision                     | Options                                                                        | Trade-off                                                                                                                                                                                                                                                                              |
-| ---------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| a brief marked ready to plan | wait for the next grooming pass, or allow the owner to request a plan now      | waiting keeps the ideas root the single queue; an immediate request lets an urgent follow-up skip a grooming cycle, and still needs the owner's explicit request                                                                                                                       |
-| who files a brief            | the executor files it during triage, or the planning owner confirms each first | executor filing loses nothing, but the ideas root fills with briefs the owner never wanted; owner confirmation keeps that root deliberate, and a follow-up the owner does not confirm is reported to that owner, with the handoff evidence recorded in its entry as its terminal state |
+**Decision** — **Options** — **Trade-off**
+
+- a brief marked ready to plan — wait for the next grooming pass, or allow the owner to request a plan now — waiting
+  keeps the ideas root the single queue; an immediate request lets an urgent follow-up skip a grooming cycle, and still
+  needs the owner's explicit request
+- who files a brief — the executor files it during triage, or the planning owner confirms each first — executor filing
+  loses nothing, but the ideas root fills with briefs the owner never wanted; owner confirmation keeps that root
+  deliberate, and a follow-up the owner does not confirm is reported to that owner, with the handoff evidence recorded
+  in its entry as its terminal state
 
 An adopter enforces the behaviour-change rule in its own execution check, which fails a plan whose own change alters
 what code does because of a `learnings.md` entry. A test or comment that records behaviour the plan delivered is not

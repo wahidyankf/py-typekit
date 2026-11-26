@@ -50,10 +50,12 @@ Two neighbouring cases are the adopter's to decide, each once, for a named path,
 
 ### A Set-Once Creation Date
 
-| Option | Gains                                                                                         | Costs                                                                                 |
-| ------ | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| forbid | one rule with no exception; `git log --follow --diff-filter=A -- <path>` answers the question | history is harder to read after renames, imports, or squashed merges                  |
-| permit | a first-added date that survives history rewrites and imports, readable without tooling       | a date key invites a second one, and a copied file silently carries its source's date |
+**Option** — **Gains** — **Costs**
+
+- forbid — one rule with no exception; `git log --follow --diff-filter=A -- <path>` answers the question — history is
+  harder to read after renames, imports, or squashed merges
+- permit — a first-added date that survives history rewrites and imports, readable without tooling — a date key invites
+  a second one, and a copied file silently carries its source's date
 
 A permitted creation date is written once, when the file is created, and never edited. Corrected by hand, it has become
 the field this convention forbids.
@@ -63,10 +65,12 @@ the field this convention forbids.
 Some trees are read where history is invisible — a published site, or a notes application that lists and sorts by a
 last-updated value — and there the date is part of what the reader sees.
 
-| Option                                   | Gains                                                     | Costs                                                                          |
-| ---------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| exempt the tree with a required field    | readers see freshness where they read, with no build step | it drifts like any hand-kept date unless a check compares it with history      |
-| keep the ban; derive the date when built | no drift and nothing to maintain                          | needs a build step and full history; a shallow clone dates every file the same |
+**Option** — **Gains** — **Costs**
+
+- exempt the tree with a required field — readers see freshness where they read, with no build step — it drifts like any
+  hand-kept date unless a check compares it with history
+- keep the ban; derive the date when built — no drift and nothing to maintain — needs a build step and full history; a
+  shallow clone dates every file the same
 
 An exempt tree is declared by path, and the field is then required there rather than merely allowed, so a check can tell
 a missing date from a forbidden one.

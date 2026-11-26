@@ -57,12 +57,15 @@ regenerated before comparison always matches, and the audit would then describe 
 
 Record each choice once; the checker audits what was recorded.
 
-| Decision       | Option                                            | Trade-off                                                                                   |
-| -------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| harness set    | every declared harness                            | full coverage; research grows with each harness added                                       |
-|                | the primary harness, the rest through parity only | cheaper runs; an upstream change in another harness goes unseen until it breaks something   |
-| parity tooling | a dedicated parity validator the checker runs     | also checks routes, identity fields, and permission translation; one more tool to keep      |
-|                | the gate's own regenerate-and-compare result      | no extra tool; misses a translation granting less than declared, which is then read by hand |
+**Decision** — **Option** — **Trade-off**
+
+- harness set — every declared harness — full coverage; research grows with each harness added
+- — the primary harness, the rest through parity only — cheaper runs; an upstream change in another harness goes unseen
+  until it breaks something
+- parity tooling — a dedicated parity validator the checker runs — also checks routes, identity fields, and permission
+  translation; one more tool to keep
+- — the gate's own regenerate-and-compare result — no extra tool; misses a translation granting less than declared,
+  which is then read by hand
 
 ## Rating
 

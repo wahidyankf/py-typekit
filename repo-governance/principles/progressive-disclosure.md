@@ -34,13 +34,17 @@ is visible where the task begins — stated there, or linked in a way no reader 
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                 | As                                                                         |
-| ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
-| [Repository Governance](../README.md)                                                      | the root names each level in a line and links to that level's own index    |
-| [Plans Convention](../conventions/structure/plans.md)                                      | a deliberately short entrypoint whose modules are each independently read  |
-| [File Naming](../conventions/structure/file-naming.md)                                     | a document over its budget becomes an entrypoint plus ordered modules      |
-| [Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md) | the description and trigger are read, and routed on, before the body loads |
-| [Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md)         | verification layers are linked to their owner rather than restated         |
+**Applied in** — **As**
+
+- [Repository Governance](../README.md) — the root names each level in a line and links to that level's own index
+- [Plans Convention](../conventions/structure/plans.md) — a deliberately short entrypoint whose modules are each
+  independently read
+- [File Naming](../conventions/structure/file-naming.md) — a document over its budget becomes an entrypoint plus ordered
+  modules
+- [Shared Value Rules](../conventions/structure/artifact-metadata/002-shared-value-rules.md) — the description and
+  trigger are read, and routed on, before the body loads
+- [Evidence and Quality](../conventions/structure/plans/007-evidence-and-quality.md) — verification layers are linked to
+  their owner rather than restated
 
 ## A Budget Is the Usual Mechanical Form
 
@@ -59,10 +63,12 @@ read, or moving it into another file every reader also loads, leaves what each r
 One question has two defensible answers, and an adopter records which it chose: does the always-read root instruction
 file state any rule itself?
 
-| Root file holds                             | Gains                                                           | Costs                                                                                |
-| ------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| links only, no rule of its own              | there is never a question of which statement is authoritative   | every rule costs a hop, and a reader who follows no link acts on nothing             |
-| short actionable rules, each linking onward | the constraints that matter most reach every reader with no hop | each line is a second statement, and drifts unless owner and summary change together |
+**Root file holds** — **Gains** — **Costs**
+
+- links only, no rule of its own — there is never a question of which statement is authoritative — every rule costs a
+  hop, and a reader who follows no link acts on nothing
+- short actionable rules, each linking onward — the constraints that matter most reach every reader with no hop — each
+  line is a second statement, and drifts unless owner and summary change together
 
 Links only suits a repository whose readers reliably follow them. Short rules suit one where the root file may be the
 only thing a reader sees. Under either, the owning document stays the authority — see

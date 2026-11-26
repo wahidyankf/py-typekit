@@ -26,11 +26,12 @@ against the current state before acting:
 
 ## Three Levels
 
-| Level            | When                                                                                     | Action                                                      |
-| ---------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| `HIGH`           | the finding is objective, re-validation confirms it, and the fix is safe and unambiguous | apply the fix                                               |
-| `MEDIUM`         | the finding is subjective, ambiguous, or depends on context the applier cannot settle    | skip it and flag it for human review                        |
-| `FALSE_POSITIVE` | re-validation disproves the finding                                                      | skip it and report it, with a suggested checker improvement |
+**Level** — **When** — **Action**
+
+- `HIGH` — the finding is objective, re-validation confirms it, and the fix is safe and unambiguous — apply the fix
+- `MEDIUM` — the finding is subjective, ambiguous, or depends on context the applier cannot settle — skip it and flag it
+  for human review
+- `FALSE_POSITIVE` — re-validation disproves the finding — skip it and report it, with a suggested checker improvement
 
 ## Record the Decision
 

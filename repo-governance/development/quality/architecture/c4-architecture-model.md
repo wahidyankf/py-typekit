@@ -19,12 +19,14 @@ This standard implements [Reproducibility](../../../principles/reproducibility.m
 
 ## Which Views Exist
 
-| Level          | Required                                                 | Skip when                                                            |
-| -------------- | -------------------------------------------------------- | -------------------------------------------------------------------- |
-| system context | always, for every system                                 | never                                                                |
-| container      | once the system has two or more deployable units         | the system is a single deployable, such as one command-line tool     |
-| component      | only for a container whose internal structure is complex | the container's structure is obvious, such as a thin interface layer |
-| code           | almost never                                             | a class relationship is not itself architecturally significant       |
+**Level** — **Required** — **Skip when**
+
+- system context — always, for every system — never
+- container — once the system has two or more deployable units — the system is a single deployable, such as one
+  command-line tool
+- component — only for a container whose internal structure is complex — the container's structure is obvious, such as a
+  thin interface layer
+- code — almost never — a class relationship is not itself architecturally significant
 
 A component view earns its place when a container holds many major components, commonly six or more, or when their
 responsibilities or internal integration are not evident from the code's structure. Where class-level detail is needed,

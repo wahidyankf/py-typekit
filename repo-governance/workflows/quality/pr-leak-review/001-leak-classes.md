@@ -11,11 +11,17 @@ when_to_use: >-
 
 A leak review judges three classes and no others. Each maps to the count of the same name in its verdict.
 
-| Class                            | A finding is                                                                                                                                                                     | Owning convention                                                                               |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `secret_or_private_value`        | a real credential or other value that grants access — in any environment, with staging and production credentials named explicitly because they reach real data and real users   | [No Secrets in Tracked Files](../../../conventions/security/no-secrets-in-tracked-files.md)     |
-| `protected_environment_property` | a value that belongs in environment or secret storage, such as a connection string or a non-public environment's endpoint or account identifier                                  | [Environment Variable Contract](../../../conventions/security/environment-variable-contract.md) |
-| `machine_specific_absolute_path` | anything identifying the machine it came from: an absolute home path such as `/Users/<name>/`, `/home/<name>/`, or `C:\Users\<name>\`, a username, a hostname, a private address | [No Machine-Specific Values](../../../conventions/security/no-machine-specific-values.md)       |
+**Class** — **A finding is** — **Owning convention**
+
+- `secret_or_private_value` — a real credential or other value that grants access — in any environment, with staging and
+  production credentials named explicitly because they reach real data and real users —
+  [No Secrets in Tracked Files](../../../conventions/security/no-secrets-in-tracked-files.md)
+- `protected_environment_property` — a value that belongs in environment or secret storage, such as a connection string
+  or a non-public environment's endpoint or account identifier —
+  [Environment Variable Contract](../../../conventions/security/environment-variable-contract.md)
+- `machine_specific_absolute_path` — anything identifying the machine it came from: an absolute home path such as
+  `/Users/<name>/`, `/home/<name>/`, or `C:\Users\<name>\`, a username, a hostname, a private address —
+  [No Machine-Specific Values](../../../conventions/security/no-machine-specific-values.md)
 
 ## Real Means Real
 

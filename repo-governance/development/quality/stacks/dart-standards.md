@@ -77,12 +77,13 @@ A public declaration carries a `///` doc comment opening with a one-sentence sum
 
 ## Adopter Decisions
 
-| Decision          | Option                            | Gains                                       | Costs                                                                                 |
-| ----------------- | --------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------- |
-| expected failures | exceptions                        | the core libraries' idiom                   | signatures hide what can fail                                                         |
-|                   | a sealed result hierarchy         | an exhaustive `switch` makes callers decide | every throwing library call needs wrapping                                            |
-| value classes     | hand-written equality and copying | no build step                               | members drift from the fields                                                         |
-|                   | generated, such as with freezed   | members track the fields                    | a code generator, weighed per [Dependency Selection](../code/dependency-selection.md) |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- expected failures — exceptions — the core libraries' idiom — signatures hide what can fail
+- a sealed result hierarchy — an exhaustive `switch` makes callers decide — every throwing library call needs wrapping
+- value classes — hand-written equality and copying — no build step — members drift from the fields
+- generated, such as with freezed — members track the fields — a code generator, weighed per
+  [Dependency Selection](../code/dependency-selection.md)
 
 Record each choice once.
 

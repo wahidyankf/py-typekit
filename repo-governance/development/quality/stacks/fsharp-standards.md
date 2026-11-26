@@ -55,13 +55,13 @@ citing its measurement.
 
 ## Domain Types
 
-| Concept              | F# shape                                                                                        |
-| -------------------- | ----------------------------------------------------------------------------------------------- |
-| closed set of states | a discriminated union, never strings, booleans, or status codes                                 |
-| data                 | an immutable record                                                                             |
-| identifier           | a single-case union; where a rule constrains it, a private case and `create` returning `Result` |
-| domain event         | a case of an event union                                                                        |
-| aggregate            | a pure function of state and command returning `Result` of new state and events                 |
+**Concept** — **F# shape**
+
+- closed set of states — a discriminated union, never strings, booleans, or status codes
+- data — an immutable record
+- identifier — a single-case union; where a rule constrains it, a private case and `create` returning `Result`
+- domain event — a case of an event union
+- aggregate — a pure function of state and command returning `Result` of new state and events
 
 Domain code holds no `obj`. Time and new identifiers arrive as arguments. A match over a domain union names every case
 and uses no wildcard, so a new case breaks each match that must handle it. Values and functions are `camelCase`; types,
@@ -78,12 +78,14 @@ modules, union cases, and record fields are `PascalCase`; a public function decl
 
 Record each choice that applies:
 
-| Decision       | Option                                            | Gains                                  | Costs                                 |
-| -------------- | ------------------------------------------------- | -------------------------------------- | ------------------------------------- |
-| web framework  | a minimal functional layer, such as Giraffe       | handlers compose as plain functions    | routing conventions assembled by hand |
-|                | an opinionated layer built on one, such as Saturn | routing and defaults arrive ready-made | more framework idiom to learn         |
-| test framework | an F#-native one, such as Expecto                 | tests are composable values            | fewer runner integrations             |
-|                | xUnit or NUnit                                    | tooling shared with C# projects        | attribute-style tests                 |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- web framework — a minimal functional layer, such as Giraffe — handlers compose as plain functions — routing
+  conventions assembled by hand
+- an opinionated layer built on one, such as Saturn — routing and defaults arrive ready-made — more framework idiom to
+  learn
+- test framework — an F#-native one, such as Expecto — tests are composable values — fewer runner integrations
+- xUnit or NUnit — tooling shared with C# projects — attribute-style tests
 
 ## Enforcement
 

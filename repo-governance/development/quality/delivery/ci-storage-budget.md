@@ -23,12 +23,17 @@ caches for a repository. GitHub Actions appears below only as an illustrative ex
 The rule fixes what is bounded. The numbers belong to the adopter, recorded once where contributors and reviewers find
 them:
 
-| Decision                   | Option                                                                                  | Gains                                                                   | Costs                                                                                 |
-| -------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| retention and cache bounds | the defaults: artifact and log retention of 7 days, a 10 GB cache, cache entries 7 days | triage output survives a working week; storage stays small and constant | output needed later has to be regenerated; a wide build matrix may churn its cache    |
-|                            | values sized to the adopter's own allowance and triage cycle                            | fits an unusual allowance or a slower investigation rhythm              | the sizing has to be measured, and re-checked as usage grows                          |
-| paid-usage budget          | zero, with usage stopping at the limit (default)                                        | an overrun is loud and free, because runs stop                          | a legitimate spike halts the pipeline until someone deliberately raises the budget    |
-|                            | a non-zero limit that still stops usage                                                 | runs continue through a spike, up to the limit                          | charges accrue quietly until the limit, and the pipeline spends money nobody approved |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- retention and cache bounds — the defaults: artifact and log retention of 7 days, a 10 GB cache, cache entries 7 days —
+  triage output survives a working week; storage stays small and constant — output needed later has to be regenerated; a
+  wide build matrix may churn its cache
+- values sized to the adopter's own allowance and triage cycle — fits an unusual allowance or a slower investigation
+  rhythm — the sizing has to be measured, and re-checked as usage grows
+- paid-usage budget — zero, with usage stopping at the limit (default) — an overrun is loud and free, because runs stop
+  — a legitimate spike halts the pipeline until someone deliberately raises the budget
+- a non-zero limit that still stops usage — runs continue through a spike, up to the limit — charges accrue quietly
+  until the limit, and the pipeline spends money nobody approved
 
 ## Artifacts Declare Their Retention
 

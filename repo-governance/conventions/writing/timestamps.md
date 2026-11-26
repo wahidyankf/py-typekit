@@ -44,10 +44,12 @@ declared zone says which moment `2025-11-30--22-45` names.
 
 ## The Adopter's Decision: Which Zone
 
-| Zone                | Gains                                                                        | Costs                                                                 |
-| ------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| UTC                 | matches servers, hosted logs, and most interfaces; no daylight-saving shifts | a team converts to local time, and dates roll over mid-working-day    |
-| a team's local zone | timestamps read as wall-clock time, and dates match working days             | conversion against UTC systems, and daylight saving shifts the offset |
+**Zone** — **Gains** — **Costs**
+
+- UTC — matches servers, hosted logs, and most interfaces; no daylight-saving shifts — a team converts to local time,
+  and dates roll over mid-working-day
+- a team's local zone — timestamps read as wall-clock time, and dates match working days — conversion against UTC
+  systems, and daylight saving shifts the offset
 
 Three rules follow from the zone decision:
 

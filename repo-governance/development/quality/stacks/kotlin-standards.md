@@ -76,12 +76,12 @@ Public declarations carry KDoc, from which a published library generates its ref
 
 ## Adopter Decisions
 
-| Decision          | Option                              | Gains                                     | Costs                                  |
-| ----------------- | ----------------------------------- | ----------------------------------------- | -------------------------------------- |
-| test framework    | JUnit with `kotlin.test` assertions | one runner shared with Java tests         | plainer specification style            |
-|                   | Kotlin-first, such as Kotest        | specification styles and property testing | a second idiom beside Java tests       |
-| expected failures | exceptions                          | the JVM idiom; no library wrapping        | signatures hide what can fail          |
-|                   | sealed result types                 | the compiler makes every caller decide    | every throwing library call is wrapped |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- test framework — JUnit with `kotlin.test` assertions — one runner shared with Java tests — plainer specification style
+- Kotlin-first, such as Kotest — specification styles and property testing — a second idiom beside Java tests
+- expected failures — exceptions — the JVM idiom; no library wrapping — signatures hide what can fail
+- sealed result types — the compiler makes every caller decide — every throwing library call is wrapped
 
 Record each choice once.
 

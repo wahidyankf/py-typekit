@@ -12,18 +12,25 @@ when_to_use: >-
 Each interactive component type carries its required roles and attributes and its keyboard behaviour. For a pattern not
 listed here, the [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) is the reference.
 
-| Component          | Roles, states, and properties                                                                | Keyboard behaviour                                                                               |
-| ------------------ | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| button             | a native button; an accessible name if icon-only; pressed state for a toggle; disabled state | Enter and Space activate it                                                                      |
-| dialog             | dialog role, modal state, labelled by its title, and a reference to its description          | focus moves inside on open, Tab cycles within it, Escape closes it, focus returns to the trigger |
-| input or text area | invalid state after failed validation, a reference to its error message, required state      | standard text editing                                                                            |
-| custom combobox    | combobox role, expanded state, and a reference to the list it controls                       | as the Authoring Practices Guide combobox pattern sets out                                       |
-| menu or dropdown   | the trigger exposes expanded state and that it opens a menu; menu and menu item roles        | arrow keys move between items, Home and End jump to the ends, Escape closes it                   |
-| tooltip            | tooltip role, referenced from its trigger as the trigger's description                       | appears on keyboard focus as well as on hover                                                    |
-| tab list           | tab list, tab, and tab panel roles; selected state; each tab references its panel            | arrow keys move between tabs, Tab moves into the active panel                                    |
-| progress indicator | progress bar role with current, minimum, and maximum values; a label if none is visible      | none                                                                                             |
-| loading region     | busy state on the container while its content loads                                          | none                                                                                             |
-| message            | alert role for a blocking error; a status role or polite live region otherwise               | none                                                                                             |
+**Component** — **Roles, states, and properties** — **Keyboard behaviour**
+
+- button — a native button; an accessible name if icon-only; pressed state for a toggle; disabled state — Enter and
+  Space activate it
+- dialog — dialog role, modal state, labelled by its title, and a reference to its description — focus moves inside on
+  open, Tab cycles within it, Escape closes it, focus returns to the trigger
+- input or text area — invalid state after failed validation, a reference to its error message, required state —
+  standard text editing
+- custom combobox — combobox role, expanded state, and a reference to the list it controls — as the Authoring Practices
+  Guide combobox pattern sets out
+- menu or dropdown — the trigger exposes expanded state and that it opens a menu; menu and menu item roles — arrow keys
+  move between items, Home and End jump to the ends, Escape closes it
+- tooltip — tooltip role, referenced from its trigger as the trigger's description — appears on keyboard focus as well
+  as on hover
+- tab list — tab list, tab, and tab panel roles; selected state; each tab references its panel — arrow keys move between
+  tabs, Tab moves into the active panel
+- progress indicator — progress bar role with current, minimum, and maximum values; a label if none is visible — none
+- loading region — busy state on the container while its content loads — none
+- message — alert role for a blocking error; a status role or polite live region otherwise — none
 
 A generic element given a button role also needs a keyboard handler and a place in the tab order, which is one more
 reason a native button is preferred.

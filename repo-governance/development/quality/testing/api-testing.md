@@ -25,11 +25,14 @@ A change affecting no such operation records `API impact: none` with its reason 
 
 ## Each Layer Proves What Only It Can
 
-| Layer       | Proves                                                                                                                | Never                                                  |
-| ----------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| unit        | business rules, input validation, authorization decisions, mapping, and error translation, with dependencies injected | opens a socket, touches the filesystem, or the network |
-| integration | routing, parsing, schema validation, serialization, and middleware against isolated local stores                      | goes through the served public origin                  |
-| end-to-end  | the operation as a caller meets it, through the exact served origin                                                   | substitutes an in-process call for the network request |
+**Layer** — **Proves** — **Never**
+
+- unit — business rules, input validation, authorization decisions, mapping, and error translation, with dependencies
+  injected — opens a socket, touches the filesystem, or the network
+- integration — routing, parsing, schema validation, serialization, and middleware against isolated local stores — goes
+  through the served public origin
+- end-to-end — the operation as a caller meets it, through the exact served origin — substitutes an in-process call for
+  the network request
 
 Whether an integration test may open a loopback listener is an adopter decision, recorded under
 [Layers and Adapters](behaviour-driven-development/002-layers-and-adapters.md).

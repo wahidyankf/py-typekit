@@ -26,13 +26,15 @@ This standard implements [Explicit Over Implicit](../../principles/explicit-over
 
 ## Outcomes
 
-| Outcome           | Means                                              | Response                                                                                                                                                |
-| ----------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| exit `124`        | a limit stopped the work; the reason says which    | for storage, free space then proceed; for capacity or pressure, requeue only with a new schema-1 `never-started` receipt, otherwise recover the payload |
-| exit `125`        | the guard could not do its job and started nothing | for a protocol mismatch, drain or upgrade every client sharing the root, never retry blindly; otherwise correct the configuration or the request        |
-| exit `2`          | the invocation is wrong                            | read the diagnostic and fix the command                                                                                                                 |
-| exit `126`, `127` | the command cannot be executed, or is not there    | fix the path or install it                                                                                                                              |
-| exit `1`          | the work ran and the answer is empty               | a result, not a failure; decide on the empty answer                                                                                                     |
+**Outcome** — **Means** — **Response**
+
+- exit `124` — a limit stopped the work; the reason says which — for storage, free space then proceed; for capacity or
+  pressure, requeue only with a new schema-1 `never-started` receipt, otherwise recover the payload
+- exit `125` — the guard could not do its job and started nothing — for a protocol mismatch, drain or upgrade every
+  client sharing the root, never retry blindly; otherwise correct the configuration or the request
+- exit `2` — the invocation is wrong — read the diagnostic and fix the command
+- exit `126`, `127` — the command cannot be executed, or is not there — fix the path or install it
+- exit `1` — the work ran and the answer is empty — a result, not a failure; decide on the empty answer
 
 Two reasons can share one status; read the namespaced reason on stderr and not the number alone. Child codes pass
 through: without a new `never-started` receipt, a child's own `124` stays child-owned.

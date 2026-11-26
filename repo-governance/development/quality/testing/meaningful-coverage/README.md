@@ -11,9 +11,10 @@ when_to_use: >-
 The modules below are read in sequence and carry the detail behind the [Meaningful Coverage](../meaningful-coverage.md)
 entrypoint.
 
-| Module                                         | Holds                                                                  |
-| ---------------------------------------------- | ---------------------------------------------------------------------- |
-| [Exclusions](001-exclusions-and-exemptions.md) | the two allowed exclusions, their one recorded place, and no exemption |
+**Module** — **Holds**
+
+- [Exclusions](001-exclusions-and-exemptions.md) — the two allowed exclusions, their one recorded place, and no
+  exemption
 
 ## Directory Map
 

@@ -16,7 +16,10 @@ One cycle is one full audit followed by one repair. Every arrow back to an earli
 ```mermaid
 flowchart TD
     accTitle: Quality gate sequence
-    accDescr: An entry check, a root-cause pre-step when it is red, a bounded audit and repair loop, an exit check, and one verdict.
+    accDescr {
+      An entry check, a root-cause pre-step when it is red, a bounded audit and repair loop, an exit check, and one
+      verdict.
+    }
     classDef default fill:#CA9161,stroke:#000000,color:#000000,stroke-width:2px
     Freeze["Freeze subject<br/>revision plus scope"] --> Entry["Entry tooling run"]
     Entry -- red --> Root["Root-cause pre-step<br/>at most 3 attempts,<br/>outside the cycle budget"]

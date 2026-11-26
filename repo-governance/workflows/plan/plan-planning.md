@@ -62,10 +62,11 @@ resolve puts the plan in `plans/backlog/`, its open question written into `READM
 
 ## Adopter Decision: Default Target Stage
 
-| Option        | The finished plan                                                   | Trade-off                                                    |
-| ------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ |
-| `backlog`     | waits as a proposal until someone schedules it                      | nothing looks active before it is chosen; one more move      |
-| `in-progress` | is active at once, for work that executes as soon as its gate holds | no scheduling step; unscheduled work can crowd the live root |
+**Option** — **The finished plan** — **Trade-off**
+
+- `backlog` — waits as a proposal until someone schedules it — nothing looks active before it is chosen; one more move
+- `in-progress` — is active at once, for work that executes as soon as its gate holds — no scheduling step; unscheduled
+  work can crowd the live root
 
 Record the default. Neither stage executes the plan: execution is [Execution](plan-execution.md)'s, after its own entry
 condition holds.

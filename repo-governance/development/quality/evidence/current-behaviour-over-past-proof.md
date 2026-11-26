@@ -35,8 +35,9 @@ certainty. The criterion is about how the work behaves now, and that can always 
   proves it can fail, per [Cycle and Evidence](../testing/test-driven-development/001-cycle-and-evidence.md).
 - Do not re-stage a past state, back-date a record, or present a new run as an old one to fill the gap.
 - When the behaviour itself can no longer be observed, this rule does not apply. Use the **accepted as permanently
-  unmet** disposition of
-  [Knowledge Capture and Archival](../../../conventions/structure/plans/008-knowledge-capture-and-archival.md#resolution-is-not-a-tick).
+  unmet** disposition of [Knowledge Capture and Archival][ref-1].
+
+  [ref-1]: ../../../conventions/structure/plans/008-knowledge-capture-and-archival.md#resolution-is-not-a-tick
 
 ## Observations
 

@@ -88,12 +88,13 @@ updates its documentation per [Specification Maintenance](../evidence/specificat
 
 ## Adopter Decisions
 
-| Decision              | Option                      | Gains                           | Costs                                                                     |
-| --------------------- | --------------------------- | ------------------------------- | ------------------------------------------------------------------------- |
-| assertions            | `testing` only              | no dependency                   | longer comparisons, hand-written diffs                                    |
-|                       | a library; example: testify | shorter assertions, clear diffs | a dependency, per [Dependency Selection](../code/dependency-selection.md) |
-| integration selection | a build tag per file        | tests stay beside code          | a forgotten tag moves a test into unit                                    |
-|                       | a separate test directory   | layer visible by path           | tests reach only the exported API                                         |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- assertions — `testing` only — no dependency — longer comparisons, hand-written diffs
+- a library; example: testify — shorter assertions, clear diffs — a dependency, per
+  [Dependency Selection](../code/dependency-selection.md)
+- integration selection — a build tag per file — tests stay beside code — a forgotten tag moves a test into unit
+- a separate test directory — layer visible by path — tests reach only the exported API
 
 Record each choice in the repository adapter [Stack Packs](../../../conventions/structure/stack-packs.md) defines.
 

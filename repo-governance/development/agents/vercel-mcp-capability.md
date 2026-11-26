@@ -31,10 +31,12 @@ probes nothing and records nothing; a vacuous check teaches readers to skip the 
 
 ## Two Gates
 
-| Gate                                               | Owner       | Decides                                                                 |
-| -------------------------------------------------- | ----------- | ----------------------------------------------------------------------- |
-| planning, before the delivery checklist is written | plan author | whether deployment-observation items are written `[AI]` or `[HUMAN]`    |
-| execution, at its start, before any phase runs     | executor    | whether the checklist's assumption still holds or its items must change |
+**Gate** — **Owner** — **Decides**
+
+- planning, before the delivery checklist is written — plan author — whether deployment-observation items are written
+  `[AI]` or `[HUMAN]`
+- execution, at its start, before any phase runs — executor — whether the checklist's assumption still holds or its
+  items must change
 
 Both outcomes are recorded in the plan. An unrecorded probe leaves a later executor, in a session without the server,
 facing `[AI]` items it cannot perform and no statement to check them against.

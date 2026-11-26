@@ -27,14 +27,14 @@ questions is not ready to formulate, because a scenario written over an open que
 
 How the practice runs is an adopter decision:
 
-| Choice         | Option                                  | Trade-off                                                    |
-| -------------- | --------------------------------------- | ------------------------------------------------------------ |
-| cadence        | before every story                      | catches every misunderstanding; costs time on simple stories |
-|                | only before stories judged non-trivial  | cheaper; the triage itself can miss a hidden rule            |
-| session length | a short fixed timebox                   | keeps sessions focused; a large story needs several          |
-|                | open until the questions settle         | finishes in one sitting; drifts without a facilitator        |
-| role holders   | a different person for each perspective | independent viewpoints; harder to schedule                   |
-|                | one person holding several perspectives | easy to arrange; the blind spots overlap                     |
+**Choice** — **Option** — **Trade-off**
+
+- cadence — before every story — catches every misunderstanding; costs time on simple stories
+- only before stories judged non-trivial — cheaper; the triage itself can miss a hidden rule
+- session length — a short fixed timebox — keeps sessions focused; a large story needs several
+- open until the questions settle — finishes in one sitting; drifts without a facilitator
+- role holders — a different person for each perspective — independent viewpoints; harder to schedule
+- one person holding several perspectives — easy to arrange; the blind spots overlap
 
 What matters is that each perspective's question gets asked, whoever asks it.
 
@@ -53,10 +53,12 @@ What matters is that each perspective's question gets asked, whoever asks it.
 
 How much a scenario's `When` steps may do is an adopter decision:
 
-| Option                                                                | Gains                                            | Costs                                                                      |
-| --------------------------------------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------- |
-| exactly one action per scenario                                       | a failure points at the single action that broke | a continuous journey splits into scenarios that each rebuild earlier state |
-| one continuous journey, repeating step keywords, never split for form | the journey stays whole, as a user performs it   | locating a failure part-way through depends on the step report             |
+**Option** — **Gains** — **Costs**
+
+- exactly one action per scenario — a failure points at the single action that broke — a continuous journey splits into
+  scenarios that each rebuild earlier state
+- one continuous journey, repeating step keywords, never split for form — the journey stays whole, as a user performs it
+  — locating a failure part-way through depends on the step report
 
 Under either option, the scenario still checks one logical outcome.
 

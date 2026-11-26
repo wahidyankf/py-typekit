@@ -20,11 +20,13 @@ strongest boundary a test touches, the loopback choice, and any floor above the 
 
 ## What Each Boundary Excludes
 
-| Layer       | Never                                                                                                               |
-| ----------- | ------------------------------------------------------------------------------------------------------------------- |
-| unit        | touches a real filesystem, database, environment, clock, random source, child process, or network; each is injected |
-| integration | reaches an external network, drives a browser, or observes the served origin; it uses only local resources it owns  |
-| end-to-end  | reaches past the public boundary, uses real user data, or shares a fixture with another case                        |
+**Layer** — **Never**
+
+- unit — touches a real filesystem, database, environment, clock, random source, child process, or network; each is
+  injected
+- integration — reaches an external network, drives a browser, or observes the served origin; it uses only local
+  resources it owns
+- end-to-end — reaches past the public boundary, uses real user data, or shares a fixture with another case
 
 The unit exclusion covers setup and assertions as well as the subject. End-to-end may use any resource, real secrets
 included, with synthetic data and per-case fixtures, since only it proves the deployed system.
@@ -39,20 +41,23 @@ by name. Support that never executes on its own, such as contracts, bindings, an
 Each layer and each static check is its own named target. Aggregate gates compose those names instead of repeating their
 commands, because a copied command drifts from the original.
 
-| Target                        | Holds                                                                                                            |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| lint                          | formatting, style, suspicious-code, and dependency findings, per [Lint Strictness](../checks/lint-strictness.md) |
-| type check                    | compiler and static-type findings, leaving no build output behind                                                |
-| unit, integration, end-to-end | one layer's suite each; the unit run also measures coverage                                                      |
-| static behaviour coverage     | scenario and binding resolution, executing nothing, where scenarios exist                                        |
+**Target** — **Holds**
+
+- lint — formatting, style, suspicious-code, and dependency findings, per
+  [Lint Strictness](../checks/lint-strictness.md)
+- type check — compiler and static-type findings, leaving no build output behind
+- unit, integration, end-to-end — one layer's suite each; the unit run also measures coverage
+- static behaviour coverage — scenario and binding resolution, executing nothing, where scenarios exist
 
 ## The Fast Gate
 
 The fast gate runs type check, lint, unit with coverage, and static behaviour coverage, in that order, so the cheapest
 failure to read comes first. It runs in the pull-request gate for affected projects, never in a hook, which would run it
-serially and get bypassed, and at the phase/pre-pull-request boundaries owned by
-[Focused Runs and Regression Gates](test-driven-development/001-cycle-and-evidence.md#focused-runs-and-regression-gates).
-A dedicated end-to-end project's fast gate holds only its type check, lint, and static behaviour coverage.
+serially and get bypassed, and at the phase/pre-pull-request boundaries owned by [Focused Runs and Regression
+Gates][ref-1]. A dedicated end-to-end project's fast gate holds only its type check, lint, and static behaviour
+coverage.
+
+[ref-1]: test-driven-development/001-cycle-and-evidence.md#focused-runs-and-regression-gates
 
 It never runs an integration or end-to-end suite. Integration runs in the pull-request gate as its own job, and
 end-to-end in a scheduled or main workflow, where
@@ -71,10 +76,10 @@ as [Software Quality Enforcement](../checks/software-quality-enforcement.md) req
 
 ## Adopter Decisions
 
-| Decision    | Option            | Gains                                         | Costs                                    |
-| ----------- | ----------------- | --------------------------------------------- | ---------------------------------------- |
-| task runner | a task-graph tool | affected selection and ordering come built in | one more tool to pin and maintain        |
-|             | plain scripts     | nothing beyond the language toolchain         | affected selection is maintained by hand |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- task runner — a task-graph tool — affected selection and ordering come built in — one more tool to pin and maintain
+- plain scripts — nothing beyond the language toolchain — affected selection is maintained by hand
 
 Record each applicable choice. Each project's README names the commands its targets resolve to, and every omitted target
 with its reason.

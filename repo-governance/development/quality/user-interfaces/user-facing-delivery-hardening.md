@@ -27,25 +27,34 @@ tests. It is declaring work done before anyone has observed the running result a
 
 ## Scope
 
-| Applies to                                                                                                    | Does not apply to                                    |
-| ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| a plan that changes a rendered interface, rendered output, or public command-line text                        | an internal refactor with no observable output       |
-| a plan that adds or changes an API operation, since its callers are its users                                 | a change to documentation or governance alone        |
-| executing, verifying, and archiving such a plan, including its done and archival criteria                     | an incidental API behaviour outside a feature change |
-| a plan changing other reachable behaviour, such as a library, hook, or pipeline, for the near-end retest only |                                                      |
+**Applies to** — **Does not apply to**
+
+- a plan that changes a rendered interface, rendered output, or public command-line text — an internal refactor with no
+  observable output
+- a plan that adds or changes an API operation, since its callers are its users — a change to documentation or
+  governance alone
+- executing, verifying, and archiving such a plan, including its done and archival criteria — an incidental API
+  behaviour outside a feature change
+- a plan changing other reachable behaviour, such as a library, hook, or pipeline, for the near-end retest only
 
 ## What Other Artifacts Already Own
 
 These rules add to existing artifacts and repeat none of them:
 
-| Rule                                                                   | Owner                                                                                                                      |
-| ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| green automation does not close a user-facing change                   | [Verification Layers](../manual-verification/002-verification-layers.md)                                                   |
-| a real-browser check and a direct API request after a behaviour change | [Behaviour Change Verification](../manual-verification/006-behaviour-change-verification.md)                               |
-| where a plan's captures live and how a checklist item cites them       | [Evidence Files](../../../conventions/structure/plans/016-evidence-files.md)                                               |
-| ticking each checklist item as it resolves                             | [Plan Execution](../../../workflows/plan/plan-execution.md)                                                                |
-| what happens when an archived plan turns out to be defective           | [Phase Boundaries and Delivery Choices](../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md) |
-| components refer to colours by token role                              | [Design Tokens](design-tokens.md)                                                                                          |
+**Rule** — **Owner**
+
+- green automation does not close a user-facing change —
+  [Verification Layers](../manual-verification/002-verification-layers.md)
+- a real-browser check and a direct API request after a behaviour change —
+  [Behaviour Change Verification](../manual-verification/006-behaviour-change-verification.md)
+- where a plan's captures live and how a checklist item cites them —
+  [Evidence Files](../../../conventions/structure/plans/016-evidence-files.md)
+- ticking each checklist item as it resolves — [Plan Execution](../../../workflows/plan/plan-execution.md)
+- what happens when an archived plan turns out to be defective — [Phase Boundaries and Delivery Choices][ref-1]
+
+  [ref-1]: ../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md
+
+- components refer to colours by token role — [Design Tokens](design-tokens.md)
 
 ## Enforcement
 

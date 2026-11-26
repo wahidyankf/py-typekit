@@ -25,12 +25,14 @@ someone could see it and disagree.
 
 ## What It Requires
 
-| Practice                                                                                                                    | Instead of                                        |
-| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| state each assumption the work depends on, and verify those that can be verified                                            | proceeding on what is probably true               |
-| name every reasonable reading of a request, and every valid approach where several exist, each with what it gains and costs | picking one and presenting it as the only option  |
-| say so when a simpler approach meets the need, before building the complex one                                              | defaulting to whatever felt most thorough         |
-| stop when something is unclear, and name exactly what                                                                       | guessing and hoping the result reveals the answer |
+**Practice** — **Instead of**
+
+- state each assumption the work depends on, and verify those that can be verified — proceeding on what is probably true
+- name every reasonable reading of a request, and every valid approach where several exist, each with what it gains and
+  costs — picking one and presenting it as the only option
+- say so when a simpler approach meets the need, before building the complex one — defaulting to whatever felt most
+  thorough
+- stop when something is unclear, and name exactly what — guessing and hoping the result reveals the answer
 
 A clear request does not settle its approach. Where several valid approaches exist, each is presented with what it gains
 and what it costs before one is chosen.
@@ -48,14 +50,19 @@ convention; [Decision Gates](../development/agents/planning-capabilities/003-dec
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                          | As                                                                           |
-| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [Decision Gates](../development/agents/planning-capabilities/003-decision-gates.md) | inspect first, then offer exclusive choices with exactly one recommendation  |
-| [Grill Me](../../.agents/skills/grill-me/SKILL.md)                                  | a material choice is resolved openly, not settled by whoever writes first    |
-| [Planning](../workflows/plan/plan-planning.md)                                      | no plan document is written until every material branch is resolved          |
-| [Adopt Artifact](../workflows/adoption/adopt-artifact.md)                           | ambiguous resolution stops, and a contradiction is reported, never absorbed  |
-| [Assess Alignment](../workflows/adoption/assess-alignment.md)                       | the target's own instructions are read before anything is compared           |
-| [Backlog Grooming](../workflows/plan/plan-backlog-grooming.md)                      | each plan is re-read against the current repository, because assumptions age |
+**Applied in** — **As**
+
+- [Decision Gates](../development/agents/planning-capabilities/003-decision-gates.md) — inspect first, then offer
+  exclusive choices with exactly one recommendation
+- [Grill Me](../../.agents/skills/grill-me/SKILL.md) — a material choice is resolved openly, not settled by whoever
+  writes first
+- [Planning](../workflows/plan/plan-planning.md) — no plan document is written until every material branch is resolved
+- [Adopt Artifact](../workflows/adoption/adopt-artifact.md) — ambiguous resolution stops, and a contradiction is
+  reported, never absorbed
+- [Assess Alignment](../workflows/adoption/assess-alignment.md) — the target's own instructions are read before anything
+  is compared
+- [Backlog Grooming](../workflows/plan/plan-backlog-grooming.md) — each plan is re-read against the current repository,
+  because assumptions age
 
 ## Proportion
 

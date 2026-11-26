@@ -7,12 +7,13 @@ when_to_use: >-
 
 # Schemas by Path
 
-| Family     | Path                                | Keys, in order                                                                                                                 |
-| ---------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| governance | `repo-governance/**/*.md`           | `description`, `when_to_use`                                                                                                   |
-| workflow   | `repo-governance/workflows/**/*.md` | `name`, `description`, `when_to_use`                                                                                           |
-| skill      | `.agents/skills/<name>/SKILL.md`    | `name`, `description`, `when_to_use`, optional `compatibility`                                                                 |
-| agent      | `agents/<name>.md`                  | `name`, `description`, `when_to_use`, `tier`, `capabilities`, optional `skills`, optional `constraints`, optional `dispatches` |
+**Family** — **Path** — **Keys, in order**
+
+- governance — `repo-governance/**/*.md` — `description`, `when_to_use`
+- workflow — `repo-governance/workflows/**/*.md` — `name`, `description`, `when_to_use`
+- skill — `.agents/skills/<name>/SKILL.md` — `name`, `description`, `when_to_use`, optional `compatibility`
+- agent — `agents/<name>.md` — `name`, `description`, `when_to_use`, `tier`, `capabilities`, optional `skills`, optional
+  `constraints`, optional `dispatches`
 
 Workflows are governance documents whose path selects the more specific schema.
 

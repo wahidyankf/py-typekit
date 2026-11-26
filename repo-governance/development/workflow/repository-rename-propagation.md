@@ -33,13 +33,14 @@ A rename is incomplete until a sweep has replaced the old name on every surface 
 each affected path has succeeded. Every hit counts, documentation included, because examples are copied into new
 automation.
 
-| Surface                                  | Where the old name hides                                                                                  |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| tracked scripts and pipeline definitions | remote addresses, API paths, owner-and-name pairs, and fallback values                                    |
-| service and deployment definitions       | arguments and environment defaults passed to services, and webhook targets                                |
-| container images                         | image names, tags, and runner labels derived from the repository name                                     |
-| remote settings                          | the remote address in every checkout and mirror, branch rules, and deploy keys                            |
-| machine-stored configuration             | registered runners and agents, pipeline secrets and variables, and endpoints saved outside any repository |
+**Surface** — **Where the old name hides**
+
+- tracked scripts and pipeline definitions — remote addresses, API paths, owner-and-name pairs, and fallback values
+- service and deployment definitions — arguments and environment defaults passed to services, and webhook targets
+- container images — image names, tags, and runner labels derived from the repository name
+- remote settings — the remote address in every checkout and mirror, branch rules, and deploy keys
+- machine-stored configuration — registered runners and agents, pipeline secrets and variables, and endpoints saved
+  outside any repository
 
 A registered agent keeps the address it was registered with. Reads through the redirect keep it running, and its first
 write, often its own removal, fails. Re-register each agent at rename time, or record its stale endpoint as an open item

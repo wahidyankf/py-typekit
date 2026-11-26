@@ -14,13 +14,15 @@ when_to_use: >-
 
 One report per run, written as [Temporary Files](../../../conventions/structure/temporary-files.md) describes:
 
-| Part                 | Holds                                                                                                           |
-| -------------------- | --------------------------------------------------------------------------------------------------------------- |
-| missing perspectives | first, each pass that could not run and why, or an explicit none                                                |
-| one section per pass | exploratory, usability, then design fidelity, each finding with a stable identifier prefixed by its pass        |
-| proposed scenarios   | kept by pass: spec-aware gaps, spec-blind suggestions, and design protections                                   |
-| cross-references     | findings from different passes that share a root cause, each pointing at the others                             |
-| coverage             | every pass's enumerated matrices, the completeness critic's result, and each gap left uncovered with its reason |
+**Part** — **Holds**
+
+- missing perspectives — first, each pass that could not run and why, or an explicit none
+- one section per pass — exploratory, usability, then design fidelity, each finding with a stable identifier prefixed by
+  its pass
+- proposed scenarios — kept by pass: spec-aware gaps, spec-blind suggestions, and design protections
+- cross-references — findings from different passes that share a root cause, each pointing at the others
+- coverage — every pass's enumerated matrices, the completeness critic's result, and each gap left uncovered with its
+  reason
 
 Sections never merge. A contradicted specification, first-use friction, and design drift call for different fixes and
 different confirmation, so a reader must always be able to tell which pass saw what.
@@ -48,9 +50,9 @@ and which proposed scenarios are accepted. The plan then carries:
 - in `README.md`, each top risk labelled with the pass that found it;
 - the design exploration [Plan UI Design](../../../conventions/structure/plan-ui-design.md) requires, whenever a fix
   adds or changes a screen or component; and
-- the near-end retest
-  [Closing a User-Facing Plan](../../../development/quality/user-interfaces/user-facing-delivery-hardening/002-closing-a-user-facing-plan.md)
-  requires, for a plan that changes a user-facing surface.
+- the near-end retest [Closing a User-Facing Plan][ref-1] requires, for a plan that changes a user-facing surface.
+
+  [ref-1]: ../../../development/quality/user-interfaces/user-facing-delivery-hardening/002-closing-a-user-facing-plan.md
 
 A deferred finding stays in the technical shape with its reason, so a later run's carry-forward lists still see its
 class.

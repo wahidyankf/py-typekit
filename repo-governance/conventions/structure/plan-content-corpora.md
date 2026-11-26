@@ -47,11 +47,13 @@ prove the link check passes.
 For a corpus not yet promoted, the custodian settles it before the first step of
 [archival](plans/008-knowledge-capture-and-archival.md), by the state of its consumers:
 
-| Consumers                                  | Hand-off                                                                                                                          |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| none live                                  | the corpus moves with the plan                                                                                                    |
-| live, and the corpus is stable             | the corpus moves with the plan, and every consumer's inbound link is rewritten to the archived path                               |
-| live, and at least one still needs changes | custody transfers: a successor plan becomes custodian, the corpus moves into its folder, and every record names the new custodian |
+**Consumers** — **Hand-off**
+
+- none live — the corpus moves with the plan
+- live, and the corpus is stable — the corpus moves with the plan, and every consumer's inbound link is rewritten to the
+  archived path
+- live, and at least one still needs changes — custody transfers: a successor plan becomes custodian, the corpus moves
+  into its folder, and every record names the new custodian
 
 A plan under `done/` is never edited again, so a corpus still changing cannot archive with it; the transfer keeps one
 custodian at every moment.

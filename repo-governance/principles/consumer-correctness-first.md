@@ -42,12 +42,14 @@ live, because every later place — a log search, a support thread, an incident 
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                                      | As                                                               |
-| --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [Errors and Diagnostics](../conventions/structure/command-line-interface-details/006-errors-and-diagnostics.md) | a diagnostic locates the problem and never carries a secret      |
-| [Command-Line Interface](../conventions/structure/command-line-interface.md)                                    | the machine-readable body says exactly what happened             |
-| [File Naming](../conventions/structure/file-naming.md)                                                          | one lowercase kebab-case name, never two names one case apart    |
-| [Fail Closed](fail-closed.md)                                                                                   | a control that cannot decide refuses rather than passing quietly |
+**Applied in** — **As**
+
+- [Errors and Diagnostics](../conventions/structure/command-line-interface-details/006-errors-and-diagnostics.md) — a
+  diagnostic locates the problem and never carries a secret
+- [Command-Line Interface](../conventions/structure/command-line-interface.md) — the machine-readable body says exactly
+  what happened
+- [File Naming](../conventions/structure/file-naming.md) — one lowercase kebab-case name, never two names one case apart
+- [Fail Closed](fail-closed.md) — a control that cannot decide refuses rather than passing quietly
 
 ## Enforcement
 

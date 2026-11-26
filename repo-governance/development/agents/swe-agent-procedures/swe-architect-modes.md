@@ -22,9 +22,10 @@ Moved verbatim from [swe-architect](../../../../agents/swe-architect.md), which 
 4. Return the decisions, the boundaries, and the deterministic tests the work must add: each a failing test, a lint or
    type rule, an end-to-end assertion, or a threshold a command checks. A design whose success no command can check is
    not finished.
-5. Write one decision record when the choice meets the test in
-   [Architecture Decision Records](../../../conventions/writing/repository-documentation-files/003-architecture-decision-records.md),
-   at the location below, with the threat notes beside it.
+5. Write one decision record when the choice meets the test in [Architecture Decision Records][ref-1], at the location
+   below, with the threat notes beside it.
+
+   [ref-1]: ../../../conventions/writing/repository-documentation-files/003-architecture-decision-records.md
 
 ## Lens
 

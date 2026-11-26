@@ -44,11 +44,12 @@ and labelled, not green.
 
 ## Contrast Floor
 
-| Element                                                             | Minimum | Criterion                                                                                      |
-| ------------------------------------------------------------------- | ------: | ---------------------------------------------------------------------------------------------- |
-| normal text                                                         |   4.5:1 | [1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)  |
-| large text: at least 18 point, or 14 point bold                     |     3:1 | 1.4.3 Contrast (Minimum)                                                                       |
-| graphical objects and interface components, against adjacent colour |     3:1 | [1.4.11 Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) |
+**Element** — **Minimum** — **Criterion**
+
+- normal text — 4.5:1 — [1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+- large text: at least 18 point, or 14 point bold — 3:1 — 1.4.3 Contrast (Minimum)
+- graphical objects and interface components, against adjacent colour — 3:1 —
+  [1.4.11 Non-text Contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
 
 Where text's rendered size cannot be known in advance, such as a diagram label, require 4.5:1: the viewer decides the
 size, and only the higher threshold holds at every size.

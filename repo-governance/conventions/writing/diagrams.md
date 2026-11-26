@@ -46,10 +46,11 @@ and give each part a short heading. Oversized diagrams become unreadable on narr
 A repository using the rendered rule declares two limits in configuration, nodes per level and label-line length, and
 validates every diagram against them. The numbers and how a label is counted are its own decision. Illustrative options:
 
-| Option  | Nodes per level | Label-line length | Counted as                | Trade-off                                                                 |
-| ------- | --------------: | ----------------: | ------------------------- | ------------------------------------------------------------------------- |
-| tighter |               4 |                20 | characters                | readable on narrow screens; more splitting                                |
-| looser  |               6 |                30 | user-perceived characters | fewer splits and fair counting of non-Latin text; clips in some renderers |
+**Option** — **Nodes per level** — **Label-line length** — **Counted as** — **Trade-off**
+
+- tighter — 4 — 20 — characters — readable on narrow screens; more splitting
+- looser — 6 — 30 — user-perceived characters — fewer splits and fair counting of non-Latin text; clips in some
+  renderers
 
 Limits are proxies because clipping depends on glyph widths and layout; inspect every new or materially changed diagram
 as rendered.

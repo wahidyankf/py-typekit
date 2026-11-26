@@ -20,10 +20,15 @@ changes nothing durable and is discarded with a one-line reason, before anyone s
 
 Every entry that is kept passes both gates, in this order, before it reaches an owner:
 
-| Gate         | Asks                                                                                     | An entry that fails                                                                                                                                                                                                                                     |
-| ------------ | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| sanitization | does its text hold a secret, a credential, a personal value, or an internal address?     | is rewritten with placeholders such as `<api-token>` first, and the value never travels — see [No Secrets](../../security/no-secrets-in-tracked-files.md); an entry that cannot lose the value without losing its meaning is discarded with that reason |
-| relevance    | does the subject belong to this repository, rather than to a tool or repository it uses? | goes to the repository that owns the subject, per [Related Repositories](../related-repositories.md), or is discarded with that reason                                                                                                                  |
+**Gate** — **Asks** — **An entry that fails**
+
+- sanitization — does its text hold a secret, a credential, a personal value, or an internal address? — is rewritten
+  with placeholders such as `<api-token>` first, and the value never travels — see
+  [No Secrets](../../security/no-secrets-in-tracked-files.md); an entry that cannot lose the value without losing its
+  meaning is discarded with that reason
+- relevance — does the subject belong to this repository, rather than to a tool or repository it uses? — goes to the
+  repository that owns the subject, per [Related Repositories](../related-repositories.md), or is discarded with that
+  reason
 
 Sanitization comes first because promotion copies text into places that outlive the plan, and a durable owner is far
 harder to clean than a transient log. Relevance comes second because a lesson about someone else's tool, filed here as a
@@ -45,10 +50,12 @@ use the record as readily as a large one; the triage stays, and only its output 
 
 Capture fails in two directions, and both look diligent from outside.
 
-| Failure       | Looks like                                                        | Guardrail                                                                                                                          |
-| ------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| under-capture | a clean log after a run full of failed gates and course changes   | triage is mandatory, a plan with nothing to route records that with its reason, and a plan check reports a log left silently empty |
-| over-capture  | every tick restated as a lesson, owners picked to look productive | the keep test discards an entry that would change nothing durable; results already in `delivery.md` stay there                     |
+**Failure** — **Looks like** — **Guardrail**
+
+- under-capture — a clean log after a run full of failed gates and course changes — triage is mandatory, a plan with
+  nothing to route records that with its reason, and a plan check reports a log left silently empty
+- over-capture — every tick restated as a lesson, owners picked to look productive — the keep test discards an entry
+  that would change nothing durable; results already in `delivery.md` stay there
 
 Three placement rules keep the triage honest:
 

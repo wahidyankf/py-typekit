@@ -20,13 +20,15 @@ standard decides what belongs on each surface, as rule C6 of the
 
 ## Where Each Check Runs
 
-| Surface                | Runs                                                                  | Never runs                        |
-| ---------------------- | --------------------------------------------------------------------- | --------------------------------- |
-| before a commit        | formatters that rewrite and restage staged files                      | any check, test, or scan          |
-| at commit-message time | validation of the message against the repository's commit format      | anything about file contents      |
-| before a push          | the deterministic leak scanner over the pushed range                  | tests, lint, or document checks   |
-| pull request           | every other blocking check, end-to-end excepted, hook checks replayed | a step whose failure is discarded |
-| main or scheduled      | end-to-end suites                                                     | a layer nothing else runs         |
+**Surface** — **Runs** — **Never runs**
+
+- before a commit — formatters that rewrite and restage staged files — any check, test, or scan
+- at commit-message time — validation of the message against the repository's commit format — anything about file
+  contents
+- before a push — the deterministic leak scanner over the pushed range — tests, lint, or document checks
+- pull request — every other blocking check, end-to-end excepted, hook checks replayed — a step whose failure is
+  discarded
+- main or scheduled — end-to-end suites — a layer nothing else runs
 
 The table is the default. A repository may declare, in its gate registry, which entries each local surface holds, and
 its wiring check refuses any other.

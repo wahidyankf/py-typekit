@@ -9,10 +9,12 @@ when_to_use: >-
 
 Read in order. Together these hold the rule the [Plan Migrations](../plan-migrations.md) entrypoint indexes.
 
-| Module                                                                      | Holds                                                                      |
-| --------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [001 Source Inventory and Contracts](001-source-inventory-and-contracts.md) | the source inventory, data-model diagrams, and the field guide             |
-| [002 Transition and Recovery](002-transition-and-recovery.md)               | the transition order, cutover proof, and handling of uninterpretable input |
+**Module** — **Holds**
+
+- [001 Source Inventory and Contracts](001-source-inventory-and-contracts.md) — the source inventory, data-model
+  diagrams, and the field guide
+- [002 Transition and Recovery](002-transition-and-recovery.md) — the transition order, cutover proof, and handling of
+  uninterpretable input
 
 ## Directory Map
 

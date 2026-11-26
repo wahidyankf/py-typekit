@@ -47,14 +47,15 @@ scanning a file meant only for the import, but lets additions reach one harness 
 
 ## The Neutral Vocabulary
 
-| Instead of                                             | Write                                                                                               |
-| ------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| a coding-agent product name                            | "the coding agent" or "the harness"                                                                 |
-| a model vendor's name                                  | nothing, or "the model provider" where the role matters                                             |
-| a model or model-family name                           | the workload tier defined in [Portable Tiers](../structure/artifact-metadata/003-portable-tiers.md) |
-| a harness binding path                                 | the role, such as "the agent definition", or `<binding-root>/<path>`                                |
-| a vendor-named instruction file presented as canonical | "the canonical root instruction file"                                                               |
-| a product-specific feature name                        | the generic capability, such as "pre-edit hook" or "delegated agent"                                |
+**Instead of** — **Write**
+
+- a coding-agent product name — "the coding agent" or "the harness"
+- a model vendor's name — nothing, or "the model provider" where the role matters
+- a model or model-family name — the workload tier defined in
+  [Portable Tiers](../structure/artifact-metadata/003-portable-tiers.md)
+- a harness binding path — the role, such as "the agent definition", or `<binding-root>/<path>`
+- a vendor-named instruction file presented as canonical — "the canonical root instruction file"
+- a product-specific feature name — the generic capability, such as "pre-edit hook" or "delegated agent"
 
 Each replacement names what the rule needs from a tool, not which tool provides it.
 

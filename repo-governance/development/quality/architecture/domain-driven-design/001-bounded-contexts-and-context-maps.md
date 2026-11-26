@@ -36,15 +36,22 @@ core, neither context has a clean dependency direction.
 The relationships between contexts are recorded in a context map, using the standard relationship patterns. The map is
 not documentation alone: each relationship is expressed in code, so the map and the code can be compared.
 
-| Relationship          | Meaning                                                       | Expressed in code as                                                                  |
-| --------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| customer and supplier | the downstream needs data or behaviour the upstream provides  | an outbound port in the downstream, implemented by an adapter that calls the upstream |
-| conformist            | the downstream adopts the upstream's published model as it is | the upstream's published contract types, used without translation                     |
-| anti-corruption layer | the downstream protects its model from a different one        | an outbound port whose adapter holds all translation                                  |
-| open host service     | the upstream serves several downstream contexts               | a stable interface the upstream publishes and versions                                |
-| published language    | the upstream emits events in a stable schema                  | a shared event schema, and a consuming adapter in each downstream                     |
-| partnership           | two contexts evolve together, with neither upstream           | each context's own ports, coupled only through shared events                          |
-| shared kernel         | contexts co-own a small model fragment                        | one declared shared module, under the rules in the next module                        |
+**Relationship** — **Meaning** — **Expressed in code as**
+
+- customer and supplier — the downstream needs data or behaviour the upstream provides — an outbound port in the
+  downstream, implemented by an adapter that calls the upstream
+- conformist — the downstream adopts the upstream's published model as it is — the upstream's published contract types,
+  used without translation
+- anti-corruption layer — the downstream protects its model from a different one — an outbound port whose adapter holds
+  all translation
+- open host service — the upstream serves several downstream contexts — a stable interface the upstream publishes and
+  versions
+- published language — the upstream emits events in a stable schema — a shared event schema, and a consuming adapter in
+  each downstream
+- partnership — two contexts evolve together, with neither upstream — each context's own ports, coupled only through
+  shared events
+- shared kernel — contexts co-own a small model fragment — one declared shared module, under the rules in the next
+  module
 
 A translation between two context models always sits behind a named port. An adapter that translates without one hides
 the contract, so replacing the integration technology means reading the adapter's internals.

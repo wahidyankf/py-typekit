@@ -82,10 +82,12 @@ person approves the exact set first and the change runs under a plan's checklist
 
 ## What an Adopter Decides
 
-| Decision         | Options and trade-off                                                                                                                                                           |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eligibility rule | A soak window admits only versions some days old, preferring long-term-support lines: problems surface first, fixes arrive later. Latest stable adopts fixes at once, unproven. |
-| advisory sources | More sources catch what one misses at more research per package; one source is quick but inherits its gaps.                                                                     |
+**Decision** — **Options and trade-off**
+
+- eligibility rule — A soak window admits only versions some days old, preferring long-term-support lines: problems
+  surface first, fixes arrive later. Latest stable adopts fixes at once, unproven.
+- advisory sources — More sources catch what one misses at more research per package; one source is quick but inherits
+  its gaps.
 
 ## Principles
 

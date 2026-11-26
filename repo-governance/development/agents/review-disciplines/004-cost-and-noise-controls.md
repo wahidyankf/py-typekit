@@ -16,21 +16,23 @@ is how much of the roster a change earns, not which model runs it.
 The scout sizes each change by the lines and files it alters, and checks it against the security-sensitive paths: secret
 and environment files, version-control identity, pipeline and hook definitions, and merge controls.
 
-| Tier    | Selected when                                                 | Runs                                           |
-| ------- | ------------------------------------------------------------- | ---------------------------------------------- |
-| trivial | at most 10 changed lines and 20 files, and no sensitive path  | the coordinator alone, in one generalist pass  |
-| lite    | at most the lite line ceiling and 20 files                    | the lite specialist set, plus the coordinator  |
-| full    | above either ceiling, or touching any security-sensitive path | every adopted discipline, plus the coordinator |
+**Tier** — **Selected when** — **Runs**
+
+- trivial — at most 10 changed lines and 20 files, and no sensitive path — the coordinator alone, in one generalist pass
+- lite — at most the lite line ceiling and 20 files — the lite specialist set, plus the coordinator
+- full — above either ceiling, or touching any security-sensitive path — every adopted discipline, plus the coordinator
 
 A security-sensitive path forces `full` regardless of size. The tier is recomputed every cycle and recorded with every
 specialist selected or skipped, because a change grows between cycles and an unrecorded selection cannot be audited.
 
 ### Adopter Decision: The Lite Tier
 
-| Option             | Lite ceiling | Lite set                                                        | Trade-off                                                                 |
-| ------------------ | ------------ | --------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| pull request       | 50 lines     | governance, architecture, correctness, security, test integrity | architecture catches expensive-to-reverse defects early, at one more pass |
-| local commit range | 100 lines    | governance, correctness, security, test integrity               | cheaper; more mid-sized changes reach fewer reviewers                     |
+**Option** — **Lite ceiling** — **Lite set** — **Trade-off**
+
+- pull request — 50 lines — governance, architecture, correctness, security, test integrity — architecture catches
+  expensive-to-reverse defects early, at one more pass
+- local commit range — 100 lines — governance, correctness, security, test integrity — cheaper; more mid-sized changes
+  reach fewer reviewers
 
 A lower ceiling overspends on small changes; a higher one sends larger diffs, which reviewers handle less reliably, to
 fewer of them. Security stays in both sets because its misses are the most expensive. Revisit the ceiling against the

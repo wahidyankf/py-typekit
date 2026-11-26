@@ -37,10 +37,14 @@ command there.
 
 ## Adopter Decision: When It Reruns
 
-| Option             | Runs on                                                                                          | Gains                                                              | Costs                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| creation only      | a new worktree, clone, or unbootstrapped session; later gaps are recovered from evidence         | no repeated work on each return, and entry is never taken as drift | a checkout whose state changed after creation stays broken until a command shows it |
-| creation and entry | also every session that enters or resumes a checkout when it is unsure the bootstrap already ran | a returning session never works in an unbootstrapped tree          | repeated runs, each cheap only while the bootstrap stays idempotent                 |
+**Option** — **Runs on** — **Gains** — **Costs**
+
+- creation only — a new worktree, clone, or unbootstrapped session; later gaps are recovered from evidence — no repeated
+  work on each return, and entry is never taken as drift — a checkout whose state changed after creation stays broken
+  until a command shows it
+- creation and entry — also every session that enters or resumes a checkout when it is unsure the bootstrap already ran
+  — a returning session never works in an unbootstrapped tree — repeated runs, each cheap only while the bootstrap stays
+  idempotent
 
 Record the option. Under creation only, entering or resuming an existing checkout triggers nothing.
 

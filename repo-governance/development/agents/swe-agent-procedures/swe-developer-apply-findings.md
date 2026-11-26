@@ -17,8 +17,10 @@ Moved verbatim from [swe-developer](../../../../agents/swe-developer.md), which 
    [Assessing Criticality and Confidence](../../../../.agents/skills/assessing-criticality-confidence/SKILL.md)
    explains.
 2. **Re-validate each one** at the stated file and line under the stated standard, or by replaying its reproduction
-   steps or request against the running service, and rate confidence per
-   [Confidence and Re-Validation](../../quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md).
+   steps or request against the running service, and rate confidence per [Confidence and Re-Validation][ref-1].
+
+   [ref-1]: ../../quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md
+
 3. **Dispose of it.** `HIGH`: apply the fix, changing only what the finding names. `MEDIUM`: leave it for a person with
    the evidence. `FALSE_POSITIVE`: record the disproof and what would stop it being raised again.
 4. **Fix test-first where a fix needs a test.** A missing regression test, untested behaviour, or a fix that changes

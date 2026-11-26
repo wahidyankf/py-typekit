@@ -48,10 +48,14 @@ service, is layered as a web application. Its API routes are presentation-side i
 How web applications are structured is an adopter decision, recorded once and applied to every web application in the
 repository.
 
-| Option                                                                                  | Gains                                                                                                      | Costs                                                                                                             |
-| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| hexagonal layering with a presentation layer                                            | one vocabulary shared with backend services; an API client or browser storage is replaceable behind a port | four layers, ports, and a composition root in applications whose logic is mostly presentation                     |
-| [Functional Core, Imperative Shell](../functional-core-imperative-shell.md) per feature | two zones and no wiring; the shell imports the core directly                                               | no dedicated port or composition root for replacing infrastructure; a second vocabulary beside hexagonal services |
+**Option** — **Gains** — **Costs**
+
+- hexagonal layering with a presentation layer — one vocabulary shared with backend services; an API client or browser
+  storage is replaceable behind a port — four layers, ports, and a composition root in applications whose logic is
+  mostly presentation
+- [Functional Core, Imperative Shell](../functional-core-imperative-shell.md) per feature — two zones and no wiring; the
+  shell imports the core directly — no dedicated port or composition root for replacing infrastructure; a second
+  vocabulary beside hexagonal services
 
 Both keep decisions free of effects and testable without a runtime. The choice decides whether replacing infrastructure
 is worth ports and wiring in applications of that kind.

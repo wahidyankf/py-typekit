@@ -11,14 +11,14 @@ when_to_use: >-
 
 ## Adopter Decisions
 
-| Decision | Option                                | Gains                                     | Costs                                    |
-| -------- | ------------------------------------- | ----------------------------------------- | ---------------------------------------- |
-| store    | a store library                       | selective subscriptions                   | one more dependency and idiom            |
-|          | context and reducers                  | nothing beyond React                      | broad re-renders as shared state grows   |
-| query    | a full-featured cache library         | mutations and optimistic updates built in | a larger surface to configure            |
-|          | a lighter revalidating library        | a small API                               | mutations assembled by hand              |
-| forms    | a form library with schema validation | field and error state handled once        | every form couples to it                 |
-|          | controlled components with a schema   | plain React                               | field and error state rewritten per form |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- store — a store library — selective subscriptions — one more dependency and idiom
+- context and reducers — nothing beyond React — broad re-renders as shared state grows
+- query — a full-featured cache library — mutations and optimistic updates built in — a larger surface to configure
+- a lighter revalidating library — a small API — mutations assembled by hand
+- forms — a form library with schema validation — field and error state handled once — every form couples to it
+- controlled components with a schema — plain React — field and error state rewritten per form
 
 Record each choice once per application, selecting libraries as
 [Dependency Selection](../../code/dependency-selection.md) requires. Either store option satisfies the fourth state home

@@ -26,9 +26,11 @@ tool's merged fix.
 2. **Confirm the version is unused.** No `version` tag exists locally or on the remote. If one does, end the run and
    choose the next version: a tag is never deleted or moved.
 3. **Run the full gate** on `revision`; a release skipping a gate publishes whatever it would have caught.
-4. **Confirm the documentation describes this version.** The changelog records it, per
-   [Security, License, and Changelog](../../conventions/writing/repository-documentation-files/002-security-license-and-changelog.md),
-   and a [Docs Quality Gate](../quality/docs-quality-gate.md) verdict on subject `all` is recorded.
+4. **Confirm the documentation describes this version.** The changelog records it, per [Security, License, and
+   Changelog][ref-1], and a [Docs Quality Gate](../quality/docs-quality-gate.md) verdict on subject `all` is recorded.
+
+   [ref-1]: ../../conventions/writing/repository-documentation-files/002-security-license-and-changelog.md
+
 5. **Build only through the release build command.** One scripted command, run where the build-location decision places
    it, builds each artifact in a clean checkout of `revision`, and itself refuses when the checkout head differs from
    `revision` or `revision` is not a full commit identifier.
@@ -58,10 +60,12 @@ Run release-cut for version 1.4.0 at revision <full-commit-id>.
 
 ## Adopter Decision: Build Location
 
-| Option                | Where steps 5 and 6 run                                       | Trade-off                                                                   |
-| --------------------- | ------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| local, before tagging | one machine builds every platform before step 7               | a broken build stops the run before tagging; artifacts are cross-built      |
-| native runners        | inside step 7, triggered by the tag on each platform's runner | each executable has started on its platform; a build failure leaves the tag |
+**Option** — **Where steps 5 and 6 run** — **Trade-off**
+
+- local, before tagging — one machine builds every platform before step 7 — a broken build stops the run before tagging;
+  artifacts are cross-built
+- native runners — inside step 7, triggered by the tag on each platform's runner — each executable has started on its
+  platform; a build failure leaves the tag
 
 Record the option. Under native runners, verify the published release before announcing: an artifact per supported
 platform, each matching its digest.

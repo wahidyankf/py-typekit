@@ -58,10 +58,14 @@ decide its model.
 
 The adopter records one option and the drift control that comes with it:
 
-| Option                      | Drift control                                                               | Gains                                                                                              | Costs                                                                                                                       |
-| --------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| commit the generated output | a gate regenerates and fails when the result differs from what is committed | generated changes are reviewable in the diff; a fresh checkout and an editor resolve types at once | a drift gate to keep green; generated noise in diffs and merge conflicts                                                    |
-| do not commit it            | every consuming step depends on generation, so committed drift cannot exist | no drift gate and no generated diffs                                                               | a fresh checkout or editor must generate before types resolve; the generator must be deterministic and available everywhere |
+**Option** — **Drift control** — **Gains** — **Costs**
+
+- commit the generated output — a gate regenerates and fails when the result differs from what is committed — generated
+  changes are reviewable in the diff; a fresh checkout and an editor resolve types at once — a drift gate to keep green;
+  generated noise in diffs and merge conflicts
+- do not commit it — every consuming step depends on generation, so committed drift cannot exist — no drift gate and no
+  generated diffs — a fresh checkout or editor must generate before types resolve; the generator must be deterministic
+  and available everywhere
 
 The rule is the same either way: generated code always matches the current description, and a mismatch fails a check
 before merging rather than surfacing at runtime.

@@ -15,27 +15,35 @@ like and the check that exposes it.
 
 ## Invented References
 
-| Anti-pattern                         | Looks like                                                         | Check that catches it                                        |
-| ------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------ |
-| a version stated from memory         | "upgrade from version 4", when the manifest pins 5                 | read the manifest or lock file                               |
-| a path that ought to exist           | "update `<config-directory>/settings.json`", which was never there | list the directory at the current revision                   |
-| a command target that is assumed     | "run the `lint:strict` target"                                     | read the target definitions or the tool's listing            |
-| a function or method name that fits  | "call `validateAll()`" where the real function has another name    | find the definition in the source                            |
-| a numeric target with no baseline    | "cut build time by 40 percent"                                     | measure a baseline first, or state it as a reasoned decision |
-| a test name that sounds right        | "extend the `handles-empty-input` test"                            | find the test in the test files                              |
-| an agent or skill nobody defined     | "delegate to the release checker agent"                            | confirm the definition file exists                           |
-| a flag taken on trust                | "pass `--fix-all`"                                                 | read the installed tool's help output                        |
-| a behaviour claim with no source     | "the library retries three times by default"                       | cite the documentation with URL, date, and excerpt           |
-| a link to a file that does not exist | a relative link to a guide that was renamed                        | resolve every link before writing                            |
+**Anti-pattern** — **Looks like** — **Check that catches it**
+
+- a version stated from memory — "upgrade from version 4", when the manifest pins 5 — read the manifest or lock file
+- a path that ought to exist — "update `<config-directory>/settings.json`", which was never there — list the directory
+  at the current revision
+- a command target that is assumed — "run the `lint:strict` target" — read the target definitions or the tool's listing
+- a function or method name that fits — "call `validateAll()`" where the real function has another name — find the
+  definition in the source
+- a numeric target with no baseline — "cut build time by 40 percent" — measure a baseline first, or state it as a
+  reasoned decision
+- a test name that sounds right — "extend the `handles-empty-input` test" — find the test in the test files
+- an agent or skill nobody defined — "delegate to the release checker agent" — confirm the definition file exists
+- a flag taken on trust — "pass `--fix-all`" — read the installed tool's help output
+- a behaviour claim with no source — "the library retries three times by default" — cite the documentation with URL,
+  date, and excerpt
+- a link to a file that does not exist — a relative link to a guide that was renamed — resolve every link before writing
 
 ## Invented Evidence
 
-| Anti-pattern                                   | Looks like                                                        | Check that catches it                                          |
-| ---------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------------------- |
-| a zero result treated as proof                 | "no references remain", from a search whose errors were discarded | record the command, inspect the status, run a positive control |
-| completeness from a text search                | "every service is listed", because a search found each listed one | diff against the set from its owning authority                 |
-| a sweep that validates itself                  | a rule change confirmed by re-running the pattern used to edit it | sweep by inbound link with a different instrument              |
-| a validator result without its real invocation | "the checker passes", from a target that runs nothing             | confirm the invocation, then run it                            |
+**Anti-pattern** — **Looks like** — **Check that catches it**
+
+- a zero result treated as proof — "no references remain", from a search whose errors were discarded — record the
+  command, inspect the status, run a positive control
+- completeness from a text search — "every service is listed", because a search found each listed one — diff against the
+  set from its owning authority
+- a sweep that validates itself — a rule change confirmed by re-running the pattern used to edit it — sweep by inbound
+  link with a different instrument
+- a validator result without its real invocation — "the checker passes", from a target that runs nothing — confirm the
+  invocation, then run it
 
 ## What the Examples Share
 

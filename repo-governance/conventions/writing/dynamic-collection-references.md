@@ -39,14 +39,15 @@ Correct:   agents/    # agent definitions
 
 ## When a Count or a List Is Correct
 
-| Context                                                            | Why it is not a stale copy                                             |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| the collection's own index                                         | it is the single source, maintained in the same change as the members  |
-| a point-in-time record — a report, commit message, or release note | it describes one moment and is never expected to change                |
-| a constraint rather than a description                             | "exactly one `name` field" is a rule, and changing it is a rule change |
-| a set that is fixed by definition                                  | it does not grow                                                       |
-| an illustrative subset                                             | marked with "for example" or "such as", so it claims no completeness   |
-| a subset defined by role                                           | "every checker is read-only" stays true as checkers are added          |
+**Context** — **Why it is not a stale copy**
+
+- the collection's own index — it is the single source, maintained in the same change as the members
+- a point-in-time record — a report, commit message, or release note — it describes one moment and is never expected to
+  change
+- a constraint rather than a description — "exactly one `name` field" is a rule, and changing it is a rule change
+- a set that is fixed by definition — it does not grow
+- an illustrative subset — marked with "for example" or "such as", so it claims no completeness
+- a subset defined by role — "every checker is read-only" stays true as checkers are added
 
 A rule that applies to exactly the members it names, and deliberately to no future member, may name them when the text
 says the list is exhaustive by decision.

@@ -18,16 +18,16 @@ inapplicable and states why.
 
 ## When It Applies
 
-| Change                                     | Real-browser check                | Direct API request                             |
-| ------------------------------------------ | --------------------------------- | ---------------------------------------------- |
-| new page, view, or component               | required                          | required for every operation it exercises      |
-| interface defect fix                       | required                          | required for every operation the fix exercises |
-| new API operation                          | required if an interface uses it  | required                                       |
-| changed API behaviour                      | required if an interface shows it | required                                       |
-| change spanning interface and API          | required                          | required                                       |
-| styling-only change                        | required                          | not applicable, with the reason                |
-| internal refactor with no behaviour change | not applicable, with the reason   | not applicable, with the reason                |
-| documentation-only change                  | not applicable, with the reason   | not applicable, with the reason                |
+**Change** — **Real-browser check** — **Direct API request**
+
+- new page, view, or component — required — required for every operation it exercises
+- interface defect fix — required — required for every operation the fix exercises
+- new API operation — required if an interface uses it — required
+- changed API behaviour — required if an interface shows it — required
+- change spanning interface and API — required — required
+- styling-only change — required — not applicable, with the reason
+- internal refactor with no behaviour change — not applicable, with the reason — not applicable, with the reason
+- documentation-only change — not applicable, with the reason — not applicable, with the reason
 
 ## Interfaces Outside a Browser
 
@@ -35,10 +35,12 @@ The real-browser column, the checklist, and the tool rules below govern interfac
 native mobile, terminal, or other interface, the adopter records how the check drives the real built runtime its users
 meet:
 
-| Option                                       | Gains                                                | Costs                                                              |
-| -------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------ |
-| the installed build on a real device or host | observes exactly what users meet                     | needs a device or host for each supported platform                 |
-| the real build in an emulator or simulator   | repeatable, and reaches platforms nobody has at hand | can differ from real hardware in rendering, input, and performance |
+**Option** — **Gains** — **Costs**
+
+- the installed build on a real device or host — observes exactly what users meet — needs a device or host for each
+  supported platform
+- the real build in an emulator or simulator — repeatable, and reaches platforms nobody has at hand — can differ from
+  real hardware in rendering, input, and performance
 
 The same trigger rows decide when such an interface is checked, with the recorded option taking the place of the
 real-browser check.

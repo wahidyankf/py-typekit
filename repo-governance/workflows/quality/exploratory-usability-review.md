@@ -53,7 +53,9 @@ lens, in that order:
    holding only `origin`, `routes`, `viewports`, and the frozen task list, never specifications, source, or design
    assets; with none available, label the lens spec-aware. Judge first use by a published heuristic set and a cognitive
    walkthrough, the empty, loading, error, and zero-result states, keyboard and focus, and responsive layout, alongside
-   [Usability Probes and Completeness](../../development/quality/manual-verification/008-usability-probes-and-completeness.md).
+   [Usability Probes and Completeness][ref-1].
+
+   [ref-1]: ../../development/quality/manual-verification/008-usability-probes-and-completeness.md
 
 Findings stay in one section per lens. Two findings sharing a root cause cross-reference each other, so it is fixed
 once. Correct behaviour no scenario states becomes a proposed scenario, labelled with its lens, reconciled through

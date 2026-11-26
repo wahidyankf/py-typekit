@@ -35,12 +35,12 @@ that must be present, the status code it expects, or the outline of a valid answ
 
 A stand-in for the dependency does not count:
 
-| Stand-in check                   | Shows                                  | Leaves unshown                                     |
-| -------------------------------- | -------------------------------------- | -------------------------------------------------- |
-| a credential exists or signs in  | there is a credential                  | whether it may perform the write the loop performs |
-| the host answers                 | the network route and name lookup work | whether that particular endpoint takes the request |
-| a configuration file loads       | its syntax is acceptable               | whether its values name anything that works        |
-| a read against the service works | reading is permitted                   | whether creating, changing, or deleting works      |
+**Stand-in check** — **Shows** — **Leaves unshown**
+
+- a credential exists or signs in — there is a credential — whether it may perform the write the loop performs
+- the host answers — the network route and name lookup work — whether that particular endpoint takes the request
+- a configuration file loads — its syntax is acceptable — whether its values name anything that works
+- a read against the service works — reading is permitted — whether creating, changing, or deleting works
 
 When the preflight creates something, such as a probe record or a test object, it gives the probe a unique name, removes
 it on success, and leaves nothing harmful if removal fails. A failed removal is logged and does not stop the loop from

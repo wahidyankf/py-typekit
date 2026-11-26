@@ -34,17 +34,19 @@ The done and archival criteria for a user-facing change include the visual sign-
 deployed build, for every declared viewport class and every supported locale. Archival is blocked until it is recorded.
 
 A sign-off that covered only the default locale is incomplete. Finding that out after archival makes it a defect in an
-archived plan, handled under
-[Phase Boundaries and Delivery Choices](../../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md).
+archived plan, handled under [Phase Boundaries and Delivery Choices][ref-1].
+
+[ref-1]: ../../../../conventions/structure/plans/011-phase-boundaries-and-delivery-choices.md
 
 ## 11. A Near-End Retest of the Running System
 
 After implementation and any sign-off, and before archival, the plan runs one retest round against the running system:
 
-| Surface                    | The round looks for                                                                                                            |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| browser-rendered interface | correctness, usability, and design fidelity, in every supported locale                                                         |
-| API operation              | contract conformance, status codes, error shape, payload limits, authentication and authorization, pagination, and idempotency |
+**Surface** — **The round looks for**
+
+- browser-rendered interface — correctness, usability, and design fidelity, in every supported locale
+- API operation — contract conformance, status codes, error shape, payload limits, authentication and authorization,
+  pagination, and idempotency
 
 A plan that changes both surfaces runs both rounds. A plan with neither surface that still changes behaviour someone can
 reach, such as a command-line tool, a library, a hook, or a pipeline, exercises that behaviour through its own interface

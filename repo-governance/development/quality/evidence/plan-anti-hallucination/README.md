@@ -11,11 +11,14 @@ when_to_use: >-
 The modules below are read in sequence and carry the detail behind the
 [Plan Anti-Hallucination](../plan-anti-hallucination.md) entrypoint.
 
-| Module                                                      | Holds                                                                                      |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [Grounding and Citation](001-grounding-and-citation.md)     | reference grounding, plain citation, no inline labels, refusal order, and checks per claim |
-| [Absence and Completeness](002-absence-and-completeness.md) | zero-result evidence, completeness diffs, concept sweeps, and real tool runs               |
-| [Anti-Pattern Examples](003-anti-pattern-examples.md)       | invented references and invented evidence, each with its catching check                    |
+**Module** — **Holds**
+
+- [Grounding and Citation](001-grounding-and-citation.md) — reference grounding, plain citation, no inline labels,
+  refusal order, and checks per claim
+- [Absence and Completeness](002-absence-and-completeness.md) — zero-result evidence, completeness diffs, concept
+  sweeps, and real tool runs
+- [Anti-Pattern Examples](003-anti-pattern-examples.md) — invented references and invented evidence, each with its
+  catching check
 
 ## Directory Map
 

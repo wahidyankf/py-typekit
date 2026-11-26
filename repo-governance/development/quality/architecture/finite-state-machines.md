@@ -55,10 +55,12 @@ that owns the lifecycle, and nothing outside that aggregate changes its state di
 
 Record one choice per stack. Every rule above holds under either.
 
-| Option                                         | Gains                                                                       | Costs                                                                                            |
-| ---------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| a state-machine library                        | declarative configuration, built-in guards and actions, generated diagrams  | a dependency and its idioms, which a domain layer that may import no framework cannot take on    |
-| hand-written transitions over an explicit type | no dependency; the domain stays plain code in the language's own constructs | the transition table, rejection, and any diagram are the repository's own code to write and test |
+**Option** — **Gains** — **Costs**
+
+- a state-machine library — declarative configuration, built-in guards and actions, generated diagrams — a dependency
+  and its idioms, which a domain layer that may import no framework cannot take on
+- hand-written transitions over an explicit type — no dependency; the domain stays plain code in the language's own
+  constructs — the transition table, rejection, and any diagram are the repository's own code to write and test
 
 A library configured through its declarative interface keeps that configuration in code, not in a separate markup file.
 

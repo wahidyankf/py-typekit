@@ -30,14 +30,20 @@ repository, how tests are classified into layers, and environment hazards unrela
 No layer is sufficient alone, because each covers a failure the others miss. Every git invocation that can write gets
 all six.
 
-| Layer                                | Requirement                                                                                                                     |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| 1. Cap discovery                     | set `GIT_CEILING_DIRECTORIES` to the fixture's temporary root, so upward search stops at that root and never climbs past it     |
-| 2. Name the repository               | set `GIT_DIR` to the fixture's own `.git` directory instead of trusting the process working directory                           |
-| 3. Neutralize configuration          | set `GIT_CONFIG_GLOBAL` and `GIT_CONFIG_SYSTEM` to the platform null device, so host hooks, templates, and aliases never apply  |
-| 4. Guard before writing              | before each writing subcommand, compare canonical `git rev-parse --show-toplevel` with the intended directory; fail on mismatch |
-| 5. Check every exit status           | treat a non-zero status from any git call as a test failure; a process that started is not a command that succeeded             |
-| 6. Diagnose away from real checkouts | investigate a misbehaving fixture only in a throwaway clone, never in the primary checkout                                      |
+**Layer** — **Requirement**
+
+- 1. Cap discovery — set `GIT_CEILING_DIRECTORIES` to the fixture's temporary root, so upward search stops at that root
+     and never climbs past it
+- 2. Name the repository — set `GIT_DIR` to the fixture's own `.git` directory instead of trusting the process working
+     directory
+- 3. Neutralize configuration — set `GIT_CONFIG_GLOBAL` and `GIT_CONFIG_SYSTEM` to the platform null device, so host
+     hooks, templates, and aliases never apply
+- 4. Guard before writing — before each writing subcommand, compare canonical `git rev-parse --show-toplevel` with the
+     intended directory; fail on mismatch
+- 5. Check every exit status — treat a non-zero status from any git call as a test failure; a process that started is
+     not a command that succeeded
+- 6. Diagnose away from real checkouts — investigate a misbehaving fixture only in a throwaway clone, never in the
+     primary checkout
 
 ## Why Each Layer Exists
 

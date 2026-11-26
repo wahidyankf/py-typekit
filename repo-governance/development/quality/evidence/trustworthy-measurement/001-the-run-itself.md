@@ -19,13 +19,16 @@ assert that the command exited successfully and produced the output it should. A
 
 Silent transformations produce exactly this false result:
 
-| Trap                                                                 | What the record shows                                                                     |
-| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| a shell that passes a variable holding several words as one argument | every call fails at once with a usage error, and the loop reports a few milliseconds each |
-| a pipeline status variable read in a shell that does not define it   | an empty value where the exit code belongs, with no warning                               |
-| a path filter whose wildcard does not cross directory separators     | no match, read as "no file changed"                                                       |
-| an alias or wrapper that rewrites a command or its output            | a result from a different tool than the one named                                         |
-| a build cache replaying an earlier result                            | a success proving a previous run passed, not that anything ran against this change        |
+**Trap** — **What the record shows**
+
+- a shell that passes a variable holding several words as one argument — every call fails at once with a usage error,
+  and the loop reports a few milliseconds each
+- a pipeline status variable read in a shell that does not define it — an empty value where the exit code belongs, with
+  no warning
+- a path filter whose wildcard does not cross directory separators — no match, read as "no file changed"
+- an alias or wrapper that rewrites a command or its output — a result from a different tool than the one named
+- a build cache replaying an earlier result — a success proving a previous run passed, not that anything ran against
+  this change
 
 Do:
 

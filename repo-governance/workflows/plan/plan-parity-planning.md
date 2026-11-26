@@ -71,10 +71,11 @@ Run plan-parity-planning with objective "align the error codes" and repositories
 
 ## Adopter Decision: Plans Only or Through Delivery
 
-| Option                  | After the plans land                                                                                                                  | Trade-off                                                     |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| plans only              | each plan waits for its own Execution run                                                                                             | each plan is reviewable before work starts; one more hand-off |
-| continue into execution | Execution starts once every plan lands and a decision gate settles order, failure policy, open decisions, and human-step availability | one run from matrix to delivered parity; no review pause      |
+**Option** — **After the plans land** — **Trade-off**
+
+- plans only — each plan waits for its own Execution run — each plan is reviewable before work starts; one more hand-off
+- continue into execution — Execution starts once every plan lands and a decision gate settles order, failure policy,
+  open decisions, and human-step availability — one run from matrix to delivered parity; no review pause
 
 Record the default. Either way, each repository keeps its own delivery route, gates, and cleanup.
 

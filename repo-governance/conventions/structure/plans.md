@@ -43,12 +43,14 @@ is what an adopter's plan validator checks against; the catalog ships none.
 Some plans carry more than every plan does. Each of these applies only when its trigger holds, and each adds to this
 convention without restating it.
 
-| Convention                                                  | Applies when a plan                                                                      |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Plan Specification Changes](plan-specification-changes.md) | changes observable behaviour, an interface, architecture, or an executable specification |
-| [Plan Migrations](plan-migrations.md)                       | moves, copies, normalizes, replaces, or retires data, configuration, or structure        |
-| [Plan UI Design](plan-ui-design.md)                         | creates or materially changes a user interface                                           |
-| [Plan Content Corpora](plan-content-corpora.md)             | authors or restructures a content corpus inside its own folder                           |
+**Convention** — **Applies when a plan**
+
+- [Plan Specification Changes](plan-specification-changes.md) — changes observable behaviour, an interface,
+  architecture, or an executable specification
+- [Plan Migrations](plan-migrations.md) — moves, copies, normalizes, replaces, or retires data, configuration, or
+  structure
+- [Plan UI Design](plan-ui-design.md) — creates or materially changes a user interface
+- [Plan Content Corpora](plan-content-corpora.md) — authors or restructures a content corpus inside its own folder
 
 ## What This Convention Does Not Decide
 

@@ -18,14 +18,15 @@ clarifies, and a key takeaway.
 
 ## Recipe Shape
 
-| #   | Part            | Carries                                                                                                       |
-| --- | --------------- | ------------------------------------------------------------------------------------------------------------- |
-| 1   | Title           | an action naming the problem solved, specific enough to search for, with no difficulty label                  |
-| 2   | Problem         | the problem in a few sentences, with its constraints and edge cases                                           |
-| 3   | Solution        | complete, runnable, annotated code ready to copy and paste, every import included                             |
-| 4   | How it works    | the approach and the insight behind it, without repeating the code's own annotations                          |
-| 5   | Common pitfalls | the mistakes readers make with this problem, each with what to do instead                                     |
-| 6   | Related recipes | links to recipes for neighbouring problems, each saying how it relates, as pointers rather than prerequisites |
+**#** — **Part** — **Carries**
+
+- 1 — Title — an action naming the problem solved, specific enough to search for, with no difficulty label
+- 2 — Problem — the problem in a few sentences, with its constraints and edge cases
+- 3 — Solution — complete, runnable, annotated code ready to copy and paste, every import included
+- 4 — How it works — the approach and the insight behind it, without repeating the code's own annotations
+- 5 — Common pitfalls — the mistakes readers make with this problem, each with what to do instead
+- 6 — Related recipes — links to recipes for neighbouring problems, each saying how it relates, as pointers rather than
+  prerequisites
 
 ## Why Recipes Look Like This
 

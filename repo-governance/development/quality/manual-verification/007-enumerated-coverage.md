@@ -36,10 +36,12 @@ that a reload discards is a defect, recorded with the control, the expected addr
 
 Which controls are in scope is an adopter decision:
 
-| Option                                               | Gains                                                           | Costs                                                                                   |
-| ---------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| every stateful control is addressable (default)      | every view can be shared, bookmarked, and reloaded without loss | transient input reaches the address, history, and logs                                  |
-| only controls the specification declares addressable | transient input stays out of the address                        | each specification has to declare its addressable controls, and an omission goes unseen |
+**Option** — **Gains** — **Costs**
+
+- every stateful control is addressable (default) — every view can be shared, bookmarked, and reloaded without loss —
+  transient input reaches the address, history, and logs
+- only controls the specification declares addressable — transient input stays out of the address — each specification
+  has to declare its addressable controls, and an omission goes unseen
 
 A control outside the chosen scope is recorded with that disposition, never as a defect. Under either option, a control
 that holds a credential, a secret, or personal data never enters the address, for the reason

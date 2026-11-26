@@ -14,14 +14,16 @@ in the sentence tells the reader so.
 
 ## Terms
 
-| Term                   | Means                                                                                                                 |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| harness                | the tool that runs a model: it owns the loop, the tools, the permissions, and the workspace                           |
-| agent                  | a model and its harness working as one system — the whole, never either half                                          |
-| subagent               | a named role a harness can start, with its own instructions and permissions                                           |
-| agent definition       | the file declaring a subagent; the **agent** form in [Capability Forms](../../development/agents/capability-forms.md) |
-| agent instruction file | a file a harness reads for repository rules, at a fixed name that harness expects                                     |
-| harness directory      | the directory holding one harness's project configuration, or the shared canonical root that several harnesses read   |
+**Term** — **Means**
+
+- harness — the tool that runs a model: it owns the loop, the tools, the permissions, and the workspace
+- agent — a model and its harness working as one system — the whole, never either half
+- subagent — a named role a harness can start, with its own instructions and permissions
+- agent definition — the file declaring a subagent; the **agent** form in
+  [Capability Forms](../../development/agents/capability-forms.md)
+- agent instruction file — a file a harness reads for repository rules, at a fixed name that harness expects
+- harness directory — the directory holding one harness's project configuration, or the shared canonical root that
+  several harnesses read
 
 A harness-specific file generated from a canonical definition is an **adapter**, governed by
 [Harness Adapters](../../development/agents/harness-adapters.md).

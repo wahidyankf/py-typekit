@@ -22,15 +22,16 @@ stripped to steps produces a learner who can repeat the procedure and cannot ada
 
 ## Required Sections, in Order
 
-| #   | Section             | Carries                                                                                                                                                                |
-| --- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Title and metadata  | a title naming the type — see [Tutorial Types](tutorial-types.md) — and the metadata the documentation system requires, stating the outcome rather than only the topic |
-| 2   | Introduction        | why the subject matters in real work, and what the learner achieves                                                                                                    |
-| 3   | Prerequisites       | the knowledge and setup required before starting, or an explicit "none"                                                                                                |
-| 4   | Learning objectives | measurable achievements of the learner, not the content covered                                                                                                        |
-| 5   | Content sections    | the learning path, one concept per section, with checkpoints                                                                                                           |
-| 6   | Summary             | the key takeaways, consolidated for recall                                                                                                                             |
-| 7   | Next steps          | concrete ways to go further                                                                                                                                            |
+**#** — **Section** — **Carries**
+
+- 1 — Title and metadata — a title naming the type — see [Tutorial Types](tutorial-types.md) — and the metadata the
+  documentation system requires, stating the outcome rather than only the topic
+- 2 — Introduction — why the subject matters in real work, and what the learner achieves
+- 3 — Prerequisites — the knowledge and setup required before starting, or an explicit "none"
+- 4 — Learning objectives — measurable achievements of the learner, not the content covered
+- 5 — Content sections — the learning path, one concept per section, with checkpoints
+- 6 — Summary — the key takeaways, consolidated for recall
+- 7 — Next steps — concrete ways to go further
 
 Section names describe required content; heading wording and level are the adopter's choice.
 

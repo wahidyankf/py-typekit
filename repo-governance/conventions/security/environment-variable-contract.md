@@ -35,10 +35,12 @@ because the consumer is what moves between environments.
 
 ## Annotation Depth Is a Decision
 
-| Option     | Each key carries                                                       | Gains                                                | Costs                                         |
-| ---------- | ---------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------- |
-| structured | requiredness, type or format, description; optional keys commented out | no code lookup; commented-out keys keep it parseable | more to write and keep true                   |
-| minimal    | a one-line description and an empty value                              | cheap to write and read                              | readers learn requiredness and type from code |
+**Option** — **Each key carries** — **Gains** — **Costs**
+
+- structured — requiredness, type or format, description; optional keys commented out — no code lookup; commented-out
+  keys keep it parseable — more to write and keep true
+- minimal — a one-line description and an empty value — cheap to write and read — readers learn requiredness and type
+  from code
 
 ```text
 # REQUIRED | url | Connection string for the primary database
@@ -58,10 +60,11 @@ A tier in the name forks the contract, and the production-only name is first rea
 
 ## Consumer Prefixes Are a Decision
 
-| Option                  | Example                  | Gains                                              | Costs                                    |
-| ----------------------- | ------------------------ | -------------------------------------------------- | ---------------------------------------- |
-| prefix app-defined keys | `<CONSUMER>_API_TIMEOUT` | visible ownership; no collisions in a shared scope | longer names; exempt names must be known |
-| no prefix               | `API_TIMEOUT`            | short names matching library defaults              | consumers sharing a scope can collide    |
+**Option** — **Example** — **Gains** — **Costs**
+
+- prefix app-defined keys — `<CONSUMER>_API_TIMEOUT` — visible ownership; no collisions in a shared scope — longer
+  names; exempt names must be known
+- no prefix — `API_TIMEOUT` — short names matching library defaults — consumers sharing a scope can collide
 
 Framework-reserved and conventional shared names such as `NODE_ENV` stay unprefixed, and a prefix never names a tier.
 
@@ -80,13 +83,14 @@ falls back to a default. A silent default hides a configuration error until it s
 
 A tracked census records where every real value lives:
 
-| Column     | Records                                                                                                                                                                    |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| surface    | an ignored environment file, secrets directory, platform environment, or secret store                                                                                      |
-| location   | a repository-relative path or platform scope, never a value; by kind, not account or project identifier, where [Public Outbound Safety](public-outbound-safety.md) applies |
-| managed by | the loader, platform, or client that reads or manages it                                                                                                                   |
-| backed up  | whether losing the machine loses the value                                                                                                                                 |
-| validated  | what checks it against the contract, if anything                                                                                                                           |
+**Column** — **Records**
+
+- surface — an ignored environment file, secrets directory, platform environment, or secret store
+- location — a repository-relative path or platform scope, never a value; by kind, not account or project identifier,
+  where [Public Outbound Safety](public-outbound-safety.md) applies
+- managed by — the loader, platform, or client that reads or manages it
+- backed up — whether losing the machine loses the value
+- validated — what checks it against the contract, if anything
 
 Rotation starts from the census: a surface nobody listed is one nobody rotates.
 [No Secrets in Tracked Files](no-secrets-in-tracked-files.md) owns leaks.

@@ -35,14 +35,14 @@ who needs it is holding a failing build rather than a translator.
 
 Another language is used only where observable context makes the text one of these:
 
-| Exception               | Identified by                                                                                 |
-| ----------------------- | --------------------------------------------------------------------------------------------- |
-| localized content       | a locale path, locale metadata, or an explicit audience declaration in its index              |
-| user-facing translation | translation resources, locale fixtures, and test assertions quoting those strings             |
-| language as the subject | a fixture proving other-language input is handled, or a term being defined                    |
-| material wording        | a faithful quotation, a proper name, or regulated or domain terminology whose wording matters |
-| third-party material    | vendored, imported, or generated content, or an external interface that dictates its strings  |
-| extracted material      | notes or excerpts citing a source in another language, kept in that source's language         |
+**Exception** — **Identified by**
+
+- localized content — a locale path, locale metadata, or an explicit audience declaration in its index
+- user-facing translation — translation resources, locale fixtures, and test assertions quoting those strings
+- language as the subject — a fixture proving other-language input is handled, or a term being defined
+- material wording — a faithful quotation, a proper name, or regulated or domain terminology whose wording matters
+- third-party material — vendored, imported, or generated content, or an external interface that dictates its strings
+- extracted material — notes or excerpts citing a source in another language, kept in that source's language
 
 The exception belongs to the text, not to its file. A test asserting a translated string keeps its name, comments, and
 surrounding explanation in the working language; only the quoted string is exempt. Where readers need it, quoted text
@@ -70,10 +70,12 @@ contributors and any tooling that assumes English.
 A language with regional spellings — `behaviour` or `behavior`, `colour` or `color` — either declares one variant for
 the words the repository authors, or declares none.
 
-| Option       | Gains                                                                         | Costs                                                                                   |
-| ------------ | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| declare one  | a consistent, searchable corpus; identifiers and paths match without guessing | contributors who write the other variant are corrected in review                        |
-| declare none | nothing to correct                                                            | a mixed corpus: a search for one spelling misses the other, and identifiers can diverge |
+**Option** — **Gains** — **Costs**
+
+- declare one — a consistent, searchable corpus; identifiers and paths match without guessing — contributors who write
+  the other variant are corrected in review
+- declare none — nothing to correct — a mixed corpus: a search for one spelling misses the other, and identifiers can
+  diverge
 
 A declared variant governs only what the repository owns. A third-party identifier or API, a quotation, a URL, and a
 proper name keep their own spelling.

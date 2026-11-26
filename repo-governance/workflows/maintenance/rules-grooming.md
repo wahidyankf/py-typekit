@@ -75,10 +75,11 @@ Run rules-grooming with scope "repo-governance/development/" and dry-run true.
 
 ## Adopter Decisions
 
-| Option            | Trade-off                                                                                                                              |
-| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| three classes     | split documents face the same tests as any text; a heavily split corpus keeps its per-module overhead                                  |
-| add fragmentation | an undersized companion module may merge back within budget, carrying every link and index line; one more class can lose an obligation |
+**Option** — **Trade-off**
+
+- three classes — split documents face the same tests as any text; a heavily split corpus keeps its per-module overhead
+- add fragmentation — an undersized companion module may merge back within budget, carrying every link and index line;
+  one more class can lose an obligation
 
 Record the choice, and whether that class is approved per item or as a batch. Also record whether step 7 runs: a verdict
 every run catches reductions keeping each obligation yet leaving rules incoherent, at a gate pass's cost; otherwise the

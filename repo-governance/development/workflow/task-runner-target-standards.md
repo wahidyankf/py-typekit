@@ -73,10 +73,12 @@ Integration and end-to-end runtime targets stay out of every fast aggregate and 
 
 ## Adopter Decision: Runner Plugins
 
-| Option             | Gains                                                                                                                      | Costs                                                                                     |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| raw commands only  | every target owns a plain command, tools arrive as ordinary exact-pinned dependencies, and no plugin layer needs upgrading | scaffolding and target definitions are written by hand                                    |
-| technology plugins | generators, executors, and inferred targets for each framework                                                             | a plugin layer between each target and its real tool, pinned and upgraded with the runner |
+**Option** — **Gains** — **Costs**
+
+- raw commands only — every target owns a plain command, tools arrive as ordinary exact-pinned dependencies, and no
+  plugin layer needs upgrading — scaffolding and target definitions are written by hand
+- technology plugins — generators, executors, and inferred targets for each framework — a plugin layer between each
+  target and its real tool, pinned and upgraded with the runner
 
 Record the option. Under raw commands only, a plugin needs explicit owner direction naming it and the capability it
 adds, recorded in the introducing change with an exact version.

@@ -67,10 +67,16 @@ scratch directory. This convention covers everything else.
 
 ## What an Adopter Decides
 
-| Decision                  | Options                                                                                                                                                                                                                                                                    | Trade-off                                                                                                                                                                                                                        |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| how directories split     | by who asked — an artifact a person asked for that is itself the answer goes to reports; everything an agent makes for itself or another agent goes to scratch, one directory per agent or per adopter-named agent group — or by artifact type, scratch apart from reports | by requester, one test places even an unanticipated artifact, but a requested audit whose next reader is an agent lands in scratch; by type, every report sits in one place, but a type list cannot place a new kind of artifact |
-| report timestamp timezone | UTC, or the repository's declared local zone                                                                                                                                                                                                                               | UTC sorts and compares across machines and contributors but reads awkwardly beside local events; a local zone reads naturally, is named where the designated directories are named, and misorders across zones and clock changes |
+**Decision** — **Options** — **Trade-off**
+
+- how directories split — by who asked — an artifact a person asked for that is itself the answer goes to reports;
+  everything an agent makes for itself or another agent goes to scratch, one directory per agent or per adopter-named
+  agent group — or by artifact type, scratch apart from reports — by requester, one test places even an unanticipated
+  artifact, but a requested audit whose next reader is an agent lands in scratch; by type, every report sits in one
+  place, but a type list cannot place a new kind of artifact
+- report timestamp timezone — UTC, or the repository's declared local zone — UTC sorts and compares across machines and
+  contributors but reads awkwardly beside local events; a local zone reads naturally, is named where the designated
+  directories are named, and misorders across zones and clock changes
 
 An adopter enforces the exclusions in each tool's configuration and may add a check failing when an untracked file
 appears outside the designated directories.

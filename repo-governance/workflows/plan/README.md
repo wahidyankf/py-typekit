@@ -32,11 +32,14 @@ one of them has a stage nobody owns.
 
 These serve the lifecycle without being a stage of it.
 
-| Workflow                                                    | Ends when                                                                   |
-| ----------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [Multi-Plans Execution](multi-plans-execution.md)           | every scheduled plan has a recorded status and cross-plan themes are routed |
-| [Plan Handover and Takeover](plan-handover-and-takeover.md) | a resumable record exists, or resumed work is classified and handed on      |
-| [Parity Planning](plan-parity-planning.md)                  | each repository in a parity set holds a gated plan, every deviation decided |
+**Workflow** — **Ends when**
+
+- [Multi-Plans Execution](multi-plans-execution.md) — every scheduled plan has a recorded status and cross-plan themes
+  are routed
+- [Plan Handover and Takeover](plan-handover-and-takeover.md) — a resumable record exists, or resumed work is classified
+  and handed on
+- [Parity Planning](plan-parity-planning.md) — each repository in a parity set holds a gated plan, every deviation
+  decided
 
 ## Directory Map
 

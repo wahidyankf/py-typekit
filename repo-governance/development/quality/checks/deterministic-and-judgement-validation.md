@@ -19,11 +19,11 @@ This standard implements [Automation Over Manual](../../../principles/automation
 
 ## One Owner Per Category
 
-| The rule can be decided by                                                            | Owner                                                     |
-| ------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| an exact predicate: a pattern, a file's existence, field equality, a hash comparison  | deterministic preflight                                   |
-| judging a passage for a semantic property: meaning, contradiction, accuracy, or voice | judgement checker                                         |
-| both                                                                                  | split into a mechanical sub-rule and a judgement sub-rule |
+**The rule can be decided by** — **Owner**
+
+- an exact predicate: a pattern, a file's existence, field equality, a hash comparison — deterministic preflight
+- judging a passage for a semantic property: meaning, contradiction, accuracy, or voice — judgement checker
+- both — split into a mechanical sub-rule and a judgement sub-rule
 
 Never give one rule to both layers. Two owners report the same finding twice, leave it unclear which report counts, and
 spend judgement on what a script already settled.

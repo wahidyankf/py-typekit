@@ -40,10 +40,12 @@ through a tag.
 
 How a plan gate treats a factual claim the checker cannot verify is an adopter decision:
 
-| Option               | Unchecked factual claim                       | Gains                                         | Costs                                                |
-| -------------------- | --------------------------------------------- | --------------------------------------------- | ---------------------------------------------------- |
-| block the gate       | blocks the gate until verified, cited, or cut | no plan proceeds on an unchecked fact         | slow verification holds up the whole plan            |
-| non-blocking finding | a `HIGH` finding that carries a disposition   | work continues while the claim is followed up | an unchecked fact can still surprise execution later |
+**Option** — **Unchecked factual claim** — **Gains** — **Costs**
+
+- block the gate — blocks the gate until verified, cited, or cut — no plan proceeds on an unchecked fact — slow
+  verification holds up the whole plan
+- non-blocking finding — a `HIGH` finding that carries a disposition — work continues while the claim is followed up —
+  an unchecked fact can still surprise execution later
 
 ## Refuse When Uncertain
 

@@ -38,12 +38,16 @@ one links to stays out of scope. Cross-folder consistency runs only when two or 
 Repositories keep corpora in different layouts and differ in whether a script checks their structure. The checker
 applies what the repository records.
 
-| Choice          | Option             | The checker                                                                         | Trade-off                                                             |
-| --------------- | ------------------ | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| layout          | Specification Tree | judges shape against it                                                             | every reader and tool finds a corpus alike; old trees need migration  |
-| layout          | a recorded layout  | judges shape against that record, reporting each departure as an adoption gap       | existing paths and bindings keep working; readers learn a local shape |
-| structure check | adopted            | carries the check's results verbatim; missing evidence for this revision is pending | exact and repeatable; the adopter maintains the check                 |
-| structure check | none               | records existence, counts, tree shape, and link resolution as not run               | nothing to maintain; those categories stay unverified in each report  |
+**Choice** — **Option** — **The checker** — **Trade-off**
+
+- layout — Specification Tree — judges shape against it — every reader and tool finds a corpus alike; old trees need
+  migration
+- layout — a recorded layout — judges shape against that record, reporting each departure as an adoption gap — existing
+  paths and bindings keep working; readers learn a local shape
+- structure check — adopted — carries the check's results verbatim; missing evidence for this revision is pending —
+  exact and repeatable; the adopter maintains the check
+- structure check — none — records existence, counts, tree shape, and link resolution as not run — nothing to maintain;
+  those categories stay unverified in each report
 
 With no layout recorded, it applies [Specification Tree](../repo-governance/conventions/structure/specification-tree.md)
 and reports the missing decision.
@@ -54,8 +58,10 @@ Validating Specification Structure carries the judgement and typical level for e
 
 1. **Index quality.** Each index says what its folder holds, per
    [Directory Indexes](../repo-governance/conventions/structure/directory-indexes.md).
-2. **Feature format.** Headers, user stories, shared preconditions, and naming, per
-   [Discovery and Scenarios](../repo-governance/development/quality/testing/behaviour-driven-development/001-discovery-and-scenarios.md).
+2. **Feature format.** Headers, user stories, shared preconditions, and naming, per [Discovery and Scenarios][ref-1].
+
+   [ref-1]: ../repo-governance/development/quality/testing/behaviour-driven-development/001-discovery-and-scenarios.md
+
 3. **Cross-folder consistency.** Counterpart folders state shared rules, actors, and entities alike.
 4. **Architecture views.** The as-built document agrees with itself across levels, per
    [Architecture Specifications](../repo-governance/development/quality/architecture/architecture-specifications.md),
@@ -69,11 +75,11 @@ never as a defect.
 ## Findings
 
 Each finding names the folder, the file and location, the category, the rule it breaks, what was observed, and its
-criticality under
-[Criticality Levels](../repo-governance/development/quality/evidence/finding-criticality-and-confidence/001-criticality-levels.md).
-The checker returns the structure check's results first, then its findings and how many folders and files it read, to
-its caller; zero read is never a clean result. Accepted false positives the caller supplies are noted and left out of
-the count.
+criticality under [Criticality Levels][ref-2]. The checker returns the structure check's results first, then its
+findings and how many folders and files it read, to its caller; zero read is never a clean result. Accepted false
+positives the caller supplies are noted and left out of the count.
+
+[ref-2]: ../repo-governance/development/quality/evidence/finding-criticality-and-confidence/001-criticality-levels.md
 
 ## Shell
 

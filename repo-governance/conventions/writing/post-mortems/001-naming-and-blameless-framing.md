@@ -25,12 +25,12 @@ YYYY-MM-DD-<system>-<short-failure>.md
 - `<short-failure>` says briefly what failed.
 - Every component is lowercase kebab-case, per [File Naming](../../structure/file-naming.md).
 
-| Name                                                   | Verdict                                                      |
-| ------------------------------------------------------ | ------------------------------------------------------------ |
-| `2025-03-14-billing-api-connection-pool-exhaustion.md` | correct                                                      |
-| `post-mortem-2025-03-14.md`                            | no system and no failure; the listing sorts but says nothing |
-| `2025-03-14__billing-api__pool.md`                     | a double underscore is another record's separator            |
-| `2025-03-14-Billing-API.md`                            | capitals, and no failure                                     |
+**Name** — **Verdict**
+
+- `2025-03-14-billing-api-connection-pool-exhaustion.md` — correct
+- `post-mortem-2025-03-14.md` — no system and no failure; the listing sorts but says nothing
+- `2025-03-14__billing-api__pool.md` — a double underscore is another record's separator
+- `2025-03-14-Billing-API.md` — capitals, and no failure
 
 The date leads because post-mortems are read chronologically, so the directory listing is itself a timeline, and because
 the incident date, unlike the writing date, never changes. The single hyphen after it is deliberate: a double underscore

@@ -11,21 +11,22 @@ when_to_use: >-
 Every post-mortem contains these sections, in this order, after its title. A fixed order means a reader looking for the
 root cause of any incident finds it in the same place, and a missing section is visible by its absence.
 
-| #   | Section                    | Holds                                                                                               |
-| --- | -------------------------- | --------------------------------------------------------------------------------------------------- |
-| 1   | Metadata table             | incident date, investigation date, severity, incident status, and author by role — before any prose |
-| 2   | Summary                    | two to four sentences: what failed, for how long, and the outcome; written last, placed first       |
-| 3   | Impact                     | who and what was affected, for how long, time to detect, and time to resolve                        |
-| 4   | Detection                  | how the incident was discovered, labelled with one category below                                   |
-| 5   | Timeline                   | absolute timestamps with an explicit offset                                                         |
-| 6   | Root Cause                 | the deepest systemic condition that let the trigger cause harm                                      |
-| 7   | Trigger                    | the proximate event that started the chain                                                          |
-| 8   | Contributing Factors       | the conditions that made it worse or made recovery harder                                           |
-| 9   | Resolution and Mitigations | the fix applied, kept separate from the root-cause fix still open                                   |
-| 10  | Action Items               | the tracked table defined in [Severity and Action Items](003-severity-and-action-items.md)          |
-| 11  | What Went Well             | what limited the impact, including where luck did                                                   |
-| 12  | Lessons Learned            | two to five insights that generalize beyond this fix                                                |
-| 13  | References                 | logs, dashboards, related plans and post-mortems, and sources consulted                             |
+**#** — **Section** — **Holds**
+
+- 1 — Metadata table — incident date, investigation date, severity, incident status, and author by role — before any
+  prose
+- 2 — Summary — two to four sentences: what failed, for how long, and the outcome; written last, placed first
+- 3 — Impact — who and what was affected, for how long, time to detect, and time to resolve
+- 4 — Detection — how the incident was discovered, labelled with one category below
+- 5 — Timeline — absolute timestamps with an explicit offset
+- 6 — Root Cause — the deepest systemic condition that let the trigger cause harm
+- 7 — Trigger — the proximate event that started the chain
+- 8 — Contributing Factors — the conditions that made it worse or made recovery harder
+- 9 — Resolution and Mitigations — the fix applied, kept separate from the root-cause fix still open
+- 10 — Action Items — the tracked table defined in [Severity and Action Items](003-severity-and-action-items.md)
+- 11 — What Went Well — what limited the impact, including where luck did
+- 12 — Lessons Learned — two to five insights that generalize beyond this fix
+- 13 — References — logs, dashboards, related plans and post-mortems, and sources consulted
 
 The metadata table records incident status as `Investigating` or `Resolved`, and severity as `Sev-N — Label`. Where time
 to detect cannot be measured because nothing alerted, Impact says `unknown` and why.

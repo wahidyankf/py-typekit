@@ -25,14 +25,20 @@ forgotten.
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                | As                                                                               |
-| ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| [Schemas by Path](../conventions/structure/artifact-metadata/001-schemas-by-path.md)      | governance documents carry no `name`, because the path is the identity           |
-| [Harness Adapters](../development/agents/harness-adapters.md)                             | an adapter holds no authored body, and is never read to learn about the artifact |
-| [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)     | hooks dispatch the ordered registry rather than transcribing it                  |
-| [Capability Forms](../development/agents/capability-forms.md)                             | two artifacts carrying the same instructions fail review                         |
-| [Lifecycle and Folders](../conventions/structure/plans/001-lifecycle-and-folders.md)      | a slug in two lifecycle roots is a failure, not a merge to resolve               |
-| [Knowledge Capture](../conventions/structure/plans/008-knowledge-capture-and-archival.md) | a learning is promoted to exactly one owner, not copied into three               |
+**Applied in** — **As**
+
+- [Schemas by Path](../conventions/structure/artifact-metadata/001-schemas-by-path.md) — governance documents carry no
+  `name`, because the path is the identity
+- [Harness Adapters](../development/agents/harness-adapters.md) — an adapter holds no authored body, and is never read
+  to learn about the artifact
+- [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md) — hooks dispatch the ordered
+  registry rather than transcribing it
+- [Capability Forms](../development/agents/capability-forms.md) — two artifacts carrying the same instructions fail
+  review
+- [Lifecycle and Folders](../conventions/structure/plans/001-lifecycle-and-folders.md) — a slug in two lifecycle roots
+  is a failure, not a merge to resolve
+- [Knowledge Capture](../conventions/structure/plans/008-knowledge-capture-and-archival.md) — a learning is promoted to
+  exactly one owner, not copied into three
 
 ## A Link Is Not a Weaker Copy
 

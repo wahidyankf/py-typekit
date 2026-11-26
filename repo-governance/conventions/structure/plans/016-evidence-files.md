@@ -29,12 +29,13 @@ reporting them.
 
 ## Inline or Filed
 
-| Evidence                                              | Goes                                                                     |
-| ----------------------------------------------------- | ------------------------------------------------------------------------ |
-| a short command output, status code, or response body | inline, under the checklist item it proves                               |
-| a console or network summary                          | inline                                                                   |
-| a capture, an exported report, or a coverage report   | `evidence/`, referenced from the item                                    |
-| a response or log longer than about twenty lines      | `evidence/`, with the item quoting the command, the status, and the head |
+**Evidence** — **Goes**
+
+- a short command output, status code, or response body — inline, under the checklist item it proves
+- a console or network summary — inline
+- a capture, an exported report, or a coverage report — `evidence/`, referenced from the item
+- a response or log longer than about twenty lines — `evidence/`, with the item quoting the command, the status, and the
+  head
 
 The checklist item always carries the reference. A file in `evidence/` that no item cites proves nothing to a reviewer,
 and an item saying "verified manually" with neither an inline record nor a reference is not evidenced at all.

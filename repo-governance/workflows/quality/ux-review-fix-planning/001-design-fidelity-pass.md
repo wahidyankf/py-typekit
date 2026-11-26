@@ -19,13 +19,17 @@ in source can still resolve to the wrong value in a browser.
 A design-fidelity reviewer compares the render at `origin`, across `routes`, `viewports`, and `locales`, with every
 source that applies:
 
-| Source                                                                                                   | A finding when the render                                                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| approved designs, carried as [Plan UI Design](../../../conventions/structure/plan-ui-design.md) sets out | departs from the selected design at a declared viewport class                                                                                                                                                  |
-| `design-source`, when given                                                                              | departs from that approved external design                                                                                                                                                                     |
-| the token layer, as it resolves at runtime                                                               | shows a value no token defines, or the wrong token role, per [Design Tokens](../../../development/quality/user-interfaces/design-tokens.md)                                                                    |
-| design-system primitives                                                                                 | rebuilds by hand an element a design names as a primitive, per [Authoring a User-Facing Plan](../../../development/quality/user-interfaces/user-facing-delivery-hardening/001-authoring-a-user-facing-plan.md) |
-| published design practice                                                                                | is weak in hierarchy, alignment, spacing and density, typography, colour, or consistency across surfaces                                                                                                       |
+**Source** — **A finding when the render**
+
+- approved designs, carried as [Plan UI Design](../../../conventions/structure/plan-ui-design.md) sets out — departs
+  from the selected design at a declared viewport class
+- `design-source`, when given — departs from that approved external design
+- the token layer, as it resolves at runtime — shows a value no token defines, or the wrong token role, per
+  [Design Tokens](../../../development/quality/user-interfaces/design-tokens.md)
+- design-system primitives — rebuilds by hand an element a design names as a primitive, per
+  [Authoring a User-Facing Plan](../../../development/quality/user-interfaces/user-facing-delivery-hardening/001-authoring-a-user-facing-plan.md)
+- published design practice — is weak in hierarchy, alignment, spacing and density, typography, colour, or consistency
+  across surfaces
 
 A practice finding cites the published guidance it relies on. Preference without a source is not a finding.
 

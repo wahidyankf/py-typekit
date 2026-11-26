@@ -52,10 +52,14 @@ them.
 A repository without a remote has no pipeline to wait for, and the rule must not quietly shrink to nothing. Every
 repository records which option it takes:
 
-| Option          | Completion requires                                                                                                                                                                                                                                                              | Trade-off                                                                               |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| hosted pipeline | the rule above, after each push                                                                                                                                                                                                                                                  | evidence from a representative environment, at the cost of waiting and a request budget |
-| no remote       | the diff is read for unrelated files and credentials, each failure is fixed at its cause and the gate rerun, the complete local gate passes, no remote is configured, the checkout is the declared branch, and no plan or workflow step fetches, pushes, or opens a pull request | no network dependency and no hosted evidence, so the local gate must carry everything   |
+**Option** — **Completion requires** — **Trade-off**
+
+- hosted pipeline — the rule above, after each push — evidence from a representative environment, at the cost of waiting
+  and a request budget
+- no remote — the diff is read for unrelated files and credentials, each failure is fixed at its cause and the gate
+  rerun, the complete local gate passes, no remote is configured, the checkout is the declared branch, and no plan or
+  workflow step fetches, pushes, or opens a pull request — no network dependency and no hosted evidence, so the local
+  gate must carry everything
 
 Under the no-remote option, finding a remote configured is a stop rather than a warning: something changed the
 repository's shape, and only its owner decides whether to remove it. An adopter enforces those checks inside its own

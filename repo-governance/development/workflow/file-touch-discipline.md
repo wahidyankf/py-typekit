@@ -19,14 +19,17 @@ This standard implements [Explicit Over Implicit](../../principles/explicit-over
 
 ## Keeping the Ledger
 
-| Rule                  | Requirement                                                                                                                   |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| start first           | open it before the first mutation, never at commit time; a late start leaves a gap of unknown size                            |
-| record as it happens  | add each path when it is mutated, with the operation and a short reason tied to the task                                      |
-| never shrink          | remove no entry; a path changed and later restored is still worth knowing                                                     |
-| from actions only     | derive it from the task's own actions, never from status, diff, or stash listings, which show every actor                     |
-| every mutation counts | edits, creations, deletions, moves, formatters, generators, and version-control commands that alter the tree, index, or stash |
-| one per tree          | a ledger covers one working tree of one repository; work across several trees keeps a separate ledger for each                |
+**Rule** — **Requirement**
+
+- start first — open it before the first mutation, never at commit time; a late start leaves a gap of unknown size
+- record as it happens — add each path when it is mutated, with the operation and a short reason tied to the task
+- never shrink — remove no entry; a path changed and later restored is still worth knowing
+- from actions only — derive it from the task's own actions, never from status, diff, or stash listings, which show
+  every actor
+- every mutation counts — edits, creations, deletions, moves, formatters, generators, and version-control commands that
+  alter the tree, index, or stash
+- one per tree — a ledger covers one working tree of one repository; work across several trees keeps a separate ledger
+  for each
 
 Read-only work needs no entry. A delegated agent returns its own ledger with its result, and the delegating agent merges
 it explicitly, never assuming the delegate stayed within its request.
@@ -52,10 +55,11 @@ file outside the context, at a location the adopter records.
 
 Immediately before staging, compare the ledger with the tree in both directions and state every difference:
 
-| Found                                  | Means                                            | Action                                           |
-| -------------------------------------- | ------------------------------------------------ | ------------------------------------------------ |
-| a changed path missing from the ledger | another actor's work                             | leave it unstaged and untouched                  |
-| a ledger path whose change is gone     | something overwrote or reverted this task's work | stop, and find out what happened before going on |
+**Found** — **Means** — **Action**
+
+- a changed path missing from the ledger — another actor's work — leave it unstaged and untouched
+- a ledger path whose change is gone — something overwrote or reverted this task's work — stop, and find out what
+  happened before going on
 
 Stage by explicit path only. [No Destructive Git Operations](no-destructive-git-operations.md) owns the prohibitions on
 whole-tree staging and discarding; this standard decides which paths may be named.

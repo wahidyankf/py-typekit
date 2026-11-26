@@ -12,12 +12,16 @@ Criticality measures how much a problem matters, independent of how certain anyo
 
 ## Four Levels
 
-| Level      | Meaning                                                                              | Examples                                                       |
-| ---------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
-| `CRITICAL` | breaks functionality, blocks users, weakens security, loses data, or violates a MUST | a failing build, an exposed credential, a broken required link |
-| `HIGH`     | significantly degrades quality, or violates a documented SHOULD convention           | an accessibility failure at level AA, misleading documentation |
-| `MEDIUM`   | a minor quality issue, a style inconsistency, or a MAY guideline not followed        | inconsistent formatting, missing optional metadata             |
-| `LOW`      | a suggestion that would improve an already acceptable artifact                       | alternative wording, an optional reorganization                |
+**Level** — **Meaning** — **Examples**
+
+- `CRITICAL` — breaks functionality, blocks users, weakens security, loses data, or violates a MUST — a failing build,
+  an exposed credential, a broken required link
+- `HIGH` — significantly degrades quality, or violates a documented SHOULD convention — an accessibility failure at
+  level AA, misleading documentation
+- `MEDIUM` — a minor quality issue, a style inconsistency, or a MAY guideline not followed — inconsistent formatting,
+  missing optional metadata
+- `LOW` — a suggestion that would improve an already acceptable artifact — alternative wording, an optional
+  reorganization
 
 ## Assign in Order
 

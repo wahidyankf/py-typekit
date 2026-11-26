@@ -47,8 +47,10 @@ The standards own every rule; [CI Quality Gate](../repo-governance/workflows/qua
    closed without a bypass, as
    [End-to-End Testing](../repo-governance/development/quality/testing/end-to-end-testing.md) places the complete suite.
    A manual run over only the affected projects stays possible.
-6. **Exemptions.** Each exemption holds on its own, per
-   [Bindings and Exemptions](../repo-governance/development/quality/testing/behaviour-driven-development/003-bindings-and-exemptions.md).
+6. **Exemptions.** Each exemption holds on its own, per [Bindings and Exemptions][ref-1].
+
+   [ref-1]: ../repo-governance/development/quality/testing/behaviour-driven-development/003-bindings-and-exemptions.md
+
 7. **Safety and hygiene.** Test data is synthetic, per
    [Test Data Isolation](../repo-governance/development/quality/testing/test-data-isolation.md); no secret is tracked;
    cache inputs are complete; and post-push verification, storage budget, and workflow file naming follow their
@@ -62,12 +64,12 @@ evidence is reported as pending. Without such a handoff, nothing is skipped.
 
 ## Rating
 
-Rate each finding by consequence, per
-[Criticality Levels](../repo-governance/development/quality/evidence/finding-criticality-and-confidence/001-criticality-levels.md).
-On this surface, a test in a hook, an end-to-end suite reachable from the pull-request gate, a missing unit layer,
-coverage under the floor, or a runtime reachable from a static target usually breaks what the gate promises. A
-placeholder target, a networked integration suite, an invalid exemption, a missing scheduled full run, or a bypass
-seriously lowers quality.
+Rate each finding by consequence, per [Criticality Levels][ref-2]. On this surface, a test in a hook, an end-to-end
+suite reachable from the pull-request gate, a missing unit layer, coverage under the floor, or a runtime reachable from
+a static target usually breaks what the gate promises. A placeholder target, a networked integration suite, an invalid
+exemption, a missing scheduled full run, or a bypass seriously lowers quality.
+
+[ref-2]: ../repo-governance/development/quality/evidence/finding-criticality-and-confidence/001-criticality-levels.md
 
 ## Findings
 

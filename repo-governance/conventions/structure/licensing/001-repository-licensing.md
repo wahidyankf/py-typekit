@@ -43,10 +43,12 @@ directory is found by whoever happens to open that directory.
 
 ## Decide Where License Files Live
 
-| Choice                                                                      | Gains                                                                                       | Costs                                             |
-| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| a `LICENSE` in every application and library, even when it matches the root | terms are visible without tracing inheritance, and one project can be relicensed on its own | one identical file per project to keep identical  |
-| the root `LICENSE` alone, with per-directory files only for exceptions      | nothing to keep in sync, and any per-directory file signals a real difference               | a reader must know that absence means inheritance |
+**Choice** — **Gains** — **Costs**
+
+- a `LICENSE` in every application and library, even when it matches the root — terms are visible without tracing
+  inheritance, and one project can be relicensed on its own — one identical file per project to keep identical
+- the root `LICENSE` alone, with per-directory files only for exceptions — nothing to keep in sync, and any
+  per-directory file signals a real difference — a reader must know that absence means inheritance
 
 Per-project files suit a permissively licensed repository whose projects are reused separately. Root-only suits
 proprietary or ungranted terms, where a per-directory file would only repeat the root. Under either choice, the rules

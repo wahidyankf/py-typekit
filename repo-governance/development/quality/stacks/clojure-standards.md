@@ -75,14 +75,15 @@ updates docstrings and specifications with the code, per
 
 ## Adopter Decisions
 
-| Decision          | Option                                                                          | Gains                                 | Costs                                                                             |
-| ----------------- | ------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------- |
-| boundary data     | the bundled spec library                                                        | no added dependency                   | its namespace is still alpha                                                      |
-|                   | a data-driven schema library, such as [Malli](https://github.com/metosin/malli) | schemas are plain, transformable data | a dependency, weighed per [Dependency Selection](../code/dependency-selection.md) |
-| test runner       | `clojure.test` through a CLI alias                                              | the fewest tools                      | fewer reporters, no watch mode                                                    |
-|                   | a dedicated runner, such as Kaocha                                              | watch mode, plugins, and focused runs | one more tool to pin                                                              |
-| expected failures | `ex-info` carrying a data map                                                   | keeps the stack trace                 | callers must know what to catch                                                   |
-|                   | a returned result map                                                           | failures stay ordinary data           | every caller branches on it                                                       |
+**Decision** — **Option** — **Gains** — **Costs**
+
+- boundary data — the bundled spec library — no added dependency — its namespace is still alpha
+- a data-driven schema library, such as [Malli](https://github.com/metosin/malli) — schemas are plain, transformable
+  data — a dependency, weighed per [Dependency Selection](../code/dependency-selection.md)
+- test runner — `clojure.test` through a CLI alias — the fewest tools — fewer reporters, no watch mode
+- a dedicated runner, such as Kaocha — watch mode, plugins, and focused runs — one more tool to pin
+- expected failures — `ex-info` carrying a data map — keeps the stack trace — callers must know what to catch
+- a returned result map — failures stay ordinary data — every caller branches on it
 
 Record each choice once.
 

@@ -53,10 +53,12 @@ Never ask `git rev-parse --is-bare-repository`: inside a linked worktree it answ
 
 ## Reconcile by Topology
 
-| Topology        | Command                                                                     | Why this form                                                                                      |
-| --------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| bare            | `git fetch origin main:main`                                                | needs no work tree, and fetch refuses a non-fast-forward update unless the refspec starts with `+` |
-| has a work tree | `git fetch origin`, then `git merge --ff-only origin/main` where main lives | moves the ref, the index, and the files together, and refuses a non-fast-forward                   |
+**Topology** — **Command** — **Why this form**
+
+- bare — `git fetch origin main:main` — needs no work tree, and fetch refuses a non-fast-forward update unless the
+  refspec starts with `+`
+- has a work tree — `git fetch origin`, then `git merge --ff-only origin/main` where main lives — moves the ref, the
+  index, and the files together, and refuses a non-fast-forward
 
 If any worktree, a kept one included, has `main` checked out, reconcile there by the work-tree form, never the refspec:
 where git permits that, the ref advances while the checkout's index and files stay behind, showing the skipped range as

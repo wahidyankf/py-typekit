@@ -14,12 +14,14 @@ in sync. This convention separates relationships that carry obligations from tho
 
 ## Four Classes
 
-| Relationship         | Means                                                  | Obliges                                                                    |
-| -------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------- |
-| parity               | two repositories keep a declared boundary in agreement | explicit propagation, recorded divergences, and proof by direct comparison |
-| upstream consumption | one repository uses another's released output          | a pinned release, local consumer configuration, and no copy of upstream    |
-| knowledge sharing    | learnings from one may inform the other                | nothing propagates automatically                                           |
-| none                 | a one-off compatibility test or shared tool invocation | no catalogue entry                                                         |
+**Relationship** — **Means** — **Obliges**
+
+- parity — two repositories keep a declared boundary in agreement — explicit propagation, recorded divergences, and
+  proof by direct comparison
+- upstream consumption — one repository uses another's released output — a pinned release, local consumer configuration,
+  and no copy of upstream
+- knowledge sharing — learnings from one may inform the other — nothing propagates automatically
+- none — a one-off compatibility test or shared tool invocation — no catalogue entry
 
 ## Parity
 

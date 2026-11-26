@@ -55,11 +55,14 @@ limit.
 Illustrative only, with one platform and framework among many: a workspace whose task runner declares two generation
 prerequisites for a web application's `build` target, deployed on Vercel as a Next.js standalone build.
 
-| Concern          | Where it is declared                                       | What it holds                                                         |
-| ---------------- | ---------------------------------------------------------- | --------------------------------------------------------------------- |
-| build target     | the task runner's project configuration                    | prerequisites `generate-index` and `generate-search-data`, then build |
-| platform command | `buildCommand` in the platform's project configuration     | both generation scripts, in that order, then the framework build      |
-| traced output    | `outputFileTracingIncludes` in the framework configuration | the directories the generation scripts write                          |
+**Concern** — **Where it is declared** — **What it holds**
+
+- build target — the task runner's project configuration — prerequisites `generate-index` and `generate-search-data`,
+  then build
+- platform command — `buildCommand` in the platform's project configuration — both generation scripts, in that order,
+  then the framework build
+- traced output — `outputFileTracingIncludes` in the framework configuration — the directories the generation scripts
+  write
 
 ```json
 {

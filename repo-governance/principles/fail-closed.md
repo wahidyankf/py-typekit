@@ -24,14 +24,20 @@ refusal. Silence is never consent.
 
 ## Where It Is Already Load-Bearing
 
-| Applied in                                                                                              | As                                                                       |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| [Public Outbound Safety](../conventions/security/public-outbound-safety.md)                             | a scan that failed to run never counts as a pass                         |
-| [Inputs and Exit Classes](../conventions/structure/plan-validator-contract/001-inputs-and-exits.md)     | exits `2` and `3` are never reported as a clean run                      |
-| [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md)           | an unknown top-level key fails rather than being ignored                 |
-| [Surfaces and Mutation](../conventions/structure/repository-configuration/003-surfaces-and-mutation.md) | a gate declaring no surface fails rather than being silently skipped     |
-| [Governance Categories](../conventions/structure/repository-configuration/004-governance-categories.md) | an undeclared category fails rather than being inferred from a directory |
-| [Harness Adapters](../development/agents/harness-adapters.md)                                           | a capability with no harness equivalent is a hard failure                |
+**Applied in** — **As**
+
+- [Public Outbound Safety](../conventions/security/public-outbound-safety.md) — a scan that failed to run never counts
+  as a pass
+- [Inputs and Exit Classes](../conventions/structure/plan-validator-contract/001-inputs-and-exits.md) — exits `2` and
+  `3` are never reported as a clean run
+- [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md) — an unknown top-level
+  key fails rather than being ignored
+- [Surfaces and Mutation](../conventions/structure/repository-configuration/003-surfaces-and-mutation.md) — a gate
+  declaring no surface fails rather than being silently skipped
+- [Governance Categories](../conventions/structure/repository-configuration/004-governance-categories.md) — an
+  undeclared category fails rather than being inferred from a directory
+- [Harness Adapters](../development/agents/harness-adapters.md) — a capability with no harness equivalent is a hard
+  failure
 
 Six applications, one rule. That count is the argument for stating it here.
 

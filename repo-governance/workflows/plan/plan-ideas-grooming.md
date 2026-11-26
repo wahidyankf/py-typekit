@@ -62,13 +62,14 @@ deferred renames or interrupted relocations remain, recorded.
 
 ## Adopter Decision: Layout, Cadence, and Residency
 
-| Decision  | Option                                                                               | Trade-off                                                  |
-| --------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
-| layout    | one flat ideas root                                                                  | nothing to re-file; urgency shows only through grooming    |
-|           | four folders, urgent or not by important                                             | every pass re-files briefs; the pressing ones sit apart    |
-| cadence   | on request only                                                                      | no idle passes; the root can grow unread                   |
-|           | a brief-count or elapsed-time trigger, first wins                                    | the root is never left long unread; a pass may find little |
-| residency | name the repositories designated for private infrastructure and generalizable briefs | one record read by every pass                              |
+**Decision** — **Option** — **Trade-off**
+
+- layout — one flat ideas root — nothing to re-file; urgency shows only through grooming
+- four folders, urgent or not by important — every pass re-files briefs; the pressing ones sit apart
+- cadence — on request only — no idle passes; the root can grow unread
+- a brief-count or elapsed-time trigger, first wins — the root is never left long unread; a pass may find little
+- residency — name the repositories designated for private infrastructure and generalizable briefs — one record read by
+  every pass
 
 Folders need a falsifiable test per axis, such as urgent only when a live plan waits on it; a trigger needs each pass
 dated in the ideas index.

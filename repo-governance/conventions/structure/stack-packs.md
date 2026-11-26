@@ -19,15 +19,15 @@ This convention implements [One Source Per Fact](../../principles/one-source-per
 
 ## Canonical Paths
 
-| Artifact           | Path                                                                                                 |
-| ------------------ | ---------------------------------------------------------------------------------------------------- |
-| stack standard     | `repo-governance/development/quality/stacks/<id>-standards.md`                                       |
-| stack index        | [`repo-governance/development/quality/stacks/README.md`](../../development/quality/stacks/README.md) |
-| skill              | `.agents/skills/<prefix>-<id>/SKILL.md`, with the prefix set by the pack's kind below                |
-| generic agents     | `agents/swe-{developer,reviewer,debugger}.md`                                                        |
-| repository adapter | `repo-governance/development/quality/stacks/repository-adapter.md`, in an adopter                    |
-| inventory          | the `extensions.software-development` key of the repository configuration file                       |
-| human reference    | `docs/reference/software-development.md`, in an adopter with a `docs/` tree                          |
+**Artifact** — **Path**
+
+- stack standard — `repo-governance/development/quality/stacks/<id>-standards.md`
+- stack index — [`repo-governance/development/quality/stacks/README.md`](../../development/quality/stacks/README.md)
+- skill — `.agents/skills/<prefix>-<id>/SKILL.md`, with the prefix set by the pack's kind below
+- generic agents — `agents/swe-{developer,reviewer,debugger}.md`
+- repository adapter — `repo-governance/development/quality/stacks/repository-adapter.md`, in an adopter
+- inventory — the `extensions.software-development` key of the repository configuration file
+- human reference — `docs/reference/software-development.md`, in an adopter with a `docs/` tree
 
 A standard gains a companion `<id>-standards/` directory only when its word budget requires one, named and indexed as
 [File Naming](file-naming.md) requires. A standard states only what is specific to its stack and links the shared
@@ -37,13 +37,14 @@ standard for everything else.
 
 The IDs form a closed set. A new stack is added here before its standard or skill is written.
 
-| Kind              | Skill prefix      | IDs                                                                                                                                       |
-| ----------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| language          | `programming-`    | `typescript`, `javascript`, `fsharp`, `golang`, `rust`, `elixir`, `csharp`, `java`, `lua`, `python`, `shell`, `clojure`, `dart`, `kotlin` |
-| framework         | `framework-`      | `react`, `nextjs`, `spring-boot`, `phoenix-liveview`, `aspnet-core`                                                                       |
-| framework adapter | `framework-`      | `giraffe`, `gin`                                                                                                                          |
-| infrastructure    | `infrastructure-` | `terraform`, `ansible`                                                                                                                    |
-| tooling adapter   | `tooling-`        | `nx`                                                                                                                                      |
+**Kind** — **Skill prefix** — **IDs**
+
+- language — `programming-` — `typescript`, `javascript`, `fsharp`, `golang`, `rust`, `elixir`, `csharp`, `java`, `lua`,
+  `python`, `shell`, `clojure`, `dart`, `kotlin`
+- framework — `framework-` — `react`, `nextjs`, `spring-boot`, `phoenix-liveview`, `aspnet-core`
+- framework adapter — `framework-` — `giraffe`, `gin`
+- infrastructure — `infrastructure-` — `terraform`, `ansible`
+- tooling adapter — `tooling-` — `nx`
 
 Skills sit outside the [Capability Naming](capability-naming.md) grammar, which already excludes them; the prefixes are
 this catalog's choice. A browser end-to-end suite has no stack ID and uses the `writing-browser-e2e-tests` skill.

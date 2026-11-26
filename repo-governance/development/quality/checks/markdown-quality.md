@@ -20,10 +20,12 @@ This standard implements [Automation Over Manual](../../../principles/automation
 
 ## Two Tools, Two Jobs
 
-| Tool              | Owns                                                            | Illustrative example                                                 |
-| ----------------- | --------------------------------------------------------------- | -------------------------------------------------------------------- |
-| layout formatter  | layout: wrapping, whitespace, list indentation, table alignment | [Prettier](https://prettier.io/docs/)                                |
-| structural linter | structure and syntax: headings, links, fences, list markers     | [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) |
+**Tool** — **Owns** — **Illustrative example**
+
+- layout formatter — layout: wrapping, whitespace, list indentation, table alignment —
+  [Prettier](https://prettier.io/docs/)
+- structural linter — structure and syntax: headings, links, fences, list markers —
+  [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
 
 The split keeps each question with one tool. A formatter that also judged structure, or a linter that also rewrote
 layout, would give a contributor two answers to one question.

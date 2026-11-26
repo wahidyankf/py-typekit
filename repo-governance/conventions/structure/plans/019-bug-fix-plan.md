@@ -21,14 +21,14 @@ It is reserved for a defect that blocks the work in hand with no workaround. Any
 
 One document, `plans/in-progress/fix-<slug>/README.md`, with these sections in this order:
 
-| Section         | Contains                                                                                                  |
-| --------------- | --------------------------------------------------------------------------------------------------------- |
-| Bug Report      | every field [Bug Reports](../../writing/bug-reports.md) requires, the version and commit included         |
-| Duplicate Check | each search of open issues, pull requests, plans, and idea briefs, with its query and result              |
-| Root Cause      | the mechanism that produces the symptom, with evidence a reviewer can check                               |
-| Solution        | the change, why it removes the cause, and every reference consulted, cited by URL                         |
-| Delivery        | `## Execution Record`, then labelled checklist items: failing regression test, fix, verification, release |
-| Learnings       | what executing it taught, routed before archival                                                          |
+**Section** — **Contains**
+
+- Bug Report — every field [Bug Reports](../../writing/bug-reports.md) requires, the version and commit included
+- Duplicate Check — each search of open issues, pull requests, plans, and idea briefs, with its query and result
+- Root Cause — the mechanism that produces the symptom, with evidence a reviewer can check
+- Solution — the change, why it removes the cause, and every reference consulted, cited by URL
+- Delivery — `## Execution Record`, then labelled checklist items: failing regression test, fix, verification, release
+- Learnings — what executing it taught, routed before archival
 
 The slug starts with `fix-` and names the symptom, not the suspected cause: `fix-gate-skips-renamed-files`.
 

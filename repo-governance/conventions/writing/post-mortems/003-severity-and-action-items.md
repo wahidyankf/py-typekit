@@ -13,12 +13,13 @@ when_to_use: >-
 Every post-mortem classifies its incident with exactly one tier, written as `Sev-N — Label`, for example
 `Sev-3 — Moderate`.
 
-| Tier  | Label    | Definition                                                                                           |
-| ----- | -------- | ---------------------------------------------------------------------------------------------------- |
-| Sev-1 | Critical | data loss, corrupted production state, or total outage of a production service or critical interface |
-| Sev-2 | Major    | significant production degradation, or every change blocked from reaching the main line              |
-| Sev-3 | Moderate | intermittent or single-component degradation with a workaround, and no data loss                     |
-| Sev-4 | Minor    | cosmetic or low-impact; affects the development workflow rather than production users                |
+**Tier** — **Label** — **Definition**
+
+- Sev-1 — Critical — data loss, corrupted production state, or total outage of a production service or critical
+  interface
+- Sev-2 — Major — significant production degradation, or every change blocked from reaching the main line
+- Sev-3 — Moderate — intermittent or single-component degradation with a workaround, and no data loss
+- Sev-4 — Minor — cosmetic or low-impact; affects the development workflow rather than production users
 
 This scale is the repository's only definition of incident severity. A second scale elsewhere — in a runbook, a tracker,
 or a template — is where two incidents of the same kind start receiving different tiers.

@@ -35,12 +35,14 @@ abandoned: never between units sharing a worktree, and never as a periodic sweep
 
 2. **Classify each one:**
 
-   | Class    | Disposition                                                                                                                                                                                                                         |
-   | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | result   | keep; it is part of what the work delivered                                                                                                                                                                                         |
-   | evidence | keep where the plan declared evidence, which for a plan is its `evidence/` folder, per [Evidence Files](../../conventions/structure/plans/016-evidence-files.md); a task outside a plan keeps evidence where its own rules place it |
-   | scratch  | remove                                                                                                                                                                                                                              |
-   | unknown  | investigate before removing; never delete something you cannot classify                                                                                                                                                             |
+   **Class** — **Disposition**
+
+   - result — keep; it is part of what the work delivered
+   - evidence — keep where the plan declared evidence, which for a plan is its `evidence/` folder, per
+     [Evidence Files](../../conventions/structure/plans/016-evidence-files.md); a task outside a plan keeps evidence
+     where its own rules place it
+   - scratch — remove
+   - unknown — investigate before removing; never delete something you cannot classify
 
    After a `partial` or `fail` outcome, the worktree and build output are evidence until diagnosis; logs and traces a
    diagnosis needs always are.

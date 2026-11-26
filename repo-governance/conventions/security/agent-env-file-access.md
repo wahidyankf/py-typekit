@@ -26,10 +26,12 @@ documentation or teaching content is not a real environment file and falls outsi
 
 The adopter chooses exactly one restricted set and records it in a tracked governance or configuration file:
 
-| Option                      | Restricted from agents                            | Gains                                            | Costs                                                                  |
-| --------------------------- | ------------------------------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------- |
-| everything but the template | every real environment file                       | no misnamed file exposes a secret                | debugging local or test configuration becomes a handoff                |
-| named sensitive tiers       | files holding deployed values, such as production | local and test configuration stay open to agents | depends on naming discipline: a secret in an unrestricted file is open |
+**Option** — **Restricted from agents** — **Gains** — **Costs**
+
+- everything but the template — every real environment file — no misnamed file exposes a secret — debugging local or
+  test configuration becomes a handoff
+- named sensitive tiers — files holding deployed values, such as production — local and test configuration stay open to
+  agents — depends on naming discipline: a secret in an unrestricted file is open
 
 The first suits local files holding real credentials; the second suits throwaway local values beside deployed tiers that
 hold everything that matters.
