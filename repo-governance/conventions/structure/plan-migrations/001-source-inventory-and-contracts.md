@@ -54,9 +54,10 @@ A plan, brief, or other document that names a migration number must call that nu
 reserves no number and authorizes no migration to take it, because the plan cannot know which number will be free when
 the work merges. Followed: the document calls the number a hint, or names none. Violated: the document says a number is
 reserved, claimed, or fixed, or a migration takes a number because a document named it. The migration takes the next
-free number when its work executes, as
-[Migration Numbers Are Taken at Use](../../../development/quality/delivery/live-service-continuity/002-release-cutover.md#migration-numbers-are-taken-at-use)
-requires.
+free number when its work executes, as [Migration Numbers Are Taken at Use][r1] requires.
+
+[r1]:
+  ../../../development/quality/delivery/live-service-continuity/002-release-cutover.md#migration-numbers-are-taken-at-use
 
 Enforcement: unenforced by decision. Whether a wording reserves a number is a judgement a reader makes, and no check in
 this catalog reads plan prose for it.

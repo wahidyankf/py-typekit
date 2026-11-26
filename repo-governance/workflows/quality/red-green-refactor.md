@@ -20,9 +20,11 @@ and any scenario that specifies the behaviour was added or updated first per
 
 - `behaviours` (`string`, required): the increments, each one observable behaviour, simplest first.
 - `target` (`string`, required): the verified runner command selecting the named case or minimal meaningful cases.
-  Selection, executed-case evidence, and phase/pre-pull-request gates follow
-  [Focused Runs and Regression Gates](../../development/quality/testing/test-driven-development/001-cycle-and-evidence.md#focused-runs-and-regression-gates).
+  Selection, executed-case evidence, and phase/pre-pull-request gates follow [Focused Runs and Regression Gates][r1].
 - `evidence` (`string`, optional, default the change's delivery record): where each run is recorded.
+
+[r1]:
+  ../../development/quality/testing/test-driven-development/001-cycle-and-evidence.md#focused-runs-and-regression-gates
 
 ## Sequence
 
@@ -62,7 +64,8 @@ diagnosis recorded. Finished increments stand, and no later increment starts on 
 ## Example Usage
 
 ```text
-Run red-green-refactor with behaviours "empty input is rejected; input missing its separator fails; well-formed input is accepted" and target "parser unit tests".
+Run red-green-refactor with behaviours "empty input is rejected; input missing its separator fails; well-formed input is
+  accepted" and target "parser unit tests".
 ```
 
 ## Related Workflows

@@ -42,9 +42,8 @@ the configuration or code a repair changes is `swe-developer`'s, per
    wholesale.
 2. **Order by priority,** as
    [Assessing Criticality and Confidence](../.agents/skills/assessing-criticality-confidence/SKILL.md) explains.
-3. **Re-validate each finding** against the current file and rate its confidence, per
-   [Confidence and Re-Validation](../repo-governance/development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md).
-   A finding whose exact predicate is delegated is skipped and its evidence carried unchanged.
+3. **Re-validate each finding** against the current file and rate its confidence, per [Confidence and
+   Re-Validation][r1]. A finding whose exact predicate is delegated is skipped and its evidence carried unchanged.
 4. **Apply only what the rule settles.** Typical repairs:
    - build the real target a placeholder stood in for, or remove the placeholder and record the omission with its
      reason;
@@ -61,6 +60,9 @@ the configuration or code a repair changes is `swe-developer`'s, per
 7. **Write the fix report,** naming the audit it answers, per
    [Generating Validation Reports](../.agents/skills/generating-validation-reports/SKILL.md): each finding's
    disposition, each false positive with what would stop it recurring, and the changed files for a scoped re-validation.
+
+[r1]:
+  ../repo-governance/development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md
 
 ## Writing Configuration and Code
 

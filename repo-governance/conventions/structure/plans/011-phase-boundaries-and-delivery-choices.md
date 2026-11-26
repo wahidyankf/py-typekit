@@ -66,12 +66,14 @@ Neither permits quietly editing `done/`. A silent correction reads as though the
 
 **Option** — **Requires** — **Trade-off**
 
-- batched cycles — one RED and GREEN per delivery batch per
-  [Batched Cycles](../../../development/quality/testing/test-driven-development/001-cycle-and-evidence/002-batched-cycles-in-planned-delivery.md);
-  single-scenario cycles only for small changes and single bug fixes — planned work skips per-scenario ceremony; an
-  oversized batch hides which scenario failed
+- batched cycles — one RED and GREEN per delivery batch per [Batched Cycles][r1]; single-scenario cycles only for small
+  changes and single bug fixes — planned work skips per-scenario ceremony; an oversized batch hides which scenario
+  failed
 - strict cycles — RED, GREEN, REFACTOR per scenario, always — every scenario proves its own red; full ceremony per
   scenario
+
+[r1]:
+  ../../../development/quality/testing/test-driven-development/001-cycle-and-evidence/002-batched-cycles-in-planned-delivery.md
 
 Batched is the rule; strict is a recorded adaptation with its reason. Unrelated failures in one RED run mean the batch
 is too large: split it.

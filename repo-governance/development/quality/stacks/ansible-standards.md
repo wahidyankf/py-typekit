@@ -45,10 +45,12 @@ rules below hold under any profile.
 Ansible maps [Type and Boundary Safety](../code/type-and-boundary-safety.md) this way:
 
 - A role declares every input in `meta/argument_specs.yml` with type, requiredness, choices, and description, so a bad
-  value fails before the role runs
-  ([roles](https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/playbook_guide/playbooks_reuse_roles.rst)).
+  value fails before the role runs ([roles][r1]).
 - A play asserts unspecified input before first use.
 - Modules use fully qualified collection names, since a short name can resolve to another collection's module.
+
+[r1]:
+  https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/playbook_guide/playbooks_reuse_roles.rst
 
 These run with the play; never present them, or a passing lint, as static typing.
 
@@ -75,9 +77,11 @@ These run with the play; never present them, or a passing lint, as static typing
   follow [Python Standards](python-standards.md).
 - A change to real hosts first runs with `--check --diff`, whose diff must show exactly the changes written down
   beforehand. Check mode is evidence, not proof: modules without check support, and tasks conditioned on a registered
-  result, report nothing
-  ([check mode](https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/playbook_guide/playbooks_checkmode.rst)).
-  After a real run, the play asserts what it configured answers, for example through `uri` or `wait_for`.
+  result, report nothing ([check mode][r2]). After a real run, the play asserts what it configured answers, for example
+  through `uri` or `wait_for`.
+
+[r2]:
+  https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/playbook_guide/playbooks_checkmode.rst
 
 Layers and gates follow [Test Boundaries and Gates](../testing/test-boundaries-and-gates.md). Only unit runs over
 collection Python code measure coverage, per [Meaningful Coverage](../testing/meaningful-coverage.md); playbooks, roles,

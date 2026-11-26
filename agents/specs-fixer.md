@@ -47,8 +47,8 @@ is left for a person, however obvious the edit.
    unchanged.
 2. **Order by priority,** as
    [Assessing Criticality and Confidence](../.agents/skills/assessing-criticality-confidence/SKILL.md) explains.
-3. **Re-validate each finding** against the current files, and rate its confidence per
-   [Confidence and Re-Validation](../repo-governance/development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md).
+3. **Re-validate each finding** against the current files, and rate its confidence per [Confidence and
+   Re-Validation][r1].
 4. **Dispose of it** by the three groups under What a Repair May Touch in Validating Specification Structure:
    - a repair the skill marks safe after re-checking, still confirmed: `HIGH`, applied;
    - a repair it marks as needing a person: `MEDIUM`, left with its evidence;
@@ -63,6 +63,9 @@ is left for a person, however obvious the edit.
 8. **Write the fix report,** naming the audit it answers, per
    [Generating Validation Reports](../.agents/skills/generating-validation-reports/SKILL.md): each disposition and the
    changed files a scoped re-validation needs.
+
+[r1]:
+  ../repo-governance/development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md
 
 ## Layout Stays as Recorded
 

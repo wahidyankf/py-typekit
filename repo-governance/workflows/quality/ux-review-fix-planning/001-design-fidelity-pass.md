@@ -26,10 +26,12 @@ source that applies:
 - `design-source`, when given — departs from that approved external design
 - the token layer, as it resolves at runtime — shows a value no token defines, or the wrong token role, per
   [Design Tokens](../../../development/quality/user-interfaces/design-tokens.md)
-- design-system primitives — rebuilds by hand an element a design names as a primitive, per
-  [Authoring a User-Facing Plan](../../../development/quality/user-interfaces/user-facing-delivery-hardening/001-authoring-a-user-facing-plan.md)
+- design-system primitives — rebuilds by hand an element a design names as a primitive, per [Authoring a User-Facing
+  Plan][r1]
 - published design practice — is weak in hierarchy, alignment, spacing and density, typography, colour, or consistency
   across surfaces
+
+[r1]: ../../../development/quality/user-interfaces/user-facing-delivery-hardening/001-authoring-a-user-facing-plan.md
 
 A practice finding cites the published guidance it relies on. Preference without a source is not a finding.
 

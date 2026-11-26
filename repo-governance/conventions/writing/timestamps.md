@@ -72,7 +72,8 @@ agents especially — an agent that writes a timestamp without running a clock c
 date -u +%Y-%m-%dT%H:%M:%SZ        # full timestamp, UTC
 date -u +%Y-%m-%d--%H-%M           # filename, UTC
 TZ='<zone>' date +%Y-%m-%d--%H-%M  # filename, another zone
-python3 -c 'from datetime import datetime; from zoneinfo import ZoneInfo; print(datetime.now(ZoneInfo("<zone>")).isoformat(timespec="seconds"))'
+python3 -c 'from datetime import datetime; from zoneinfo import ZoneInfo; '\
+'print(datetime.now(ZoneInfo("<zone>")).isoformat(timespec="seconds"))'
 ```
 
 The `date` forms behave the same in GNU and BSD. Outside UTC, a full timestamp uses the last line, because `date` cannot

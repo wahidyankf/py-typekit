@@ -59,8 +59,10 @@ journal identifies it by name.
 
 Enforcement: unenforced by decision. A check would compare the change with the main branch and read the adopter's
 migration catalog. This catalog holds no migration and ships no executor for that check, and a declared gate without an
-executor would fail or never run. A number written in a plan is a hint, governed by
-[Plan Migrations](../../../../conventions/structure/plan-migrations/001-source-inventory-and-contracts.md#migration-numbers-are-hints).
+executor would fail or never run. A number written in a plan is a hint, governed by [Plan Migrations][r1].
+
+[r1]:
+  ../../../../conventions/structure/plan-migrations/001-source-inventory-and-contracts.md#migration-numbers-are-hints
 
 ## Switch Traffic Without Dropping Connections
 
