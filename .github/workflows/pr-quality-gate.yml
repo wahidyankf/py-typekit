@@ -6,17 +6,18 @@ name: PR Quality Gate
 #
 # Every job runs registry entries through the same pinned RHINO, and no job copies
 # a gate's command. Pull-request entries are split across four jobs. Each job names
-# its entries with --entry, and together they cover all 25 pull-request entries
+# its entries with --entry, and together they cover all 29 pull-request entries
 # exactly once:
 #
 #   unit-tests       tests, coverage
 #   commit-messages  public-safety-range, public-safety-message
 #   checks           commit-message, public-safety, markdown-format,
-#                    markdown-line-length, ruff-format, ruff-lint, pyright,
+#                    markdown-line-length, markdownlint, ruff-format, ruff-lint, pyright,
 #                    doc-snippets, repo-config, gate-registry, artifact-metadata,
 #                    word-budget, internal-links, mermaid, md-naming,
 #                    directory-map, quality-gates, harness-adapters, wheel-check,
-#                    public-safety-tests
+#                    public-safety-tests, behaviour-coverage, test-integration,
+#                    agent-hippo-guard-test
 #   verify-clean     format-staged, then fails if the replay changed any file
 #
 # A push to main runs main-gate instead. It runs `--surface main`, which runs every
@@ -200,12 +201,14 @@ jobs:
           set -eu
           ./rhino gate run --surface pull-request \
             --entry commit-message --entry public-safety --entry markdown-format \
-            --entry markdown-line-length --entry ruff-format --entry ruff-lint \
+            --entry markdown-line-length --entry markdownlint --entry ruff-format --entry ruff-lint \
             --entry pyright --entry doc-snippets --entry repo-config \
             --entry gate-registry --entry artifact-metadata --entry word-budget \
             --entry internal-links --entry mermaid --entry md-naming \
             --entry directory-map --entry quality-gates --entry harness-adapters \
             --entry wheel-check --entry public-safety-tests \
+            --entry behaviour-coverage --entry test-integration \
+            --entry agent-hippo-guard-test \
             --base "${BASE_SHA}" --head "${HEAD_SHA}"
 
   verify-clean:

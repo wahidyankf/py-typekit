@@ -3,7 +3,11 @@
   "private": true,
   "description": "Contributor tooling only. The shipped artifact is the typekit Python package; nothing here is published.",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:quick": "uv run --locked coverage run -m pytest --ignore=tests/e2e --ignore=tests/integration && uv run --locked coverage report",
+    "test:integration": "uv run --locked pytest tests/integration",
+    "test:e2e": "uv run --locked pytest tests/e2e",
+    "test:behaviour:coverage": "./rhino behaviour coverage validate"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",

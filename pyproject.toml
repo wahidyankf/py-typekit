@@ -8,7 +8,13 @@ requires-python = ">=3.14,<3.15"
 dependencies = []
 
 [dependency-groups]
-dev = ["coverage>=7.16", "pyright>=1.1.414", "pytest>=9.1", "ruff>=0.16.8"]
+dev = [
+    "coverage>=7.16",
+    "pyright>=1.1.414",
+    "pytest>=9.1",
+    "pytest-bdd>=9.0.1",
+    "ruff>=0.16.8",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.16,<0.13.0"]
@@ -21,6 +27,7 @@ module-name = "typekit"
 minversion = "9.0"
 testpaths = ["tests"]
 addopts = ["--import-mode=importlib", "--strict-config", "--strict-markers", "-ra"]
+markers = ["integration-exempt: a scenario with no integration-level test, see specs/behaviours"]
 xfail_strict = true
 
 [tool.ruff]
@@ -52,5 +59,3 @@ source = ["typekit"]
 fail_under = 100
 show_missing = true
 skip_covered = false
-# The one exclusion: each `pipe` overload stub, whose `...` body never runs. The implementation stays measured.
-exclude_also = ["@overload"]

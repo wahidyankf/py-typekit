@@ -16,7 +16,7 @@ for file in "$@"; do
 	*.md | *.json | *.yml | *.yaml)
 		prettier --write "$file"
 		;;
-	*.py) uv run --locked ruff format "$file" ;;
+	*.py) ruff format --no-cache "$file" ;;
 	*) ;;
 	esac
 done
