@@ -622,9 +622,12 @@ policies:
         max-cycles: 3
       gates:
         - family: plan
-        - family: rules
         - family: docs
+        - family: rules
+        - family: harness
+        - family: ci
         - family: pr-review
+        - family: specs
   behaviour:
     corpus: [specs/behaviours]
     levels:
