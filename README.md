@@ -105,23 +105,22 @@ Every Python block in this README and in `docs/` is type-checked under strict Py
 
 ## Development
 
-Every gate runs from a plain terminal, each with one command:
+The test levels and the pull-request gate each run with one command:
 
 ```text
-uv run pytest                          # tests, fast, no coverage
-uv run --locked coverage run -m pytest && uv run --locked coverage report
-uv run pyright
-uv run ruff check && uv run ruff format --check
-uv run --locked python scripts/check-doc-snippets.py   # every documented Python block type-checks as marked
-npx --no-install prettier --check .
-bash scripts/check-wheel.sh            # the wheel lists py.typed and declares no dependency
-./rhino gate run --surface main        # everything before a pull request
+npm run test:quick                        # unit tests, with the coverage report
+npm run test:integration                  # integration tests
+npm run test:e2e                          # end-to-end tests
+npm run test:behaviour:coverage           # behaviour coverage
+uv run pytest                             # tests, fast, no coverage
+./rhino gate run --surface pull-request   # every gate the pull-request check runs
 ```
 
 `uv sync --locked` installs the Python dev dependencies, and `npm ci` installs the Markdown tooling and the git hooks;
 Node is repository tooling only and never part of the library. The hooks and the hosted checks run the same gate
-registry, `repo-config.yml`. Contribution rules, governance, and the agent setup are in [AGENTS.md](AGENTS.md). External
-contributions are currently closed while the engineering patterns stabilize. Forks remain welcome under the MIT license.
+registry, `repo-config.yml`, and the [gate inventory](docs/reference/gate-inventory.md) lists each gate. Contribution
+rules, governance, and the agent setup are in [AGENTS.md](AGENTS.md). External contributions are currently closed while
+the engineering patterns stabilize. Forks remain welcome under the MIT license.
 
 ## Related repositories
 

@@ -37,32 +37,34 @@ second one now.
 
 ## Prefer
 
-- **a direct call or plain data** — Over: a layer, plugin point, or option with one use; Because: every indirection is a
-  place a reader must visit to learn anything
-- **flat structure** — Over: deep nesting; Because: depth is paid on every read and rarely earns it
-- **one job per part** — Over: a part that does several; Because: a part with several jobs changes for several unrelated
-  reasons
-- **composing small parts** — Over: a deep inheritance hierarchy; Because: a change to a base reaches every descendant,
-  wanted or not
-- **code about as long as its job** — Over: code much longer than its job; Because: needless length is a signal to
-  restructure, not to annotate
-- **validation where input enters** — Over: checks inside for states that cannot occur; Because: a branch for an
-  impossible case is code no test can reach
+**Prefer** — **Over** — **Because**
+
+- a direct call or plain data — a layer, plugin point, or option with one use — every indirection is a place a reader
+  must visit to learn anything
+- flat structure — deep nesting — depth is paid on every read and rarely earns it
+- one job per part — a part that does several — a part with several jobs changes for several unrelated reasons
+- composing small parts — a deep inheritance hierarchy — a change to a base reaches every descendant, wanted or not
+- code about as long as its job — code much longer than its job — needless length is a signal to restructure, not to
+  annotate
+- validation where input enters — checks inside for states that cannot occur — a branch for an impossible case is code
+  no test can reach
 
 The last row does not relax [Fail Closed](fail-closed.md). The boundary where input enters is exactly where a control
 that cannot decide must refuse.
 
 ## Where It Is Already Load-Bearing
 
-- **[Principles](README.md)**: a rule gets a page only after several artifacts already apply it
-- **[Bounded Convergence](../development/workflow/bounded-convergence.md)**: a fixed sequence of three named steps is
-  three steps, not a loop to govern
-- **[Sole-Writer Propagation](../development/workflow/sole-writer-propagation.md)**: one writer per gate family edits
-  only what a frozen ledger row requires
-- **[Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md)**: the runner schedules,
-  retries, and parallelizes nothing
-- **[Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md)**: an omitted tier
-  defers to the harness instead of reimplementing inheritance
+**Applied in** — **As**
+
+- [Principles](README.md) — a rule gets a page only after several artifacts already apply it
+- [Bounded Convergence](../development/workflow/bounded-convergence.md) — a fixed sequence of three named steps is three
+  steps, not a loop to govern
+- [Sole-Writer Propagation](../development/workflow/sole-writer-propagation.md) — one writer per gate family edits only
+  what a frozen ledger row requires
+- [Gate Entries](../conventions/structure/repository-configuration/002-gate-entries.md) — the runner schedules, retries,
+  and parallelizes nothing
+- [Top-Level Schema](../conventions/structure/repository-configuration/001-top-level-schema.md) — an omitted tier defers
+  to the harness instead of reimplementing inheritance
 
 ## When Complexity Is Right
 

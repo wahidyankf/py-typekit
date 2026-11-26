@@ -46,8 +46,8 @@ them all. Each expected failure is a behaviour with its own test.
 
 Tests never share mutable state and never depend on execution order. Each test builds what it needs or receives its own
 fresh copy. When one test changes data another reads, the second test's result depends on which ran first, and a
-parallel run will eventually expose it. Rules for the data and fixtures a test owns are in [Test Data
-Isolation][test-data-isolation].
+parallel run will eventually expose it. Rules for the data and fixtures a test owns are in
+[Test Data Isolation](../test-data-isolation.md).
 
 ## Guard Completeness With a Derived Set
 
@@ -57,6 +57,3 @@ leave the number unchanged. It also fails closed where it should not, since a le
 with nothing wrong.
 
 Whenever a test asserts how many, ask which set it is really about, and derive that set.
-
-[test-data-isolation]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/testing/test-data-isolation.md

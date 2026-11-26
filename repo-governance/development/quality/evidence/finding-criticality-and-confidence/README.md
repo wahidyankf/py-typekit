@@ -11,11 +11,13 @@ when_to_use: >-
 The modules below are read in sequence and carry the detail behind the
 [Finding Criticality and Confidence](../finding-criticality-and-confidence.md) entrypoint.
 
-- **[Criticality Levels](001-criticality-levels.md)**: the four levels, assignment order, fixed adjustments, and
-  blocking rules
-- **[Confidence and Re-Validation](002-confidence-and-revalidation.md)**: mandatory re-validation, three confidence
-  levels, and false positives
-- **[Priority and Reporting](003-priority-and-reporting.md)**: the P0 to P4 matrix, execution order, and report contents
+**Module** — **Holds**
+
+- [Criticality Levels](001-criticality-levels.md) — the four levels, assignment order, fixed adjustments, and blocking
+  rules
+- [Confidence and Re-Validation](002-confidence-and-revalidation.md) — mandatory re-validation, three confidence levels,
+  and false positives
+- [Priority and Reporting](003-priority-and-reporting.md) — the P0 to P4 matrix, execution order, and report contents
 
 ## Directory Map
 

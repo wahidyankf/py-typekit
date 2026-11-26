@@ -19,7 +19,7 @@ It cites this standard for everything else. It does not restate the rules, softe
 
 This standard owns the rules completely. A binding that paraphrases them is a second copy that will drift, and nothing
 would decide which copy a delegated agent should have believed; see
-[One Source Per Fact](../../../principles/one-source-per-fact.md) and [Capability Forms][capability-forms].
+[One Source Per Fact](../../../principles/one-source-per-fact.md) and [Capability Forms](../capability-forms.md).
 
 ## Harnesses
 
@@ -62,6 +62,3 @@ same whether or not a list was kept, so a gate declared for this standard would 
 Review verifies compliance by setting the list beside the change and the commands actually run. A session that produced
 work with no corresponding entries is the violating observation. An adopter that wants the check earlier enforces it in
 its own session-review checklist.
-
-[capability-forms]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/agents/capability-forms.md

@@ -1,7 +1,7 @@
 ---
 description: >-
-  Indexes the procedure sections moved verbatim out of four swe-* agent definitions so each definition fits its word
-  budget.
+  Indexes the procedure sections moved verbatim out of three swe-* agent definitions so each definition fits its
+  word budget.
 when_to_use: >-
   Read this index to find the moved section an swe-* agent definition links to.
 ---

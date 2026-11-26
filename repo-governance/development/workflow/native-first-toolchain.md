@@ -48,14 +48,16 @@ cost and gives up the cheap isolation that worktrees are used for.
 
 ## Adopter Decision: What Repair May Change
 
-- **converge machine tools** — Repair may: install missing or drifted machine-level toolchains through the native
-  managers; Gains: one command takes a new machine to a working state; Costs: a repository command changes the machine
-  outside the checkout, sometimes with elevated rights
-- **repository state only** — Repair may: restore dependencies, hooks, and other state the repository owns, and report
-  each absent machine tool with how to install it; Gains: the repository never alters anything outside its own tree;
-  Costs: contributors install machine tools by hand before repair can succeed
+**Option** — **Repair may** — **Gains** — **Costs**
 
-Record the option. Either way, the per-checkout part runs as [Checkout Bootstrap][checkout-bootstrap] requires.
+- converge machine tools — install missing or drifted machine-level toolchains through the native managers — one command
+  takes a new machine to a working state — a repository command changes the machine outside the checkout, sometimes with
+  elevated rights
+- repository state only — restore dependencies, hooks, and other state the repository owns, and report each absent
+  machine tool with how to install it — the repository never alters anything outside its own tree — contributors install
+  machine tools by hand before repair can succeed
+
+Record the option. Either way, the per-checkout part runs as [Checkout Bootstrap](checkout-bootstrap.md) requires.
 
 ## When to Revisit
 
@@ -65,6 +67,3 @@ Revisit this choice when any of these holds:
 - container file access on contributor hosts reaches native speed;
 - contributors need a hosted development environment because they cannot install toolchains locally;
 - the number of toolchains outgrows what a flat list of checks can manage.
-
-[checkout-bootstrap]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/checkout-bootstrap.md

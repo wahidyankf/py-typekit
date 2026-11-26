@@ -18,29 +18,32 @@ This standard implements [Evidence Over Assertion](../../principles/evidence-ove
 
 ## What It Carries
 
-- **outcome**: the problem and the result rather than a list of edits, so a reader can judge whether one answers the
-  other
-- **decisions**: what was chosen and what was rejected; a declined alternative is the thing a diff can never show
-- **scope and non-goals**: what is in and what is deliberately out, each with its reason, so an exclusion reads as a
+**Part** — **Holds**
+
+- outcome — the problem and the result rather than a list of edits, so a reader can judge whether one answers the other
+- decisions — what was chosen and what was rejected; a declined alternative is the thing a diff can never show
+- scope and non-goals — what is in and what is deliberately out, each with its reason, so an exclusion reads as a
   decision
-- **seam**: why this is one delivery unit under
+- seam — why this is one delivery unit under
   [Delivery Seams and Ownership](../agents/planning-capabilities/005-delivery-seams-and-ownership.md), never a line or
   file count
-- **proof**: the named gate, test, or scenario that failed before and passes now; "tested locally" proves nothing
-- **reading order**: where to start, and which paths to skip, with generated output and mechanical churn named
-- **risk and rollback**: what could still go wrong, and the step that undoes or contains it
-- **surprises**: a reversal, a departure from the plan, or an exception to a rule
-- **trunk state**: why the merged trunk meets the repository's claim, decided below
+- proof — the named gate, test, or scenario that failed before and passes now; "tested locally" proves nothing
+- reading order — where to start, and which paths to skip, with generated output and mechanical churn named
+- risk and rollback — what could still go wrong, and the step that undoes or contains it
+- surprises — a reversal, a departure from the plan, or an exception to a rule
+- trunk state — why the merged trunk meets the repository's claim, decided below
 
 Where the change comes from a plan, link the plan and name the delivery unit. A change to rules or documentation carries
 all of this as well; without the obligation its body decays into a changelog.
 
 ## Adopter Decision: The Trunk-State Claim
 
-- **releasable** — The body states: a release could be cut from the merged trunk, and what a consumer pinned to a
-  changed public surface would see; Fits: tools, libraries, and catalogs consumed by version
-- **deployable** — The body states: the merged trunk could reach production at once, covering each flag's enabled and
-  disabled paths and its removal record; Fits: services deployed continuously from the trunk
+**Claim** — **The body states** — **Fits**
+
+- releasable — a release could be cut from the merged trunk, and what a consumer pinned to a changed public surface
+  would see — tools, libraries, and catalogs consumed by version
+- deployable — the merged trunk could reach production at once, covering each flag's enabled and disabled paths and its
+  removal record — services deployed continuously from the trunk
 
 The repository records which claim its bodies make.
 

@@ -17,8 +17,8 @@ This is the `rules` family's sole writer, under
 
 ## Scope
 
-Every rule-bearing location that [Rule Definition][rule-definition] names, plus derived surfaces regenerated from them.
-A handed-over ledger narrows the scope to what its rows require.
+Every rule-bearing location that [Rule Definition](../../conventions/writing/rule-definition.md) names, plus derived
+surfaces regenerated from them. A handed-over ledger narrows the scope to what its rows require.
 
 ## Executor
 
@@ -35,9 +35,10 @@ disposition, and the deterministic gates over the changed surfaces exit 0, per
 
 ### Entry
 
-A rule, as [Rule Definition][rule-definition] defines one, is about to be added, changed, moved, or removed, or [Rules
-Grooming][rules-grooming] or the [Rules Quality Gate][rules-quality-gate] hands over findings. Entry is automatic:
-whoever proposes or detects the change starts here unasked. Edits made inside one run start no second one.
+A rule, as [Rule Definition](../../conventions/writing/rule-definition.md) defines one, is about to be added, changed,
+moved, or removed, or [Rules Grooming](../maintenance/rules-grooming.md) or the
+[Rules Quality Gate](rules-quality-gate.md) hands over findings. Entry is automatic: whoever proposes or detects the
+change starts here unasked. Edits made inside one run start no second one.
 
 - `rules` (`string`, required): each rule as stated, with its reason.
 - `findings` (`file`, optional): a handed-over, frozen ledger.
@@ -87,17 +88,11 @@ Run rules-propagation with rules "Every script that deletes files offers a dry r
 
 ## Related Workflows
 
-- [Rules Grooming][rules-grooming] hands over reductions.
-- [Rules Quality Gate][rules-quality-gate] hands over findings.
+- [Rules Grooming](../maintenance/rules-grooming.md) hands over reductions.
+- [Rules Quality Gate](rules-quality-gate.md) hands over findings.
 
 ## Modules
 
 1. [Statement and Conflict](rules-propagation/001-statement-and-conflict.md)
 2. [Placement](rules-propagation/002-placement.md)
 3. [Enforcement and Verification](rules-propagation/003-enforcement-and-verification.md)
-
-[rule-definition]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/rule-definition.md
-[rules-grooming]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/maintenance/rules-grooming.md
-[rules-quality-gate]: rules-quality-gate.md

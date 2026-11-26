@@ -13,7 +13,7 @@ Git keeps no undo for work that was never committed, and a rewrite of published 
 it. Assume other people, agents, and background processes are using the same machine and remote at the same moment. A
 command that costs someone their own scratch work in a solo checkout can destroy another person's work on a shared one.
 
-This standard implements [Deliberate Problem-Solving][catalog-deliberate-problem-solving],
+This standard implements [Deliberate Problem-Solving](../../principles/deliberate-problem-solving.md),
 [Immutability](../../principles/immutability.md), and
 [Root Cause Orientation](../../principles/root-cause-orientation.md).
 
@@ -57,8 +57,8 @@ revert, a removal without force. When none exists:
 4. Run exactly what was approved. If a flag, ref, or target changes, ask again.
 
 Such per-instance approval never carries forward. The repository can change between two operations, and the earlier
-answer was about a state that no longer exists. Task authorization follows [Commit
-Authorization][catalog-commit-authorization].
+answer was about a state that no longer exists. Task authorization follows
+[Commit Authorization](commit-authorization.md).
 
 A secret found in history is no exception. Its rewrite is approved by whoever holds authority over that history and
 follows [No Secrets in Tracked Files](../../conventions/security/no-secrets-in-tracked-files.md), which puts rotation
@@ -69,17 +69,10 @@ first.
 - Worktrees share the object database and every ref, while each keeps its own `HEAD` and index. Checkouts of different
   branches do not collide, yet garbage collection, pruning, and forced removal reach state other worktrees depend on.
 - Git refuses to check out a branch active in another worktree. Never defeat that guard with `--ignore-other-worktrees`.
-- Stage only explicit paths that [File-Touch Discipline][catalog-file-touch-discipline] accounts for. A destructive
-  operation in another task's worktree needs positive evidence it is idle, not merely no sign it is busy.
+- Stage only explicit paths that [File-Touch Discipline](file-touch-discipline.md) accounts for. A destructive operation
+  in another task's worktree needs positive evidence it is idle, not merely no sign it is busy.
 
 ## Prefer Additive
 
 When destructive and additive operations reach the same end state, take the one that leaves a trail. A revert can be
 reverted; an erased commit cannot be recalled from nothing. Before any bulk deletion, run its dry-run form.
-
-[catalog-deliberate-problem-solving]:
-  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/principles/deliberate-problem-solving.md
-[catalog-commit-authorization]:
-  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/development/workflow/commit-authorization.md
-[catalog-file-touch-discipline]:
-  https://github.com/wahidyankf/ose-rules/blob/9e15c702ef01187f5a3fafca975d2891854c0495/repo-governance/development/workflow/file-touch-discipline.md

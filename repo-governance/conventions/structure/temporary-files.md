@@ -62,19 +62,21 @@ deliberately, once unmodified for an age the adopter states.
 
 ## Other Rules Win Where They Apply
 
-Evidence a plan keeps belongs in its `evidence/` folder under [Evidence Files](plans/015-evidence-files.md), not in a
+Evidence a plan keeps belongs in its `evidence/` folder under [Evidence Files](plans/016-evidence-files.md), not in a
 scratch directory. This convention covers everything else.
 
 ## What an Adopter Decides
 
-- **how directories split** — Options: by who asked — an artifact a person asked for that is itself the answer goes to
-  reports; everything an agent makes for itself or another agent goes to scratch, one directory per agent or per
-  adopter-named agent group — or by artifact type, scratch apart from reports; Trade-off: by requester, one test places
-  even an unanticipated artifact, but a requested audit whose next reader is an agent lands in scratch; by type, every
-  report sits in one place, but a type list cannot place a new kind of artifact
-- **report timestamp timezone** — Options: UTC, or the repository's declared local zone; Trade-off: UTC sorts and
-  compares across machines and contributors but reads awkwardly beside local events; a local zone reads naturally, is
-  named where the designated directories are named, and misorders across zones and clock changes
+**Decision** — **Options** — **Trade-off**
+
+- how directories split — by who asked — an artifact a person asked for that is itself the answer goes to reports;
+  everything an agent makes for itself or another agent goes to scratch, one directory per agent or per adopter-named
+  agent group — or by artifact type, scratch apart from reports — by requester, one test places even an unanticipated
+  artifact, but a requested audit whose next reader is an agent lands in scratch; by type, every report sits in one
+  place, but a type list cannot place a new kind of artifact
+- report timestamp timezone — UTC, or the repository's declared local zone — UTC sorts and compares across machines and
+  contributors but reads awkwardly beside local events; a local zone reads naturally, is named where the designated
+  directories are named, and misorders across zones and clock changes
 
 An adopter enforces the exclusions in each tool's configuration and may add a check failing when an untracked file
 appears outside the designated directories.
@@ -82,8 +84,5 @@ appears outside the designated directories.
 ## Principles
 
 This convention implements [Explicit Over Implicit](../../principles/explicit-over-implicit.md): temporary-file places
-are named, not guessed; and [Governance Continuity][governance-continuity]: a report written as work proceeds survives
-the loss of the context that produced it.
-
-[governance-continuity]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/governance-continuity.md
+are named, not guessed; and [Governance Continuity](../../principles/governance-continuity.md): a report written as work
+proceeds survives the loss of the context that produced it.

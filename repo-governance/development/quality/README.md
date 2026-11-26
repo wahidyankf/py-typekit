@@ -10,14 +10,25 @@ when_to_use: >-
 # Quality Standards
 
 Verification standards. They answer what proves a change works, and what a proof has to look like to be worth anything
-to someone who was not there when it was produced. Code, testing, contract, stack, and check standards sit alongside
-them.
+to someone who was not there when it was produced. Design, code, testing, contract, delivery, interface, stack, and
+repository-check standards sit alongside them.
 
 ## Directory Map
 
-- [Architecture and Contracts](architecture/README.md) — the public contract and its compatible and breaking changes
-- [Checks and Gates](checks/README.md) — lint strictness and documented waivers
-- [Code](code/README.md) — dependency selection, and type and boundary safety
-- [Evidence](evidence/README.md) — finding criticality and confidence ratings
-- [Stacks](stacks/README.md) — the Python standard and the repository adapter recording its decisions
-- [Testing](testing/README.md) — test layers and gates, test-first work, meaningful coverage, and test doubles
+- [Architecture and Contracts](architecture/README.md) — architecture models, application structure, and published
+  interfaces
+- [Checks and Gates](checks/README.md) — rule enforcement, which gate runs each check, the test and gate contract,
+  strictness, validators, and what a new check needs
+- [Code](code/README.md) — what code and dependencies justify, clarity, cross-file invariants, scripts, and data files
+- [Deletion With Proof](deletion-with-proof.md) — what must be demonstrated before something is removed
+- [Delivery](delivery/README.md) — live-service continuity, automation loop observability, and pipeline storage
+- [Evidence](evidence/README.md) — finding ratings, grounded plan claims, measurement, specifications, failing gates,
+  and preserved content
+- [Manual Verification](manual-verification.md) — the layers automation cannot reach, behaviour-change checks, coverage,
+  and the evidence they produce
+- [Manual Verification Modules](manual-verification/README.md) — eight modules, from gate results to usability probes
+- [Stacks](stacks/README.md) — per-stack gates, defaults, and design rules for languages, frameworks, infrastructure,
+  and tooling, adopted only with that stack
+- [Testing](testing/README.md) — test layers and gates, test-first work, and API, behaviour, and end-to-end tests with
+  isolated data
+- [User Interfaces](user-interfaces/README.md) — accessibility, design tokens, styling, and user-facing delivery

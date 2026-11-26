@@ -32,9 +32,9 @@ Messages follow [Conventional Commits](https://www.conventionalcommits.org/):
 - **Scope** is optional. A repository using scopes keeps a stable list instead of coining a synonym per commit.
 - **Subject** is required, in the imperative ("add", not "added" or "adds"), with no closing period. Write to about 50
   characters; the ceiling a hook enforces is the adopter's, commonly 100.
-- **Body** is optional, follows a blank line, and explains why the change was needed: the failing case, the constraint,
-  or an alternative rejected. It does not narrate the diff. Body lines keep within the ceiling the message hook
-  enforces, such as 100 characters. Follow [Writing Style](../../conventions/writing-style.md) for brevity and language.
+- **Body** is optional, follows a blank line, and briefly explains why the change was needed: the failing case, the
+  constraint, or an alternative rejected. It does not narrate the diff. Body lines keep within the ceiling the message
+  hook enforces, such as 100 characters.
 - **Footer** carries `BREAKING CHANGE:` for an incompatible change, and issue references.
 
 ## Types
@@ -69,12 +69,9 @@ with its tests and documentation inside, in the fewest commits that each still b
 
 The purpose rule is selected because a commit should be self-contained, build, carry one purpose, and revert cleanly,
 and a feature separated from its tests or documentation is none of those. A `feat` commit may therefore hold test and
-documentation files. How a change set divides is owned by [Thematic Commits][thematic-commits].
+documentation files. How a change set divides is owned by [Thematic Commits](thematic-commits.md).
 
 ## Enforcement
 
 A commit-message hook validates the syntax; an adopter wires its own message linter there. No linter can tell whether a
 subject is true, so review reads each message against its diff.
-
-[thematic-commits]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/workflow/thematic-commits.md

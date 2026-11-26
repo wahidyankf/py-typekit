@@ -15,9 +15,9 @@ specific to rules.
 
 ## Entry
 
-The gate starts only on an explicit request that names it, or from [Rules Grooming][rules-grooming] on the state a
-grooming run produced. An adopting repository lists only the callers it has, chosen from this set. A rule change, review
-request, or propagation run never starts it alone.
+The gate starts only on an explicit request that names it, or from [Rules Grooming](../maintenance/rules-grooming.md) on
+the state a grooming run produced. An adopting repository lists only the callers it has, chosen from this set. A rule
+change, review request, or propagation run never starts it alone.
 
 ## Inputs
 
@@ -55,7 +55,8 @@ The audit covers the affected rule, its uses, the authority above it, and overla
 manifest. It asks whether:
 
 1. the need, outcome, and reason are concrete enough to judge;
-2. the wording's strength matches the intended strength, per [Rule Definition][rule-definition];
+2. the wording's strength matches the intended strength, per
+   [Rule Definition](../../conventions/writing/rule-definition.md);
 3. scope, trigger, action, boundaries, and necessary exceptions are explicit;
 4. the rule sits at the right level, and nothing lower contradicts a higher rule;
 5. one canonical source owns the meaning, and links keep it findable without copies;
@@ -101,9 +102,4 @@ Run rules-quality-gate on proposal "Require a dry run for every script that dele
 ## Related Workflows
 
 - [Rules Propagation](rules-propagation.md) repairs every blocking row.
-- [Rules Grooming][rules-grooming] may request a verdict after its reductions.
-
-[rules-grooming]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/maintenance/rules-grooming.md
-[rule-definition]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/rule-definition.md
+- [Rules Grooming](../maintenance/rules-grooming.md) may request a verdict after its reductions.

@@ -1,6 +1,7 @@
 ---
 description: >-
-  Fixes the six-step order of the execution review and makes its terminal verdict the precondition for archival.
+  Fixes the six-step order of the execution review and makes its archive-readiness verdict the precondition for
+  archival.
 when_to_use: >-
   Use once every substantive delivery item is terminal and archival is the next step.
 ---
@@ -12,14 +13,14 @@ performed by [`plan-execution-check`](../../../workflows/plan/plan-execution-che
 
 ## The Fixed Order
 
-| #   | Step               | Asks                                                                                 |
-| --- | ------------------ | ------------------------------------------------------------------------------------ |
-| 1   | scope              | did the executed work match the stated scope, with nothing quietly added or dropped? |
-| 2   | requirements       | is every acceptance criterion terminal, and does its evidence establish it?          |
-| 3   | checklist evidence | does every completed item carry a result that matches the repository's state?        |
-| 4   | gates              | did every declared gate run and return a terminal result?                            |
-| 5   | cleanup            | are task-owned artifacts gone, and is their absence proven?                          |
-| 6   | knowledge capture  | is every learning promoted to a durable owner or discarded with a reason?            |
+| #   | Step               | Asks                                                                                    |
+| --- | ------------------ | --------------------------------------------------------------------------------------- |
+| 1   | scope              | did the executed work match the stated scope, with nothing quietly added or dropped?    |
+| 2   | requirements       | is every acceptance criterion terminal, and does its evidence establish it?             |
+| 3   | checklist evidence | does every completed item carry a result that matches the repository's state?           |
+| 4   | gates              | did every declared gate run and return a terminal result?                               |
+| 5   | cleanup            | is pre-archive cleanup proven, with the checkout and branches marked pending afterward? |
+| 6   | knowledge capture  | is every learning promoted to a durable owner or discarded with a reason?               |
 
 The order is fixed because each step assumes the previous one held. Checking evidence before checking scope produces
 findings about work that should not have been done — technically correct, and useless. Checking cleanup before checking
@@ -31,8 +32,10 @@ Reordering does not merely change the sequence of findings; it changes which fin
 
 The review records one terminal verdict. Archival proceeds only on a verdict that permits it.
 
-An unresolved acceptance criterion, an unproven cleanup, or an unrouted learning blocks archival. The remedy is to
-resolve the item and re-run the review — never to archive with a note explaining what was left open.
+An unresolved acceptance criterion, unproven pre-archive cleanup, or unrouted learning blocks archival. Required
+post-delivery cleanup is marked `pending`, not `met`, and does not block archive readiness; it remains open until actual
+cleanup is verified in the final delivery record. The review follows the precise cleanup and completion rules in
+[Execution Check](../../../workflows/plan/plan-execution-check.md).
 
 ## Why Review and Archival Are Separate Steps
 

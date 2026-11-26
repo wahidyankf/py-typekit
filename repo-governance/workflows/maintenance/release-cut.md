@@ -27,8 +27,10 @@ tool's merged fix.
    choose the next version: a tag is never deleted or moved.
 3. **Run the full gate** on `revision`; a release skipping a gate publishes whatever it would have caught.
 4. **Confirm the documentation describes this version.** The changelog records it, per [Security, License, and
-   Changelog][002-security-license-and-changelog], and a [Docs Quality Gate](../quality/docs-quality-gate.md) verdict on
-   subject `all` is recorded.
+   Changelog][ref-1], and a [Docs Quality Gate](../quality/docs-quality-gate.md) verdict on subject `all` is recorded.
+
+   [ref-1]: ../../conventions/writing/repository-documentation-files/002-security-license-and-changelog.md
+
 5. **Build only through the release build command.** One scripted command, run where the build-location decision places
    it, builds each artifact in a clean checkout of `revision`, and itself refuses when the checkout head differs from
    `revision` or `revision` is not a full commit identifier.
@@ -58,17 +60,15 @@ Run release-cut for version 1.4.0 at revision <full-commit-id>.
 
 ## Adopter Decision: Build Location
 
-- **Local, before tagging:** one machine runs steps 5 and 6 for every platform before step 7. A broken build stops the
-  run before tagging; artifacts are cross-built.
-- **Native runners:** steps 5 and 6 run inside step 7, triggered by the tag on each platform's runner. Each executable
-  has started on its platform; a build failure leaves the tag.
+**Option** — **Where steps 5 and 6 run** — **Trade-off**
+
+- local, before tagging — one machine builds every platform before step 7 — a broken build stops the run before tagging;
+  artifacts are cross-built
+- native runners — inside step 7, triggered by the tag on each platform's runner — each executable has started on its
+  platform; a build failure leaves the tag
 
 Record the option. Under native runners, verify the published release before announcing: an artifact per supported
 platform, each matching its digest.
-
-**Recorded here: no artifact.** Consumers pin the tag's commit through `uv.lock`, so steps 5 and 6 do not apply and
-nothing is built or uploaded. Step 7 creates an annotated `vX.Y.Z` tag on `revision` and pushes only that tag. Tag
-protection is the forge's `release-tags` ruleset, which refuses updating or deleting a `v*` tag.
 
 ## A Released Tag Never Moves
 
@@ -83,8 +83,8 @@ step 5.
 ## One Build Path
 
 Nobody can reproduce a hand-built artifact; a clean checkout of the exact revision keeps output independent of the
-machine and its disk. Promoting a running service's release adds candidate, migration, and traffic rules, which [Release
-Cutover][002-release-cutover] owns.
+machine and its disk. Promoting a running service's release adds candidate, migration, and traffic rules, which
+[Release Cutover](../../development/quality/delivery/live-service-continuity/002-release-cutover.md) owns.
 
 ## Principles
 
@@ -92,8 +92,3 @@ This workflow implements [Immutability](../../principles/immutability.md): a pub
 edit; [Reproducibility](../../principles/reproducibility.md): every artifact comes from one clean revision through one
 command; and [Fail Closed](../../principles/fail-closed.md): an existing tag, dirty tree, or mismatched revision stops
 the run.
-
-[002-security-license-and-changelog]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/writing/repository-documentation-files/002-security-license-and-changelog.md
-[002-release-cutover]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/delivery/live-service-continuity/002-release-cutover.md

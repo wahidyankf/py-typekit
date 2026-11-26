@@ -21,8 +21,8 @@ harness alone acts on the verdict. No human is on the merge path; a self-judged 
 
 Two entry points share one judgement:
 
-- **Push.** Before any push to a remote, review the outgoing range privately per
-  [Push Review](pr-leak-review/002-push-review.md). Nothing is posted; a finding blocks the push.
+- **Push.** The outgoing range is reviewed privately before every agent push, in every repository, and before any other
+  push to a remote, per [Push Review](pr-leak-review/002-push-review.md). Nothing is posted; a finding blocks the push.
 - **Merge.** A pull request is about to merge, and the harness holds no `pass` verdict for its current head. The
   delivery harness runs this workflow for that head before merge. `pull-request` (`string`, required): its number or
   address.
@@ -67,7 +67,7 @@ Run the push leak review on this branch's outgoing commits.
 
 ## Related Workflows
 
-- [Harness Parity Verification][harness-parity-verification] is another single-pass review.
+- [Harness Parity Verification](harness-parity-verification.md) is another single-pass review.
 
 ## One Head, One Review
 
@@ -81,6 +81,3 @@ except `pass`.
 [Fail Closed](../../principles/fail-closed.md): `stale` and `failed` never satisfy the precondition.
 [Evidence Over Assertion](../../principles/evidence-over-assertion.md): the verdict is one reviewer's reading of one
 pinned head, and the harness acts on that reading alone.
-
-[harness-parity-verification]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/workflows/quality/harness-parity-verification.md

@@ -62,33 +62,39 @@ boundary the unit layer excludes, so a test using one is integration, per
 [Test Boundaries and Gates](../testing/test-boundaries-and-gates.md). Example: pytest's `tmp_path` and
 `monkeypatch.setenv`.
 
-The unit run measures coverage with branches on. An untakeable partial branch is excluded with its reason, per
-[Meaningful Coverage](../testing/meaningful-coverage.md). Example: coverage.py with `branch = true` and `fail_under`
-([branch coverage](https://coverage.readthedocs.io/en/latest/branch.html)). The floor is recorded in the
-[repository adapter](repository-adapter.md).
+The unit run measures coverage with branches on. An untakeable partial branch is removed or restructured, never
+exempted, per [Exclusions](../testing/meaningful-coverage/001-exclusions-and-exemptions.md). Example: coverage.py with
+`branch = true` and `fail_under` ([branch coverage](https://coverage.readthedocs.io/en/latest/branch.html)). Any floor
+above the minimum is recorded under
+[Layers and Adapters](../testing/behaviour-driven-development/002-layers-and-adapters.md).
+
+## Hermetic Unit Tests
+
+The linter bans impure modules and calls in unit-test modules. Example: Ruff's `banned-api` rule (`TID251`, from
+flake8-tidy-imports) lists `os.environ`, `subprocess`, `socket`, `urllib.request`, `time.time`, and `random` under
+`lint.flake8-tidy-imports.banned-api`, and a negated `lint.per-file-ignores` pattern, `"!<unit-test glob>"`, ignores
+`TID251` everywhere else.
 
 ## Documentation
 
 Public modules, classes, and functions carry docstrings stating behaviour, not the types annotations already give. A
-change to observable behaviour updates them per [Specification Maintenance][specification-maintenance] and
-[Public Contract](../architecture/public-contract.md).
+change to observable behaviour updates them per [Specification Maintenance](../evidence/specification-maintenance.md)
+and [Public Contract](../architecture/public-contract.md).
 
 ## Adopter Decisions
 
-- **boundary validation** — Option: standard-library dataclasses and checks; Gains: no dependency; Costs: hand-written
-  validation and serialization
-- **boundary validation** — Option: a library; example: Pydantic; Gains: declared rules, parsing, serialization; Costs:
-  a dependency, per [Dependency Selection](../code/dependency-selection.md)
-- **expected failures** — Option: exceptions; Gains: the standard library's idiom; Costs: signatures hide what can fail
-- **expected failures** — Option: returned result values; Gains: the checker forces every caller to handle; Costs: every
-  raising library call needs wrapping
+**Decision** — **Option** — **Gains** — **Costs**
+
+- boundary validation — standard-library dataclasses and checks — no dependency — hand-written validation and
+  serialization
+- a library; example: Pydantic — declared rules, parsing, serialization — a dependency, per
+  [Dependency Selection](../code/dependency-selection.md)
+- expected failures — exceptions — the standard library's idiom — signatures hide what can fail
+- returned result values — the checker forces every caller to handle — every raising library call needs wrapping
 
 Record each choice in the repository adapter [Stack Packs](../../../conventions/structure/stack-packs.md) defines.
 
 ## Enforcement
 
-Pyright, the formatter, the linter, and the coverage floor run in the adopter's own hooks and pipeline; review applies
+Pyright, the formatter, the linter, and the coverage floor run in the adopter's own pull-request gate; review applies
 boundary validation, code shape, and failure handling.
-
-[specification-maintenance]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/evidence/specification-maintenance.md

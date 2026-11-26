@@ -24,3 +24,4 @@ the builtin. The package declares no runtime dependency, requires Python 3.14 on
   curried combinators of `typekit.option`.
 - [`attempt`](./attempt.md) — the one place py-typekit catches an exception.
 - [`pipe`](./pipe.md) — left-to-right function application with one to nine typed stages.
+- [Gate inventory](./gate-inventory.md) — Every registry gate with its surfaces, command, and contract rule.

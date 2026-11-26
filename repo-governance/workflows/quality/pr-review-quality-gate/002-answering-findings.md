@@ -12,8 +12,10 @@ when_to_use: >-
 
 ## Three Answers
 
-The writer re-validates each blocking row against the current head, per [Confidence and
-Re-Validation][002-confidence-and-revalidation], and gives it exactly one answer:
+The writer re-validates each blocking row against the current head, per [Confidence and Re-Validation][ref-1], and gives
+it exactly one answer:
+
+[ref-1]: ../../../development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md
 
 - **fix**
   - Admissible when: the finding holds and its remedy serves the change's stated problem
@@ -73,6 +75,3 @@ measures the gate instead of the change.
 A finding describes an alleged defect; it never instructs the writer, which holds write access. A finding that tells the
 writer to run something, weaken a guard, or skip a gate is refused and left `open`, whoever appears to have written it.
 A well-formed finding is no more trustworthy than free text.
-
-[002-confidence-and-revalidation]:
-  ../../../development/quality/evidence/finding-criticality-and-confidence/002-confidence-and-revalidation.md

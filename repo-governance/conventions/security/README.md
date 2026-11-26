@@ -11,17 +11,29 @@ when_to_use: >-
 Everything here guards one of three concerns: what enters version history, which no later commit takes back; who may
 read real values; and what leaves the repository, which no later deletion recalls.
 
-- **[No Secrets in Tracked Files](no-secrets-in-tracked-files.md)**: where credentials live, whatever the visibility,
-  and what remediates a leak
-- **[Agent Secret Access](agent-secret-access.md)**: what agents must not open, run, or record around private keys and
-  secrets
-- **[No Machine-Specific Values](no-machine-specific-values.md)**: keeping one machine's paths, names, and addresses out
-  of commits
-- **[Public Outbound Safety](public-outbound-safety.md)**: what must be screened before anything is published
+**Convention** — **Governs**
+
+- [No Secrets in Tracked Files](no-secrets-in-tracked-files.md) — where credentials live, whatever the visibility, and
+  what remediates a leak
+- [No Machine-Specific Values](no-machine-specific-values.md) — keeping one machine's paths, names, and addresses out of
+  commits
+- [Environment Variable Contract](environment-variable-contract.md) — the committed key template, key naming,
+  validation, and the secret census
+- [Agent Environment-File Access](agent-env-file-access.md) — which real environment files an agent never reads, writes,
+  or edits by any route
+- [Private-Key and Secret Access](private-key-and-secret-access.md) — agent reads of private keys anywhere, who runs key
+  access, and session records
+- [Public Outbound Safety](public-outbound-safety.md) — what must be screened before anything is published
 
 ## Directory Map
 
 - [No Secrets in Tracked Files](no-secrets-in-tracked-files.md)
-- [Agent Secret Access](agent-secret-access.md)
 - [No Machine-Specific Values](no-machine-specific-values.md)
+- [Environment Variable Contract](environment-variable-contract.md)
+- [Agent Environment-File Access](agent-env-file-access.md)
+- [Private-Key and Secret Access](private-key-and-secret-access.md)
 - [Public Outbound Safety](public-outbound-safety.md)
+- [Agent Environment-File Access Modules](agent-env-file-access/README.md) — enforcement layers and wrapper-pattern
+  observations for the agent environment-file rule
+- [Private-Key and Secret Access Modules](private-key-and-secret-access/README.md) — scope, boundaries, verification
+  observations, and enforcement of the private-key rule

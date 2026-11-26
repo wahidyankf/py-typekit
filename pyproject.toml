@@ -8,7 +8,13 @@ requires-python = ">=3.14,<3.15"
 dependencies = []
 
 [dependency-groups]
-dev = ["coverage>=7.16", "pyright>=1.1.414", "pytest>=9.1", "ruff>=0.16.8"]
+dev = [
+    "coverage>=7.16",
+    "pyright>=1.1.414",
+    "pytest>=9.1",
+    "pytest-bdd>=9.0.1",
+    "ruff>=0.16.8",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.16,<0.13.0"]
@@ -21,6 +27,7 @@ module-name = "typekit"
 minversion = "9.0"
 testpaths = ["tests"]
 addopts = ["--import-mode=importlib", "--strict-config", "--strict-markers", "-ra"]
+markers = ["integration-exempt: a scenario with no integration-level test, see specs/behaviours"]
 xfail_strict = true
 
 [tool.ruff]
@@ -29,12 +36,31 @@ target-version = "py314"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
-select = ["E", "W", "F", "I", "N", "UP", "B", "C4", "SIM", "PT", "RUF", "D1"]
+select = ["E", "W", "F", "I", "N", "UP", "B", "C4", "SIM", "PT", "RUF", "D1", "TID"]
 ignore = ["D105"]
 
 [tool.ruff.lint.per-file-ignores]
 # Docstrings document the public API; a test is named as a sentence instead.
 "tests/**" = ["D1"]
+# Only unit-test files are hermetic (C21); integration, e2e, and repository scripts may touch the machine by design.
+"!tests/test_*.py" = ["TID251"]
+
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+# Unit tests are hermetic (C21): each entry bans one impure module or call from the unit layer.
+"subprocess".msg = "Unit tests are hermetic: no subprocess (C21)."
+"socket".msg = "Unit tests are hermetic: no socket (C21)."
+"urllib.request".msg = "Unit tests are hermetic: no network via urllib.request (C21)."
+"http.client".msg = "Unit tests are hermetic: no network via http.client (C21)."
+"requests".msg = "Unit tests are hermetic: no network via requests (C21)."
+"httpx".msg = "Unit tests are hermetic: no network via httpx (C21)."
+"tempfile".msg = "Unit tests are hermetic: no file system via tempfile (C21)."
+"time.sleep".msg = "Unit tests are hermetic: no sleeping via time.sleep (C21)."
+"time.time".msg = "Unit tests are hermetic: no wall clock via time.time (C21)."
+"datetime.datetime.now".msg = "Unit tests are hermetic: no wall clock via datetime.datetime.now (C21)."
+"os.getenv".msg = "Unit tests are hermetic: no environment read via os.getenv (C21)."
+"os.environ".msg = "Unit tests are hermetic: no environment read via os.environ (C21)."
+"os.system".msg = "Unit tests are hermetic: no process via os.system (C21)."
+"random".msg = "Unit tests are hermetic: no randomness via random (C21)."
 
 [tool.pyright]
 include = ["src", "tests", "scripts"]
@@ -52,5 +78,3 @@ source = ["typekit"]
 fail_under = 100
 show_missing = true
 skip_covered = false
-# The one exclusion: each `pipe` overload stub, whose `...` body never runs. The implementation stays measured.
-exclude_also = ["@overload"]

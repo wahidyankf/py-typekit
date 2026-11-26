@@ -6,10 +6,10 @@ that guarantee instead of asserting it: five mistakes, each a type error, with t
 ## The mistakes
 
 Each comment under a mistake quotes the rule and a trimmed message from a real strict Pyright run. The `doc-snippets`
-gate type-checks this block on every push and requires exactly these errors, and `tests/test_typing.py` keeps each one
-as a refused line under `# pyright: ignore[<rule>]`, which Pyright fails once the ignore is no longer needed, so this
-page cannot drift from what Pyright reports. The error comments read `# Pyright error:` because Pyright parses any
-comment starting `# pyright:` as a directive.
+gate type-checks this block on every pull request and requires exactly these errors, and `tests/test_typing.py` keeps
+each one as a refused line under `# pyright: ignore[<rule>]`, which Pyright fails once the ignore is no longer needed,
+so this page cannot drift from what Pyright reports. The error comments read `# Pyright error:` because Pyright parses
+any comment starting `# pyright:` as a directive.
 
 ```python
 from typing import assert_never

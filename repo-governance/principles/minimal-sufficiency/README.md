@@ -10,9 +10,11 @@ when_to_use: >-
 Read in order. Together these hold the change-scope half of the rule the
 [Minimal Sufficiency](../minimal-sufficiency.md) entrypoint states.
 
-- **[Scope of a Change](001-scope-of-a-change.md)**: understand first, prefer what exists, refuse speculation, and stop
-- **[What Minimality Never Removes](002-what-minimality-never-removes.md)**: mandatory obligations, the narrowest
-  failing check, proportional proof
+**Module** — **Holds**
+
+- [Scope of a Change](001-scope-of-a-change.md) — understand first, prefer what exists, refuse speculation, and stop
+- [What Minimality Never Removes](002-what-minimality-never-removes.md) — mandatory obligations, the narrowest failing
+  check, proportional proof
 
 ## Directory Map
 

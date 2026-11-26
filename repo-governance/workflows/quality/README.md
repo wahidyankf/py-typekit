@@ -21,8 +21,15 @@ relinks each gate's companions, and runs its searches, per the contract's
 
 ## Directory Map
 
+- [CI Propagation](ci-propagation.md)
+- [CI Quality Gate](ci-quality-gate.md)
 - [Docs Propagation](docs-propagation.md)
 - [Docs Quality Gate](docs-quality-gate.md)
+- [Exploratory and Usability Review](exploratory-usability-review.md)
+- [Gherkin Implementation Review](gherkin-implementation-review.md)
+- [Harness Parity Verification](harness-parity-verification.md)
+- [Harness Propagation](harness-propagation.md)
+- [Harness Quality Gate](harness-quality-gate.md)
 - [Plan Propagation](plan-propagation.md)
 - [Plan Quality Gate](plan-quality-gate.md)
 - [PR Leak Review](pr-leak-review.md)
@@ -35,3 +42,7 @@ relinks each gate's companions, and runs its searches, per the contract's
 - [Rules Propagation](rules-propagation.md)
 - [Rules Propagation Modules](rules-propagation/README.md)
 - [Rules Quality Gate](rules-quality-gate.md)
+- [Specs Propagation](specs-propagation.md)
+- [Specs Quality Gate](specs-quality-gate.md)
+- [UX Review Fix Planning](ux-review-fix-planning.md)
+- [UX Review Fix Planning Modules](ux-review-fix-planning/README.md)

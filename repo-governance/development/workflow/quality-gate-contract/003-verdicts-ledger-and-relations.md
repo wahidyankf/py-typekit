@@ -15,8 +15,8 @@ A gate ends with one of four verdicts: `PASS`, `PASS_WITH_FINDINGS`, `FAIL`, or 
 caller. The caller records the verdict and, for `FAIL` or `BLOCKED`, gives each open blocking row an owner: an idea
 brief, a plan item, or an issue in the owning repository. Then it continues its own sequence.
 
-Only deterministic tooling, such as a pre-commit hook, a hosted check, or a configured gate runner, can refuse a commit,
-merge, or push. Advisory covers gate verdicts only. A plan's archival condition and the verdict of
+Only deterministic tooling, such as a hosted check or a configured gate runner, can refuse a commit, merge, or push.
+Advisory covers gate verdicts only. A plan's archival condition and the verdict of
 [Execution Check](../../../workflows/plan/plan-execution-check.md), which permits or blocks archival, judge finished
 execution, not a gate, and this contract leaves them blocking. A plan that runs a gate writes one line in its delivery
 checklist, for example `plan-quality-gate: PASS_WITH_FINDINGS (2 cycles, 3 LOW open)`, and commits no other gate

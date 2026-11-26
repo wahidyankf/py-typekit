@@ -17,11 +17,11 @@ silence:
 
 - **Covered.** A named existing check fails on the rule's violating observation. Show it failing on a violating input
   and passing on a conforming one; a check that merely reads the same files is not coverage.
-- **Gated.** A new check is declared for the rule where the repository declares its checks, per [Automated Quality
-  Gates][automated-quality-gates]. The declaration is declarative configuration, so `swe-developer` writes it: the
-  writer names it as repairer, and the fixer or its caller dispatches it, per
-  [SWE Delegation](../../../development/agents/swe-delegation.md). When the check needs behaviour not yet built, the
-  declaration records the intent and the implementation is filed as its own work.
+- **Gated.** A new check is declared for the rule where the repository declares its checks, per
+  [Automated Quality Gates](../../../development/quality/checks/automated-quality-gates.md). The declaration is
+  declarative configuration, so `swe-developer` writes it: the writer names it as repairer, and the fixer or its caller
+  dispatches it, per [SWE Delegation](../../../development/agents/swe-delegation.md). When the check needs behaviour not
+  yet built, the declaration records the intent and the implementation is filed as its own work.
 - **Unenforced by decision.** A judgement no mechanical check can settle, recorded on the rule with its reason. It is
   rare: when most rules in a run take it, the falsifiability test was applied too gently.
 
@@ -54,23 +54,19 @@ silence:
 
 ## Beyond This Repository
 
-A rule portable across a declared parity boundary records its sibling obligation per [Related
-Repositories][related-repositories], or records none with why. A repository adopting from a shared catalog proposes a
-rule that holds beyond itself to that catalog, through the catalog's own delivery, published only after the catalog's
-outbound-safety screen passes. A fan-out across members, at minimum ose-projects, must land in the catalog first:
-members must adopt only from its published head, never from a branch or worktree, and a member adoption must name the
-catalog head it copies.
+A rule portable across a declared parity boundary records its sibling obligation per
+[Related Repositories](../../../conventions/structure/related-repositories.md), or records none with why. A repository
+adopting from a shared catalog proposes a rule that holds beyond itself to that catalog, through the catalog's own
+delivery, published only after the catalog's outbound-safety screen passes.
+
+A fan-out across members, at minimum across `ose-projects`, lands in the catalog first; members adopt only from its
+published head, never from a branch or a worktree. A member adoption names the catalog head it copies.
 
 ## Adopter Decision: How Entry Becomes Automatic
 
 - **Root instruction file:** a route before any rule edit; it needs no tooling but relies on being read.
-- **Commit-time notice:** names this workflow whenever a staged path carries rules, reaching every editor; it reports
-  without blocking, since a hook cannot judge semantic decisions.
+- **Pull-request notice:** names this workflow in the pull-request gate whenever a changed path carries rules, reaching
+  every editor; it reports without blocking, since a check cannot judge semantic decisions, and no hook runs it.
 - **Editor pre-edit trigger:** the same notice earlier, in one harness; a convenience that can be switched off.
 
 Record the routes taken and the delivery route. Every trigger reads one recorded list of rule-bearing paths.
-
-[automated-quality-gates]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/checks/automated-quality-gates.md
-[related-repositories]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/related-repositories.md

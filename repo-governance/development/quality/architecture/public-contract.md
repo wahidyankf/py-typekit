@@ -12,9 +12,10 @@ when_to_use: >-
 A consumer pins a tool by version and calls it from a hook or a gate it does not want to think about again. That pin has
 to mean the same thing tomorrow.
 
-[Consumer Independence][consumer-independence] establishes that the surface is a contract and that breaking it ships
-only as a major version. This standard fixes how the contract is declared and where the line between compatible and
-breaking falls. It also implements [Explicit Over Implicit](../../../principles/explicit-over-implicit.md) and
+[Consumer Independence](../../../principles/consumer-independence.md) establishes that the surface is a contract and
+that breaking it ships only as a major version. This standard fixes how the contract is declared and where the line
+between compatible and breaking falls. It also implements
+[Explicit Over Implicit](../../../principles/explicit-over-implicit.md) and
 [Immutability](../../../principles/immutability.md).
 
 ## Declare the Contract
@@ -80,6 +81,3 @@ improve is what lets the declared surface stay still.
 
 An adopter keeps its declared surface classified and versioned as above, and enforces it at an enforcement point it
 names, such as its own test suite or gate.
-
-[consumer-independence]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/principles/consumer-independence.md

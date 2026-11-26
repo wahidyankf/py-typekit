@@ -5,7 +5,7 @@ py-typekit is a zero-dependency, strictly typed Python 3.14 library of functiona
 [related repositories](docs/README.md#project-context).
 
 For English writing, including replies, use clear, simple, and natural English that is easy for non-native speakers to
-understand. Follow [Writing Style](repo-governance/conventions/writing-style.md).
+understand. Follow [Content Quality](repo-governance/conventions/writing/content-quality.md).
 
 ## Consumption
 
@@ -24,20 +24,21 @@ ships `py.typed`. A released tag never moves, per [Release Cut](repo-governance/
 ## Gates
 
 ```text
-uv run pytest                          # tests, fast, no coverage
-uv run --locked coverage run -m pytest && uv run --locked coverage report
-uv run pyright
-uv run ruff check && uv run ruff format --check
-uv run --locked python scripts/check-doc-snippets.py   # every documented Python block type-checks as marked
-npx --no-install prettier --check .
-bash scripts/check-wheel.sh            # the wheel lists py.typed and declares no dependency
-./rhino gate run --surface main        # everything before a pull request
+npm run test:quick                        # unit tests, with the coverage report
+npm run test:integration                  # integration tests
+npm run test:e2e                          # end-to-end tests
+npm run test:behaviour:coverage           # behaviour coverage
+uv run pytest                             # tests, fast, no coverage
+./rhino gate run --surface pull-request   # every gate the pull-request check runs
 ```
 
-`repo-config.yml` is the one gate registry. The husky hooks, the hosted workflow, and the aggregate command dispatch it
-through `./rhino gate run --surface <surface>`, so a gate added there reaches every surface it declares. `pre-push`
-refuses a push whose tests fail or whose branch coverage is below 100%, and one that breaks a link, a word budget, the
-120-column limit, Prettier formatting, a generated adapter, or a Mermaid diagram check.
+`repo-config.yml` is the one gate registry. The husky hooks, the hosted workflow
+(`.github/workflows/pr-quality-gate.yml`), and the aggregate command dispatch it through
+`./rhino gate run --surface <surface>`, so a gate added there reaches every surface it declares. The
+[gate inventory](docs/reference/gate-inventory.md) lists each gate, its surfaces, and its rule.
+
+`pre-push` runs only the leak scan over the pushed range. The tests and the 100% branch coverage floor run at
+pull-request, with the link, word-budget, 120-column, Prettier, generated-adapter, and Mermaid checks.
 
 `./rhino` installs the RHINO release `rhino.lock` pins and verifies it before running; exit `125` is the wrapper
 refusing. This repository pins RHINO only: no HIPPO and no FERRET.
@@ -45,10 +46,10 @@ refusing. This repository pins RHINO only: no HIPPO and no FERRET.
 ## Testing
 
 Work test-first under [Test-Driven Development](repo-governance/development/quality/testing/test-driven-development.md).
-The suite is unit tests only; behaviour-driven development and Gherkin bindings are not adopted. Branch coverage over
-`typekit` stays at 100%, measured with coverage.py directly, and its one exclusion is the `@overload` stubs. Pyright
-runs in strict mode. The [repository adapter](repo-governance/development/quality/stacks/repository-adapter.md) records
-these decisions.
+The suite spans unit, integration, and end-to-end tests. Gherkin scenarios in `specs/behaviours/` are adopted, bound
+with pytest-bdd. Branch coverage over `typekit` stays at 100%, measured with coverage.py directly, and its one exclusion
+is the `@overload` stubs. Pyright runs in strict mode. The
+[repository adapter](repo-governance/development/quality/stacks/repository-adapter.md) records these decisions.
 
 ## Tooling
 
@@ -60,7 +61,7 @@ library, its wheel, or its Python dependencies. `npm ci` installs it and the hoo
 
 Every change starts in a task worktree at `worktrees/<task>`, never a sibling directory, and lands through a pull
 request merged by squash under [Pull Request Merge](repo-governance/development/workflow/pull-request-merge.md), once
-the `quality` check passes on its head. The [PR Leak Review](repo-governance/workflows/quality/pr-leak-review.md)
+the `quality-gate` check passes on its head. The [PR Leak Review](repo-governance/workflows/quality/pr-leak-review.md)
 harness refuses any push or merge without a fresh `leak-reviewer` pass on that head. Everything pushed is public, so
 commits, branch names, and pull-request text pass the `scripts/public-safety/` screen first. After the merge,
 [Dev Artifact Clean-Up](repo-governance/workflows/maintenance/dev-artifact-clean-up.md) removes the worktree and task
@@ -69,9 +70,8 @@ branch and fast-forwards `main`.
 ## Documents
 
 - Every Markdown line is at most 120 columns, and every conceptual diagram is an accessible Mermaid block, per
-  [Markdown Line Length](repo-governance/conventions/markdown-line-length.md) and
-  [Markdown Visualizations](repo-governance/conventions/markdown-visualizations.md): no ASCII-art diagram, image, or
-  inline HTML.
+  [Markdown Prose Wrap](repo-governance/conventions/writing/markdown-prose-wrap.md) and
+  [Diagrams](repo-governance/conventions/writing/diagrams.md): no ASCII-art diagram, image, or inline HTML.
 - `AGENTS.md`, `CLAUDE.md`, and each `repo-governance/**/*.md` and `.agents/**/*.md` file hold 750 words at most.
 - Governed documents declare `description` and `when_to_use` front matter, per
   [Artifact Metadata](repo-governance/conventions/structure/artifact-metadata.md).

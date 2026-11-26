@@ -41,12 +41,15 @@ check in the open, which is the opposite of silencing it — see [Fail Closed](f
 
 ## Where It Is Already Load-Bearing
 
-- **[Public Outbound Safety](../conventions/security/public-outbound-safety.md)**: a false positive is fixed by
-  narrowing the rule, never by a bypass
-- **[Quality Gate Results][001-quality-gate-results]**: a gate is not re-run until it agrees
-- **[Deletion With Proof][deletion-with-proof]**: a failure after retirement means finding what was missed, not a shim
-- **[Plan Execution](../workflows/plan/plan-execution.md)**: a check already failing before the work began is still
-  fixed
+**Applied in** — **As**
+
+- [Public Outbound Safety](../conventions/security/public-outbound-safety.md) — a false positive is fixed by narrowing
+  the rule, never by a bypass
+- [Quality Gate Results](../development/quality/manual-verification/001-quality-gate-results.md) — a gate is not re-run
+  until it agrees
+- [Deletion With Proof](../development/quality/deletion-with-proof.md) — a failure after retirement means finding what
+  was missed, not a shim
+- [Plan Execution](../workflows/plan/plan-execution.md) — a check already failing before the work began is still fixed
 
 ## Finished Means the Cause Cannot Recur
 
@@ -61,16 +64,13 @@ A known defect inside the code a change touches, or a required check that was al
 [What Minimality Never Removes](minimal-sufficiency/002-what-minimality-never-removes.md). A defect that lies outside
 the task entirely has two defensible dispositions, and an adopter records which it uses.
 
-- **fix it at its cause, in the current work** — Gains: a known defect never outlives its discovery; "already broken"
-  exempts nothing; Costs: the change outgrows what was planned and reviewed, and mixes in unrelated risk
-- **report it to its owner with the failure, impact, and a next step** — Gains: the change stays reviewable, and the
-  owner decides; Costs: the defect survives until someone acts, and unread reports accumulate
+**Disposition** — **Gains** — **Costs**
+
+- fix it at its cause, in the current work — a known defect never outlives its discovery; "already broken" exempts
+  nothing — the change outgrows what was planned and reviewed, and mixes in unrelated risk
+- report it to its owner with the failure, impact, and a next step — the change stays reviewable, and the owner decides
+  — the defect survives until someone acts, and unread reports accumulate
 
 Under either, a defect once found is never silently worked around or ignored. And a fix that needs a decision only its
 owner can make is reported with evidence, whichever disposition applies, rather than guessed. A defect in a pinned tool
 consumed from an upstream follows [Upstream Tool Defects](../development/workflow/upstream-tool-defects.md).
-
-[001-quality-gate-results]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/manual-verification/001-quality-gate-results.md
-[deletion-with-proof]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/development/quality/deletion-with-proof.md

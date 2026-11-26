@@ -10,7 +10,7 @@ when_to_use: >-
 # Required Documents
 
 Every formal plan — one in `plans/backlog/` or `plans/in-progress/` — contains six documents. Not five, and not five
-plus an optional sixth. The one exception is a [Bug-Fix Plan](018-bug-fix-plan.md), whose single document carries the
+plus an optional sixth. The one exception is a [Bug-Fix Plan](019-bug-fix-plan.md), whose single document carries the
 six roles as sections.
 
 | Document            | Answers                                                                                      |
@@ -26,8 +26,8 @@ The technical shape is one of the six, not an addition to them. A plan root ther
 technical shape is a single file, and five files plus one directory when it is a directory.
 
 Those counts are of plan documents. Beside them, a plan root may also hold two artifact folders: `evidence/`, governed
-by [Evidence Files](015-evidence-files.md), and `assets/`, governed by [Plan UI Design][plan-ui-design]. Neither is a
-plan document, and neither is a technical shape: the only directory that is a technical shape is `tech-docs/`.
+by [Evidence Files](016-evidence-files.md), and `assets/`, governed by [Plan UI Design](../plan-ui-design.md). Neither
+is a plan document, and neither is a technical shape: the only directory that is a technical shape is `tech-docs/`.
 
 ## Why Six
 
@@ -68,6 +68,3 @@ rollback trigger's window, is not an estimate. Archives under `plans/done/` stay
 
 This is judged in review rather than mechanically, because telling an effort estimate from a system duration needs
 judgement.
-
-[plan-ui-design]:
-  https://github.com/wahidyankf/ose-rules/blob/97f4d1ca35b5ab65a4f60aff724e210e638d87f4/repo-governance/conventions/structure/plan-ui-design.md

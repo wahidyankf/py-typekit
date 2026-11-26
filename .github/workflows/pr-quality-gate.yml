@@ -1,0 +1,349 @@
+name: PR Quality Gate
+
+# Defence in depth for the gate registry in `repo-config.yml`. Every gate here also
+# runs locally before a commit and before a push. This run exists because a local
+# hook can be skipped and a hosted check cannot.
+#
+# Every job runs registry entries through the same pinned RHINO, and no job copies
+# a gate's command. Pull-request entries are split across four jobs. Each job names
+# its entries with --entry, and together they cover all 29 pull-request entries
+# exactly once:
+#
+#   unit-tests       tests, coverage
+#   commit-messages  public-safety-range, public-safety-message
+#   checks           commit-message, public-safety, markdown-format,
+#                    markdown-line-length, markdownlint, ruff-format, ruff-lint, pyright,
+#                    doc-snippets, repo-config, gate-registry, artifact-metadata,
+#                    word-budget, internal-links, mermaid, md-naming,
+#                    directory-map, quality-gates, harness-adapters, wheel-check,
+#                    public-safety-tests, behaviour-coverage, test-integration,
+#                    agent-hippo-guard-test
+#   verify-clean     format-staged, then fails if the replay changed any file
+#
+# A push to main runs main-gate instead. It runs `--surface main`, which runs every
+# entry that declares a main run-on.
+#
+# quality-gate is the one check to require. It fails unless every job that the
+# event runs succeeded. A skipped job does not count as a success.
+#
+# Every action reference names a full commit SHA, with the release tag it was
+# resolved from in a trailing comment.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-quality-gate-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    name: unit-tests
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          # Range gates read the base and head commits, so the history must be here.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # The interpreter and uv are pinned to the versions the dev dependencies were locked with.
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.14.7"
+
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          version: 0.12.16
+          checksum: 8e5c6e5523dffc2dcf615bd995554c84c9feb4e577808a3fb8698a639d3f8d9c
+
+      - run: uv sync --locked
+
+      # Proves the pin resolves and verifies on a runner with an empty cache,
+      # which is the state every adopter starts from. A failure here is a broken
+      # pin rather than a failing gate, and the two deserve different names.
+      - name: Pinned RHINO bootstrap
+        run: |
+          set -eu
+          # The runner's cache is empty, which is the state every adopter starts
+          # from. The wrapper refuses on a digest or identity mismatch, so
+          # reaching this comparison at all already means both verified.
+          pinned=$(sed -n 's/^version=//p' rhino.lock)
+          test "$(./rhino version)" = "${pinned%%-*}"
+
+      - name: Run the unit tests and coverage
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -eu
+          ./rhino gate run --surface pull-request \
+            --entry tests --entry coverage \
+            --base "${BASE_SHA}" --head "${HEAD_SHA}"
+
+  commit-messages:
+    name: commit-messages
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          # Range gates read the base and head commits, so the history must be here.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # The interpreter and uv are pinned to the versions the dev dependencies were locked with.
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.14.7"
+
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          version: 0.12.16
+          checksum: 8e5c6e5523dffc2dcf615bd995554c84c9feb4e577808a3fb8698a639d3f8d9c
+
+      - run: uv sync --locked
+
+      # Proves the pin resolves and verifies on a runner with an empty cache,
+      # which is the state every adopter starts from. A failure here is a broken
+      # pin rather than a failing gate, and the two deserve different names.
+      - name: Pinned RHINO bootstrap
+        run: |
+          set -eu
+          # The runner's cache is empty, which is the state every adopter starts
+          # from. The wrapper refuses on a digest or identity mismatch, so
+          # reaching this comparison at all already means both verified.
+          pinned=$(sed -n 's/^version=//p' rhino.lock)
+          test "$(./rhino version)" = "${pinned%%-*}"
+
+      - name: Run the commit-message and public-safety range checks
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -eu
+          ./rhino gate run --surface pull-request \
+            --entry public-safety-range --entry public-safety-message \
+            --base "${BASE_SHA}" --head "${HEAD_SHA}"
+
+  checks:
+    name: checks
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          # Range gates read the base and head commits, so the history must be here.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # The interpreter and uv are pinned to the versions the dev dependencies were locked with.
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.14.7"
+
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          version: 0.12.16
+          checksum: 8e5c6e5523dffc2dcf615bd995554c84c9feb4e577808a3fb8698a639d3f8d9c
+
+      - run: uv sync --locked
+
+      # Proves the pin resolves and verifies on a runner with an empty cache,
+      # which is the state every adopter starts from. A failure here is a broken
+      # pin rather than a failing gate, and the two deserve different names.
+      - name: Pinned RHINO bootstrap
+        run: |
+          set -eu
+          # The runner's cache is empty, which is the state every adopter starts
+          # from. The wrapper refuses on a digest or identity mismatch, so
+          # reaching this comparison at all already means both verified.
+          pinned=$(sed -n 's/^version=//p' rhino.lock)
+          test "$(./rhino version)" = "${pinned%%-*}"
+
+      - name: Run the pull-request checks
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -eu
+          ./rhino gate run --surface pull-request \
+            --entry commit-message --entry public-safety --entry markdown-format \
+            --entry markdown-line-length --entry markdownlint --entry ruff-format --entry ruff-lint \
+            --entry pyright --entry doc-snippets --entry repo-config \
+            --entry gate-registry --entry artifact-metadata --entry word-budget \
+            --entry internal-links --entry mermaid --entry md-naming \
+            --entry directory-map --entry quality-gates --entry harness-adapters \
+            --entry wheel-check --entry public-safety-tests \
+            --entry behaviour-coverage --entry test-integration \
+            --entry agent-hippo-guard-test \
+            --base "${BASE_SHA}" --head "${HEAD_SHA}"
+
+  verify-clean:
+    name: verify-clean
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          # Range gates read the base and head commits, so the history must be here.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # The interpreter and uv are pinned to the versions the dev dependencies were locked with.
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.14.7"
+
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          version: 0.12.16
+          checksum: 8e5c6e5523dffc2dcf615bd995554c84c9feb4e577808a3fb8698a639d3f8d9c
+
+      - run: uv sync --locked
+
+      # Proves the pin resolves and verifies on a runner with an empty cache,
+      # which is the state every adopter starts from. A failure here is a broken
+      # pin rather than a failing gate, and the two deserve different names.
+      - name: Pinned RHINO bootstrap
+        run: |
+          set -eu
+          # The runner's cache is empty, which is the state every adopter starts
+          # from. The wrapper refuses on a digest or identity mismatch, so
+          # reaching this comparison at all already means both verified.
+          pinned=$(sed -n 's/^version=//p' rhino.lock)
+          test "$(./rhino version)" = "${pinned%%-*}"
+
+      - name: Replay the format-staged mutation for the pull-request range
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -eu
+          ./rhino gate run --surface pull-request \
+            --entry format-staged \
+            --base "${BASE_SHA}" --head "${HEAD_SHA}"
+
+      # format-staged rewrites files in the range. Any change left in the tree is a
+      # commit that was not formatted, so this step fails on any difference.
+      - name: Fail if the replay changed any file
+        run: git diff --exit-code
+
+  main-gate:
+    name: main-gate
+    if: github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          # Range gates read the base and head commits, so the history must be here.
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # The interpreter and uv are pinned to the versions the dev dependencies were locked with.
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.14.7"
+
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          version: 0.12.16
+          checksum: 8e5c6e5523dffc2dcf615bd995554c84c9feb4e577808a3fb8698a639d3f8d9c
+
+      - run: uv sync --locked
+
+      # Proves the pin resolves and verifies on a runner with an empty cache,
+      # which is the state every adopter starts from. A failure here is a broken
+      # pin rather than a failing gate, and the two deserve different names.
+      - name: Pinned RHINO bootstrap
+        run: |
+          set -eu
+          # The runner's cache is empty, which is the state every adopter starts
+          # from. The wrapper refuses on a digest or identity mismatch, so
+          # reaching this comparison at all already means both verified.
+          pinned=$(sed -n 's/^version=//p' rhino.lock)
+          test "$(./rhino version)" = "${pinned%%-*}"
+
+      - name: Run the main gate
+        run: ./rhino gate run --surface main
+
+  quality-gate:
+    name: quality-gate
+    # The single required status check. A job that the event does not run is skipped,
+    # so the script below reads only the jobs that apply to this event.
+    needs: [unit-tests, commit-messages, checks, verify-clean, main-gate]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check every gate the event runs
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          UNIT_TESTS: ${{ needs.unit-tests.result }}
+          COMMIT_MESSAGES: ${{ needs.commit-messages.result }}
+          CHECKS: ${{ needs.checks.result }}
+          VERIFY_CLEAN: ${{ needs.verify-clean.result }}
+          MAIN_GATE: ${{ needs.main-gate.result }}
+        run: |
+          set -eu
+          if [ "${EVENT_NAME}" = "pull_request" ]; then
+            results="${UNIT_TESTS} ${COMMIT_MESSAGES} ${CHECKS} ${VERIFY_CLEAN}"
+          else
+            results="${MAIN_GATE}"
+          fi
+          echo "Gate results: ${results}"
+          for result in ${results}; do
+            if [ "${result}" != "success" ]; then
+              echo "A quality gate job did not succeed." >&2
+              exit 1
+            fi
+          done
+          echo "All quality gates passed."

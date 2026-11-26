@@ -6,6 +6,9 @@
 # `set -e` is not decoration: without it a failing gate prints its finding and
 # the last command's status becomes the hook's, so the operation completes
 # anyway. The pinned wrapper's exit code is this hook's exit code.
+# The commit-msg surface holds only the work its allowed list in `repo-config.yml` names.
 set -euo pipefail
+root=$(git rev-parse --show-toplevel)
+export PATH="$root/node_modules/.bin:$PATH"
 
 exec ./rhino gate run --surface commit-msg --message-file "$1"
