@@ -24,20 +24,21 @@ ships `py.typed`. A released tag never moves, per [Release Cut](repo-governance/
 ## Gates
 
 ```text
-uv run pytest                          # tests, fast, no coverage
-uv run --locked coverage run -m pytest && uv run --locked coverage report
-uv run pyright
-uv run ruff check && uv run ruff format --check
-uv run --locked python scripts/check-doc-snippets.py   # every documented Python block type-checks as marked
-npx --no-install prettier --check .
-bash scripts/check-wheel.sh            # the wheel lists py.typed and declares no dependency
-./rhino gate run --surface main        # everything before a pull request
+npm run test:quick                        # unit tests, with the coverage report
+npm run test:integration                  # integration tests
+npm run test:e2e                          # end-to-end tests
+npm run test:behaviour:coverage           # behaviour coverage
+uv run pytest                             # tests, fast, no coverage
+./rhino gate run --surface pull-request   # every gate the pull-request check runs
 ```
 
-`repo-config.yml` is the one gate registry. The husky hooks, the hosted workflow, and the aggregate command dispatch it
-through `./rhino gate run --surface <surface>`, so a gate added there reaches every surface it declares. `pre-push` runs
-only the leak scan. The `pull-request` gate runs the tests, the 100% branch coverage floor, and the link, word-budget,
-120-column, Prettier, generated-adapter, and Mermaid checks.
+`repo-config.yml` is the one gate registry. The husky hooks, the hosted workflow
+(`.github/workflows/pr-quality-gate.yml`), and the aggregate command dispatch it through
+`./rhino gate run --surface <surface>`, so a gate added there reaches every surface it declares. The
+[gate inventory](docs/reference/gate-inventory.md) lists each gate, its surfaces, and its rule.
+
+`pre-push` runs only the leak scan over the pushed range. The tests and the 100% branch coverage floor run at
+pull-request, with the link, word-budget, 120-column, Prettier, generated-adapter, and Mermaid checks.
 
 `./rhino` installs the RHINO release `rhino.lock` pins and verifies it before running; exit `125` is the wrapper
 refusing. This repository pins RHINO only: no HIPPO and no FERRET.

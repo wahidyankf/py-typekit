@@ -1,8 +1,9 @@
 # Public Safety
 
 This repository is published, so everything it emits — file contents, file names, commit messages, branch names, tags,
-release notes — is outbound material. This directory is the gate that screens all of it, and it is the first gate to run
-on every surface that has one.
+release notes — is outbound material. This directory is the gate that screens all of it. The local `pre-push` hook runs
+its range screen. The `pull-request` gate runs its tree, message, and range screens, and the `main` gate runs its `main`
+screen.
 
 Two scripts and the set they read, deliberately separate:
 
@@ -32,6 +33,9 @@ inferring is expensive.
 | `pre-push`     | one declared immutable range: IDs, messages, names, and each commit's additions |
 | `pull-request` | the declared tree, message, and range gates replayed independently              |
 | `main`         | the ref, the head commit message, and the checked-out tree                      |
+
+The registry never calls the `pre-commit` or `commit-msg` surface, so those rows describe what `check.sh` screens if a
+surface asks for it.
 
 A range is screened commit by commit, never as its final files: a value one commit adds and the next deletes is still in
 every clone. Each commit contributes only the lines it added, at the line numbers they occupy, labelled
