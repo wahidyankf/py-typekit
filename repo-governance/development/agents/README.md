@@ -35,8 +35,8 @@ holds for how an agent works: how it plans, delegates, asks, tracks, and reviews
   results
 - [Subagent Orchestration Modules](subagent-orchestration/README.md) — concurrency, stuck detection and recovery, and
   result handling
-- [SWE Agent Procedures](swe-agent-procedures/README.md) — the procedure sections moved out of four swe-* agent
-  definitions to fit their word budget
+- [SWE Agent Procedures](swe-agent-procedures/README.md) — the procedure sections moved out of three swe-* agent
+  definitions (swe-architect, swe-developer, swe-reviewer) to fit their word budget
 - [SWE Delegation](swe-delegation.md) — dispatching coding work to the fitting swe agent, and its exceptions
 - [Task Tracking](task-tracking.md) — the task list kept before and during every task
 - [Task Tracking Modules](task-tracking/README.md) — list lifecycle, direction and continuity, and bindings

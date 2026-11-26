@@ -28,3 +28,7 @@ read real values; and what leaves the repository, which no later deletion recall
 - [Agent Environment-File Access](agent-env-file-access.md)
 - [Private-Key and Secret Access](private-key-and-secret-access.md)
 - [Public Outbound Safety](public-outbound-safety.md)
+- [Agent Environment-File Access Modules](agent-env-file-access/README.md) — enforcement layers and wrapper-pattern
+  observations for the agent environment-file rule
+- [Private-Key and Secret Access Modules](private-key-and-secret-access/README.md) — scope, boundaries, verification
+  observations, and enforcement of the private-key rule

@@ -39,6 +39,7 @@ standards sit alongside them.
   no agent-set identity
 - [Hook Verification](hook-verification.md) — hook bypass as a separate per-operation permission, fixing a failing hook
   at its cause, and bypass disclosure
+- [Hook Verification Modules](hook-verification/README.md) — the companion on the capacity-held hook exception
 - [Implementation Stages](implementation-stages.md) — work, then right, then fast only on measured need, with surgical
   edits and verifiable success criteria
 - [Integration Diff Review](integration-diff-review.md) — reading and reconciling every incoming commit's diff before
@@ -51,6 +52,8 @@ standards sit alongside them.
   what repair may change, and when to revisit
 - [No Destructive Git Operations](no-destructive-git-operations.md) — bounded authorized task sync, per-instance
   approval, and additive equivalents for operations that destroy work or rewrite history
+- [No Destructive Git Operations Details](no-destructive-git-operations/README.md) — the bounded exception for routine
+  synchronization of an authorized task-owned branch
 - [Pull Request Body](pull-request-body.md) — what a body states, the trunk-state claim, and rewriting the body whenever
   the head moves
 - [Pull Request Merge](pull-request-merge.md) — the merge preconditions, the recorded landing method, the no-bypass

@@ -57,6 +57,8 @@ and the selecting inventory follow [Stack Packs](../../../conventions/structure/
 - [React Standards](react-standards.md) — typed function components, hooks and accessibility lint, narrowest-home state,
   query-cached server data, and client security
 - [React Standards Modules](react-standards/README.md) — store, query, and form library decisions, and example tools
+- [Repository Adapter](repository-adapter.md) — the stack packs this repository adopts, its procedure and gate-family
+  decisions, and its deviations
 - [Rust Standards](rust-standards.md) — explicit editions, rustfmt and pedantic Clippy gates, forbidden unsafe code, one
   async runtime and serializer, and typed errors
 - [Rust Standards Modules](rust-standards/README.md) — code organisation, domain-type shapes, and security rules

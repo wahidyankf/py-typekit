@@ -17,8 +17,7 @@ Moved verbatim from [swe-architect](../../../../agents/swe-architect.md), which 
    or does, as [Developing Applications](../../../../.agents/skills/developing-applications/SKILL.md) teaches.
 2. Name the assets, trust boundaries, and entry points the design creates or changes, and the threats each choice opens
    or closes, as [Modeling Threats](../../../../.agents/skills/modeling-threats/SKILL.md) teaches.
-3. Where the design changes a stored schema or a migration, load
-   [Evolving Database Schemas](../../../../.agents/skills/evolving-database-schemas/SKILL.md) on demand and state the
+3. Where the design changes a stored schema or a migration, load Evolving Database Schemas on demand and state the
    expand, migrate, verify, and contract steps.
 4. Return the decisions, the boundaries, and the deterministic tests the work must add: each a failing test, a lint or
    type rule, an end-to-end assertion, or a threshold a command checks. A design whose success no command can check is

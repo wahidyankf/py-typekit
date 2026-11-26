@@ -22,6 +22,8 @@ The modules below are read in sequence and carry the detail behind the
 ## Directory Map
 
 - [001 Cycle and Evidence](001-cycle-and-evidence.md)
+- [Cycle and Evidence Companions](001-cycle-and-evidence/README.md) — the focused-run and batched-cycle companions, with
+  regression gates
 - [002 Test Design](002-test-design.md)
 - [003 Regression Tests](003-regression-tests.md)
 - [004 Intermittent Failures](004-intermittent-failures.md)
