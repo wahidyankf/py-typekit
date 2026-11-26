@@ -12,8 +12,8 @@ UNFORMATTED_PYTHON = "x=1\n"
 UNFORMATTED_JSON = '{"a":1}\n'
 
 
-def test_format_staged_formats_python_and_json_with_only_uv_and_npx_on_path(tmp_path: Path) -> None:
-    """A job whose PATH holds no ruff or prettier still formats a Python and a JSON file through the locked tools."""
+def test_format_staged_formats_python_and_json_with_uv_and_locked_prettier_on_path(tmp_path: Path) -> None:
+    """A job whose PATH holds uv and the locked node_modules/.bin, but no ruff, still formats Python and JSON."""
 
     uv = shutil.which("uv")
     npx = shutil.which("npx")
@@ -30,7 +30,9 @@ def test_format_staged_formats_python_and_json_with_only_uv_and_npx_on_path(tmp_
     json_file.write_text(UNFORMATTED_JSON, encoding="utf-8")
 
     environment = {key: value for key, value in os.environ.items() if key not in {"VIRTUAL_ENV", "PYTHONPATH"}}
-    environment["PATH"] = os.pathsep.join([str(uv_dir), str(Path(npx).parent), "/usr/bin", "/bin"])
+    environment["PATH"] = os.pathsep.join(
+        [str(uv_dir), str(REPO_ROOT / "node_modules" / ".bin"), str(Path(npx).parent), "/usr/bin", "/bin"]
+    )
 
     completed = subprocess.run(
         ["bash", str(FORMAT_STAGED), str(python_file), str(json_file)],
@@ -46,6 +48,42 @@ def test_format_staged_formats_python_and_json_with_only_uv_and_npx_on_path(tmp_
         f"format-staged exited {completed.returncode}:\n{completed.stdout}{completed.stderr}"
     )
     assert python_file.read_text(encoding="utf-8") == "x = 1\n"
+    assert json_file.read_text(encoding="utf-8") != UNFORMATTED_JSON
+
+
+def test_format_staged_formats_json_with_the_locked_prettier_in_a_checkout_without_node_modules(
+    tmp_path: Path,
+) -> None:
+    """A replay checkout has no node_modules, so bare prettier must resolve from the launch root's node_modules/.bin.
+
+    RHINO prepends the launch root's node_modules/.bin to PATH for the mutator. npx would look in the working directory
+    instead, cancel with no node_modules there, or fetch an unlocked version.
+    """
+
+    node = shutil.which("node")
+    assert node is not None, "node must be installed to run the locked prettier"
+    locked_bin = REPO_ROOT / "node_modules" / ".bin"
+    assert (locked_bin / "prettier").exists(), "run npm ci so the locked prettier is installed"
+
+    json_file = tmp_path / "settings.json"
+    json_file.write_text(UNFORMATTED_JSON, encoding="utf-8")
+
+    environment = {key: value for key, value in os.environ.items() if key not in {"VIRTUAL_ENV", "PYTHONPATH"}}
+    environment["PATH"] = os.pathsep.join([str(locked_bin), str(Path(node).parent), "/usr/bin", "/bin"])
+
+    completed = subprocess.run(
+        ["bash", str(FORMAT_STAGED), str(json_file)],
+        cwd=tmp_path,
+        env=environment,
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=600,
+    )
+
+    assert completed.returncode == 0, (
+        f"format-staged exited {completed.returncode}:\n{completed.stdout}{completed.stderr}"
+    )
     assert json_file.read_text(encoding="utf-8") != UNFORMATTED_JSON
 
 

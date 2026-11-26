@@ -18,13 +18,14 @@ for file in "$@"; do
 		# Reformatting them would make a generated adapter stale immediately.
 		continue
 		;;
-	# Both formatters come from the project's locked dependencies (uv.lock for ruff,
-	# node_modules for prettier), so the PATH of the job decides only where uv and npx
-	# are found. npx resolves prettier from node_modules in the working directory, so
-	# run this script from the repository root.
 	*.md | *.json | *.yml | *.yaml)
-		npx --no-install prettier --write "$file"
+		# prettier comes from the locked node_modules (npm ci). RHINO puts the launch root's
+		# node_modules/.bin first on PATH, so the bare name resolves to that binary in any
+		# checkout, including a replay checkout with no node_modules. npx is not used: it
+		# resolves from the working directory and can fetch an unlocked version.
+		prettier --write "$file"
 		;;
+	# ruff comes from the locked uv environment (uv.lock).
 	*.py) uv run --locked ruff format --no-cache "$file" ;;
 	*) ;;
 	esac
