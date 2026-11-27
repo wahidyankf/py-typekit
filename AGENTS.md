@@ -17,8 +17,8 @@ ships `py.typed`. A released tag never moves, per [Release Cut](repo-governance/
 
 `src/typekit/` holds `result.py` (`Ok`, `Err`, `Result`, and the curried `map`, `map_err`, `flat_map`, `flat_map_err`,
 `tap`, `tap_err`), `option.py` (`Some`, `Option`, `from_optional`, and the curried `map`, `flat_map`, `tap`, `ok_or`),
-`boundary.py` (`attempt`, the one `except` in the package), and `pipeline.py` (`pipe`, one to nine stages, one
-`@overload` each). `__all__` lists exactly ten names; consumers reach the combinators through their modules,
+`boundary.py` (`attempt`, the one `except` in the package), and `pipeline.py` (`pipe`, one to nine stages, with its
+overloads in `pipeline.pyi`). `__all__` lists exactly ten names; consumers reach the combinators through their modules,
 `from typekit import option, result`, so none shadows the builtin `map`. A runtime dependency is never added.
 
 ## Gates
@@ -28,7 +28,7 @@ npm run test:quick                        # unit tests, with the coverage report
 npm run test:integration                  # integration tests
 npm run test:e2e                          # end-to-end tests
 npm run test:behaviour:coverage           # behaviour coverage
-uv run pytest                             # tests, fast, no coverage
+uv run pytest                             # all tests, no coverage
 ./rhino gate run --surface pull-request   # every gate the pull-request check runs
 ```
 
@@ -47,8 +47,8 @@ refusing. This repository pins RHINO only: no HIPPO and no FERRET.
 
 Work test-first under [Test-Driven Development](repo-governance/development/quality/testing/test-driven-development.md).
 The suite spans unit, integration, and end-to-end tests. Gherkin scenarios in `specs/behaviours/` are adopted, bound
-with pytest-bdd. Branch coverage over `typekit` stays at 100%, measured with coverage.py directly, and its one exclusion
-is the `@overload` stubs. Pyright runs in strict mode. The
+with pytest-bdd. Branch coverage over `typekit` stays at 100%, measured with coverage.py directly, and it has no
+coverage exclusion. Pyright runs in strict mode. The
 [repository adapter](repo-governance/development/quality/stacks/repository-adapter.md) records these decisions.
 
 ## Tooling

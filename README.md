@@ -112,7 +112,7 @@ npm run test:quick                        # unit tests, with the coverage report
 npm run test:integration                  # integration tests
 npm run test:e2e                          # end-to-end tests
 npm run test:behaviour:coverage           # behaviour coverage
-uv run pytest                             # tests, fast, no coverage
+uv run pytest                             # all tests, no coverage
 ./rhino gate run --surface pull-request   # every gate the pull-request check runs
 ```
 

@@ -63,3 +63,17 @@ The `wiring.local-surfaces` block in `repo-config.yml` names the three gates tha
   the leak scan over the pushed range.
 
 Every other gate runs at `pull-request` or `main` only, so the local hooks stay short.
+
+## Conformance Record
+
+This table records each module of the test and gate contract for this repository.
+
+| Module                      | Status  | Reason                                                                      |
+| --------------------------- | ------- | --------------------------------------------------------------------------- |
+| 001 Registry and Dispatch   | adopted | `repo-config.yml` is the one registry; hooks and CI run `./rhino gate run`. |
+| 002 Surface Placement       | adopted | One gate per local hook; C9 not applicable, a pull-request gate exists.     |
+| 003 Pull-Request Scope      | adopted | The Surface column names where each gate runs; three gates run locally.     |
+| 004 Test Levels and Targets | adopted | npm scripts set test targets; ruff TID251 bans impure APIs in unit tests.   |
+| 005 Behaviour Corpus        | adopted | Corpus is `specs/behaviours/`; the behaviour coverage gate checks it.       |
+| 006 Coverage Floor          | adopted | `pyproject.toml` sets 100% branch coverage; the contract floor is 99%.      |
+| 007 Conformance Record      | adopted | `repo-governance/` holds the copied text; this table is the record.         |
